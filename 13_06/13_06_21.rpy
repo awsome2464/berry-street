@@ -298,7 +298,7 @@ label c_cleanroom:
     $c_blink = True
     "A short while had passed before I heard Christeena walking up next to me."
     show chris b2 straight casual grin at tworight with easeinright
-    with pause 0.1
+    pause 0.1
     c "I've got all your clothes put away!"
     "Sure enough, all the boxes that housed my clothing were empty and broken down by the door."
     "Damn. She's quick."
@@ -702,7 +702,7 @@ label grayhair:
     g casual "Food'll be ready in a couple hours."
     "I gave Mom a thumbs-up, and she went into the kitchen. I would've offered to help, but that would make me a bad host."
     hide ginger with easeoutright
-    with pause 0.5
+    pause 0.5
     show don:
         ease 0.5 close_left_d
     show chris:

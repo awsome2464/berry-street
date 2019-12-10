@@ -130,12 +130,12 @@ label nhie_start:
     pause 0.1
     d "Take a seat."
     hide don with dissolve
-    with pause 0.1
+    pause 0.1
     "Brittney took a seat across from Donald."
     "Christeena sat to Brittney's right."
     "That just left me across from Christeena."
     show don e1 straight casual grin at close_d with dissolve
-    with pause 0.1
+    pause 0.1
     d "Alright, so hear me out:"
     d "Alex still doesn't really know much about us, correct?"
     d level "I mean, he knew a lot about me from when we were younger, but not any current things, right?"
@@ -482,7 +482,7 @@ label startnhie:
     show chris d1 straight casual blank at middle
     show brit d2 straight casual blank at close_right_b_2
     with dissolve
-    with pause 0.1
+    pause 0.1
     a "Never have I ever watched a horror movie."
     $ nhie_b_points -= 1
     $ nhie_c_points -= 1
