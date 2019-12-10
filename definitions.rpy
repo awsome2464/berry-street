@@ -406,7 +406,7 @@ default persistent.choices = {"1": 0, "2": 0, "3": 0,
     "9": 0, "10": 0,
     "11": 0, "12": 0, "13": 0, "14": 0, "15": 0, "16": 0, "17": 0,
     "18": 0, "19": 0, "20": 0, "21": 0, "22": 0,
-    "23": 0, "24": 0, "25": 0, "26": 0,
+    "23": 0, "23_": 0 "24": 0, "25": 0, "26": 0,
     "27": 0, "28": 0, "29": 0, "30": 0,
     "31": 0, "32": 0}
 
@@ -421,11 +421,14 @@ default nextchoice = 0
 default choicevbox = 1
 default B_Name = "???"
 default C_Name = "???"
+default K_Name = "Waitress"
 default M_Name = "Waitress"
 default B_Points = 0
 default C_Points = 0
 default D_Points = 0
 default E_Points = 0
+default B_Kiss = False
+default C_Kiss = False
 default d_buy_stuff = False
 default B_Basketball = False
 default delifoodorder = ""
@@ -459,6 +462,11 @@ default k_hair = 0
 default m_glasses = True
 default m_partial = False
 default p_glasses = 1
+
+default nhie_a_points = 5
+default nhie_b_points = 5
+default nhie_c_points = 5
+default nhie_d_points = 5
 
 default replay = False
 default dayselectmenuvalue = "June, 2013"

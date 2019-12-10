@@ -135,26 +135,26 @@ label swimming:
     $ choicevbox = 2
     b "Wassup, homeboys?"
 
-    if persistent.choice_27 == 1:
+    if persistent.choices["27"] == 1:
         jump thesky
-    elif persistent.choice_27 == 2:
+    elif persistent.choices["27"] == 2:
         jump notmuchgirlfriend
-    elif persistent.choice_27 == 3:
+    elif persistent.choices["27"] == 3:
         jump likethetopless
     else:
         menu:
             b "Wassup, homeboys?{fast}"
 
             "'The sky, duh!'":
-                $ persistent.choice_27 = 1
+                $ persistent.choices["27"] = 1
                 jump thesky
 
             "'Not much, girlfriend!'":
-                $ persistent.choice_27 = 2
+                $ persistent.choices["27"] = 2
                 jump notmuchgirlfriend
 
             "'Diggin\' the topless style you got there.'":
-                $ persistent.choice_27 = 3
+                $ persistent.choices["27"] = 3
                 jump likethetopless
 
 label thesky:
@@ -284,25 +284,25 @@ label chrishasears:
     a "Well, uh..."
     a "I think..."
     $ choicevbox = 3
-    if persistent.choice_28 == 1:
+    if persistent.choices["28"] == 1:
         jump shelooksfineassheis
-    elif persistent.choice_28 == 2:
+    elif persistent.choices["28"] == 2:
         jump sheshouldshowoffmore
-    elif persistent.choice_28 == 3:
+    elif persistent.choices["28"] == 3:
         jump gotodonaldshouse
     else:
         menu:
 
             "'...she looks fine as she is.'":
-                $ persistent.choice_28 = 1
+                $ persistent.choices["28"] = 1
                 jump shelooksfineassheis
 
             "'...she should show off a bit more.'":
-                $ persistent.choice_28 = 2
+                $ persistent.choices["28"] = 2
                 jump sheshouldshowoffmore
 
             "'...we should just go to Donald\'s house.'":
-                $ persistent.choice_28 = 3
+                $ persistent.choices["28"] = 3
                 jump gotodonaldshouse
 
 label shelooksfineassheis:
@@ -509,26 +509,25 @@ label shesnotfatharry:
     "Unless I decide to not resist and let her get me in."
     "Hm."
     $ choicevbox = 5
-    if persistent.choice_29 == 1:
+    if persistent.choices["29"] == 1:
         jump chargeather
-    elif persistent.choice_29 == 2:
+    elif persistent.choices["29"] == 2:
         jump standstillandresist
-    elif persistent.choice_29 == 3:
+    elif persistent.choices["29"] == 3:
         jump standstillanddontresist
     else:
         "How should I approach this?"
-
         menu:
             "Charge at her.":
-                $ persistent.choice_29 = 1
+                $ persistent.choices["29"] = 1
                 jump chargeather
 
             "Stand still and resist.":
-                $ persistent.choice_29 = 2
+                $ persistent.choices["29"] = 2
                 jump standstillandresist
 
             "Stand still and don't resist.":
-                $ persistent.choice_29 = 3
+                $ persistent.choices["29"] = 3
                 jump standstillanddontresist
 
 label chargeather:
@@ -1298,7 +1297,7 @@ label b_pond:
 
     Then again, she's not the most normal of people.
     """
-    if persistent.choice_18 == 3 and persistent.choice_20 == 3:
+    if persistent.choices["18"] == 3 and persistent.choices["20"] == 3:
         narrate "Even the fact that she claims to not trust him with everything seems off."
         narrate "I don't know what kind of 'things' she doesn't want Donald to know, but this seems like one of them."
     narrate """
@@ -1490,13 +1489,13 @@ label c_pond:
     c e1 sad "I give her crap about being a bit too revealing in her outfit choices at times, but..."
     c left "...at least she has a body worth showing off."
     a "..."
-    if persistent.choice_28 == 1:
+    if persistent.choices["28"] == 1:
         a "Chris, I was serious when I said that you look fine the way you do now."
         a "In a way, I'm glad that you respect yourself enough to not walk out of the house essentially naked."
-    elif persistent.choice_28 == 2:
+    elif persistent.choices["28"] == 2:
         a "Chris, I was serious when I said you already have a body worth showing off."
         a "Again, you don't gotta go overboard, but you might actually get some positive attention."
-    elif persistent.choice_28 == 3:
+    elif persistent.choices["28"] == 3:
         "She really is upset about this..."
         "Maybe I should've answered Brittney's question when I had the chance..."
     c "..."
@@ -1572,7 +1571,7 @@ label c_pond:
     a "You're honest. You care about your friends."
     a "And dare I say you look very cute."
     c grin "..."
-    if persistent.choice_4 == 2:
+    if persistent.choices["4"] == 2:
         a "When I said I thought you were pretty that day I first met you..."
         a "...I wasn't lying."
     else:
@@ -2100,10 +2099,10 @@ label d_pond:
     a "Why didn't you just call her out in front of everyone when she denied it?"
     d level "Oh, trust me, I wanted to."
 
-    if persistent.choice_30 == 1:
+    if persistent.choices["30"] == 1:
         d raised grin "But be honest; would you have believed me if I had said she was lying?"
         jump ofcourse
-    elif persistent.choice_30 == 2:
+    elif persistent.choices["30"] == 2:
         d raised grin "But be honest; would you have believed me if I had said she was lying?"
         jump no
     else:
@@ -2112,11 +2111,11 @@ label d_pond:
             d "But be honest; would you have believed me if I had said she was lying?{fast}"
 
             "\"Of course!\"":
-                $ persistent.choice_30 = 1
+                $ persistent.choices["30"] = 1
                 jump ofcourse
 
             "\"No...\"":
-                $ persistent.choice_30 = 2
+                $ persistent.choices["30"] = 2
                 jump no
 
     label ofcourse:
@@ -2264,7 +2263,7 @@ label e_pond:
     $ current_track = "\"Chaotic Evil\""
     play music chaotic_evil
     "Eleanor Yellman."
-    if persistent.choice_12 == 3:
+    if persistent.choices["12"] == 3:
         "This is my first time seeing her since that day at the mall."
         "While she wasn't really THAT angry and moody then, she's certainly furious now."
     else:
@@ -2345,10 +2344,10 @@ label e_pond:
     "Huh."
     "She actually seem less hostile right now."
     "Maybe I can take advantage of this opportunity..."
-    if persistent.choice_12 == 3 and persistent.choice_15 == 1:
-        if persistent.choice_16 == 1:
+    if persistent.choices["12"] == 3 and persistent.choices["15"] == 1:
+        if persistent.choices["16"] == 1:
             a "Hey, I don't know if you remember me, but I went up to you at the art store a couple weeks ago."
-        elif persistent.choice_16 == 2:
+        elif persistent.choices["16"] == 2:
             a "Hey, I don't know if you remember me, but I introduced myself at the art store a couple weeks ago."
     else:
         a "I'm Alex, by the way."

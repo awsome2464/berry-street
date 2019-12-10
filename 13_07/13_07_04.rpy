@@ -141,23 +141,23 @@ label donbirthday:
     $ chris_dare = False
     $ don_dare = False
 
-    if persistent.choice_18 == 1:
-        if persistent.choice_20 == 1 or persistent.choice_20 == 3:
+    if persistent.choices["18"] == 1:
+        if persistent.choices["20"]== 1 or persistent.choices["20"] == 3:
             $ brit_dare = True
             jump bad_dare_discussion
-        elif persistent.choice_20 == 2 and persistent.choice_21 == 1:
+        elif persistent.choices["20"] == 2 and persistent.choices["21"] == 1:
             $ brit_dare = True
             jump good_dare_discussion
         else:
             jump no_dare_discussion
-    if persistent.choice_18 == 2:
-        if persistent.choice_19 == 3:
+    if persistent.choices["18"] == 2:
+        if persistent.choices["19"] == 3:
             $ chris_dare = True
             jump bad_dare_discussion
         else:
             jump no_dare_discussion
-    if persistent.choice_18 == 3:
-        if persistent.choice_20 == 2:
+    if persistent.choices["18"] == 3:
+        if persistent.choices["20"] == 2:
             $ don_dare = True
             jump bad_dare_discussion
         else:
@@ -172,7 +172,7 @@ label donbirthday:
         d right "I'll be honest; I had it coming."
 
         if brit_dare == True:
-            if persistent.choice_20 == 1:
+            if persistent.choices["20"] == 1:
                 a "Yeah, but having your crush kiss me in front of you was kinda harsh."
                 d straight "Well, I can't blame you for wanting to make that dare in the first place."
                 d left "I would've done the same thing if I had the chance..."
@@ -216,11 +216,11 @@ label donbirthday:
             jump no_dare_discussion
         elif don_dare == True:
                 a "Yeah, but jumping in the pond was a pretty stupid idea."
-                if persistent.choice_21 == 1:
+                if persistent.choices["21"] == 1:
                     d straight "Well, credit where it's due, you at least changed your mind and apologized, so no harm, no foul, right?"
                     a "I guess. I still feel bad, though."
                     d raised "Don't, man. It's cool."
-                elif persistent.choice_21 == 2:
+                elif persistent.choices["21"] == 2:
                     d straight blank "Well, yeah, it was."
                     d right grin "But I didn't have to do it. I could've been a sissy and turned it down."
                     d "So, honestly, it's really my fault at the end of the day."
@@ -344,7 +344,7 @@ label no_dare_discussion:
     $d_blink = False
     d closed sad grin "Whew. That's a relief."
     a "What, are these special brats or something?"
-    if persistent.choice_18 == 2 and persistent.choice_19 == 2 and persistent.choice_20 == 2:
+    if persistent.choices["18"] == 2 and persistent.choices["19"] == 2 and persistent.choices["20"] == 2:
         hide chad
         hide don
         show brit a1 straight casual grin at middle
@@ -440,17 +440,17 @@ label no_dare_discussion:
     $ b_dare_talk = False
     $ c_dare_talk = False
 
-    if persistent.choice_23 == 1:
+    if persistent.choices["23"] == 1:
         jump girltalk_b
-    elif persistent.choice_23 == 2:
+    elif persistent.choices["23"] == 2:
         jump girltalk_c
     else:
         menu:
             "Walk over with Brittney":
-                $ persistent.choice_23 = 1
+                $ persistent.choices["23"] = 1
                 jump girltalk_b
             "Stay with Christeena":
-                $ persistent.choice_23 = 2
+                $ persistent.choices["23"] = 2
                 jump girltalk_c
 
     label girltalk_c:
@@ -465,30 +465,30 @@ label no_dare_discussion:
         show chris:
            ease 0.5 close_c
         with Pause(.6)
-        if persistent.choice_18 == 1:
-            if persistent.choice_19 == 2:
+        if persistent.choices["18"] == 1:
+            if persistent.choices["19"] == 2:
                 jump animetalk_c
-            elif persistent.choice_20 == 1:
+            elif persistent.choices["20"] == 1:
                 jump kisstalk_c
-            elif persistent.choice_20 == 2:
+            elif persistent.choices["20"] == 2:
                 jump kisstalk_b_d_c
-            elif persistent.choice_20 == 3:
+            elif persistent.choices["20"] == 3:
                 jump punchtalk_b_c_c
-        elif persistent.choice_18 == 2:
-            if persistent.choice_19 == 1:
+        elif persistent.choices["18"] == 2:
+            if persistent.choices["19"] == 1:
                 jump kisstalk_c_c_
-            elif persistent.choice_19 == 2:
+            elif persistent.choices["19"] == 2:
                 jump flashtalk_c_t
-            elif persistent.choice_19 == 3:
+            elif persistent.choices["19"] == 3:
                 jump punchtalk_c_c
-        elif persistent.choice_18 == 3:
-            if persistent.choice_19 == 2:
+        elif persistent.choices["18"] == 3:
+            if persistent.choices["19"] == 2:
                 jump tampontalk_c
-            elif persistent.choice_20 == 1:
+            elif persistent.choices["20"] == 1:
                 jump pushuptalk_c
-            elif persistent.choice_20 == 2:
+            elif persistent.choices["20"] == 2:
                 jump pondtalk_c
-            elif persistent.choice_20 == 3:
+            elif persistent.choices["20"] == 3:
                 jump kisstalk_c_d_d
 
     label girltalk_b:
@@ -503,33 +503,33 @@ label no_dare_discussion:
         with Pause(.1)
         $ b_partial = False
         "Brittney and I started walking towards the coolers."
-        if persistent.choice_18 == 1:
-            if persistent.choice_19 == 2:
+        if persistent.choices["18"] == 1:
+            if persistent.choices["19"] == 2:
                 jump animetalk_b
-            elif persistent.choice_20 == 1:
+            elif persistent.choices["20"] == 1:
                 jump kisstalk_b
-            elif persistent.choice_20 == 2:
+            elif persistent.choices["20"] == 2:
                 jump kisstalk_b_d_b
-            elif persistent.choice_20 == 3:
+            elif persistent.choices["20"] == 3:
                 jump punchtalk_b_b
-        elif persistent.choice_18 == 2:
-            if persistent.choice_19 == 1:
+        elif persistent.choices["18"] == 2:
+            if persistent.choices["19"] == 1:
                 if C_Kiss == True:
                     jump kisstalk_b_c_t
                 if C_Kiss == False:
                     jump kisstalk_b_c_f
-            elif persistent.choice_19 == 2:
+            elif persistent.choices["19"] == 2:
                 jump flashtalk_b_c
-            elif persistent.choice_19 == 3:
+            elif persistent.choices["19"] == 3:
                 jump punchtalk_b_c
-        elif persistent.choice_18 == 3:
-            if persistent.choice_19 == 2:
+        elif persistent.choices["18"] == 3:
+            if persistent.choices["19"] == 2:
                 jump tampontalk_b
-            elif persistent.choice_20 == 1:
+            elif persistent.choices["20"] == 1:
                 jump pushuptalk_b
-            elif persistent.choice_20 == 2:
+            elif persistent.choices["20"] == 2:
                 jump pondtalk_b
-            elif persistent.choice_20 == 3:
+            elif persistent.choices["20"] == 3:
                 jump kisstalk_b_d_d
 
 label britreturns:
@@ -567,17 +567,17 @@ label britreturns:
     c blank "Brittney!"
     if b_dare_talk == True:
         "Christeena then turned towards me to try and get a reading off me, I assume."
-        if persistent.choice_24 == 1:
+        if persistent.choices["24"] == 1:
             jump playalong_b
-        elif persistent.choice_24 == 2:
+        elif persistent.choices["24"] == 2:
             jump spoilthefun_b
         else:
             menu:
                 "Play along with the joke.":
-                    $ persistent.choice_24 = 1
+                    $ persistent.choices["24"] = 1
                     jump playalong_b
                 "Spoil the fun.":
-                    $ persistent.choice_24 = 2
+                    $ persistent.choices["24"] = 2
                     jump spoilthefun_b
         label spoilthefun_b:
             $ C_Points += 1
@@ -603,20 +603,20 @@ label britreturns:
         "I then noticed something bright green sticking out of her pocket."
         show brit straight raised grin
         "I looked and saw that she was looking me, clearly now knowing that I know."
-        if persistent.choice_24 == 1:
+        if persistent.choices["24"] == 1:
             jump playalong_c
-        elif persistent.choice_24 == 2:
+        elif persistent.choices["24"] == 2:
             jump spoilthefun_c
         else:
             "Hm..."
             window hide
             menu:
                 "Play along with the joke.":
-                    $ persistent.choice_24 = 1
+                    $ persistent.choices["24"] = 1
                     window show
                     jump playalong_c
                 "Spoil the fun.":
-                    $ persistent.choice_24 = 2
+                    $ persistent.choices["24"] = 2
                     window show
                     jump spoilthefun_c
     label spoilthefun_c:
@@ -862,22 +862,22 @@ label endofprank:
     b left huhu "I dunno. Nobody's ever told me that in response."
     b straight casual a1 grin "But, I won't force ya to play."
     b level "Alex? Whaddaya say?"
-    if persistent.choice_25 == 1:
+    if persistent.choices["25"] == 1:
         jump bagswithbrit
-    elif persistent.choice_25 == 2:
+    elif persistent.choices["25"] == 2:
         jump chillinsidewithchris
-    elif persistent.choice_25 == 3:
+    elif persistent.choices["25"] == 3:
         jump hangoutwithdon
     else:
         menu:
             "Play bags with Brittney.":
-                $ persistent.choice_25 = 1
+                $ persistent.choices["25"] = 1
                 jump bagswithbrit
             "Chill inside with Christeena.":
-                $ persistent.choice_25 = 2
+                $ persistent.choices["25"] = 2
                 jump chillinsidewithchris
             "Hang out with Donald.":
-                $ persistent.choice_25 = 3
+                $ persistent.choices["25"] = 3
                 jump hangoutwithdon
 
 label bagswithbrit:
@@ -891,10 +891,10 @@ label bagswithbrit:
     b "Hey, Alex?"
     a "Yeah?"
     b "Be honest."
-    if persistent.choice_26 == 1:
+    if persistent.choices["26"] == 1:
         b raised hanging a1 "Did you just want to play because you felt bad for me or something?"
         jump feltbad
-    if persistent.choice_26 == 2:
+    if persistent.choices["26"] == 2:
         b raised hanging a1 "Did you just want to play because you felt bad for me or something?"
         jump didntfeelbad
     else:
@@ -902,10 +902,10 @@ label bagswithbrit:
         menu:
             b "Did you just want to play because you felt bad for me or something?{fast}"
             "Yes":
-                $ persistent.choice_26 = 1
+                $ persistent.choices["26"] = 1
                 jump feltbad
             "No":
-                $ persistent.choice_26 = 2
+                $ persistent.choices["26"] = 2
                 jump didntfeelbad
 
     label feltbad:
@@ -1318,7 +1318,7 @@ label chillinsidewithchris:
             "I could feel my heart pounding a bit faster."
             "She then spoke in a whisper."
             c "Hey, uh..."
-            if persistent.choice_23 == 2:
+            if persistent.choices["23"] == 2:
                 c right "I know I said I hardly knew you and all, but..."
             else:
                 c right "I know this might sound a bit weird, but..."
@@ -1327,11 +1327,18 @@ label chillinsidewithchris:
             a "...!"
             "Well, way to be subtle, Chris."
             "But to answer her question..."
-            menu:
-                "Kiss her.":
-                    jump kissher
-                "Don't kiss her.":
-                    jump dontkissher
+            if persistent.choices["26"] == 1:
+                jump kissher
+            elif persistent.choices["26"] == 2:
+                jump dontkissher
+            else:
+                menu:
+                    "Kiss her.":
+                        $ persistent.choices["26"] = 1
+                        jump kissher
+                    "Don't kiss her.":
+                        $ persistent.choices["26"] = 2
+                        jump dontkissher
             label kissher:
                 $ C_Points += 1
                 "Well, without any more hesitation, I leaned towards her."
@@ -1622,7 +1629,7 @@ label presenttime:
     "Oh, boy...{w} I hope he enjoys it..."
     $d_blink = True
     d straight level blank "..."
-    if persistent.choice_12 == 1:
+    if persistent.choices["12"] == 1:
         d casual dot "A Bulls jersey?"
         d smile "Thanks, Al!"
         a "You really like it?"
@@ -1631,7 +1638,7 @@ label presenttime:
         "I gave a mental sigh of relief."
         "I don't know if he LOVED it, but at least he didn't hate it."
         $ D_Points += 1
-    elif persistent.choice_12 == 2:
+    elif persistent.choices["12"] == 2:
         d casual wide "No way!"
         d "{i}Clunker's Bad Day{/i}?!"
         "That's always a good sign."
@@ -1646,7 +1653,7 @@ label presenttime:
         d sad smile "Anyway, thanks again, man!"
         a "No problem!"
         $ D_Points += 2
-    elif persistent.choice_12 == 3:
+    elif persistent.choices["12"] == 3:
         "He stared at the opened box in a bit of confusion."
         a "I remembered you drawing when we were younger."
         "I explained in a bit of a nervous tone."
@@ -1760,7 +1767,7 @@ label presenttime:
     hide white
     pause 0.1
     hide firework with dissolve
-    if persistent.choice_25 == 2:
+    if persistent.choices["25"] == 2:
         "Chris certainly was right when she said that fireworks aren't as much of a 'wow' factor as they once were."
     else:
         "Admittedly, as I've gotten older, I haven't found fireworks to have that 'wow' factor as much as they used to."
@@ -1798,7 +1805,7 @@ label presenttime:
     "I guess while I'm thinking of things that are seemingly stupid..."
     "This first month I've spent in Smalltown certainly has been quite a change for me."
     "Yet, I can't, at this point in time, say I'm upset that we moved."
-    if persistent.choice_25 == 3:
+    if persistent.choices["25"] == 3:
         "I wouldn't go as far as Donald and say that I don't miss Chicago, but..."
     "I finally have friends, plural, as well as the chance to reconnect with the only one I had growing up."
     "I honestly don't know what my future in Smalltown holds, and as far as I know, it might just get worse."

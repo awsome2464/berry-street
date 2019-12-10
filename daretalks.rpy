@@ -70,7 +70,7 @@ label kisstalk_b:
     b a2 raised closed_smile "What can I say? I'm just that kind of girl."
     b right level huhu "I mean, yeah, it's probably wrong, but I just like teasing Donald about his crush, making him upset by reminding him that I'm not his."
     b a1 straight sad blank "Though, as you can imagine, it sometimes does go a bit too far..."
-    if persistent.choice_12 == 1:
+    if persistent.choices["12"] == 1:
         b level grin "...but it's like I told you: I've made it clear to him that I don't feel that way about him, and that he's setting himself up for disappointment by pursuing the impossible."
     else:
         b level grin "...but I've made it clear to him that I don't feel that way about him, and that he's setting himself up for disappointment by pursuing the impossible."
@@ -101,8 +101,8 @@ label kisstalk_b_d_b:
     b "You totally had the chance to dare me to fuck him or something crazy like that and didn't take it."
     "Well, when she puts it like that, it sounds like a wasted opportunity."
     "Though it's an opportunity that I would kindly not want to witness."
-    if persistent.choice_21 == 2:
-        b a1 straight casual grin "Plus, you changed your mind, and I didn't have to do it, in the end, anway, which I really appreciate."
+    if persistent.choices["21"] == 2:
+        b a1 straight casual grin "Plus, you changed your mind, and I didn't have to do it, in the end, anyway, which I really appreciate."
     b a1 straight casual grin "So, yeah. No hard feelings."
     a "Alright, then. Glad to know that."
     "I grabbed a Hilly Dew for myself, and we started to walk back towards Christeena, who was standing by herself awkwardly in the middle of the yard."
@@ -110,7 +110,7 @@ label kisstalk_b_d_b:
     a "So, um..."
     b blank "What?"
     a "If I'm not getting too personal here..."
-    if persistent.choice_21 == 1:
+    if persistent.choices["21"] == 1:
         a "Did you... you know...{w} enjoy it?"
     else:
         a "If you had actually kissed him, do you think you would... you know... {w} enjoy it?"
@@ -268,7 +268,7 @@ label flashtalk_b_c:
     a "And why would I do a thing like that?"
     $ b_partial = False
     show brit a1 straight level grin at close_b
-    if persistent.choice_20 == 1:
+    if persistent.choices["20"] == 1:
         b "Because you tried to make her show you her tits, and now you're embarrassed."
     else:
         b "Because you tried to make her show you her tits, and now she's pissed at you."
@@ -291,7 +291,7 @@ label flashtalk_b_c:
     a "...!"
     b level right huhu a1 "...oops."
     a "She...{w=.5} does...?"
-    if persistent.choice_20 == 1:
+    if persistent.choices["20"] == 1:
         b a2 level straight grin "Well, she certainly thinks a little less of you because of that dare, but yeah. She's mentioned it a few times."
     else:
         b a2 level straight grin "Well, she certainly thinks you're a perverted asshole because of that dare, but yeah. She's mentioned it a few times."
@@ -647,17 +647,21 @@ label kisstalk_c:
     a "..."
     "Well, I certainly wasn't expecting her to ask that."
     a "I, uh...{nw}"
+    if persistent.choices["23_"] == 1:
+        jump thinkshesattractive
+    elif persistent.choices["23_"] == 2:
+        jump makedonaldjealous
+    else:
+        menu:
+            a "I, uh...{fast}"
 
-    menu:
-        a "I, uh...{fast}"
+            "'I think she's attractive.'":
+                $ persistent.choices["23_"] = 1
+                jump thinkshesattractive
 
-        "'I think she's attractive.'":
-            $ persistent.choice_23_ = 1
-            jump thinkshesattractive
-
-        "'I wanted to make Donald jealous.'":
-            $ persistent.choice_23_ = 2
-            jump makedonaldjealous
+            "'I wanted to make Donald jealous.'":
+                $ persistent.choices["23_"] = 2
+                jump makedonaldjealous
 
     label thinkshesattractive:
         a "Okay, this stays between us, but..."
@@ -731,7 +735,7 @@ label kisstalk_b_d_c:
     c "And the idea of kissing Donald is very high on the list of things that get her upset."
     a "Oh..."
     c straight sad b1 "Yeah..."
-    if persistent.choice_21 == 2:
+    if persistent.choices["21"] == 2:
         a "I mean, at least I changed my mind, right?"
         c grin "Yeah, you did."
         c level blank "Still, she really was upset that it was suggested, nonetheless..."
@@ -854,9 +858,9 @@ label flashtalk_c_t:
     a "..."
     "We both seemed to reach the same realization that we were alone."
     "We hadn't really talked since that night in the cabin."
-    if persistent.choice_20 == 1:
+    if persistent.choices["20"] == 1:
         "Yeah, we both agreed to never mention it again, but we weren't really sure what to talk about, instead."
-    elif persistent.choice_20 == 2:
+    elif persistent.choices["20"] == 2:
         "I was personally too scared to bring it up, and she was most likely too angry to mention it."
     "I guess some old-fashioned small talk will have to do for now."
     $ current_track = "\"Reflection\""
@@ -869,7 +873,7 @@ label flashtalk_c_t:
     a "..."
     "I looked towards the coolers and saw Brittney digging around in one of them."
     "I turned back to Christeena and sighed and crossed my arms with embarrassment."
-    if persistent.choice_20 == 2:
+    if persistent.choices["20"] == 2:
         a "...look. About that dare..."
         c level "...yeah?"
         a "I'm sorry. I really am."
@@ -886,7 +890,7 @@ label flashtalk_c_t:
         c grin "...I appreciate the fact you apologized."
         a "So, do you forgive me, then?"
         c level blank "..."
-    elif persistent.choice_20 == 1:
+    elif persistent.choices["20"] == 1:
         a "Look, I just wanna make sure everything's good between us."
         c level "..."
         a "I'll admit I was being stupid that night in the cabin."
@@ -982,7 +986,7 @@ label tampontalk_c:
     c level "Well..."
     c b2 right "I guess you're kinda right, but it's still not something I just wanna go and talk about all the time."
     a "Well, I don't, either."
-    if persistent.choice_12 == 2:
+    if persistent.choices["12"] == 2:
         a "Still, it's like I told you: you shouldn't let things like that bother you. She's clearly just doing it for a reaction."
     else:
         a "Still, you shouldn't let things like that bother you. She's clearly just doing it for a reaction."

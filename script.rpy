@@ -343,18 +343,18 @@ label logs:
             logno = "2013-06-23"
             logdate = "Sunday, June 23, 2013"
             logtime = "16:55"
-            if persistent.choice_12 == 1:
+            if persistent.choices["12"] == 1:
                 messagepart01 = "going alone to a video game store and Sprouse and Usher going together to a sports store.\n\n"
-                if persistent.choice_14 == 1:
+                if persistent.choices["14"] == 1:
                     messagepart02 = "The latter two also ran like fools throughout the mall in some sort of race. Waste of energy, I say.\n\n"
                 else:
                     messagepart02 = "The latter also ran like a fool throughout the mall in some sort of race while Sprouse didn't follow suit. Quite a pleasure to see him have some sense.\n\n"
-            elif persistent.choice_12 == 2:
+            elif persistent.choices["12"] == 2:
                 messagepart01 = "and Sprouse going to a video game store and Usher going alone to a sports store.\n\nTruman spent time talking about Waters and her not-so subtle dislike of him. One wonders if this could affect Sprouse's thoughts and feelings of him.\n\n"
                 messagepart02 = ""
             else:
                 messagepart01 = "going to a video game store, Usher going to a sports store, and Sprouse going to an art store.\n\nThe most interesting aspect was Sprouse encountering Yellman for a second time.\n\n"
-                if persistent.choice_15 == 1 and persistent.choice_16 == 2:
+                if persistent.choices["15"] == 1 and persistent.choices["16"] == 2:
                     messagepart02 = "He actually had the strength to talk to her, despite her obvious disinterest. This could certainly show that Sprouse is willing to be friendly to those others see unworthy.\n\n"
                 else:
                     messagepart02 = "He didn't muster the strength to hold a conversation with her. This could certainly show that Sprouse is perhaps a bit cowardly, or like the other 3, who are unwilling to show compassion for those they don't see worthy of it.\n\n"
@@ -363,33 +363,33 @@ label logs:
             logno = "2013-06-30"
             logdate = "Sunday, June 30, 2013"
             logtime = "23:10"
-            if persistent.choice_18 == 1:
+            if persistent.choices["18"] == 1:
                 messagepart01 = "Usher from the game first.\n\n"
-                if persistent.choice_19 == 2:
+                if persistent.choices["19"] == 2:
                     messagepart02 = "However, in a surprise move, he allowed Truman to win. It's currently unclear why this move was made, but it is certainly worth mentioning.\n\n"
-                elif persistent.choice_20 == 1:
+                elif persistent.choices["20"] == 1:
                     messagepart02 = "In an expected move, Sprouse also won the competition, allowing Usher to perform a dare for him, the dare in question being a kiss. Typical teenage male behavior.\n\n"
-                elif persistent.choice_20 == 2:
+                elif persistent.choices["20"] == 2:
                     messagepart02 = "In an expected move, Sprouse also won the competition, allowing Usher to perform a dare for him, the dare in question being for her to kiss Waters. Certainly a very interesting move.\n\n"
-                elif persistent.choice_20 == 3:
+                elif persistent.choices["20"] == 3:
                     messagepart02 = "In an expected move, Sprouse also won the competition, allowing Usher to perform a dare for him, the dare in question being for her to punch Waters. Few things bring me true joy, but I will admit that seeing that brought a small smile to my face.\n\n"
-            elif persistent.choice_18 == 2:
+            elif persistent.choices["18"] == 2:
                 messagepart01 = "Truman from the game first.\n\n"
-                if persistent.choice_19 == 1:
+                if persistent.choices["19"] == 1:
                     messagepart02 = "In an expected move, Sprouse also won the competition, allowing Truman to perform a dare for him, the dare in question being a kiss. Typical teenage male behavior.\n\n"
-                elif persistent.choice_19 == 2:
+                elif persistent.choices["19"] == 2:
                     messagepart02 = "In an expected move, Sprouse also won the competition, allowing Truman to perform a dare for him, the dare in question being for her to show him her bare breasts. Typical teenage male behavior.\n\n"
-                elif persistent.choice_19 == 3:
+                elif persistent.choices["19"] == 3:
                     messagepart02 = "In an expected move, Sprouse also won the competition, allowing Truman to perform a dare for him, the dare in question being for her to punch Waters. Few things bring me true joy, but I will admit that seeing that brought a small smile to my face.\n\n"
             else:
                 messagepart01 = "Waters from the game first.\n\n"
-                if persistent.choice_19 == 2:
+                if persistent.choices["19"] == 2:
                     messagepart02 = "However, in a surprise move, he allowed Usher to win. It's currently unclear why this move was made, but it is certainly worth mentioning.\n\n"
-                elif persistent.choice_20 == 1:
+                elif persistent.choices["20"] == 1:
                     messagepart02 = "In an expected move, Sprouse also won the competition, allowing Waters to perform a dare for him, the dare in question being for him to perform pushups. I have no explanation for the logic behind this decision.\n\n"
-                elif persistent.choice_20 == 2:
+                elif persistent.choices["20"] == 2:
                     messagepart02 = "In an expected move, Sprouse also won the competition, allowing Waters to perform a dare for him, the dare in question being for him to jump into the local pond. I suppose that given that the average temperature of said pond at this time of night is around 7 degrees Celsius, that is a fair punishment.\n\n"
-                elif persistent.choice_20 == 3:
+                elif persistent.choices["20"] == 3:
                     messagepart02 = "In an expected move, Sprouse also won the competition, allowing Waters to perform a dare for him, the dare in question being for him to kiss Usher. What a rather interesting turn of events.\n\n"
             logmessage = "After an uneventful morning and afternoon from Sprouse, he, along with Usher, Truman, and Waters, met up in their cabin for a dare game of sorts. I knew from the very beginning that this would only end in disaster.\n\nThe game ended with Sprouse eliminating " + messagepart01 + messagepart02
         elif progress == 7:

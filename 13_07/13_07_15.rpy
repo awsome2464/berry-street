@@ -252,18 +252,18 @@ label baseball:
     "Actually, maybe a conversation with her could help me learn more about Brittney..."
     "...or maybe the whole time Christeena and Donald are gone, it'll just be awkward silence..."
     a "Well, uh..."
-    if persistent.choice_31 == 1:
+    if persistent.choices["31"] == 1:
         jump gowithchris
-    elif persistent.choice_31 == 2:
+    elif persistent.choices["31"] == 2:
         jump stayhere
     else:
         "What should I do?"
         menu:
             "Go with Christeena and Donald":
-                $ persistent.choice_31 = 1
+                $ persistent.choices["31"] = 1
                 jump gowithchrisanddon
             "Stay here":
-                $ persistent.choice_31 = 2
+                $ persistent.choices["31"] = 2
                 jump stayhere
 
 label gowithchrisanddon:
@@ -318,17 +318,17 @@ label gowithchrisanddon:
     "Did they forget I existed for a second, or...?"
     "Ah, whatever. I suppose I better go after one of them so I'm not just standing around awkwardly."
 
-    if persistent.choice_32 == 1:
+    if persistent.choices["32"] == 1:
         jump getchipswithdon
-    elif persistent.choice_32 == 2:
+    elif persistent.choices["32"] == 2:
         jump getdrinkswithchris
     else:
         menu:
             "Get chips with Donald":
-                $ persistent.choice_32 = 1
+                $ persistent.choices["32"] = 1
                 jump getchipswithdon
             "Get drinks with Christeena":
-                $ persistent.choice_32 = 2
+                $ persistent.choices["32"] = 2
                 jump getdrinkswithchris
 
     label getchipswithdon:
@@ -557,7 +557,7 @@ label stayhere:
     "They had a pretty decent distance between them; maybe about 10 feet?"
     "Brit really looked like she was completely focused on the ball and her teammate, as if nothing else around her existed."
     "I couldn't help but notice that she was able to throw the ball pretty quickly; her teammate almost missed a few times."
-    if persistent.choice_25 == 1:
+    if persistent.choices["25"] == 1:
         "It felt very reminiscent to our bags game at Donald's birthday party."
     "I then turned to Mrs. Truman; I think I finally found a good conversation starter."
     show martha b1 straight casual blank at close_m zorder 3 with dissolve
@@ -624,17 +624,17 @@ label stayhere:
     a "Nah, you're fine, Mrs. Truman."
     mu level "Please, 'Martha' is fine."
 
-    if persistent.choice_32 == 1:
+    if persistent.choices["32"] == 1:
         jump callhermrstruman
-    elif persistent.choice_32 == 2:
+    elif persistent.choices["32"] == 2:
         jump callhermartha
     else:
         menu:
             "Call her Mrs. Truman":
-                $ persistent.choice_32 = 1
+                $ persistent.choices["32"] = 1
                 jump callhermrstruman
             "Call her Martha":
-                $ persistent.choice_32 = 2
+                $ persistent.choices["32"] = 2
                 jump callhermartha
 
     label callhermrstruman:
@@ -782,7 +782,7 @@ label gamestart:
     pause 0.1
     "As far as Brittney goes, she did a good job catching and throwing in the first half of the inning."
     "Not perfect, as she did manage to miss her teammate's glove or throw too late, but she was responsible for 2 of the outs."
-    if persistent.choice_31 == 2:
+    if persistent.choices["31"] == 2:
         "Though with the second half of the inning starting, I realized that [M_Name] and I never talked about her daughter's batting abilities."
     else:
         "Though with the second half of the inning starting, I realized that I hadn't heard anything about her batting abilities."

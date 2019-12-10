@@ -6,24 +6,20 @@ label nhie_b:
     "Well, Brittney was intended to get out first, anyway."
     "The bigger question now is whether or not I make sure I win or Donald wins."
     "I guess we'll see when the time comes."
-
     show screen finger_points
     show nhie at left zorder 3
     show don e1 straight casual blank at close_left_d_2
     show chris d1 straight sad blank at middle
     show brit d2 straight casual blank at close_right_b_2
     with dissolve
-    with Pause(.1)
-    a "Never have I ever...{w}had my mom marry another man."
+    pause 0.1
+    a "Never have I ever...{w} had my mom marry another man."
     b small hanging "...!"
     b d1 straight mad grin "Well, well, well. Bravo, Mr. Sprouse!"
-
     $ nhie_b_points -= 1
     with dissolve
     "Brittney then lowered her final finger, marking her out of the game."
-
     # Points: A = 3, B = 0, C = 1, D = 1
-
     show don level grin
     "Donald looked at me and winked, as if thanking me for that."
     $ b_wink = True
@@ -34,26 +30,21 @@ label nhie_b:
     hide chris
     show don at close_d
     with easeoutright
-    with Pause(.1)
+    pause 0.1
     show don straight raised
     $ b_wink = False
     "Donald looked at both Christeena and I with giant grins."
-
     d smile "Never have I ever..."
     d grin "..."
     d smile "...needed to wear glasses."
-
     $ nhie_a_points -= 1
     with dissolve
-
     "I rolled my eyes as I lowered a finger."
-
     # Points: A = 2, B = 0, C = 1, D = 1
-
     show don at close_left_d
     show chris d1 straight casual blank at tworight
     with easeinright
-    with Pause(.1)
+    pause 0.1
     d right casual blank "Wait a minute; Christeena, I thought you wore glasses at one point!"
     c raised "Why the heck would you think that?"
     d straight level "I thought I saw a picture of you in glasses at one point..."
@@ -67,7 +58,7 @@ label nhie_b:
     show chris at middle
     show brit d2 closed sad closed_smile at close_right_b_2
     with easeinright
-    with Pause(.1)
+    pause 0.1
     b "Nice try, Donnie."
     $ b_partial = True
     $b_blink = True
@@ -77,14 +68,13 @@ label nhie_b:
     hide don
     hide brit
     with dissolve
-    with Pause(.1)
+    pause 0.1
     $ b_partial = False
     c casual smile "Okay, then!"
     c level left dot "Hm..."
     c d1 straight raised smile "Oh, I've got a good one!"
     c left blank "As gross as it is..."
     c straight grin "Never have I ever peed standing up!"
-
     show chris at tworight
     show don e1 straight level blank at close_left_d
     with easeinleft
@@ -92,54 +82,44 @@ label nhie_b:
     $ nhie_d_points -= 1
     $ nhie_a_points -= 1
     with dissolve
-    with Pause(.1)
-
+    pause 0.1
     "And, with that, Donald and I each lowered a finger, thus marking Donald out of the game."
-
     # Points: A = 1, B = 0, C = 1, D = 0s
-
-    hide don
-    with dissolve
+    hide don with dissolve
     show chris at twoleft
     show brit d1 straight casual opened_smile at close_right_b
     with easeinright
-    with Pause(.1)
+    pause 0.1
     b "{cps=15}DAAAAAAAAAMN!{/cps}{w=.5} Nice one, Chris!"
-
     $ c_blush = True
-    $c_blink = False
+    $ c_blink = False
     show chris closed_happy grin d2 sad
     "Brittney raised her hand for a high-five, to which Christeena quickly accepted and slapped."
-
     b level "There's just one problem."
     $ c_blush = False
-    $c_blink = True
-    show chris d2 straight casual blank at twoleft
-    c "What's that?"
+    $ c_blink = True
+    c d2 straight casual blank "What's that?"
     b d2 "It's Alex's turn.{w} And he may be able to get you out with something stupidly easy."
     $ c_blush = True
     c small sad dot "Oh."
-
     "Well, Brittney does have a point..."
     "If I wanted to win, I could easily get Christeena out, making me the winner and the one to have Brittney perform a dare."
     "Hmm..."
     "Then again, Christeena might enjoy this win.{w} Making her older sister perform any dare she wishes could be pretty fun on her end..."
-    if persistent.choice_19 == 1:
+    if persistent.choices["19"] == 1:
         jump chris_out
-    elif persistent.choice_19 == 2:
+    elif persistent.choices["19"] == 2:
         jump chris_win
     else:
-        "What should I do?{nw}"
-
         menu:
-            "What should I do?{fast}"
+            "What should I do?"
 
             "Get Christeena out":
-                $ persistent.choice_19 = 1
+                $ persistent.choices["19"] = 1
                 jump chris_out
 
             "Let Christeena win":
-                $ persistent.choice_19 = 2
+                $ persistent.choices["19"] = 2
                 jump chris_win
 
 #######################
@@ -150,32 +130,27 @@ label nhie_b:
 
 label chris_out:
     "Sorry, Christeena; better luck next time."
-
     hide brit
     show chris at middle
     with easeoutright
-    with Pause(.1)
+    pause 0.1
     $ c_blush = False
     show chris d1 straight level blank at middle
-
     a "Never have I ever peed sitting down after I was potty trained."
     $ c_blush = True
     c mad "Ugh!"
     $ nhie_c_points -= 1
     with dissolve
-
     "And with that, Christeena lowered her final finger."
-
     hide screen finger_points
     hide nhie
     hide chris
     show brit d2 straight raised opened_smile at close_b
     with dissolve
-    with Pause(.1)
+    pause 0.1
     $ c_blush = False
     b "Oooo, using her own move against her! Clever, Mr. Sprouse."
     b d1 casual grin "Alrighty, then; what shall I do for you, my good sir?"
-
     "She seems very eager to be doing this dare."
     "She truly is an oddball."
     "But to answer her question..."
@@ -190,32 +165,29 @@ label chris_out:
     "She may be mad at me, though, as a result."
     "Then again, I could easily turn the tables and perform a dare nobody would see coming."
     "Alright, time to decide."
-
     a "Okay, Brittney."
-    $ B_Kiss = False
     show brit d2 raised
     a "I dare you to..."
-    if persistent.choice_20 == 1:
+    if persistent.choices["20"] == 1:
         jump b_dare_kiss_a
-    elif persistent.choice_20 == 2:
+    elif persistent.choices["20"] == 2:
         jump b_dare_kiss_d
-    elif persistent.choice_20 == 3:
+    elif persistent.choices["20"] == 3:
         jump b_dare_hit
     else:
-
         menu:
             "..."
 
             "...kiss me.":
-                $ persistent.choice_20 = 1
+                $ persistent.choices["20"] = 1
                 jump b_dare_kiss_a
 
             "...kiss Donald.":
-                $ persistent.choice_20 = 2
+                $ persistent.choices["20"] = 2
                 jump b_dare_kiss_d
 
             "...hit Donald.":
-                $ persistent.choice_20 = 3
+                $ persistent.choices["20"] = 3
                 jump b_dare_hit
 
 ##################
@@ -233,14 +205,14 @@ label b_dare_kiss_a:
     show don e1 straight raised blank at close_left_d
     show brit at close_right_b
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     d "'Sweet'?"
     show don:
         ease 0.5 xalign 0.0
     show brit:
         ease 0.5 xalign 1.0
     show chris d2 straight raised blank at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     c "'Innocent'?"
     b d1 small level hanging "Hey!"
     b straight raised grin "None of you are even gonna question the 'girl' part?"
@@ -252,7 +224,7 @@ label b_dare_kiss_a:
     with easeoutleft
     show brit at close_b
     with easeinright
-    with Pause(.1)
+    pause 0.1
     $ b_partial = False
     show brit d1 straight casual grin
     b "Alright, then, Alexander. Let's kiss!"
@@ -260,11 +232,10 @@ label b_dare_kiss_a:
     b d2 raised huhu "Hey, you're the one who wanted a kiss!"
     b level grin d1 "It's just a kiss; it's not like it has to mean anything. Actors do it all the time with no issue."
     a "I guess..."
-
     show brit:
-        ease 0.5 size (792, 1584)
+        ease 0.5 zoom 1.1
     pause .6
-    $b_blink = False
+    $ b_blink = False
     show brit closed_sad casual huhu
     "Brittney then leaned towards me, closed her eyes, and slightly puckered her lips."
     "I turned towards Christeena and Donald."
@@ -272,13 +243,11 @@ label b_dare_kiss_a:
     show chris d2 straight level blank at tworight
     show don e1 level blank straight at close_left_d
     with dissolve
-    with Pause(.1)
+    pause 0.1
     "They both looked curious yet embarrassed."
     "It's not every day you watch two people kiss in a scenario like this one."
-    hide don
-    hide chris
-    with dissolve
-    with Pause(.1)
+    scene bg cabin_i_s with dissolve
+    pause 0.1
     "With nothing else to really lose, I looked back to Brittney, leaned forward, and pressed my lips against hers."
     $ B_Points += 1
     $ B_Kiss = True
@@ -289,7 +258,7 @@ label b_dare_kiss_a:
     "A few seconds passed before Brittney pulled back, opening up her eyes."
     $b_blink = True
     show brit d2 straight level blank at close_b with dissolve
-    with Pause(.1)
+    pause 0.1
     b "Huh."
     b "You didn't even try going French on me."
     b raised "If you were going to make a weak dare, you could've at least tried to spice it up!"
@@ -304,7 +273,7 @@ label b_dare_kiss_a:
     show brit at close_right_b
     show don e1 straight mad blank at close_left_d
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     d "..."
     b level left "Aww, is Donnie jealous?"
     d "..."
@@ -316,11 +285,10 @@ label b_dare_kiss_a:
     show brit:
         ease 0.5 xalign 1.0
     show chris d1 straight sad blank at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     c "Good idea."
     d "..."
     a "Yeah, before things get too heated."
-
     jump nhie_end
 
 ########################
@@ -335,7 +303,7 @@ label b_dare_kiss_d:
     show brit at close_right_b
     show don e1 straight casual blank at close_left_d
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     d "!!!"
     a "I mean, he's been wanting it for a while, right?"
     a "It's the least you could do."
@@ -344,9 +312,7 @@ label b_dare_kiss_d:
     d raised "Besides, you've done worse dares before."
     b left "..."
     b "Fine."
-
     "Her sour attitude was obvious, but that didn't make it any less scary."
-
     b mad "But I hope you realize that it's just a kiss and nothing more."
     d casual smile "I'll take it."
     b level "..."
@@ -356,16 +322,15 @@ label b_dare_kiss_d:
     hide don
     hide brit
     with dissolve
-    with Pause(.1)
+    pause 0.1
     $d_blink = True
     "Donald then quickly went to the other side of the table, nearly bumping into Christeena on the way."
     "He was really looking forward to this."
     "Brittney, on the other hand..."
-
     show brit d1 straight mad blank at close_right_b
     show don e1 straight casual grin at close_left_d
     with dissolve
-    with Pause(.1)
+    pause 0.1
     b "Just a kiss, and it'll only last a split second. Understand?"
     d smile "You bet!"
     b "..."
@@ -374,7 +339,7 @@ label b_dare_kiss_d:
     show brit:
         ease 0.5 xalign 1.0
     show chris d1 straight sad blank at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     c "Brit, you really don't have to do this if you don't want to."
     b level "..."
     d sad blank "Is the idea of kissing me really that awful?"
@@ -382,35 +347,30 @@ label b_dare_kiss_d:
     b d2 straight blank "It's not anything against you, specifically..."
     b right "...but kissing a close friend, dare or not, is just kinda weird, you know?"
     b "If it was someone like Alex, a guy I hardly even know, then I wouldn't care as much."
-
     if not persistent.b_kiss:
         "Noted."
         $ persistent.b_kiss = True
-
     d "..."
     b "..."
     c "..."
-
     "Well, this got awkward."
     "I can either try to convince Brittney to go through with the dare, or I can have her drop it altogether."
     "One choice will make Donald happy and Brittney less happy, and the other choice has the opposite effect."
     "I better act fast."
-    if persistent.choice_21 == 1:
+    if persistent.choices["21"] == 1:
         jump nhie_b_continue
-    elif persistent.choice_21 == 2:
+    elif persistent.choices["21"] == 2:
         jump nhie_b_stop
     else:
-        "What should I do?{nw}"
-
         menu:
-            "What should I do?{fast}"
+            "What should I do?"
 
             "Tell Brittney to do the dare.":
-                $ persistent.choice_21 = 1
+                $ persistent.choices["21"] = 1
                 jump nhie_b_continue
 
             "Tell Brittney to not do the dare.":
-                $ persistent.choice_21 = 2
+                $ persistent.choices["21"] = 2
                 jump nhie_b_stop
 
 label nhie_b_continue:
@@ -418,7 +378,7 @@ label nhie_b_continue:
     hide chris
     with dissolve
     show brit at close_b with easeinright
-    with Pause(.1)
+    pause 0.1
     a "Brittney..."
     show brit casual straight
     a "I understand where you're coming from."
@@ -431,20 +391,15 @@ label nhie_b_continue:
     show brit at close_right_b
     show don e1 straight level grin at close_left_d
     with easeinleft
-    with Pause(.1)
-
+    pause 0.1
     "Donald was kind enough to give me a wink of thanks before getting closer to Brittney."
     "She then stood up and grabbed him by the shoulders."
-
     b d1 straight "Close your mouth."
     d raised "What, no tongue?"
     show brit small mad frown
     d small sad wide "AH!"
-
     "She quickly tightened her grip on him and got even angrier."
-
     d blank straight "Okay, okay! I'm sorry!"
-
     show brit blank straight
     "Her grip loosened."
     "She then gave an annoyed sigh as she quickly leaned forward."
@@ -452,15 +407,14 @@ label nhie_b_continue:
     hide don
     hide brit
     with dissolve
-    with Pause(.1)
-
+    pause 0.1
     "And just like that, their lips touched."
     "Before Donald could fully appreciate it, though, she pulled back, still sporting that disinterested face."
     $ b_partial = True
     show brit d2 level blank straight at close_right_b
     show don e1 small sad blank at close_left_d
     with dissolve
-    with Pause(.1)
+    pause 0.1
     b "There. Happy?"
     d "..."
     d raised grin straight "Y-Yeah! Of course!"
@@ -472,7 +426,6 @@ label nhie_b_continue:
     d level "Yeah, I suppose so."
     $ D_Points += 1
     $ B_Points -= 1
-
     jump brit_don_kiss_end
 
 label nhie_b_stop:
@@ -480,7 +433,7 @@ label nhie_b_stop:
     hide chris
     with dissolve
     show brit at close_b with easeinright
-    with Pause(.1)
+    pause 0.1
     a "Brittney..."
     show brit straight casual
     a "I'm sorry for suggesting this dare."
@@ -492,7 +445,7 @@ label nhie_b_stop:
     show brit at close_right_b
     show don e1 straight sad blank at close_left_d zorder 2
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     d "..."
     d "He's right."
     b casual left "Huh?"
@@ -505,34 +458,32 @@ label nhie_b_stop:
     $b_blink = False
     show brit closed sad closed_smile zorder 1:
         linear 0.2 xalign 0.25
-    with Pause(.2)
+    pause 0.2
     d e2 small casual blank "Urk!"
-
     "Just like that, Brittney hugged him tightly."
     "Once she noticed how tightly she was squeezing, though, she released him from her grasp."
     $b_blink = True
     show brit d2 straight grin at close_right_b with easeinleft
-    with Pause(.1)
+    pause 0.1
     b "Sorry, I just got excited."
     d e1 level straight grin "No need to apologize; as long as you're happy, I'm happy."
     b "..."
     b level "You know what?"
     b d1 sad opened_smile "I won't kiss you on the lips, but how about the cheek?"
-    b d2 grin "I won't kiss you on the lips, but how about the cheek?{fast} That's a fair enough compromise, right?"
+    extend d2 grin " That's a fair enough compromise, right?"
     d casual blank "..."
     d smile "Heck yeah, it is!"
-
     hide don
     hide brit
     with dissolve
-    with Pause(.1)
+    pause 0.1
     "Brittney then reached around and gave Donald a quick peck on the cheek."
     "It may have been quick, but it was still enough for Donald's smile to grow twice as big."
     $d_blink = False
     show don closed sad grin e1 at close_left_d
     show brit d1 straight sad grin at close_right_b
     with dissolve
-    with Pause(.1)
+    pause 0.1
     b "There. We good?"
     d "Yeah, we're good."
     $b_blink = False
@@ -540,15 +491,13 @@ label nhie_b_stop:
     $ D_Points += 2
     $ B_Points += 1
 
-    jump brit_don_kiss_end
-
 label brit_don_kiss_end:
     show don:
         ease .5 xalign 0.0
     show brit:
         ease 0.5 xalign 1.0
     show chris d2 straight sad grin at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     c "Well, I'm just glad that it didn't end as chaotic as I expected."
     a "That makes two of us."
     $d_blink = True
@@ -558,7 +507,6 @@ label brit_don_kiss_end:
     d right "I will neither confirm nor deny if there were other reasonings behind this hangout session other than Alex getting to know us better."
     $ b_partial = True
     b straight grin casual "Sure thing, Donald. Sure thing."
-
     jump nhie_end
 
 #######################
@@ -571,7 +519,7 @@ label b_dare_hit:
     show don e1 straight level blank at close_left_d zorder 2
     show brit at close_right_b
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     d "..."
     b "Um..."
     b raised d1 "Why waste a dare on something I normally do, anyway?"
@@ -584,18 +532,17 @@ label b_dare_hit:
         linear 0.15 xalign 0.4
         pause 0.05
         linear 0.15 xalign 0.9
-    with Pause(0.15)
+    pause 0.15
     play sound punch
     show white zorder 4
-    with Pause(.05)
+    pause 0.05
     hide white
     d small sad wide "OUCH!!"
-
     "Man, she didn't even hesitate!"
     hide brit
     show don mad straight blank at close_d
     with easeoutright
-    with Pause(.1)
+    pause 0.1
     "Donald glanced over to me with anger in his eyes."
     "I'm probably on his shit list, but he kinda got what was coming to him."
     $ D_Points -= 1
@@ -603,7 +550,7 @@ label b_dare_hit:
     show don at close_left_d
     show brit d1 straight sad grin at close_right_b
     with easeinright
-    with Pause(.1)
+    pause 0.1
     b "Man, that felt good! Thanks, Alex!"
     a "No problem, I suppose."
     b level "Well, what do you say we get out of here?"
@@ -615,19 +562,19 @@ label b_dare_hit:
     d "..."
     hide don with easeoutleft
     play sound door_slam
-    with Pause(1)
+    pause 1
     b casual blank "..."
     show chris d1 straight sad blank at twoleft with easeinleft
-    with Pause(.1)
+    pause 0.1
     c "..."
     b "I went too far that time, didn't I?"
     c d2 "Maybe just a little."
     b sad left "Damn it..."
     b "I better go apologize."
     hide brit with easeoutleft
-    with Pause(1)
+    pause 1
     show chris at middle with easeinleft
-    with Pause(.1)
+    pause 0.1
     $ current_track = "\"Reflection\""
     play music reflection
     a "This is all my fault, isn't it?"
@@ -640,14 +587,11 @@ label b_dare_hit:
     c straight sad grin "But I'm sure things will work out okay."
     a "..."
     c blank "..."
-
     window hide dissolve
-    with Pause (2)
+    pause 2
     window show dissolve
-
     a "Well, we should probably catch up to them."
     c d2 grin "Good idea."
-
     jump nhie_end
 
 ######################
@@ -659,33 +603,27 @@ label b_dare_hit:
 label chris_win:
     "You know what?"
     "Let's let Christeena have some fun with this."
-
     show chris straight blank
     show brit casual blank
     a "Never have I ever..."
     a "...graduated high school."
-    hide chris
-    show chris raised d1 straight blank at twoleft
+    show chris raised d1 straight blank
     show brit level hanging
-
     "Both girls looked naturally surprised at my move."
     show brit raised left blank
     "But it didn't take long for Brittney to see what I was doing."
-
     b d1 level straight opened_smile "Well, Christeena hasn't graduated, either, so she doesn't lose a point."
     c casual dot "..."
     b d2 casual grin "Which means you're up, Christeena!"
     hide brit
     show chris at middle
     with easeoutright
-    with Pause(.1)
+    pause 0.1
     c d2 blank "Okay, then."
     c raised grin "Never have I ever had blond hair!"
-
     $ nhie_a_points -= 1
     with dissolve
     "And with that, my final finger dropped."
-
     show brit d1 straight mad opened_smile at close_right_b
     show chris at twoleft
     with easeinright
@@ -717,13 +655,12 @@ label chris_win:
     show brit at close_right_b_2
     show don e1 straight raised grin at close_left_d_2
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     d "On that note, what do you say we all call it a night?"
     c d1 smile "Yeah! Then we can get started on the anime right away!"
     b d1 right mad "Ugh..."
     $ C_Points += 1
     $ B_Points += 1
-
     jump nhie_end
 
 
@@ -739,14 +676,13 @@ label chris_win:
 label nhie_c:
     "Hm... Christeena might be the best person to perform a certain dare on."
     "I just hope I win; who knows what Donald or Brittney could have her do..."
-
     show screen finger_points
     show nhie at left zorder 3
     show don e1 straight casual blank at close_left_d_2
     show chris d1 straight casual blank at middle
     show brit d2 straight casual blank at close_right_b_2
     with dissolve
-    with Pause(.1)
+    pause 0.1
     a "Never have I ever..."
     a "...had my dad marry another woman."
     show chris sad hanging at middle
@@ -760,10 +696,8 @@ label nhie_c:
     show brit at close_right_d
     show don at close_left_b
     with easeinright
-    with Pause(.1)
-
+    pause 0.1
     # Points: A = 3, B = 1, C = 0, D = 1
-
     d level grin "Alright, then; that means it's my turn, next."
     b d2 left level huhu "And now that someone else is out and has to perform a dare, that means you have no reason to try to get me out."
     d casual "You're right; I have no reason."
@@ -771,80 +705,69 @@ label nhie_c:
     d "So, never have I ever worn a bra."
     $ b_wink = True
     show brit tongue mad
-
     "Brittney playfully stuck out her tongue as she put her final finger down."
-
     # Points: A = 3, B = 0, C = 0, D = 1
-
     $ nhie_b_points -= 1
     with dissolve
     hide don
     show brit at close_b
     with easeoutleft
-    with Pause(.1)
+    pause 0.1
     $ b_wink = False
-    show brit d1 straight raised grin at close_b
-
-    b "Alright, then; whoever wins get to make Christeena perform a dare."
+    b d1 straight raised grin "Alright, then; whoever wins get to make Christeena perform a dare."
     b d2 level huhu "And I have a feeling that Alex is going to be the winner here, unless he wants the game to last longer."
     b d1 sad grin "Either way, this is going to be fun!"
     show brit at close_right_b
     $ c_blush = True
     show chris d1 straight mad blank at twoleft
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     c "Yeah, for you!"
     b casual "Don't worry; if either of them dares something TOO inappropriate, I'll castrate him with a rusty knife."
     a "Noted."
     hide brit
     hide chris
     with dissolve
-    with Pause(.1)
+    pause 0.1
     $ c_blush = False
     "Well, she's right in the fact that I don't want this game to drag on any longer than necessary."
     "Which means I gotta get Donald out right now."
     "Time to make another dick move."
-
     show don e1 straight casual blank at close_d with dissolve
-    with Pause(.1)
+    pause 0.1
     a "Never have I ever..."
     a "...asked Brittney on a date."
-
     show don level
     "You could see the defeat and anger in Donald's eyes as he lowered his final finger."
     $ nhie_d_points -= 1
     with dissolve
     $ c_blush = True
-    pause .1
+    pause 0.1
     hide don
     show chris d1 straight sad blank at middle
     with dissolve
-    with Pause(.1)
+    pause 0.1
     "Christeena was also looking at me, but with fear in her eyes."
     "I would say that she had no reason to be scared, but if I was a shy teenage girl who had to perform a dare for a teenage boy..."
-
     c level "Alright. Get it over with."
     a "Huh?"
     c d2 mad "The dare. Just get it over with. Humiliate me, make me do something sexy, whatever."
-
     hide screen finger_points
     hide nhie
     with dissolve
+    pause 0.1
     "..."
-    "Alright, then. The moment of truth."
+    "Alright, then. The big moment."
     "I don't really want her to hate me, yet I still wouldn't mind something fun from this..."
     "Then again, I have one trick up my sleeve that might get all but one person on my side."
-
     a "Okay, Christeena."
     show chris d1 sad
-    $ C_Kiss = False
     a "I dare you to..."
-
-    if persistent.choice_19 == 1:
+    if persistent.choices["19"] == 1:
         jump c_dare_kiss
-    elif persistent.choice_19 == 2:
+    elif persistent.choices["19"] == 2:
         jump c_dare_flash
-    elif persistent.choice_19 == 3:
+    elif persistent.choices["19"] == 3:
         jump c_dare_hit
     else:
 
@@ -852,15 +775,15 @@ label nhie_c:
             "..."
 
             "...kiss me.":
-                $ persistent.choice_19 = 1
+                $ persistent.choices["19"] = 1
                 jump c_dare_kiss
 
             "...flash me.":
-                $ persistent.choice_19 = 2
+                $ persistent.choices["19"] = 2
                 jump c_dare_flash
 
             "...hit Donald.":
-                $ persistent.choice_19 = 3
+                $ persistent.choices["19"] = 3
                 jump c_dare_hit
 
 ###################
@@ -876,7 +799,7 @@ label c_dare_kiss:
     show chris at twoleft
     show brit d2 left level huhu at close_right_b
     with easeinright
-    with Pause(.1)
+    pause 0.1
     b "Ah, relax, Chris! It's just a kiss!"
     c d1 straight hanging "Huh??"
     c "Y-You're not going to try and stop this??"
@@ -891,7 +814,7 @@ label c_dare_kiss:
     b closed closed_smile "Oh, alright."
     hide brit with easeoutright
     show chris at middle with easeinleft
-    with Pause(.1)
+    pause 0.1
     show chris d1 straight sad blank
     $b_blink = True
     "With that, Brittney and Donald walked to the bathroom, closing the door behind them."
@@ -904,7 +827,6 @@ label c_dare_kiss:
     stop music fadeout 3.0
     "That's when I decided to talk quietly, in case the others were eavesdropping."
     "Which, given my knowledge of Brittney, is a very high possibility."
-
     $ current_track = "\"Reflection\""
     play music reflection
     a "Hey, look; if you really don't want to do this, it's okay."
@@ -916,27 +838,21 @@ label c_dare_kiss:
         a "Huh?"
         c straight "I mean, yeah, I haven't really known you for that long, but..."
         c grin "...you are kinda handsome."
-
         "{i}Kinda?{/i}"
-
         c d1 "And... I've never really been offered a kiss from a guy like you before."
         c "So I think it'll be okay."
         c d2 mad blank left "Just... please don't try and make out with me or grope me or something."
         a "The thought never crossed my mind."
         c straight sad grin "Okay then..."
-
         "She seemed a little less nervous all of a sudden."
         "I suppose that's a good thing, right?"
-
         c "Alright, let's just get it over with."
         c mad blank "But when I want to stop, we stop. Got it?"
         a "Got it."
         c level grin "Okay... close your eyes."
-
         "I did as I was commanded and shut my eyes."
-
         scene bg fade with dissolve
-        with Pause(.1)
+        pause 0.1
         $ c_blush = False
         "I could hear what sounded like her walking a little bit closer."
         "Then, I couldn't hear any more movement."
@@ -947,18 +863,13 @@ label c_dare_kiss:
         $ C_Points += 1
         $ C_Kiss = True
         "After kissing me for a few seconds, Christeena pulled back."
-
         c_o "Okay... you can open your eyes."
-
         scene bg cabin_i:
             xalign 1.0
         with dissolve
-
-        with Pause(1)
-
+        pause 1
         show chris d1 straight sad blank at close_c with dissolve
-        with Pause(.1)
-
+        pause 0.1
         c "H-How was it?"
         a "..."
         a "Well, it was kinda quick..."
@@ -977,13 +888,10 @@ label c_dare_kiss:
         $ c_blush = True
         c right sad grin "...it was worth it."
         show chris straight
-
         "We looked at each other for a little bit longer with goofy grins before Christeena turned to the bathroom door."
-
     else:
         $ c_blush = False
-        show chris d1 straight raised blank at close_c
-        c raised "Really?"
+        c d1 straight raised blank "Really?"
         a "Yes, really."
         c left level "..."
         c straight grin "Okay."
@@ -993,27 +901,23 @@ label c_dare_kiss:
         c sad "It's alright. I understand."
         c "Boys tend to do before they think, I've discovered, so I get it."
         a "..."
-
         "Christeena then looked towards the bathroom door."
-
     show chris:
         ease 0.5 middle
     pause 0.6
-    hide chris
-    show chris at middle
     c d2 straight raised smile "Okay, you guys can come out now!"
     play sound door_open
     $ current_track = "\"Cabin Fever\""
     play music cabin_fever
     hide chris with dissolve
-    with Pause(.1)
+    pause 0.1
     "Almost on cue, Brittney and Donald exited the bathroom with faces of anticipation."
     $ c_blush = False
     $ b_partial = True
     show brit d2 level huhu straight at tworight
     show don e1 straight casual grin at twoleft
     with easeinright
-    with Pause(.1)
+    pause 0.1
 
     b "Well?"
     if C_Kiss:
@@ -1023,18 +927,18 @@ label c_dare_kiss:
         show don:
             ease 0.5 xalign 0.1
         show chris d2 left sad grin at middle with dissolve
-        with Pause(.1)
+        pause 0.1
     else:
         show brit:
             ease 0.5 xalign 0.9
         show don:
             ease 0.5 xalign 0.1
         show chris d2 level straight grin at middle with dissolve
-        with Pause(.1)
+        pause 0.1
     c "Honestly, it wasn't so bad."
     $ b_partial = False
     show brit d1 straight mad grin at threeright
-    with Pause(.1)
+    pause 0.1
     b "I told you, it was just a kiss."
     c "Yeah..."
     c d1 "Just a kiss..."
@@ -1044,7 +948,6 @@ label c_dare_kiss:
     d right grin "Ah, screw you."
     $ b_partial = True
     b d2 casual huhu "Oh, how you wish."
-
     jump nhie_end
 
 ####################
@@ -1060,7 +963,7 @@ label c_dare_flash:
     show chris at middle
     show brit d1 casual straight grin at close_right_b_2
     with dissolve
-    with Pause(.1)
+    pause 0.1
     d "Dang, Al! I didn't think you'd be the one to go for the big one like that!"
     b raised opened_smile "I know, right? Looks like you've got some balls in those pants, after all!"
     c sad hanging "Brit, aren't you gonna try and stop this?!"
@@ -1068,7 +971,7 @@ label c_dare_flash:
     show chris at twoleft
     show brit at close_right_b
     with easeoutleft
-    with Pause(.1)
+    pause 0.1
     b d1 casual blank "Why would I? They're just boobs."
     c mad scream d1 "No, they are not 'just boobs', Brittney!!"
     c "Not all girls have a man's chest like you do!"
@@ -1093,7 +996,7 @@ label c_dare_flash:
     show chris at middle
     show don e1 straight raised grin at close_left_d_2
     with easeinleft
-
+    pause 0.1
     "Donald gave me a small wink and nod, as if to say 'You got this, Bro!'"
     $ current_track = "None"
     stop music fadeout 2.0
@@ -1101,7 +1004,7 @@ label c_dare_flash:
     hide don
     with easeoutright
     play sound door_open
-    with Pause(1)
+    pause 1
     $ b_partial = False
     "And with that, Christeena and I were alone in the cabin."
     $ current_track = "\"Reflection\""
@@ -1118,23 +1021,20 @@ label c_dare_flash:
     "Then again..."
     "Boobs are boobs."
     "I better decide quick."
-
-    if persistent.choice_20 == 1:
+    if persistent.choices["20"] == 1:
         jump c_flash_no
-    elif persistent.choice_20 == 2:
+    elif persistent.choices["20"] == 2:
         jump c_flash_yes
     else:
-
-        "What should I tell her?{nw}"
         menu:
-            "What should I tell her?{fast}"
+            "What should I tell her?"
 
             "You don't have to do this.":
-                $ persistent.choice_20 = 1
+                $ persistent.choices["20"] = 1
                 jump c_flash_no
 
             "It doesn't have to take very long.":
-                $ persistent.choice_20 = 2
+                $ persistent.choices["20"] = 2
                 jump c_flash_yes
 
 label c_flash_no:
@@ -1161,7 +1061,6 @@ label c_flash_no:
     c level grin "I believe you."
     c raised d2 "Now, what do you say we get out of here and never mention this again?"
     a "Good idea."
-
     jump nhie_end
 
 label c_flash_yes:
@@ -1184,17 +1083,14 @@ label c_flash_yes:
     "She stopped right at the bottom of her boobs."
     "Her eyes opened and she looked right at me."
     "She still looked very nervous."
-
     window hide dissolve
-    with Pause(3)
+    pause 3
     $ current_track = "None"
     stop music fadeout 3.0
     window show
-
     "She then dropped her shirt, covering herself back up."
-
     show chris d2 straight mad blank at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     c "I'm sorry, but I just can't do it."
     c "I've never shown a guy my chest before, and this isn't how the first time I do it is going to happen."
     $ c_blush = True
@@ -1203,15 +1099,14 @@ label c_flash_yes:
     hide chris with moveoutright
     $ C_Points -= 1
     play sound door_slam
-    with Pause(2)
+    pause 2
     $ c_blush = False
     "..."
     "Well, this was certainly not the smartest I've been..."
     "If she didn't hate me before, it's safe to say she might now."
     "..."
     "I just hope that Brittney and Donald don't think any less of me as a result of this..."
-    "The last thing I need is to lose the closest things I had to friends since I moved here."
-
+    "The last thing I need is to lose the closest friends I had since I moved here."
     jump nhie_end
 
 #########################
@@ -1226,27 +1121,26 @@ label c_dare_hit:
     show brit d2 straight raised blank at close_right_b
     show chris at twoleft
     with easeinright
-    with Pause(.1)
+    pause 0.1
     b "What??"
     show don e1 straight casual blank at close_left_d_2
     show chris at middle
     show brit at close_right_b_2
     with easeinleft
-    with Pause(.1)
-    d "Say what, now?"
+    pause 0.1
+    d "Say what?"
     a "The only reason we're doing this stupid dare is because Donald wanted to try and perform it on Brittney."
     a "So, I say we should punish him for trying to be so stupid."
     c casual "..."
     b casual left "..."
     d "..."
-
     show don right
     "Christeena then turned to look at Donald, who then looked back at her in response."
     show chris grin d2
     "Christeena gave a small shrug before reaching across the table and slapping Donald hard in the face."
     play sound punch
     show white zorder 4
-    with Pause(.05)
+    pause 0.05
     hide white
     d small sad wide "OUCH!!"
     b d1 straight mad opened_smile "Damn! That was a rock-solid slap!"
@@ -1254,51 +1148,40 @@ label c_dare_hit:
     hide chris
     show don at close_d
     with easeoutright
-    with Pause(.1)
+    pause 0.1
     show don straight mad blank
-
     "Donald sat there in silence, rubbing his cheek and moving his jaw."
     "He looked at me with an angry expression."
     "Sorry, buddy, but you can't pull stunts like this and expect things to work out."
-
     $ D_Points -= 1
     $ C_Points += 2
-
     hide don
     show brit d1 straight casual grin at close_b
     with dissolve
-    with Pause(.1)
-
+    pause 0.1
     b "Anyway, let's get out of here, shall we?"
     b d2 raised "I don't know about you, but I don't think anything is going to top that spectacle."
     show don e1 straight mad blank at close_left_d
     show brit at close_right_b
     with easeinleft
-    with Pause(.1)
-
+    pause 0.1
     $ current_track = "None"
     stop music fadeout 3.0
     d "..."
-
     hide don with easeoutright
     play sound door_slam
-    with Pause(1)
+    pause 1
     show brit casual blank at close_b with easeinleft
-    with Pause(.1)
-
+    pause 0.1
     "Donald quickly got up and left the cabin."
-
     b sad "..."
     b d1 "I better check on him; he may actually be hurt."
-
     hide brit with easeoutright
-
-    with Pause(1)
-
+    pause 1
     $ current_track = "\"Reflection\""
     play music reflection
     show chris d1 straight sad blank at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     c "..."
     a "..."
     c "H-Hey, Alex?"
@@ -1322,7 +1205,6 @@ label c_dare_hit:
     a "No problem."
     a "Now, what do you say we catch up to the others?"
     c d1 casual "Good idea."
-
     jump nhie_end
 
 
@@ -1340,43 +1222,35 @@ label c_dare_hit:
 label nhie_d:
     "I suppose getting Donald out could lead to some fun..."
     "Though I suppose the true 'fun' factor is based on who wins and makes him perform a dare."
-
     show screen finger_points
     show nhie at left zorder 3
     show don e1 straight casual blank at close_left_d_2
     show chris d1 straight casual blank at middle
     show brit d1 straight casual blank at close_right_b_2
     with dissolve
-    with Pause(.1)
+    pause 0.1
     a "Never have I ever..."
     a "...had curly hair."
     d level dot "!!"
     b d2 level opened_smile left "Wow, talk about a personal attack!"
     d blank "..."
-
     $ nhie_d_points -= 1
     with dissolve
-    pause .1
+    pause 0.1
     "Nevertheless, Donald lowered his final finger, marking him out of the game."
-
     # Points: A = 3, B = 1, C = 1, D = 0
-
     hide don
     with dissolve
     show chris at twoleft
     show brit at close_right_b
     with easeinright
-    with Pause(.1)
-
+    pause 0.1
     b raised grin "Alright, Chris; your turn!"
     c level left "Hm..."
     c "Never have I ever..."
     c raised straight smile d2 "...moved to a new house within the last month!"
-
     "Well, I suppose I deserved that one."
-
     # Points A = 2, B = 1, C = 1, D = 0
-
     $ nhie_a_points -= 1
     with dissolve
     pause .1
@@ -1393,30 +1267,26 @@ label nhie_d:
     b casual grin "Rule 1 of this game: never be nice!"
     b "Being nice results in lame games!"
     show chris d1 left
-
     if acceptsandwich:
         "Christeena still didn't seem happy, and rightfully so, as we each put a finger down."
         $ nhie_a_points -= 1
         $ nhie_c_points -= 1
         with dissolve
-
+        pause 0.1
         # Points: A = 1, B = 1, C = 0, D = 0
-
     else:
         "Christeena still didn't seem happy, and rightfully so, as she put her final finger down."
         $ nhie_c_points -= 1
         with dissolve
-
+        pause 0.1
         # Points A = 2, B = 1, C = 0, D = 0
-
     $ b_partial = False
-    show brit d1 straight casual grin
-    b "Okay, Al. You're up!"
+    b d1 straight casual grin "Okay, Al. You're up!"
     a "So I am."
     hide brit
     hide chris
     with dissolve
-    with Pause(.1)
+    pause 0.1
     $ c_blush = False
     if acceptsandwich:
         jump al_1_point
@@ -1429,23 +1299,21 @@ label al_1_point:
     "Brittney and I each have one point left, meaning it's anyone's game."
     "The question now is if I get Brittney out, making me the one to have Donald perform a dare..."
     "...or do I let her get me out, letting HER have Donald perform it?"
-
-    if persistent.choice_19 == 1:
+    if persistent.choices["19"] == 1:
         jump brit_out
-    elif persistent.choice_19 == 2:
+    elif persistent.choices["19"] == 2:
         jump brit_win
     else:
         "I better decide quickly."
-        "What should I do?{nw}"
         menu:
-            "What should I do?{fast}"
+            "What should I do?"
 
             "Get Brittney out.":
-                $ persistent.choice_19 = 1
+                $ persistent.choices["19"] = 1
                 jump brit_out
 
             "Let Brittney win.":
-                $ persistent.choice_19 = 2
+                $ persistent.choices["19"] = 2
                 jump brit_win
 
 ################
@@ -1454,12 +1322,10 @@ label al_1_point:
 
 label brit_out:
     "Sorry, Brittney."
-
     show brit d2 straight raised grin at close_b with dissolve
-    with Pause(.1)
+    pause 0.1
     a "Never have I ever chipped a tooth."
     b d1 small sad hanging "Ach!!"
-
     "She then grabbed at where heart would be on her chest and leaned her head back."
     b "I was so close to victory and you stole it from me!"
     b d2 straight blank "For shame, Alexander. For shame."
@@ -1469,20 +1335,18 @@ label brit_out:
     b d1 straight level grin "So you do, indeed."
     $ nhie_b_points -= 1
     with dissolve
-    pause .1
+    pause 0.1
     "And with that, Brittney's final finger was lowered."
     hide screen finger_points
     hide nhie
     with dissolve
-    pause .1
+    pause 0.1
     # Points: A = 2, B = 0, C = 0, D = 0
-
     b casual d2 "So, the question now is what you're going to make Donald do."
     hide brit
     show don e1 straight casual blank at close_d
     with dissolve
-    with Pause(.1)
-
+    pause 0.1
     "That's... actually a good question."
     "I'm straight, and so is Donald, so anything sexual is out of the picture."
     "That still leaves something embarrassing he could do."
@@ -1493,28 +1357,26 @@ label brit_out:
     a "Okay, Donald."
     show don raised
     a "I dare you to..."
-
-    if persistent.choice_20 == 1:
+    if persistent.choices["20"] == 1:
         jump d_dare_pushup
-    elif persistent.choice_20 == 2:
+    elif persistent.choices["20"] == 2:
         jump d_dare_pond
-    elif persistent.choice_20 == 3:
+    elif persistent.choices["20"] == 3:
         jump d_dare_kiss
     else:
-
         menu:
             "..."
 
             "...do 50 push-ups.":
-                $ persistent.choice_20 = 1
+                $ persistent.choices["20"] = 1
                 jump d_dare_pushup
 
             "...jump in the pond.":
-                $ persistent.choice_20 = 2
+                $ persistent.choices["20"] = 2
                 jump d_dare_pond
 
             "...kiss Brittney.":
-                $ persistent.choice_20 = 3
+                $ persistent.choices["20"] = 3
                 jump d_dare_kiss
 
 ##################
@@ -1529,23 +1391,22 @@ label d_dare_pushup:
     $ b_partial = True
     show brit d2 straight raised grin at close_right_b
     with easeinright
-    with Pause(.1)
+    pause 0.1
     b "Oh, really?{w} I don't think I've ever seen you do a push-up."
     d right raised "Well, prepare to be amazed!"
     hide don
     hide brit
     with dissolve
-    with Pause(.1)
+    pause 0.1
     show bg cabin_i_s:
         ease 0.5 xalign 0.0
     $ b_partial = False
     "Donald then got up from his seat and moved to the living area, the rest of us quickly following suit."
     "He seems to be perfectly fine with this dare, though whether it's an act to impress Brittney is not currently clear."
-
     show don e1 straight raised grin at twoleft
     show brit d1 straight casual grin at tworight
     with dissolve
-    with Pause(.1)
+    pause 0.1
     d "Alright, let's do this!"
     b d2 raised "This is certainly going to be more entertaining than it should be."
     $ b_partial = True
@@ -1558,44 +1419,36 @@ label d_dare_pushup:
     d right mad grin "What do you take me for? I'll happily do all 50 right here, right now!"
     show brit d2 raised closed_smile
     b "Okay, this I gotta see."
-
     hide don
     hide brit
     with dissolve
-    with Pause(.1)
+    pause 0.1
     "Oh, boy. This probably won't end well, but I suppose that's part of his punishment."
     $ current_track = "\"Friendly Competition\""
     play music friendly_competition
     "Donald then dropped on the ground and got into the push-up position."
     "He truly does seem ready for this. Maybe he can do it, after all..."
-
     show brit d1 straight raised grin at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     b "We're ready when you are, Mr. Waters."
     d "Very well, then!"
-
     "And with that, he started doing push-ups, with Brittney counting them as he went along."
-
     b mad opened_smile "5{w=0.5}, 6{w=0.5}, 7{w=0.5}, 8{w=0.5}..."
-
     "He was actually going at a pretty good pace at first, doing them very quickly."
     "Eventually, though, the speed of his push-ups started to decline."
-
     b d2 raised grin "...20...{w=1.0}21...{w=1.0}22..."
     show chris d2 straight sad blank at twoleft
     show brit at tworight
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     c "...this isn't going to end well, is it?"
     d "I'll...{w=0.5}be...{w=0.5}fine!"
     b d1 mad closed_smile "25...{w=1.0}26...{w=1.0}27..."
     c "..."
     a "C'mon, Don! You're over halfway there!"
-
     "Donald looked at me with a face that showed...{w}well, I'm not sure what emotion it was supposed to be."
     "Anger?{w} Determination?{w} Constipation?"
     "Regardless, he continued his push-ups."
-
     b opened_smile "33...{w=1.5}34...{w=1.5}35..."
     b d2 grin raised "Let's go, Waters! Pick up the pace!"
     c d1 mad hanging "Brit, don't overwork the guy!"
@@ -1603,16 +1456,12 @@ label d_dare_pushup:
     a "10 more, Don! You got this!"
     c d2 left sad blank "..."
     b straight grin "43!{w=2.0} 44!{w=2.0} 45!"
-
     "Donald's arms looked like they were about to give out on him. His body was trembling with weakness. His face was red and sweaty."
-
     b d1 casual opened_smile straight "48!!{w=2.0} 49!!{w=2.0} {i}50!!!{/i}"
     show chris straight casual dot
     $ current_track = "None"
     stop music fadeout(3)
-
     "At hearing that magical number, Donald collapsed to the ground, breathing heavily, his arms not moving an inch."
-
     c d1 hanging "Holy crap! I didn't think he'd actually do it!"
     a "Quite the motivator, aren't you?"
     c level blank d2 "I was just being honest."
@@ -1621,23 +1470,21 @@ label d_dare_pushup:
     hide chris
     show brit at middle
     with easeoutleft
-    pause .1
+    pause 0.1
     b d2 sad grin "Well, you told me you could do it, and you did it!"
     b "For that, I give you props, Donnie."
     d "*huff* Thank... {w=0.75}*huff* you... {w=0.75}*huff*"
     b d1 level "Shall we help you up?"
     d "...please..."
-
     hide brit with dissolve
-    pause .1
+    pause 0.1
     "And with that, Brittney and I each took one of Don's arms and carefully stood him up, moving him to the couch and sitting him down there."
     "His arms flopped to his sides, almost as if he had lost all feeling in them."
     "Well, if I'm being honest, he probably did."
-
     show brit d2 level grin straight at tworight
     show don e2 straight sad blank at twoleft
     with dissolve
-    with Pause(.1)
+    pause 0.1
     b "We'll let you sit there until you can move again."
     b sad "Though if I'm being honest..."
     b d1 opened_smile "Though if I'm being honest...{fast} That was pretty impressive!"
@@ -1652,7 +1499,7 @@ label d_dare_pushup:
     hide brit
     show chris d1 straight sad blank at tworight
     with dissolve
-    with Pause(.1)
+    pause 0.1
     c "Feeling a bit better?"
     d e1 right level "Yeah; I just needed a minute. I'm fine now."
     a "Well, I'm glad; I would've felt terrible if my dare permanently harmed ya."
@@ -1661,15 +1508,13 @@ label d_dare_pushup:
     show don:
         ease 0.5 xalign 0.1
     show brit d1 straight mad grin at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     b "Hey, it was his ego that would've done the damage; he could've easily gone the sissy route if he wanted to."
     a "I suppose so."
     c d2 casual grin "Well, now that he's doing better, can we head home? I don't want to be out too late, and it looks like Donald's had enough fun for a while."
     $d_blink = False
     d closed smile sad "Yeah, you could say that."
-
     $ D_Points += 1
-
     jump nhie_end
 
 ###############
@@ -1685,7 +1530,7 @@ label d_dare_pond:
     show don at close_left_d zorder 2
     show brit d2 straight casual hanging at close_right_b zorder 1
     with easeinright
-    with Pause(.1)
+    pause 0.1
     b "Damn! That's harsh!"
     $ b_partial = True
     b level huhu "I love it! Let's go!"
@@ -1693,32 +1538,28 @@ label d_dare_pond:
         ease 0.25 xalign 0.25
     pause .26
     d "Ah!"
-
     hide don
     hide brit
     with moveoutright
-    with Pause(.1)
+    pause 0.1
     $ b_partial = False
     "With that, Brittney quite literally dragged Donald out of the cabin."
     "Christeena and I quickly followed after them."
-
     scene bg pond_n with dissolve
     play loop forest_nighttime
-    with Pause(.1)
-
+    pause 0.1
     "By the time we caught up to them, they were already right by the pond."
-
     show brit d1 straight mad closed_smile at tworight
     show don e1 straight sad blank at twoleft
     with dissolve
-    with Pause(.1)
+    pause 0.1
     b "C'mon! Get in!"
     d mad "W-Wait! Let me go!"
     show chris d2 straight mad blank at threeleft
     show don at middle
     show brit at threeright
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     c "Brit, calm down!"
     b d2 raised grin "Hey, the only way I know he's going to go in is if he's forced in; he's too chicken to do it, himself!"
     d wide "Hey!"
@@ -1729,7 +1570,7 @@ label d_dare_pond:
     show brit at tworight
     show don at twoleft
     with easeoutleft
-    with Pause(.1)
+    pause 0.1
     d "Well, I can't just jump in a pond this late at night without a swimsuit or something!"
     b d2 raised grin "Really? That's what's stopping you?"
     b "Ever hear of swimming in your underwear?{w} Or skinny dipping?"
@@ -1739,39 +1580,34 @@ label d_dare_pond:
     b d1 closed sad closed_smile "In a heartbeat!"
     $b_blink = True
     $ b_partial = True
-    b straight level grin "In a heartbeat!{fast} But the point is you're just too cowardly to do it!"
+    extend straight level grin " But the point is you're just too cowardly to do it!"
     d "I...!"
-
     "Uh-oh. This isn't going very well."
     "Donald really doesn't look very comfortable with this dare, and I don't blame him. After all, this dare was made to humiliate him."
     "But still, even I have a conscience, and it's saying this might not be the best idea."
     "I suppose I could tell him he doesn't have to do the dare, after all...{w}but at the same time, I'm still wanting him to receive some sort of punishment."
     "I better make up my mind right now."
-
-    if persistent.choice_21 == 1:
+    if persistent.choices["21"] == 1:
         jump d_pond_no
-    elif persistent.choice_21 == 2:
+    elif persistent.choices["21"] == 2:
         jump d_pond_yes
     else:
-
-        "What should I do?{nw}"
-
         menu:
-            "What should I do?{fast}"
+            "What should I do?"
 
             "Tell Donald to not do the dare.":
-                $ persistent.choice_21 = 1
+                $ persistent.choices["21"] = 1
                 jump d_pond_no
 
             "Tell Donald to do the dare.":
-                $ persistent.choice_21 = 2
+                $ persistent.choices["21"] = 2
                 jump d_pond_yes
 
 label d_pond_no:
     show don:
         ease 0.5 close_d
     hide brit with dissolve
-    with Pause(.1)
+    pause 0.1
     $ b_partial = False
     a "Hey, Donald?"
     d raised "Yeah?"
@@ -1783,7 +1619,7 @@ label d_pond_no:
     show don at close_left_d zorder 2
     show brit d2 straight level blank at tworight zorder 1
     with easeinright
-    with Pause(.1)
+    pause 0.1
     b "..."
     b sad "Well, shit..."
     b right "Well, shit...{fast}now I feel like an ass for trying to force this on you."
@@ -1796,22 +1632,20 @@ label d_pond_no:
     b casual straight huhu "Well, how about this?"
     show brit:
         linear 0.3 xalign 1.55
-        size (720, 1440)
+        zoom 1.0
         yalign 0.2
         ease 0.2 xalign 0.25
     pause 0.5
     play sound punch
     show white zorder 4
-    with Pause(.05)
+    pause 0.05
     show brit:
         linear 0.15 xalign 0.9
     hide white
     d small sad blank "OOF!"
-
     "Before he could even respond to her, Donald got punched right in the chest. Nothing too serious (at least, that's how it looked), but certainly enough to get one's attention."
-
     $ b_partial = False
-    $b_blink = False
+    $ b_blink = False
     b d1 closed sad closed_smile "There! We'll call that your punishment!"
     d straight level grin "*cough* I guess so..."
     show don:
@@ -1819,7 +1653,7 @@ label d_pond_no:
     show brit:
         ease 0.5 threright
     show chris d1 straight raised blank at threeleft with easeinleft
-    with Pause(.1)
+    pause 0.1
     c "You guys truly are weird..."
     $b_blink = True
     b d2 left level huhu "I try!"
@@ -1827,7 +1661,6 @@ label d_pond_no:
     b d1 straight casual grin "Sounds like a plan!"
     c d2 casual smile "Yeah, let's!"
     d raised "That sounds nice."
-
     $ D_Points += 1
 
     jump nhie_end
@@ -1836,7 +1669,7 @@ label d_pond_yes:
     show don:
         ease 0.5 close_d
     hide brit with dissolve
-    with Pause(.1)
+    pause 0.1
     $ b_partial = False
     a "C'mon, Donald. It's not that big of a deal."
     d wide "Not that big of a deal??"
@@ -1844,30 +1677,26 @@ label d_pond_yes:
     a "Still, you lost the challenge, and now you have to do the dare."
     d blank "..."
     hide don with dissolve
-    with Pause(.1)
-
+    pause 0.1
     "Donald remained silent as he took his phone and wallet out of his pockets and handed them to Christeena."
-
     show don e1 straight mad blank at tworight
     show chris d1 straight casual blank at twoleft
     with dissolve
-    with Pause(.1)
+    pause 0.1
     d "Here, since you're the only one here that cares about me at the moment."
     c sad "...!"
     hide don
     hide chris
     with dissolve
-    with Pause(.1)
-
+    pause 0.1
     play sound splash
     "With that, Donald quickly ran towards the pond and jumped in, fully clothed, fully submerged."
     "A second later, he walked out of the pond, completely soaked from head to toe."
     "He was also shaking very badly."
-
     show don e1 straight mad blank at tworight
     show brit d2 straight casual blank at twoleft
     with dissolve
-    with Pause(.1)
+    pause 0.1
     d "A-A-Are you h-happy now??"
     b sad left "..."
     a "..."
@@ -1875,18 +1704,16 @@ label d_pond_yes:
     show brit at middle
     show don at threeright
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     c "Let's get some towels from the cabin, Donald."
     d "P-P-Please."
-
     $ D_Points -= 1
-
     hide chris
     hide don
     with easeoutleft
     $ current_track = "None"
     stop music fadeout 2.0
-    with Pause(3)
+    pause 3
     $ current_track = "\"Reflection\""
     play music reflection
     a "Well, I'm not as happy as I thought I would be."
@@ -1903,7 +1730,6 @@ label d_pond_yes:
     "She still looked rightfully upset as she looked towards where Donald and Christeena had walked off."
     a "We better catch up with them."
     b "Good idea."
-
     $ persistent.d_pond = True
 
     jump nhie_end
@@ -1918,7 +1744,7 @@ label d_dare_kiss:
     show don at close_left_b
     show brit d1 small sad hanging at close_right_b
     with easeinright
-    with Pause(.1)
+    pause 0.1
     b "What??"
     a "Well, isn't that why you wanted to add a dare element in the first place, Don? To do something like this?"
     d level blank "Uh..."
@@ -1931,26 +1757,22 @@ label d_dare_kiss:
     show brit:
         linear 0.5 xalign 1.0
     show chris d1 straight mad blank at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     c "Well, it doesn't feel right to force Brittney into something she clearly doesn't want to do."
     d sad right "Is the thought of us kissing really that awful?"
     b sad small hanging "I...!"
     b d2 straight blank "It's not anything against you, specifically..."
     b right "...but kissing a close friend, dare or not, is just kinda weird, you know?"
     b "If it was someone like Alex, a guy I hardly even know, then I wouldn't care as much."
-
-    if persistent.b_kiss:
-        pass
-    else:
+    if not persistent.b_kiss:
         "Noted."
         $ persistent.b_kiss = True
-
     show don:
         ease 0.5 xalign 0.1
     show brit:
         ease 0.5 xalign 0.9
     hide chris with dissolve
-    with Pause(.1)
+    pause 0.1
     d level "Still, you are part of my dare."
     b straight raised blank "Yeah, I know.{w} Though why it feels like I've been punished is beyond me."
     a "You'll survive. It's just a kiss; it doesn't have to mean anything."
@@ -1970,7 +1792,7 @@ label d_dare_kiss:
     a "..."
     d left "I figured that since you're always willing to do a dare, that this might've worked in my favor, but now that it's happened, it just doesn't feel right."
     b d2 "Donald..."
-    b grin "Donald...{fast}that was really sweet."
+    b grin "Donald...{fast} that was really sweet."
     d right "So, you're not mad at me?"
     b d1 level "Of course not. Honestly, if I were in your shoes, I'd be lying if I said that the idea of pulling a similar stunt wouldn't cross my mind."
     b sad opened_smile "Plus, you apologized and knew that what you were doing was wrong, just like the Donald Waters I know."
@@ -1981,17 +1803,16 @@ label d_dare_kiss:
     hide don
     show chris d2 straight mad blank at twoleft
     with dissolve
-    with Pause(.1)
+    pause 0.1
     c "Ugh..."
     hide chris
     show don e1 straight casual grin at close_left_d
     with dissolve
-    with Pause(.1)
+    pause 0.1
     b d1 casual grin straight "However, this does mean that you still owe Alex a dare."
     a "Nah, no worries. Let's just forget about that and get out of here."
     b level opened_smile "That works, too."
     d level "Yeah, let's get out of here."
-
     $ D_Points += 2
 
     jump nhie_end
@@ -2003,22 +1824,20 @@ label d_dare_kiss:
 label brit_win:
     "You know what? I'm very curious to see what would happen if the roles reversed, with HER making Donald do a dare."
     show brit d1 straight casual grin at close_b with dissolve
-    with Pause(.1)
+    pause 0.1
     a "Never have I ever graduated high school."
     b level dot "..."
     b d2 blank "Well, neither have I."
     a "Huh. So I guess that makes it your turn, then."
     b "..."
     b raised left grin "So it does."
-
     "Looks like she's caught on to my plan."
-
     b d1 straight mad opened_smile "Never have I ever had a penis!"
     $ c_blush = True
     show brit at close_right_b
     show chris d2 straight mad blank at twoleft
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     c "Really? There was no other option you could've come up with?"
     $ b_partial = True
     b level huhu "Nope!"
@@ -2026,7 +1845,7 @@ label brit_win:
     hide chris
     show brit at close_b
     with easeoutleft
-    with Pause(.1)
+    pause 0.1
     $ c_blush = False
     $ nhie_a_points -= 1
     with dissolve
@@ -2042,10 +1861,10 @@ label brit_win:
     show brit at close_right_b
     show don e1 small sad blank at close_left_d
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     d "{i}*gulp*{/i}"
     b d2 right level huhu "Hmm.{w=0.25}.{w=0.25}.{w=0.5}{nw}"
-    b d1 straight casual opened_smile "Hmm... {fast}Oh, I know!"
+    extend d1 straight casual opened_smile " Oh, I know!"
     b "I dare you to buy pads and tampons for me for a year!"
     d straight level "...{w}that's it?"
     b raised grin "That's it."
@@ -2053,7 +1872,6 @@ label brit_win:
     a "Huh. Even I admit that that's a little underwhelming."
     $ b_partial = True
     b "Well, I'm not so cruel that I'd make him do something like jump into the pond."
-
     if persistent.d_pond:
         a "I highly doubt that."
         $ b_partial = False
@@ -2062,7 +1880,6 @@ label brit_win:
         a "Whatever you say."
     else:
         a "I guess."
-
     $ b_partial = False
     b d1 straight casual grin "Plus, at least all the people at the store will know they're not for you, so if anything, you should be happy!"
     d left "I suppose..."
@@ -2072,19 +1889,16 @@ label brit_win:
     show brit:
         ease 0.5 xalign 1.0
     show chris d1 straight mad blank at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     c "God, you are so embarrassing, Brit."
     b d1 straight raised grin "What? I really do need them! Don't you?"
     $ c_blush = True
     c d2 hanging "!!!"
-
     "Christeena's face is understandably red."
-
     a "Alright, now that that's settled, what do you say we call it a night?"
     $ b_partial = True
     b d2 level "I suppose so. I'll be sure to let Donald know when I'm in need for supplies."
     c left blank "Ugh..."
-
     $ d_buy_stuff = True
     $ B_Points += 2
 
