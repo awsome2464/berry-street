@@ -145,29 +145,29 @@ label churchends:
     "I looked at the screen and saw that it was Christeena."
     stop loop
     a "Hello?"
-    c_o "{font=gui/LemonMilk.otf}{i}Hey, are you doing anything today?{/i}{/font}"
+    c_o "{font=fonts/LemonMilk.otf}{i}Hey, are you doing anything today?{/i}{/font}"
     a "Not that I'm aware of. Why?"
-    c_o "{font=gui/LemonMilk.otf}{i}Well, you know how Donald's birthday is coming up?{/i}{/font}"
+    c_o "{font=fonts/LemonMilk.otf}{i}Well, you know how Donald's birthday is coming up?{/i}{/font}"
     a "He'd never forgive me if I forgot."
-    c_o "{font=gui/LemonMilk.otf}{i}Hahaha! Well, Brittney and I were going to go out shopping for gifts for him today; you wanna come with?{/i}{/font}"
+    c_o "{font=fonts/LemonMilk.otf}{i}Hahaha! Well, Brittney and I were going to go out shopping for gifts for him today; you wanna come with?{/i}{/font}"
     a "You? Inviting a boy to go shopping with you?"
-    c_o "{font=gui/LemonMilk.otf}{i}H-Hey, now! Don't get any weird thoughts!{/i}{/font}"
+    c_o "{font=fonts/LemonMilk.otf}{i}H-Hey, now! Don't get any weird thoughts!{/i}{/font}"
     a "Too late."
-    c_o "{font=gui/LemonMilk.otf}{i}You're an asshole.{/i}{/font}"
+    c_o "{font=fonts/LemonMilk.otf}{i}You're an asshole.{/i}{/font}"
     a "And the sun is a star."
 
     "I could hear a snort of contained laughter escape her."
 
-    c_o "{font=gui/LemonMilk.otf}{i}Anyway, you wanna come with us or not? Doesn't matter either way.{/i}{/font}"
+    c_o "{font=fonts/LemonMilk.otf}{i}Anyway, you wanna come with us or not? Doesn't matter either way.{/i}{/font}"
 
     "Well, I'll admit that with all that's been happening, I had forgotten that Donald's birthday was coming up. I mean, I remembered the day, but I didn't realize it was that close."
     "Of course, with as often as he loves to brag about sharing a birthday with the entire country, how could ANYONE forget the day?"
     "Still, with the 4th coming quickly, and me realistically forgetting to go gift shopping after today..."
 
     a "Yeah, I'll go with you guys. When are you leaving?"
-    c_o "{font=gui/LemonMilk.otf}{i}Whenever Brittney's ready, which could be anywhere between 10 minutes and 10 hours.{/i}{/font}"
+    c_o "{font=fonts/LemonMilk.otf}{i}Whenever Brittney's ready, which could be anywhere between 10 minutes and 10 hours.{/i}{/font}"
     a "Hahaha! Alright, I'll be there ASAP; just gotta let my parents know."
-    c_o "{font=gui/LemonMilk.otf}{i}Alrighty! See ya in a bit!{/i}{/font}"
+    c_o "{font=fonts/LemonMilk.otf}{i}Alrighty! See ya in a bit!{/i}{/font}"
     a "See ya!"
 
     "We hung up, and I got out of the van."
@@ -695,7 +695,7 @@ label sportsstore:
 
     "With that, she walked over to the outer wall and started making her away around, looking at everything with a giant grin."
     "As she was walking away from me, my heart almost skipped a beat as I looked at her from behind."
-    "With her tight short shorts, her butt looked just a bit bigger than normal. {w} Or has it always been that big...?"
+    "With her tight short shorts, her butt looked just a bit bigger than normal. {w}Or has it always been that big...?"
     "Feeling my face start to heat up, I turned away and walked to the basketball section."
 
     window hide dissolve
@@ -722,7 +722,7 @@ label sportsstore:
     a "Eh. There's something to be said about having pride in your hometown."
     b c1 sad grin "Oh, I get his logic. I do."
     $ b_partial = True
-    b level huhu "But that doesn't mean I'm going to ever stop making fun of him for hoping crappy teams will win."
+    b level huhu "But that doesn't mean I'm ever going to stop making fun of him for hoping crappy teams will win."
     $ b_partial = False
     show brit c2 straight raised opened_smile
     b "I keep telling him he's setting himself up for disappointment each time, but oh well."
@@ -1321,16 +1321,16 @@ label artstore:
         nvl clear
         window hide dissolve
         nvl show dissolve
-        a_nvl "{font=gui/LemonMilk.otf}{i}Hey, I'm done shopping.{/i}{/font}"
-        b_nvl "{font=gui/LemonMilk.otf}{i}Already?{/i}{/font}"
-        c_nvl "{font=gui/LemonMilk.otf}{i}That was fast...{/i}{/font}"
-        a_nvl "{font=gui/LemonMilk.otf}{i}I had a fair idea of what I wanted to get. I just hope he likes it.{/i}{/font}"
-        b_nvl "{font=gui/LemonMilk.otf}{i}I'm sure he will.{/i}{/font}"
-        b_nvl "{font=gui/LemonMilk.otf}{i}At least, he'll PRETEND to like it lol XD{/i}{/font}"
-        a_nvl "{font=gui/LemonMilk.otf}{i}I'm on my way to the food court. Should I wait for you guys?{/i}{/font}"
-        b_nvl "{font=gui/LemonMilk.otf}{i}I won't be upset if you start eating without me.{/i}{/font}"
-        c_nvl "{font=gui/LemonMilk.otf}{i}I think I'm almost done, anyway, so I should be there soon, if you wanna wait.{/i}{/font}"
-        a_nvl "{font=gui/LemonMilk.otf}{i}Alright.{/i}{/font}"
+        a_nvl "{font=fonts/LemonMilk.otf}{i}Hey, I'm done shopping.{/i}{/font}"
+        b_nvl "{font=fonts/LemonMilk.otf}{i}Already?{/i}{/font}"
+        c_nvl "{font=fonts/LemonMilk.otf}{i}That was fast...{/i}{/font}"
+        a_nvl "{font=fonts/LemonMilk.otf}{i}I had a fair idea of what I wanted to get. I just hope he likes it.{/i}{/font}"
+        b_nvl "{font=fonts/LemonMilk.otf}{i}I'm sure he will.{/i}{/font}"
+        b_nvl "{font=fonts/LemonMilk.otf}{i}At least, he'll PRETEND to like it lol XD{/i}{/font}"
+        a_nvl "{font=fonts/LemonMilk.otf}{i}I'm on my way to the food court. Should I wait for you guys?{/i}{/font}"
+        b_nvl "{font=fonts/LemonMilk.otf}{i}I won't be upset if you start eating without me.{/i}{/font}"
+        c_nvl "{font=fonts/LemonMilk.otf}{i}I think I'm almost done, anyway, so I should be there soon, if you wanna wait.{/i}{/font}"
+        a_nvl "{font=fonts/LemonMilk.otf}{i}Alright.{/i}{/font}"
         nvl clear
         nvl hide dissolve
         window show dissolve
@@ -1391,15 +1391,13 @@ label artstore:
         a "Alright, enough chatter; let's eat!"
         b c1 sad opened_smile "Don't gotta tell me twice!"
 
-        jump eatatfc
-
 label eatatfc:
     hide brit
     hide chris
     with dissolve
     with Pause(.1)
     $ c_blush = False
-    if persistent.choice_17 != 0:
+    if persistent.choices["17"] != 0:
         pass
     else:
         "I then looked around to see where I should eat. It was a pretty small food court, but there still seemed to be a decent variety of choices."
@@ -1410,19 +1408,19 @@ label eatatfc:
             "Where should I eat?{fast}"
 
             "Taco Jack's":
-                $ persistent.choice_17 = 1
+                $ persistent.choices["17"] = 1
 
             "Uncle Ulmer's Pretzels":
-                $ persistent.choice_17 = 2
+                $ persistent.choices["17"] = 2
 
             "Pizza Shack":
-                $ persistent.choice_17 = 3
+                $ persistent.choices["17"] = 3
 
             "McDaniel's":
-                $ persistent.choice_17 = 4
+                $ persistent.choices["17"] = 4
 
             "P.J. Chong's":
-                $ persistent.choice_17 = 5
+                $ persistent.choices["17"] = 5
 
     window hide dissolve
     scene bg fade with wipeleft
@@ -1431,15 +1429,15 @@ label eatatfc:
     window show dissolve
     with Pause(.1)
 
-    if persistent.choice_17 == 1:
+    if persistent.choices["17"] == 1:
         $ food_court_food = "tacos"
-    elif persistent.choice_17 == 2:
+    elif persistent.choices["17"] == 2:
         $ food_court_food = "pretzel"
-    elif persistent.choice_17 == 3:
+    elif persistent.choices["17"] == 3:
         $ food_court_food = "pizza"
-    elif persistent.choice_17 == 4:
+    elif persistent.choices["17"] == 4:
         $ food_court_food = "burger"
-    elif persistent.choice_17 == 5:
+    elif persistent.choices["17"] == 5:
         $ food_court_food = "sweet and sour chicken"
 
     "As I ate my [food_court_food], the girls talked about this and that; I honestly wasn't paying too much attention."
@@ -1574,7 +1572,7 @@ label eatatfc:
     "She then let out a sigh."
 
     c "I'm such a bitch."
-    a "Hey, now; I get why you were upset. I wouldn't constantly want to be belittled and humiliated like that, either."
+    a "Hey, now; I get why you were upset. I wouldn't want to constantly be belittled and humiliated like that, either."
     c straight "Still, I could've handled that a bit better."
     a "Well...{w} Yeah, you could've."
     c c2 right "I don't know what's wrong with me... I always end up doing things like this, especially to Brittney..."
@@ -1596,7 +1594,7 @@ label eatatfc:
     b blank "Listen, I--{w=.25}{nw}"
     show chris:
         parallel:
-            ease 0.25 size(540, 1080)
+            ease 0.25 zoom 0.75
         parallel:
             ease 0.25 xalign 0.39 yalign 0.5
     pause .25

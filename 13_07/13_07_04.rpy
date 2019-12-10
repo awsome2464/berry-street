@@ -264,7 +264,7 @@ label no_dare_discussion:
     "Donald's phone buzzed, prompting him to pull it out of his pocket, look at the screen, and smile."
     d level grin "...when they're on their way."
     "He pointed his screen at me, allowing me to read the text."
-    "{font=gui/LemonMilk.otf}{i}\"We'll be there in a literal minute dum-dum XP\"{/i}{/font}"
+    "{font=fonts/LemonMilk.otf}{i}\"We'll be there in a literal minute dum-dum XP\"{/i}{/font}"
     d casual "What do you say we meet them at the door?"
     a "Sounds good."
     hide don with dissolve

@@ -53,14 +53,14 @@ define config.has_voice = True
 ## uncomment a line below and use it to set a sample sound to play.
 
 # define config.sample_sound = "sample-sound.ogg"
-define config.sample_voice = "se/voice/alex.ogg"
+define config.sample_voice = "audio/voice/alex.ogg"
 
 
 ## Uncomment the following line to set an audio file that will be played while
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-define config.main_menu_music = "<to 76 loop 8>music/Welcome to Berry Street.ogg"
+define config.main_menu_music = "<to 76 loop 8>audio/music/Welcome to Berry Street.ogg"
 
 
 ## Transitions #################################################################

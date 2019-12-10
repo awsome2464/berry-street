@@ -4,12 +4,12 @@ init -999 python:
     if not persistent.ziphtech:
         persistent.gamename = "Berry Street"
         persistent.ziphtech_label = "gui/textbox.png"
-        persistent.game_text = "gui/libel-suit-rg.ttf"
+        persistent.game_text = "fonts/libel-suit-rg.ttf"
         persistent.custom_icon = "gui/window_icon.png"
     else:
         persistent.gamename = "ZiphTech"
         persistent.ziphtech_label = "gui/ziphtech_textbox.png"
-        persistent.game_text = "gui/Audiowide-Regular.ttf"
+        persistent.game_text = "fonts/Audiowide-Regular.ttf"
         persistent.custom_icon = "gui/ziphtech_icon.png"
 
 default persistent.playthroughs = 0
@@ -17,7 +17,7 @@ default persistent.progress = -1
 default persistent.customdialogue = False
 
 style build:
-    font "gui/LibbyRegular.ttf"
+    font "fonts/LibbyRegular.ttf"
     color "#ffffff"
     outlines [(absolute(1), "#000000", absolute(0), absolute(0))]
     size 25
@@ -126,7 +126,7 @@ label before_main_menu:
                 ease 1.3 alpha 1.0
             parallel:
                 ease 1.0 ypos 0.051
-    with Pause(2)
+    pause 2
 
     return
 

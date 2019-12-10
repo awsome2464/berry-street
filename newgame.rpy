@@ -5,61 +5,18 @@ init python:
 
 label newgame:
     python:
-        
-        # 6-03-13
-        persistent.choice_1 = 0
-        persistent.choice_2 = 0
-        persistent.choice_3 = 0
+        persistent.choices = {"1": 0, "2": 0, "3": 0,
+        "4": 0, "5": 0, "6": 0, "7": 0,
+        "8": 0,
+        "9": 0, "10": 0,
+        "11": 0, "12": 0, "13": 0, "14": 0, "15": 0, "16": 0, "17": 0,
+        "18": 0, "19": 0, "20": 0, "21": 0, "22": 0,
+        "23": 0, "24": 0, "25": 0, "26": 0,
+        "27": 0, "28": 0, "29": 0, "30": 0,
+        "31": 0, "32": 0}
 
-        # 6-04-13
-        persistent.choice_4 = 0
-        persistent.choice_5 = 0
-        persistent.choice_6 = 0
-        persistent.choice_7 = 0
+        persistent.tour = {"1": 0, "2": 0, "3": 0, "4": 0}
 
-        persistent.tour_1 = 0
-        persistent.tour_2 = 0
-        persistent.tour_3 = 0
-        persistent.tour_4 = 0
-
-        # 6-11-13
-        persistent.choice_8 = 0
-
-        # 6-21-13
-        persistent.choice_9 = 0
-        persistent.choice_10 = 0
-
-        # 6-23-13
-        persistent.choice_11 = 0
-        persistent.choice_12 = 0
-        persistent.choice_13 = 0
-        persistent.choice_14 = 0
-        persistent.choice_15 = 0
-        persistent.choice_16 = 0
-        persistent.choice_17 = 0
-
-        # 6-30-13
-        persistent.choice_18 = 0
-        persistent.choice_19 = 0
-        persistent.choice_20 = 0
-        persistent.choice_21 = 0
-        persistent.choice_22 = 0
-
-        # 7-04-13
-        persistent.choice_23 = 0
-        persistent.choice_23_ = 0
-        persistent.choice_24 = 0
-        persistent.choice_25 = 0
-        persistent.choice_26 = 0
-
-        # 7-10-13
-        persistent.choice_27 = 0
-        persistent.choice_28 = 0
-        persistent.choice_29 = 0
-        persistent.choice_30 = 0
-
-        # 7-15-13
-        persistent.choice_31 = 0
-        persistent.choice_32 = 0
+        persistent.progress = -1
 
     return

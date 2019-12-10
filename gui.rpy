@@ -58,10 +58,10 @@ define gui.interface_text_color = '#ffffff'
 define gui.text_font = persistent.game_text
 
 ## The font used for character names.
-define gui.name_text_font = "gui/LibbyRegular.ttf"
+define gui.name_text_font = "fonts/LibbyRegular.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "gui/LibbyRegular.ttf"
+define gui.interface_text_font = "fonts/LibbyRegular.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 45

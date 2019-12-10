@@ -721,7 +721,7 @@ screen save():
             yalign 0.95
             text "   Current Track: [current_track]   " xalign 0.05 yalign 0.5
 
-    if current_track != "None":
+    if current_track != "None" and current_track != "\"...\"":
         add "gui/record.png" at record_move
     else:
         add "gui/record.png" at record_pause
@@ -1042,11 +1042,12 @@ screen preferences():
                 xalign 0.1
                 yalign 0.5
                 spacing 20
-                text "{font=gui/LibbyRegular.ttf}Text Speed"
-                text "{font=gui/LibbyRegular.ttf}Auto Speed"
-                text "{font=gui/LibbyRegular.ttf}Music"
-                text "{font=gui/LibbyRegular.ttf}Sound"
-                textbutton "{font=gui/LibbyRegular.ttf}{size=+15}Blip" action Play("voice", config.sample_voice)
+                style "options_menu"
+                text "Text Speed"
+                text "Auto Speed"
+                text "Music"
+                text "Sound"
+                textbutton "{size=+15}Blip{/size}" action Play("voice", config.sample_voice)
             vbox:
                 xalign 0.85
                 yalign 0.5

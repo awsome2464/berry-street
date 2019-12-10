@@ -219,8 +219,6 @@ image quit_button = "gui/quit_idle.png"
 image menu_01 = "gui/menu_intro_01.png"
 image menu_02 = "gui/menu_intro_02.png"
 image record = "gui/record.png"
-image record_bottom = "gui/record_bottom.png"
-image record_top = "gui/record_top.png"
 image phone_base = "Phone/base.png"
 image phone_bg = "Phone/bg.png"
 image phone_receiver = "Phone/receiver.png"
@@ -341,73 +339,78 @@ image alex_title:
 # Music #
 #########
 
-define audio.new_life = "<loop 14.769>music/New Life.ogg" # Opening
-define audio.oddball = "music/Oddball.ogg" # Brittney
-define audio.ivories_and_ebony = "<loop 3>music/Ivories and Ebony.ogg" # Gang All Together
-define audio.home_life = "<to 112 loop 5.32>music/Home Life.ogg" # Slow Moments @ Home
-define audio.relaxation_in_the_country = "<loop 5.333>music/Relaxation in the Country.ogg" # Mellow Moments
-define audio.violet_wonder = "<loop 9.6>music/Violet Wonder.ogg" # Christeena
-define audio.dinin_in = "<loop 9.6>music/Dinin' In.ogg" # Kelly's Deli
-define audio.reflection = "music/Reflection.ogg" # Sad
-define audio.cabin_fever = "<loop 8>music/Cabin Fever.ogg" # Cabin
-define audio.friendly_competition = "music/Friendly Competition.ogg" # Heavy Workout
-define audio.outside_the_street = "music/Outside the Street.ogg" # Downtown
-define audio.the_pond = "music/The Pond.ogg" # Pond
-define audio.scrapbook = "music/Scrapbook.mp3" # School
-define audio.sunday_service = "music/Sunday Service.ogg" # Church
-define audio.generic_80s_song = "music/Generic 80s Song.ogg" # Generic 80's Song
-define audio.different_yet_equal = "music/Different Yet Equal.ogg" # Sisters
-define audio.donald = "<to 68 loop 12>music/Brotato Chips.ogg" # Donald
-define audio.main_theme = "<to 76 loop 8>music/Welcome to Berry Street.ogg"
-define audio.the_mall = "<loop 15>music/The Mall.ogg" # Mall
-define audio.chaotic_evil = "music/Chaotic Evil.ogg" # Eleanor
-define audio.chillaxin = "<loop 18>music/Chillaxin.ogg" # Slow, happy moments
-define audio.judgement = "se/judgement.mp3" # ???
-define audio.credits = "<from 14.769>music/New Life.ogg"
+define audio.new_life = "<loop 14.769>audio/music/New Life.ogg" # Opening
+define audio.oddball = "audio/music/Oddball.ogg" # Brittney
+define audio.ivories_and_ebony = "<loop 3>audio/music/Ivories and Ebony.ogg" # Gang All Together
+define audio.home_life = "<to 112 loop 5.32>audio/music/Home Life.ogg" # Slow Moments @ Home
+define audio.relaxation_in_the_country = "<loop 5.333>audio/music/Relaxation in the Country.ogg" # Mellow Moments
+define audio.violet_wonder = "<loop 9.6>audio/music/Violet Wonder.ogg" # Christeena
+define audio.dinin_in = "<loop 9.6>audio/music/Dinin' In.ogg" # Kelly's Deli
+define audio.reflection = "audio/music/Reflection.ogg" # Sad
+define audio.cabin_fever = "<loop 8>audio/music/Cabin Fever.ogg" # Cabin
+define audio.friendly_competition = "audio/music/Friendly Competition.ogg" # Heavy Workout
+define audio.outside_the_street = "audio/music/Outside the Street.ogg" # Downtown
+define audio.the_pond = "audio/music/The Pond.ogg" # Pond
+define audio.scrapbook = "audio/music/Scrapbook.mp3" # School
+define audio.sunday_service = "audio/music/Sunday Service.ogg" # Church
+define audio.generic_80s_song = "audio/music/Generic 80s Song.ogg" # Generic 80's Song
+define audio.different_yet_equal = "audio/music/Different Yet Equal.ogg" # Sisters
+define audio.donald = "<to 68 loop 12>audio/music/Brotato Chips.ogg" # Donald
+define audio.main_theme = "<to 76 loop 8>audio/music/Welcome to Berry Street.ogg"
+define audio.the_mall = "<loop 15>audio/music/The Mall.ogg" # Mall
+define audio.chaotic_evil = "audio/music/Chaotic Evil.ogg" # Eleanor
+define audio.chillaxin = "<loop 18>audio/music/Chillaxin.ogg" # Slow, happy moments
+define audio.judgement = "audio/se/judgement.mp3" # ???
+define audio.credits = "<from 14.769>audio/music/New Life.ogg"
 
 
 #################
 # Sound Effects #
 #################
 
-define audio.phone_vibrate = "se/phone_vibrate.mp3"
-define audio.phone_vibrate_call = "se/phone_vibrate_call.mp3"
-define audio.deli_door = "se/deli_door.mp3"
-define audio.deli_crowd = "se/deli_crowd.mp3"
-define audio.door_knock = "se/door_knock.mp3"
-define audio.door_open = "se/door_open.mp3"
-define audio.door_slam = "se/door_slam.mp3"
-define audio.punch = "se/punch.mp3"
-define audio.truck_start = "se/truck_start.mp3"
-define audio.van_start = "se/van_start.mp3"
-define audio.mall = "se/mall.mp3"
-define audio.dolmart = "se/dolmart.mp3"
-define audio.shopping_cart = "se/shopping_cart.mp3"
-define audio.woosh = "se/woosh.mp3"
-define audio.table_slam = "se/table_slam.mp3"
-define audio.chair = "se/chair.mp3"
-define audio.bag_hit = "se/bag_hit.mp3"
-define audio.fireworks = "se/fireworks.mp3"
-define audio.begin_judgement = "se/begin_judgement.mp3"
-define audio.light_flicker = "se/light_flicker.mp3"
-define audio.splash = "se/splash.mp3"
-define audio.forest_daytime = "se/forest_daytime.mp3"
-define audio.forest_nighttime = "se/forest_nighttime.mp3"
-define audio.stomach = "se/stomach.mp3"
-define audio.doorbell = "se/doorbell.mp3"
-define audio.twig_snap = "se/twig_snap.mp3"
-define audio.scare_and_scream = "se/scare_and_scream.mp3"
+define audio.phone_vibrate = "audio/se/phone_vibrate.mp3"
+define audio.phone_vibrate_call = "audio/se/phone_vibrate_call.mp3"
+define audio.deli_door = "audio/se/deli_door.mp3"
+define audio.deli_crowd = "audio/se/deli_crowd.mp3"
+define audio.door_knock = "audio/se/door_knock.mp3"
+define audio.door_open = "audio/se/door_open.mp3"
+define audio.door_slam = "audio/se/door_slam.mp3"
+define audio.punch = "audio/se/punch.mp3"
+define audio.truck_start = "audio/se/truck_start.mp3"
+define audio.van_start = "audio/se/van_start.mp3"
+define audio.mall = "audio/se/mall.mp3"
+define audio.dolmart = "audio/se/dolmart.mp3"
+define audio.shopping_cart = "audio/se/shopping_cart.mp3"
+define audio.woosh = "audio/se/woosh.mp3"
+define audio.table_slam = "audio/se/table_slam.mp3"
+define audio.chair = "audio/se/chair.mp3"
+define audio.bag_hit = "audio/se/bag_hit.mp3"
+define audio.fireworks = "audio/se/fireworks.mp3"
+define audio.begin_judgement = "audio/se/begin_judgement.mp3"
+define audio.light_flicker = "audio/se/light_flicker.mp3"
+define audio.splash = "audio/se/splash.mp3"
+define audio.forest_daytime = "audio/se/forest_daytime.mp3"
+define audio.forest_nighttime = "audio/se/forest_nighttime.mp3"
+define audio.stomach = "audio/se/stomach.mp3"
+define audio.doorbell = "audio/se/doorbell.mp3"
+define audio.twig_snap = "audio/se/twig_snap.mp3"
+define audio.scare_and_scream = "audio/se/scare_and_scream.mp3"
 
 #############
 # Variables #
 #############
 
-default persistent.tour_1 = 0
-default persistent.tour_2 = 0
-default persistent.tour_3 = 0
-default persistent.tour_4 = 0
+default persistent.choices = {"1": 0, "2": 0, "3": 0,
+    "4": 0, "5": 0, "6": 0, "7": 0,
+    "8": 0,
+    "9": 0, "10": 0,
+    "11": 0, "12": 0, "13": 0, "14": 0, "15": 0, "16": 0, "17": 0,
+    "18": 0, "19": 0, "20": 0, "21": 0, "22": 0,
+    "23": 0, "24": 0, "25": 0, "26": 0,
+    "27": 0, "28": 0, "29": 0, "30": 0,
+    "31": 0, "32": 0}
 
-default persistent.choice_17 = 0
+default persistent.tour = {"1": 0, "2": 0, "3": 0, "4": 0}
 
 default marthatruman = False
 
@@ -416,6 +419,9 @@ default warning_selector = 0
 default progress = 0
 default nextchoice = 0
 default choicevbox = 1
+default B_Name = "???"
+default C_Name = "???"
+default M_Name = "Waitress"
 default B_Points = 0
 default C_Points = 0
 default D_Points = 0
@@ -436,7 +442,7 @@ default first_tour_pick = False
 default b_blink = True
 default b_hat = 0
 default b_hair = 0
-default b_hairtie = 0
+default b_hairtie = renpy.random.randint(0, 2)
 default b_partial = False
 default b_wink = False
 default b_wince = False
@@ -716,124 +722,98 @@ image chris_talking:
 layeredimage chris:
     if c_hair == 0:
         "Characters/Christeena/Christeena_Hair_Down_02.png"
-        ypos (0.1)
+        ypos 0.1
     elif c_hair == 1:
         "Characters/Christeena/Christeena_Hair_Up_02.png"
-        ypos (0.1)
+        ypos 0.1
     group body:
+        ypos 0.1
         attribute a1:
             "Characters/Christeena/Christeena_Body_a01.png"
-            ypos (0.1)
         attribute a2:
             "Characters/Christeena/Christeena_Body_a02.png"
-            ypos (0.1)
         attribute b1:
             "Characters/Christeena/Christeena_Body_b01.png"
-            ypos (0.1)
         attribute b2:
             "Characters/Christeena/Christeena_Body_b02.png"
-            ypos (0.1)
         attribute c1:
             "Characters/Christeena/Christeena_Body_c01.png"
-            ypos (0.1)
         attribute c2:
             "Characters/Christeena/Christeena_Body_c02.png"
-            ypos (0.1)
         attribute d1:
             "Characters/Christeena/Christeena_Body_d01.png"
-            ypos (0.1)
         attribute d2:
             "Characters/Christeena/Christeena_Body_d02.png"
-            ypos (0.1)
         attribute e1:
             "Characters/Christeena/Christeena_Body_e01.png"
-            ypos (0.1)
         attribute e2:
             "Characters/Christeena/Christeena_Body_e02.png"
-            ypos (0.1)
     group eyes:
+        ypos 0.1
         attribute straight:
             "Characters/Christeena/Christeena_Pupils_01.png"
-            ypos (0.1)
         attribute right:
             "Characters/Christeena/Christeena_Pupils_02.png"
-            ypos (0.1)
         attribute left:
             "Characters/Christeena/Christeena_Pupils_03.png"
-            ypos (0.1)
         attribute up:
             "Characters/Christeena/Christeena_Pupils_04.png"
-            ypos (0.1)
         attribute small:
             "Characters/Christeena/Christeena_Pupils_05.png"
-            ypos (0.1)
         attribute closed_happy:
             "Characters/Christeena/Christeena_Eyelids_01.png"
-            ypos (0.1)
         attribute closed_sad:
             "Characters/Christeena/Christeena_Eyelids_02.png"
-            ypos (0.1)
         attribute tightly_shut:
             "Characters/Christeena/Christeena_Eyelids_03.png"
-            ypos (0.1)
     if c_blink:
         "chris_blink"
-        ypos (0.1)
+        ypos 0.1
     group mouth:
+        ypos 0.1
         attribute grin:
             "Characters/Christeena/Christeena_Mouth_01.png"
-            ypos (0.1)
         attribute blank:
             "Characters/Christeena/Christeena_Mouth_02.png"
-            ypos (0.1)
         attribute dot:
             "Characters/Christeena/Christeena_Mouth_03.png"
-            ypos (0.1)
         attribute smile:
             "Characters/Christeena/Christeena_Mouth_04.png"
-            ypos (0.1)
         attribute hanging:
             "Characters/Christeena/Christeena_Mouth_05.png"
-            ypos (0.1)
         attribute scream:
             "Characters/Christeena/Christeena_Mouth_06.png"
-            ypos (0.1)
     group lips:
+        ypos 0.1
         attribute talking:
             "chris_talking"
-            ypos (0.1)
         attribute notalking:
             "Characters/Christeena/Christeena_Lip_None.png"
-            ypos (0.1)
     if c_blush:
         "Characters/Christeena/Christeena_Blush_01.png"
-        ypos (0.1)
+        ypos 0.1
     if c_hair == 0:
         "Characters/Christeena/Christeena_Hair_Down_01.png"
-        ypos (0.1)
+        ypos 0.1
     elif c_hair == 1:
         "Characters/Christeena/Christeena_Hair_Up_01.png"
-        ypos (0.1)
+        ypos 0.1
     group eyebrows:
+        ypos 0.1
         attribute sad:
             "Characters/Christeena/Christeena_Eyebrows_01.png"
-            ypos (0.1)
         attribute casual:
             "Characters/Christeena/Christeena_Eyebrows_02.png"
-            ypos (0.1)
         attribute mad:
             "Characters/Christeena/Christeena_Eyebrows_03.png"
-            ypos (0.1)
         attribute level:
             "Characters/Christeena/Christeena_Eyebrows_04.png"
-            ypos (0.1)
         attribute raised:
             "Characters/Christeena/Christeena_Eyebrows_05.png"
-            ypos (0.1)
     group crying:
+        ypos 0.1
         attribute tears:
             "Characters/Christeena/Christeena_Tears_01.png"
-            ypos (0.1)
 
 # Chad Truman
 image chad_blink:
@@ -879,55 +859,46 @@ image chad_talking:
 
 layeredimage chad:
     group body:
+        ypos 0.1
         attribute a1:
             "Characters/Chad/Chad_Body_a01.png"
-            ypos (0.1)
         attribute b1:
             "Characters/Chad/Chad_Body_b01.png"
-            ypos (0.1)
     group mouth:
+        ypos 0.1
         attribute grin:
             "Characters/Chad/Chad_Mouth_01.png"
-            ypos (0.1)
         attribute blank:
             "Characters/Chad/Chad_Mouth_02.png"
-            ypos (0.1)
     group lip:
+        ypos 0.1
         attribute talking:
             "chad_talking"
-            ypos (0.1)
         attribute notalking:
             "Characters/Brittney/Brittney_Lip_None.png"
-            ypos (0.1)
     group eyes:
+        ypos 0.1
         attribute straight:
             "Characters/Chad/Chad_Pupils_01.png"
-            ypos (0.1)
         attribute left:
             "Characters/Chad/Chad_Pupils_02.png"
-            ypos (0.1)
         attribute right:
             "Characters/Chad/Chad_Pupils_03.png"
-            ypos (0.1)
     always:
         "chad_blink"
-        ypos (0.1)
+        ypos 0.1
     group eyebrows:
+        ypos 0.1
         attribute sad:
             "Characters/Chad/Chad_Eyebrows_01.png"
-            ypos (0.1)
         attribute casual:
             "Characters/Chad/Chad_Eyebrows_02.png"
-            ypos (0.1)
         attribute mad:
             "Characters/Chad/Chad_Eyebrows_03.png"
-            ypos (0.1)
         attribute raised:
             "Characters/Chad/Chad_Eyebrows_04.png"
-            ypos (0.1)
         attribute level:
             "Characters/Chad/Chad_Eyebrows_05.png"
-            ypos (0.1)
 
 # Daniel
 image daniel_blink:
@@ -1002,11 +973,11 @@ layeredimage daniel:
 
 # Donald
 image don_blink:
-    "Characters/Brittney/Brittney_Blinking_00.png"
+    "Characters/Donald/Donald_Blinking_00.png"
     block:
         pause 2.0
         choice:
-            pass
+            pause 0.0
         choice:
             pause 0.5
         choice:
@@ -1741,18 +1712,23 @@ image martha_talking:
 
 layeredimage martha:
     group body:
+        ypos 40
         attribute a1:
             "Characters/Martha/Martha_Body_a01.png"
         attribute b1:
             "Characters/Martha/Martha_Body_b01.png"
     group eyes:
+        ypos 40
         attribute straight:
             "Characters/Martha/Martha_Pupils_01.png"
     always:
         "martha_blinking"
+        ypos 40
     if m_partial:
         "Characters/Martha/Martha_Eyelids_01.png"
+        ypos 40
     group mouth:
+        ypos 40
         attribute grin:
             "Characters/Martha/Martha_Mouth_01.png"
         attribute blank:
@@ -1760,13 +1736,16 @@ layeredimage martha:
         attribute smile:
             "Characters/Martha/Martha_Mouth_03.png"
     group lips:
+        ypos 40
         attribute talking:
             "martha_talking"
         attribute notalking:
             "Characters/Martha/Martha_Blinking_00.png"
     if m_glasses:
         "Characters/Martha/Martha_Glasses_01.png"
+        ypos 40
     group eyebrows:
+        ypos 40
         attribute casual:
             "Characters/Martha/Martha_Eyebrows_01.png"
         attribute raised:
@@ -1780,37 +1759,30 @@ layeredimage martha:
 
 transform m_middle:
     size (540, 1080)
-    ypos 40
     xalign 0.5
 
 transform m_twoleft:
     size (540, 1080)
-    ypos 40
     xalign 0.25
 
 transform m_tworight:
     size (540, 1080)
-    ypos 40
     xalign 0.75
 
 transform m_threeleft:
     size (540, 1080)
-    ypos 40
     xalign 0.1
 
 transform m_threeright:
     size (540, 1080)
-    ypos 40
     xalign 0.9
 
 transform m_four2:
     size (540, 1080)
-    ypos 40
     xalign 0.3
 
 transform m_four4:
     size (540, 1080)
-    ypos 40
     xalign 1.0
 
 # Percy
@@ -1895,88 +1867,73 @@ layeredimage cg_01:
         "CG/CG 01/CG_01.png"
         size (1920, 1080)
     group alex_eyebrows:
+        size (1920, 1080)
         attribute a_level:
             "CG/CG 01/Alex_Eyebrows_01.png"
-            size (1920, 1080)
         attribute a_raised:
             "CG/CG 01/Alex_Eyebrows_02.png"
-            size (1920, 1080)
         attribute a_casual:
             "CG/CG 01/Alex_Eyebrows_03.png"
-            size (1920, 1080)
     group alex_eyes:
+        size (1920, 1080)
         attribute a_right:
             "CG/CG 01/Alex_Eyes_01.png"
-            size (1920, 1080)
         attribute a_left:
             "CG/CG 01/Alex_Eyes_02.png"
-            size (1920, 1080)
     group alex_mouth:
+        size (1920, 1080)
         attribute a_grin:
             "CG/CG 01/Alex_Mouth_01.png"
-            size (1920, 1080)
         attribute a_blank:
             "CG/CG 01/Alex_Mouth_02.png"
-            size (1920, 1080)
 
     group brit_eyebrows:
+        size (1920, 1080)
         attribute b_raised:
             "CG/CG 01/Brit_Eyebrows_01.png"
-            size (1920, 1080)
         attribute b_casual:
             "CG/CG 01/Brit_Eyebrows_02.png"
-            size (1920, 1080)
         attribute b_level:
             "CG/CG 01/Brit_Eyebrows_03.png"
-            size (1920, 1080)
         attribute b_mad:
             "CG/CG 01/Brit_Eyebrows_04.png"
-            size (1920, 1080)
     group brit_eyes:
+        size (1920, 1080)
         attribute b_right:
             "CG/CG 01/Brit_Eyes_01.png"
-            size (1920, 1080)
     group brit_mouth:
+        size (1920, 1080)
         attribute b_grin:
             "CG/CG 01/Brit_Mouth_01.png"
-            size (1920, 1080)
         attribute b_opened_smile:
             "CG/CG 01/Brit_Mouth_02.png"
-            size (1920, 1080)
         attribute b_blank:
             "CG/CG 01/Brit_Mouth_03.png"
-            size (1920, 1080)
 
     group chris_eyebrows:
+        size (1920, 1080)
         attribute c_level:
             "CG/CG 01/Chris_Eyebrows_01.png"
-            size (1920, 1080)
         attribute c_sad:
             "CG/CG 01/Chris_Eyebrows_02.png"
-            size (1920, 1080)
         attribute c_mad:
             "CG/CG 01/Chris_Eyebrows_03.png"
-            size (1920, 1080)
         attribute c_casual:
             "CG/CG 01/Chris_Eyebrows_04.png"
-            size (1920, 1080)
     group chris_eyes:
+        size (1920, 1080)
         attribute c_left:
             "CG/CG 01/Chris_Eyes_01.png"
-            size (1920, 1080)
         attribute c_right:
             "CG/CG 01/Chris_Eyes_02.png"
-            size (1920, 1080)
         attribute c_up:
             "CG/CG 01/Chris_Eyes_03.png"
-            size (1920, 1080)
     group chris_mouth:
+        size (1920, 1080)
         attribute c_blank:
             "CG/CG 01/Chris_Mouth_01.png"
-            size (1920, 1080)
         attribute c_grin:
             "CG/CG 01/Chris_Mouth_02.png"
-            size (1920, 1080)
 
 image bg cg_02:
     "CG/CG 02/CG_02.png"
@@ -2005,11 +1962,11 @@ init:
     $ config.default_transform = new_default
 
 transform middle:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.5 yalign 0.5
 
 transform middle_float:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.5 ycenter 0.5
     block:
         ease 1.0 ycenter 0.52
@@ -2017,11 +1974,11 @@ transform middle_float:
         repeat
 
 transform twoleft:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.25 yalign 0.5
 
 transform twoleft_float:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.25 ycenter 0.5
     block:
         ease 1.0 ycenter 0.52
@@ -2029,11 +1986,11 @@ transform twoleft_float:
         repeat
 
 transform tworight:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.75 yalign 0.5
 
 transform tworight_float:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.75 ycenter 0.5
     block:
         ease 1.0 ycenter 0.52
@@ -2041,11 +1998,11 @@ transform tworight_float:
         repeat
 
 transform threeleft:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.1 yalign 0.5
 
 transform threeleft_float:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.1 ycenter 0.5
     block:
         ease 1.0 ycenter 0.52
@@ -2053,11 +2010,11 @@ transform threeleft_float:
         repeat
 
 transform threeright:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.9 yalign 0.5
 
 transform threeright_float:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.9 ycenter 0.5
     block:
         ease 1.0 ycenter 0.52
@@ -2065,27 +2022,27 @@ transform threeright_float:
         repeat
 
 transform four1:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.0 yalign 0.5
 
 transform four2:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.3 yalign 0.5
 
 transform four3:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.7 yalign 0.5
 
 transform four4:
-    size (540, 1080)
+    zoom 0.75
     xalign 1.0 yalign 0.5
 
 transform close_b:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.5 yalign 0.2
 
 transform close_b_float:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.5 yalign 0.2
     block:
         ease 1.0 yalign 0.15
@@ -2093,11 +2050,11 @@ transform close_b_float:
         repeat
 
 transform close_right_b:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.9 yalign 0.2
 
 transform close_right_b_float:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.9 yalign 0.2
     block:
         ease 1.0 yalign 0.15
@@ -2105,11 +2062,11 @@ transform close_right_b_float:
         repeat
 
 transform close_right_b_2:
-    size (720, 1440)
+    zoom 1.0
     xalign 1.0 yalign 0.2
 
 transform close_right_b_2_float:
-    size (720, 1440)
+    zoom 1.0
     xalign 1.0 yalign 0.2
     block:
         ease 1.0 yalign 0.15
@@ -2117,15 +2074,15 @@ transform close_right_b_2_float:
         repeat
 
 transform close_left_b:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.1 yalign 0.2
 
 transform close_c:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.5 yalign 0.4
 
 transform close_c_float:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.5 yalign 0.4
     block:
         ease 1.0 yalign 0.35
@@ -2133,7 +2090,7 @@ transform close_c_float:
         repeat
 
 transform close_c_float_2:
-    size(720, 1440)
+    zoom 1.0
     xalign 0.5 yalign 0.25
     block:
         ease 1.0 yalign 0.2
@@ -2141,11 +2098,11 @@ transform close_c_float_2:
         repeat
 
 transform close_left_c:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.1 yalign 0.4
 
 transform close_left_c_float:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.1 yalign 0.4
     block:
         ease 1.0 yalign 0.35
@@ -2153,19 +2110,19 @@ transform close_left_c_float:
         repeat
 
 transform close_right_c:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.9 yalign 0.4
 
 transform close_right_c_2:
-    size (720, 1440)
+    zoom 1.0
     xalign 1.0 yalign 0.4
 
 transform close_d:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.5 yalign 0.2
 
 transform close_d_float:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.5 yalign 0.2
     block:
         ease 1.0 yalign 0.15
@@ -2173,11 +2130,11 @@ transform close_d_float:
         repeat
 
 transform close_right_d:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.9 yalign 0.2
 
 transform close_right_d_float:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.9 yalign 0.2
     block:
         ease 1.0 yalign 0.15
@@ -2185,11 +2142,11 @@ transform close_right_d_float:
         repeat
 
 transform close_left_d:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.1 yalign 0.2
 
 transform close_left_d_float:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.1 yalign 0.2
     block:
         ease 1.0 yalign 0.15
@@ -2197,11 +2154,11 @@ transform close_left_d_float:
         repeat
 
 transform close_left_d_2:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.0 yalign 0.2
 
 transform close_left_d_2_float:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.0 yalign 0.2
     block:
         ease 1.0 yalign 0.15
@@ -2209,15 +2166,15 @@ transform close_left_d_2_float:
         repeat
 
 transform close_e:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.5 yalign 0.25
 
 transform close_h:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.5 yalign 0.45
 
 transform close_h_float:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.5 yalign 0.45
     block:
         ease 1.0 yalign 0.4
@@ -2225,11 +2182,11 @@ transform close_h_float:
         repeat
 
 transform close_left_h:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.1 yalign 0.45
 
 transform close_left_h_float:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.1 yalign 0.45
     block:
         ease 1.0 yalign 0.4
@@ -2237,11 +2194,11 @@ transform close_left_h_float:
         repeat
 
 transform close_right_h:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.9 yalign 0.45
 
 transform close_right_h_float:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.9 yalign 0.45
     block:
         ease 1.0 yalign 0.4
@@ -2249,50 +2206,50 @@ transform close_right_h_float:
         repeat
 
 transform close_m:
-    size (720, 1440)
+    zoom 1.0
     xalign 0.5 yalign 0.15
 
 transform close_to_left:
     parallel:
-        ease 0.5 size (540, 1080)
+        ease 0.5 zoom 0.75
     parallel:
         ease 0.5 xalign 0.25 yalign 0.5
 
 transform close_to_right:
     parallel:
-        ease 0.5 size (540, 1080)
+        ease 0.5 zoom 0.75
     parallel:
         ease 0.5 xalign 0.75 yalign 0.5
 
 transform close_to_far:
-    ease 0.5 size size (540, 1080)
+    ease 0.5 zoom 0.75
 
 transform punchleft:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.25 yalign 0.5
     linear 0.15 xalign 0.6
     pause .05
     linear 0.15 xalign 0.25
 
 transform punchright:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.75 yalign 0.5
     linear 0.15 xalign 0.4
     pause .05
     linear 0.15 xalign 0.75
 
 transform three_to_two_left:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.1 yalign 0.5
     linear 0.5 xalign .25
 
 transform three_to_two_right:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.9 yalign 0.5
     linear 0.5 xalign .75
 
 transform hugtwoleft:
-    size (540, 1080)
+    zoom 0.75
     xalign 0.75 yalign 0.5
     linear .25 xalign 0.4
 
@@ -2321,6 +2278,13 @@ transform record_pause:
     xanchor 0.5 yanchor 0.5
     xalign 0.05 yalign 0.75
 
+##########
+# Styles #
+##########
+
+style options_menu:
+    font "fonts/LibbyRegular.ttf"
+
 #############
 # Callbacks #
 #############
@@ -2331,7 +2295,7 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("se/voice/alex.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/alex.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
@@ -2342,7 +2306,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("brit talking")
-            renpy.sound.play("se/voice/brittney.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/brittney.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("brit notalking")
             renpy.sound.stop(channel="blip")
@@ -2352,7 +2316,7 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("se/voice/brittney.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/brittney.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
@@ -2363,7 +2327,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("chad talking")
-            renpy.sound.play("se/voice/chad.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/chad.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("chad notalking")
             renpy.sound.stop(channel="blip")
@@ -2375,7 +2339,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("chris talking")
-            renpy.sound.play("se/voice/christeena.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/christeena.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("chris notalking")
             renpy.sound.stop(channel="blip")
@@ -2385,7 +2349,7 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("se/voice/christeena.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/christeena.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
@@ -2397,7 +2361,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("daniel talking")
-            renpy.sound.play("se/voice/daniel.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/daniel.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("daniel notalking")
             renpy.sound.stop(channel="blip")
@@ -2407,7 +2371,7 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("se/voice/daniel.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/daniel.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
@@ -2419,7 +2383,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("don talking")
-            renpy.sound.play("se/voice/donald.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/donald.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("don notalking")
             renpy.sound.stop(channel="blip")
@@ -2429,7 +2393,7 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("se/voice/donald.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/donald.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
@@ -2440,7 +2404,7 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("se/voice/brit_and_don.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/brit_and_don.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
@@ -2452,7 +2416,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("elie talking")
-            renpy.sound.play("se/voice/eleanor.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/eleanor.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("elie notalking")
             renpy.sound.stop(channel="blip")
@@ -2462,7 +2426,7 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("se/voice/eleanor.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/eleanor.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
@@ -2474,7 +2438,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("fred talking")
-            renpy.sound.play("se/voice/fred.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/fred.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("fred notalking")
             renpy.sound.stop(channel="blip")
@@ -2484,7 +2448,7 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("se/voice/fred.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/fred.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
@@ -2496,7 +2460,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("ginger talking")
-            renpy.sound.play("se/voice/ginger.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/ginger.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("ginger notalking")
             renpy.sound.stop(channel="blip")
@@ -2506,7 +2470,7 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("se/voice/ginger.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/ginger.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
@@ -2518,7 +2482,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("harry talking")
-            renpy.sound.play("se/voice/harry.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/harry.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("harry notalking")
             renpy.sound.stop(channel="blip")
@@ -2528,7 +2492,7 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("se/voice/harry.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/harry.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
@@ -2540,7 +2504,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("janice talking")
-            renpy.sound.play("se/voice/janice.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/janice.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("janice notalking")
             renpy.sound.stop(channel="blip")
@@ -2553,7 +2517,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("kelly talking")
-            renpy.sound.play("se/voice/kelly.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/kelly.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("kelly notalking")
             renpy.sound.stop(channel="blip")
@@ -2566,7 +2530,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("latrell talking")
-            renpy.sound.play("se/voice/latrell.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/latrell.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("latrell notalking")
             renpy.sound.stop(channel="blip")
@@ -2579,7 +2543,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("martha talking")
-            renpy.sound.play("se/voice/martha.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/martha.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("martha notalking")
             renpy.sound.stop(channel="blip")
@@ -2589,7 +2553,7 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("se/voice/martha.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/martha.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
@@ -2601,7 +2565,7 @@ init -1 python:
             return
         if event == "show_done":
             renpy.show("percy talking")
-            renpy.sound.play("se/voice/percy.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/percy.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.show("percy notalking")
             renpy.sound.stop(channel="blip")
@@ -2611,7 +2575,7 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("se/voice/percy.ogg", loop=True, channel="blip")
+            renpy.sound.play("audio/voice/percy.ogg", loop=True, channel="blip")
         elif event == "slow_done":
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
@@ -2625,26 +2589,26 @@ init -1 python:
 init -1 python:
     mr = MusicRoom(fadeout=0.5, loop=True, single_track=True)
 
-    mr.add("<to 76 loop 8>music/Welcome to Berry Street.ogg", always_unlocked=True)
-    mr.add("music/Oddball.ogg")
-    mr.add("<loop 9.6>music/Violet Wonder.ogg")
-    mr.add("<to 68 loop 12>music/Brotato Chips.ogg")
-    mr.add("music/Chaotic Evil.ogg")
-    mr.add("<loop 3>music/Ivories and Ebony.ogg")
-    mr.add("<loop 5.333>music/Relaxation in the Country.ogg")
-    mr.add("music/Reflection.ogg")
-    mr.add("<loop 18>music/Chillaxin.ogg")
-    mr.add("music/Different Yet Equal.ogg")
-    mr.add("<to 112 loop 5.32>music/Home Life.ogg")
-    mr.add("music/The Pond.ogg")
-    mr.add("music/Outside the Street.ogg")
-    mr.add("<loop 9.6>music/Dinin' In.ogg")
-    mr.add("music/Friendly Competition.ogg")
-    mr.add("<loop 8>music/Cabin Fever.ogg")
-    mr.add("music/Sunday Service.ogg")
-    mr.add("music/Generic 80s Song.ogg")
-    mr.add("<loop 14.769>music/New Life.ogg")
-    mr.add("<loop 15>music/The Mall.ogg")
+    mr.add("<to 76 loop 8>audio/music/Welcome to Berry Street.ogg", always_unlocked=True)
+    mr.add("audio/music/Oddball.ogg")
+    mr.add("<loop 9.6>audio/music/Violet Wonder.ogg")
+    mr.add("<to 68 loop 12>audio/music/Brotato Chips.ogg")
+    mr.add("audio/music/Chaotic Evil.ogg")
+    mr.add("<loop 3>audio/music/Ivories and Ebony.ogg")
+    mr.add("<loop 5.333>audio/music/Relaxation in the Country.ogg")
+    mr.add("audio/music/Reflection.ogg")
+    mr.add("<loop 18>audio/music/Chillaxin.ogg")
+    mr.add("audio/music/Different Yet Equal.ogg")
+    mr.add("<to 112 loop 5.32>audio/music/Home Life.ogg")
+    mr.add("audio/music/The Pond.ogg")
+    mr.add("audio/music/Outside the Street.ogg")
+    mr.add("<loop 9.6>audio/music/Dinin' In.ogg")
+    mr.add("audio/music/Friendly Competition.ogg")
+    mr.add("<loop 8>audio/music/Cabin Fever.ogg")
+    mr.add("audio/music/Sunday Service.ogg")
+    mr.add("audio/music/Generic 80s Song.ogg")
+    mr.add("<loop 14.769>audio/music/New Life.ogg")
+    mr.add("<loop 15>audio/music/The Mall.ogg")
 
 init python:
     renpy.music.register_channel('blip', mixer="voice")

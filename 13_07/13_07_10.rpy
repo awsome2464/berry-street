@@ -44,19 +44,19 @@ label swimming:
     "Suddenly, my phone was ringing. It was Donald."
     stop loop
     a "Yeah?"
-    d_o "{font=gui/LemonMilk.otf}{i}Hey, you got anything planned for the day?{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Hey, you got anything planned for the day?{/i}{/font}"
     a "Only sitting on the couch and watching TV."
-    d_o "{font=gui/LemonMilk.otf}{i}Well, with as hot as it is, the girls and I were gonna go swimming at the pond. You willing to cancel your plans for that?{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Well, with as hot as it is, the girls and I were gonna go swimming at the pond. You willing to cancel your plans for that?{/i}{/font}"
     a "Hm... {w}This couch is pretty comfy, I must admit..."
-    d_o "{font=gui/LemonMilk.otf}{i}Oh, come on!{/i}{/font}"
-    d_o "{font=gui/LemonMilk.otf}{i}Brittney said she's been dying to try out her new bikini!{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Oh, come on!{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Brittney said she's been dying to try out her new bikini!{/i}{/font}"
     a "You seem just a LITTLE too excited at that..."
-    d_o "{font=gui/LemonMilk.otf}{i}Ahaha! Maybe just a little.{/i}{/font}"
-    d_o "{font=gui/LemonMilk.otf}{i}Anyway, you coming? We're planning on heading over there pretty quickly.{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Ahaha! Maybe just a little.{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Anyway, you coming? We're planning on heading over there pretty quickly.{/i}{/font}"
     a "Alright, fine, if you insist. I'll let my mom know and get changed."
-    d_o "{font=gui/LemonMilk.otf}{i}Good deal! I'll tell the girls, and we can all meet up at my house.{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Good deal! I'll tell the girls, and we can all meet up at my house.{/i}{/font}"
     a "Sounds like a plan! See ya in a few."
-    d_o "{font=gui/LemonMilk.otf}{i}See ya!{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}See ya!{/i}{/font}"
     "I hung up and, very slowly, got off the couch."
     "I hadn't really paid attention to how long I had been sitting on that thing..."
     a "Hey, Mom!"
@@ -109,17 +109,17 @@ label swimming:
     "I then took out my phone and dialed."
     "I'm pretty sure they truly wouldn't mind if Harry tagged along, but just in case..."
     a "Hey, Don?"
-    d_o "{font=gui/LemonMilk.otf}{i}Uh, oh.{w=0.5} Don't tell me you can't make it...!{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Uh, oh.{w=0.5} Don't tell me you can't make it...!{/i}{/font}"
     a "No, no, I can. I was just wondering if it was okay for Harry to swim with us."
-    d_o "{font=gui/LemonMilk.otf}{i}...{w}heh. Your mom force you to?{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}...{w}heh. Your mom force you to?{/i}{/font}"
     a "Nah. HE did."
-    d_o "{font=gui/LemonMilk.otf}{i}What? Since when do you cave into Harry's orders?{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}What? Since when do you cave into Harry's orders?{/i}{/font}"
     a "Hey, I'm not a monster! He could use a day of fun; the only friend he's got right now is Daniel, and the Rodriguezes are in town right now."
-    d_o "{font=gui/LemonMilk.otf}{i}Alright, alright. I don't really care, anyway; I'll let the girls know. They shouldn't be bothered by it, either.{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Alright, alright. I don't really care, anyway; I'll let the girls know. They shouldn't be bothered by it, either.{/i}{/font}"
     a "Thought so, but you never know."
-    d_o "{font=gui/LemonMilk.otf}{i}Well, anyway, just meet at my house when you two are ready!{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Well, anyway, just meet at my house when you two are ready!{/i}{/font}"
     a "Will do. See ya!"
-    d_o "{font=gui/LemonMilk.otf}{i}See ya!{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}See ya!{/i}{/font}"
     "I hung up and entered my room; unlike Harry, my trunks were still packed and in my dresser."
     "A quick switch of the bottoms was all it took before I opened the door back up."
     "After Harry and I once again received a small lecture from Mom on being safe, we were on our way towards the end of the street."
@@ -213,11 +213,8 @@ label chrishasears:
     "The front door opened up again, this time the other sister headed our way."
     "Though, if I'm being honest, it took a second to recognize her."
     show brit e1 straight casual grin shorts at twoleft with dissolve
-    pause .1
-    show chris e1 straight casual grin:
-        size(540, 1080)
-        offscreenright
-        ease 0.5 tworight
+    pause 0.1
+    show chris e1 straight casual grin at tworight with easeinright
     pause 1
     a "Holy crap!"
     show brit e2 blank
@@ -547,7 +544,7 @@ label chargeather:
     show chris mad e2
     "She still stared at me, not moving an inch."
     show chris:
-        ease 0.2 size (792, 1584)
+        ease 0.2 zoom 1.1
         pause 0.5
         linear 0.2 xalign -1.0
     pause 0.9
@@ -579,7 +576,7 @@ label standstillandresist:
     "However, we were both right by the edge of the dock, and it was then when I had an idea that might just work."
     "Using all the strength I had, I kept moving forward right towards Christeena."
     show chris:
-        ease 0.2 size (792, 1584)
+        ease 0.2 zoom 1.1
     pause 0.2
     c casual dot "Eh?"
     "Before she could fully comprehend what had happened, we were right on top of each other, as if we were about to hug."
@@ -598,7 +595,7 @@ label standstillandresist:
     play sound splash
     pause 1.5
     show chris e2 straight mad blank:
-        size (720, 1440)
+        zoom 1.0
         xalign 0.5 yalign -2.0
         ease 0.3 yalign 0.5
         ease 0.2 yalign 0.3
@@ -624,13 +621,13 @@ label standstillandresist:
         ease 0.5 yalign 0.25
         close_c_float_2
     show don straight raised smile d1:
-        size (720, 1440)
+        zoom 1.0
         offscreenleft
         yalign 0.2
         ease 0.5 close_left_d_2
         close_left_d_2_float
     show brit e1 straight casual grin:
-        size (720, 1440)
+        zoom 1.0
         offscreenright
         yalign 0.1
         ease 0.5 close_right_b_2
@@ -738,7 +735,7 @@ label splashchris:
     show chris e1 closed_happy sad grin:
         xalign 0.5 yalign 0.5
         parallel:
-            ease 0.5 size (720, 1440)
+            ease 0.5 zoom 1.0
         parallel:
             ease 0.2 yalign 1.0
             ease 0.3 yalign -2.0
@@ -777,7 +774,7 @@ label wereallinnow:
     play sound splash
     $b_blink = False
     show brit e2 closed_sad sad frown:
-        size (540, 1080)
+        zoom 0.75
         xalign 0.9 ycenter 2.0
         ease 0.3 ycenter 0.5
         ease 0.3 ycenter 0.58
@@ -831,7 +828,7 @@ label wereallinnow:
             ease 1.0 yalign 0.45
             repeat
     show chris e2 straight mad blank:
-        size(720, 1440)
+        zoom 1.0
         offscreenleft
         yalign 0.4
         ease 0.5 xalign 0.0
@@ -2527,12 +2524,12 @@ label pond_end:
         parallel:
             ease 0.5 yalign 1.0
         parallel:
-            ease 0.5 size (513, 1026)
+            ease 0.5 zoom 0.7125
     pause 0.6
     "Harry then backed up, ready to pounce."
     show harry:
         parallel:
-            ease 0.5 size (720, 1440)
+            ease 0.5 zoom 1.0
         parallel:
             ease 0.2 yalign 1.0
             ease 0.3 yalign -2.0
@@ -2570,7 +2567,7 @@ label pond_end:
     $ b_wince = True
     play sound splash
     show brit e1 straight sad blank:
-        size(540, 1080)
+        zoom 0.75
         xalign 0.9 ycenter 2.0
         ease 0.3 ycenter 0.5
         ease 0.3 ycenter 0.58

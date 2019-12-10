@@ -1,7 +1,5 @@
 label tour:
     $ B_Name = "Brittney"
-    $ C_Name = "???"
-    $ M_Name = "Waitress"
     $ b_hat = 1
     show text "{size=+50}June, 2013{/size}":
         xalign 0.5 yalign 0.05
@@ -22,10 +20,8 @@ label tour:
     hide calendar_circle
     with dissolve
     pause 1
-    scene bg bedroom_a_m
-    with dissolve
+    scene bg bedroom_a_m with dissolve
     window show dissolve
-
     $ current_track = "\"Relaxation in the Country\""
     play music relaxation_in_the_country
     $ renpy.block_rollback()
@@ -40,34 +36,25 @@ label tour:
     "My eyes were still waking up, but it looked like it was from Donald."
     "I yawned again and answered the phone."
     stop loop
-
     a "Hello?"
-    d_o "{font=gui/LemonMilk.otf}{i}Morning, Sunshine!{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Morning, Sunshine!{/i}{/font}"
     a "Donald, why are you calling me this early?"
-    d_o "{font=gui/LemonMilk.otf}{i}Well, we gotta give you a tour of the town sooner or later, so we decided sooner!{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Well, we gotta give you a tour of the town sooner or later, so we decided sooner!{/i}{/font}"
     a "'We?'"
-    d_o "{font=gui/LemonMilk.otf}{i}Just get ready and head over to Brittney's house; I'll meet you guys there soon enough.{/i}{/font}"
-
+    d_o "{font=fonts/LemonMilk.otf}{i}Just get ready and head over to Brittney's house; I'll meet you guys there soon enough.{/i}{/font}"
     "I gave another yawn and rubbed my eyes."
-
     a "Alright, whatever you say, man."
-    d_o "{font=gui/LemonMilk.otf}{i}Good deal! See ya soon!{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Good deal! See ya soon!{/i}{/font}"
     a "See ya soon."
-
     "Donald then hung up, and I put my phone away."
     "Well, I guess it's time for me to see how well the shower works."
-
-# Head to Brittney's
-
     window hide dissolve
     scene bg fade with wipeleft
     scene bg house_ut with wipeleft
     window show dissolve
-
     "I told Mom I was hanging out with Donald, and she simply said to have fun and not to be out too late."
     "I walked over to the house next door, the one belonging to Brittney Usher, and went onto the porch."
     "I don't know why we had to meet here, but who am I to question the Great Donald Waters?"
-
     scene bg porch_ut
     with dissolve
     play sound door_knock
@@ -78,16 +65,12 @@ label tour:
     $ current_track = "None"
     stop music fadeout 2.5
     "I was expecting to see Brittney, but I was quite surprised to see..."
-
     window hide dissolve
-    with Pause(.5)
+    pause 0.5
     show chris a2 straight casual blank at middle with dissolve
-    with Pause(1)
+    pause 1
     window show dissolve
     "...well, NOT Brittney."
-
-# Meet Christeena
-
     $ current_track = "\"Violet Wonder\""
     play music violet_wonder
     "It was a girl about my age, a little bit shorter than me and certainly shorter than Donald."
@@ -95,28 +78,21 @@ label tour:
     "Not necessarily 'fat', but she certainly had some thickness and chubbiness to her."
     "Of course, saying that aloud would most likely result in me going down a path I don't want to go down."
     "Although something about her eyes were quite...{w} What's the right word? Mesmerizing?"
-
     a "Uh..."
     a "Hello."
     a "I'm looking for Brittney."
     c dot "..."
-
     "She then turned towards the interior of the house."
-
     c up hanging raised "Hey, Brittney!"
     b_o "Yeah?"
     c "Some guy's here to see you!"
     b_o "Oh! Is he tall, blonde, and wearing glasses?"
-
     show chris straight casual blank
     "She looked back at me, ran her eyes up and down, and turned back to the house."
-
     c up hanging raised "Yes!"
     b_o "Cool! Tell him I'll be down in a minute!"
-
     show chris straight casual blank
     "The girl turned back to me."
-
     c "She said-"
     a "Thank you, but I'm not deaf."
     $ c_blush = True
@@ -126,16 +102,13 @@ label tour:
     c "Anyway, would you like to come in?"
     a "If you insist."
     hide chris with dissolve
-
+    pause 0.1
     "I then entered the house."
-
-    scene bg living_ut
-    with dissolve
-
+    scene bg living_ut with dissolve
     "My hostess gestured to the couch, an offer I politely accepted."
-
     a "Man, this couch is comfy!"
     show chris a1 raised grin straight at close_c with dissolve
+    pause 0.1
     c "I know, right? I could sit on it all day!"
     a "You and me both!"
     $c_blink = False
@@ -179,57 +152,45 @@ label tour:
     c level "Well, physically, we look different, of course."
     c right "I mean, she's tall, thin, blonde, pretty..."
     c "And then you have..."
-
     "She then pointed at herself with her thumbs."
     $ choicevbox = 3
     c a1 sad straight "...NOT that."
-
-label choice4:
     hide screen skipchoice
-    if persistent.choice_4 == 1:
+    if persistent.choices["4"] == 1:
         jump theyreopposite
-    elif persistent.choice_4 == 2:
+    elif persistent.choices["4"] == 2:
         jump christeenaspretty
-    elif persistent.choice_4 == 3:
+    elif persistent.choices["4"] == 3:
         jump britisntpretty
     else:
-        a "...{nw}"
-
         menu:
-            a "...{fast}"
+            a "..."
 
             "Yeah, you are pretty opposite.":
-                $ persistent.choice_4 = 1
+                $ persistent.choices["4"] = 1
                 jump theyreopposite
 
             "I think you're pretty, too.":
-                $ persistent.choice_4 = 2
+                $ persistent.choices["4"] = 2
                 jump christeenaspretty
 
             "Brittney isn't pretty.":
-                $ persistent.choice_4 = 3
+                $ persistent.choices["4"] = 3
                 jump britisntpretty
 
 label theyreopposite:
-    $ britnotpretty = False
-    $ C_Points += 0
     a "I suppose you two do look pretty different."
     c a2 left grin "Yeah..."
-
-    hide screen skiptext
     jump waitingforbrit
 
 label christeenaspretty:
     $ C_Points += 1
-    $ britnotpretty = False
     a "Hey, now; I think you look pretty, too!"
     c small casual dot "...!"
     $ c_blush = True
     c a2 right sad blank "Well, uh, thank you, but I know you're just saying that to be nice."
     a "No, I wasn't."
     c straight "If you say so..."
-
-    hide screen skiptext
     jump waitingforbrit
 
 label britisntpretty:
@@ -239,21 +200,18 @@ label britisntpretty:
     c casual dot "Eh?"
     c a2 left mad blank "..."
     a "..."
-
     "I have a feeling I accidentally insulted both sisters at once."
-
-    hide screen skiptext
-    jump waitingforbrit
 
 label waitingforbrit:
     $ choicevbox = 1
     hide chris with dissolve
+    pause 0.1
     $ c_blush = False
     "We could then hear footsteps on the staircase."
     "We looked and saw Brittney coming down while pulling her ponytail through her baseball cap."
-
     show chris a1 straight grin casual at twoleft with dissolve
     show brit a1 straight casual grin at tworight with easeinright
+    pause 0.1
     b "Hello, Alex!"
     b a2 left "I see you've met my sister from another mister, Christeena."
     a "Yes, I have, indeed."
@@ -272,7 +230,6 @@ label waitingforbrit:
     play music ivories_and_ebony
     play sound door_open
     "The front door then opened up, revealing Donald strutting in like it's his own house."
-
     show brit a1 straight casual grin at threeright
     show chris a2 straight casual dot at middle
     with dissolve
@@ -305,7 +262,7 @@ label waitingforbrit:
     c straight casual dot "Walking?"
     d raised grin "Well, it's a nice day, and there's no need to burn gas if we don't have to."
     c a2 left mad blank "In that case, I'll pa{nw}"
-    b a1 straight mad opened_smile "Ah ah ah! No takebacks, Missy!"
+    b a1 straight mad opened_smile "Ah ah ah! No take-backs, Missy!"
     c straight "Hmph."
     d straight casual grin "Don't worry, it shouldn't take THAT long."
     d raised "After all, the name 'Smalltown' wasn't just pulled from thin air."
@@ -317,7 +274,7 @@ label waitingforbrit:
     hide chris
     with dissolve
     show don at middle with easeinleft
-    with Pause(.1)
+    pause 0.1
     d smile "Anyway, let's start our tour, shall we?"
     d grin "Here's a list."
     d raised "We don't need to see EVERYTHING in town, but I've marked all the stuff that's most important."
@@ -337,46 +294,42 @@ label waitingforbrit:
         with dissolve
         d "Where should we go first?"
 
-    jump tourtown
-
-# Tour Town
-
 label tourtown:
     if tour_town == 0:
-        if persistent.tour_1 == 1:
+        if persistent.tour["1"] == 1:
             jump tourberrystreet
-        elif persistent.tour_1 == 2:
+        elif persistent.tour["1"] == 2:
             jump tourpond 
-        elif persistent.tour_1 == 3:
+        elif persistent.tour["1"] == 3:
             jump tourdowntown
-        elif persistent.tour_1 == 4:
+        elif persistent.tour["1"] == 4:
             jump tourschool
     elif tour_town == 1:
-        if persistent.tour_2 == 1:
+        if persistent.tour["2"] == 1:
             jump tourberrystreet
-        elif persistent.tour_2 == 2:
+        elif persistent.tour["2"] == 2:
             jump tourpond 
-        elif persistent.tour_2 == 3:
+        elif persistent.tour["2"] == 3:
             jump tourdowntown
-        elif persistent.tour_2 == 4:
+        elif persistent.tour["2"] == 4:
             jump tourschool
     elif tour_town == 2:
-        if persistent.tour_3 == 1:
+        if persistent.tour["3"] == 1:
             jump tourberrystreet
-        elif persistent.tour_3 == 2:
+        elif persistent.tour["3"] == 2:
             jump tourpond 
-        elif persistent.tour_3 == 3:
+        elif persistent.tour["3"] == 3:
             jump tourdowntown
-        elif persistent.tour_3 == 4:
+        elif persistent.tour["3"] == 4:
             jump tourschool
     elif tour_town == 3:
-        if persistent.tour_4 == 1:
+        if persistent.tour["4"] == 1:
             jump tourberrystreet
-        elif persistent.tour_4 == 2:
+        elif persistent.tour["4"] == 2:
             jump tourpond 
-        elif persistent.tour_4 == 3:
+        elif persistent.tour["4"] == 3:
             jump tourdowntown
-        elif persistent.tour_4 == 4:
+        elif persistent.tour["4"] == 4:
             jump tourschool
     elif tour_town == 4:
         jump tourcomplete
@@ -390,98 +343,90 @@ label tourtown:
         "School" if tour_school == False:
             jump tourschool
 
-#####################
-# Tour Berry Street #
-#####################
 
 label tourberrystreet:
-    if persistent.tour_1 == 0:
-        $persistent.tour_1 = 1
-    elif persistent.tour_2 == 0:
-        $persistent.tour_2 = 1
-    elif persistent.tour_3 == 0:
-        $persistent.tour_3 = 1
-    elif persistent.tour_4 == 0:
-        $persistent.tour_4 = 1
+    if persistent.tour["1"] == 0:
+        $persistent.tour["1"] = 1
+    elif persistent.tour["2"] == 0:
+        $persistent.tour["2"] = 1
+    elif persistent.tour["3"] == 0:
+        $persistent.tour["3"] = 1
+    elif persistent.tour["4"] == 0:
+        $persistent.tour["4"] = 1
 
-    scene bg bs
-    with dissolve
-
+    scene bg bs with dissolve
     $ current_track = "\"Welcome to Berry Street!\""
     play music main_theme
-
     show don a1 straight casual smile at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     d "Welcome to your new home: Berry Street!"
     d raised grin left "To be honest, most of the people you'll realistically interact with on a regular basis are already here with you."
     d straight sad "Still, it doesn't hurt to know more about your neighbors!"
     show don at tworight
     show brit a1 raised straight closed_smile at twoleft
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     b "Until they call the cops on you for stalking them."
     d mad wide "That only happened once!"
     d right level blank "And I wasn't 'stalking'..."
     hide brit
     show don at middle
     with easeoutleft
-    with Pause(.1)
+    pause 0.1
     d straight raised grin "So, anyway, let's check out house number one!"
     hide don with dissolve
-    with Pause(.1)
-
-    # Rodriguez
-
+    pause 0.1
+    window hide dissolve
     scene bg house_ro
     with pushleft
-
+    window show dissolve
     show don a1 straight casual grin at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     d "Right there is Mr. and Mrs. Rodriguez."
     d "They immigrated here from Mexico about 10 years ago."
     show don at twoleft
     show brit a2 straight casual grin at tworight
     with easeinright
-    with Pause(.1)
+    pause 0.1
     b "And honestly, their English is so good, I would've never guessed they weren't originally from here!"
     a "What brought them from Mexico to Smalltown?"
     hide don
     hide brit
     show chris a1 straight casual blank at middle
     with dissolve
-    pause .1
+    pause 0.1
     c "I think it was something about Mr. Rodriguez knowing a guy who knew a guy, or something similar."
     c a2 grin "He works with my dad. Very nice guy."
     hide chris
     show brit a1 raised straight opened_smile at middle
     with dissolve
-    pause .1
+    pause 0.1
     b "And Mrs. R makes the BEST cookies you'll ever taste!"
     b a2 left casual grin "She gives them to Trick or Treaters on Halloween; it's honestly the only reason anyone comes to Berry Street during that time."
     hide brit
     show don a1 straight raised smile at middle
     with dissolve
-    pause .1
+    pause 0.1
     d "But we can't forget about their son, Daniel."
     $c_blink = False
     hide don
     show chris a1 closed_happy sad smile at middle
     with dissolve
-    pause .1
+    pause 0.1
     c "Oh, he is so cute!"
     $c_blink = True
     c a2 straight casual grin "He's only 9, and he's the nicest kid I've ever met!"
     show chris at twoleft
     show brit a2 straight casual grin at tworight
     with easeinright
-    pause .1
+    pause 0.1
     b "Yeah, I'll admit he makes the wait for the bus pretty enjoyable."
     b "So full of energy, but not to the point where it's annoying."
     hide chris
     hide brit
     show don a1 straight casual grin at middle
     with dissolve
-    pause .1
+    pause 0.1
     d "You like kids, right, Alex?"
     a "Only when they're not little pains in the neck."
     $d_blink = False
@@ -495,7 +440,7 @@ label tourberrystreet:
     hide don
     show brit a2 closed sad closed_smile at middle
     with dissolve
-    pause .1
+    pause 0.1
     b "Hehehe."
     $b_blink = True
     $ b_partial = True
@@ -507,13 +452,10 @@ label tourberrystreet:
     $ b_partial = False
     d "Alright, then; moving on."
     hide don with dissolve
-    pause .1
-
-    # Ziphon
-
-    scene bg house_z
-    with pushright
-
+    pause 0.1
+    window hide dissolve
+    scene bg house_z with pushright
+    window show dissolve
     show don a1 straight casual grin at middle with dissolve
     pause .1
     d "Next up, we have the home of Anna Ziphon."
@@ -524,7 +466,7 @@ label tourberrystreet:
     show don at twoleft
     show brit a1 straight blank casual at tworight
     with easeinright
-    pause .1
+    pause 0.1
     b "She's a scientist that's always conducting experiments in her lab."
     a "Seriously?"
     $c_blink = False
@@ -532,7 +474,7 @@ label tourberrystreet:
     show brit at middle
     show chris a1 closed_happy sad smile at threeright
     with easeinright
-    pause .1
+    pause 0.1
     c "I know it sounds crazy, but we're serious!"
     $c_blink = True
     c a2 straight blank casual "Apparently, she was a government worker or something, but left to work independently, creating all sorts of stuff to try and help the world."
@@ -544,12 +486,11 @@ label tourberrystreet:
     show brit a2 closed sad opened_smile
     show chris a1 closed_happy sad smile
     "They all started laughing like I had told a joke."
-
     show don:
         ease 0.5 offscreenleft
     show chris:
         ease 0.5 offscreenright
-    with Pause(.6)
+    pause 0.6
     $b_blink = True
     $c_blink = True
     $d_blink = True
@@ -559,27 +500,23 @@ label tourberrystreet:
     hide brit
     show don a1 blank level straight at middle
     with dissolve
-    pause .1
+    pause 0.1
     d "She's, to put it simply, intimidating."
     d left "Her blank, emotionless expressions and her empty, monotone voice just makes you feel like you're talking to a machine."
     hide don
     show brit a2 left level grin at middle
     with dissolve
-    pause .1
+    pause 0.1
     b "In fact, there are a lot of people in town that think she IS a machine, some sort of artificial intelligence robot on the lam."
     b a1 straight casual "There are also rumors of her being fine with sacrificing human lives if it can help progress her research."
     b a2 level "So, basically, try and avoid any and all interaction with her, or you may regret it."
     a "...okay, then..."
     hide brit with dissolve
-    pause .1
-
+    pause 0.1
     "What the hell kind of neighborhood is this...?"
-
-    # Reagan
-
-    scene bg house_re
-    with pushright
-
+    window hide dissolve
+    scene bg house_re with pushright
+    window show dissolve
     show don a1 straight casual grin at middle with dissolve
     d "Up next is the Reagan household."
     $d_blink = False
@@ -598,40 +535,33 @@ label tourberrystreet:
     hide brit
     show chris a2 straight grin casual at middle
     with dissolve
-    pause .1
+    pause 0.1
     c "I personally think Percy does a good George Michael."
     c left level dot "His Michael Jackson could use some work, though."
     show chris at tworight
     show don a1 raised straight grin at twoleft
     with easeinleft
-    pause .1
+    pause 0.1
     d "But we all agree his Bon Jovi is spot-on."
     show chris at threeright
     show don at middle
     show brit a2 straight opened_smile level at threeleft
     with easeinleft
-    pause .1
+    pause 0.1
     b "Oh, no doubt."
     c a1 straight casual grin "Absolutely!"
     d casual "They sometimes add their own instrumental takes on the songs, probably to avoid lawsuits, but it's honestly kinda refreshing."
     d "We're trying to get them to perform at prom this upcoming school year, since it's rumored that the 80s is the theme."
     b a1 sad closed_smile "Fingers crossed!"
-    hide don
-    hide brit
-    hide chris
-    with dissolve
-    pause .1
-
+    scene bg house_re with dissolve
+    pause 0.1
     "So, Mexican immigrants, a mad scientist, and a cover band all on the same street."
     "If I didn't know any better, I'd say I had stumbled upon the plot of a sitcom."
-
-    # Yellman
-
-    scene bg house_y
-    with pushright
-
+    window hide dissolve
+    scene bg house_y with pushright
+    window show dissolve
     show don a1 straight casual grin at middle with dissolve
-    pause .1
+    pause 0.1
     d "Over here, we have the Yellman house."
     d "There's only one resident, Eleanor. She's in Brittney's class."
     d blank level "She's..."
@@ -641,9 +571,7 @@ label tourberrystreet:
     with easeinleft
     pause .1
     c "A cunt."
-
     "Christeena's sudden mood change was both noticeable and frightening."
-
     d straight sad "...yeah, that."
     d raised "It's really no secret that not a lot of people like her, ourselves included."
     a "Why?"
@@ -651,45 +579,39 @@ label tourberrystreet:
     hide don
     show brit a1 straight blank casual at middle
     with dissolve
-    pause .1
+    pause 0.1
     b "Well, I'm not really the kind of person to bad-mouth someone, but-"
     show brit at twoleft
     show chris a2 straight mad blank at tworight
     with easeinright
-    pause .1
+    pause 0.1
     c "She's a slut who will constantly treat everyone like useless garbage."
     b small dot "..."
     b a2 left sad blank "That actually hit the nail on the head perfectly."
     hide brit
     show chris at middle
     with easeoutleft
-    pause .1
+    pause 0.1
     c "All you really need to know is that she lives there and she's evil. Got it?"
     a "Er... yeah."
     c a1 casual grin "Good. Moving on."
     hide chris with dissolve
-    pause .1
-
+    pause 0.1
     "The way Christeena is handling this seems like she and this Eleanor girl have a personal history."
     "I'll definitely have to talk to Brittney or Donald about this."
-
-    # Last House
-
-    scene bg bs
-    with dissolve
-
+    window hide dissolve
+    scene bg bs with dissolve
+    window show dissolve
     show don a1 straight casual grin at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     d "Then we have my house, of course, then the girls', and then yours."
     d raised "I assume no further explanation is required."
     a "So what about that last house?"
     hide don with dissolve
-
-    scene bg house_n
-    with dissolve
-    with Pause(.5)
-
+    scene bg house_n with dissolve
+    pause 0.5
     show chris a2 straight grin casual at middle with dissolve
+    pause 0.1
     c "Oh, that one's been for sale for as long as we've been here."
     show chris at tworight
     show brit a2 right huhu level at twoleft
@@ -700,52 +622,48 @@ label tourberrystreet:
     hide brit
     hide chris
     with dissolve
-
-    scene bg bs
-    with dissolve
-
+    scene bg bs with dissolve
+    pause 0.1
     show don a1 straight casual grin at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     d "So, there's your basic rundown of our neighbors."
     d "I'm sure you'll find opportunities to properly introduce yourself to them, but for now, that's all there is to talk about!"
-
     $ tour_town += 1
     $ tour_berrystreet = True
-
     jump tourtown
 
+
 label tourpond:
-    if persistent.tour_1 == 0:
-        $persistent.tour_1 = 2
-    elif persistent.tour_2 == 0:
-        $persistent.tour_2 = 2
-    elif persistent.tour_3 == 0:
-        $persistent.tour_3 = 2
-    elif persistent.tour_4 == 0:
-        $persistent.tour_4 = 2
+    if persistent.tour["1"] == 0:
+        $persistent.tour["1"] = 2
+    elif persistent.tour["2"] == 0:
+        $persistent.tour["2"] = 2
+    elif persistent.tour["3"] == 0:
+        $persistent.tour["3"] = 2
+    elif persistent.tour["4"] == 0:
+        $persistent.tour["4"] = 2
     scene bg pond
     show pond_foreground
     with dissolve
     $d_blink = False
     $ current_track = "\"The Pond\""
     play music the_pond
-
     show don a1 closed sad grin at middle with dissolve
-    with Pause(.1)
+    pause 0.1
     d "Ah, the pond."
     $d_blink = True
     d straight casual "Honestly, it's a nice place to go if you just want to get away from it all."
     hide don
     show brit a1 casual grin straight at middle
     with dissolve
-    with Pause(.1)
+    pause 0.1
     b "It's especially nice in the summer months."
     b a2 left opened_smile "Cookouts, fishing, swimming..."
     b straight raised grin "The water's cold enough to turn your nipples to diamond, but it's worth it."
     show brit at tworight
     show chris a1 straight mad blank at twoleft
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     c "Really, Brittney?"
     b left huhu level "Well, am I wrong?"
     c a2 hanging "I just..."
@@ -755,7 +673,7 @@ label tourpond:
     hide chris
     show don a1 straight casual grin at middle
     with dissolve
-    with Pause(.1)
+    pause 0.1
     $ c_blush = False
     d "Anyway, when it gets colder outside, people like to go ice skating on it, so there's something if you're into that."
     a "Not really."
@@ -771,7 +689,7 @@ label tourpond:
         hide brit
         show chris a1 straight grin casual at close_c
         with dissolve
-        with Pause(.1)
+        pause 0.1
         c "Well, I don't think you're lame."
         show brit a2 straight level huhu at tworight
         show chris at close_left_c
@@ -780,7 +698,7 @@ label tourpond:
         $ c_blush = True
         c small sad hanging "...!"
         show chris a2 straight blank mad at close_to_left
-        with Pause(.1)
+        pause 0.1
         c "C-can't a girl compliment a guy without it coming off as flirting?"
         $b_blink = False
         b a1 closed sad opened_smile "Alright, alright; fair enough."
@@ -788,44 +706,34 @@ label tourpond:
         hide brit
         show chris a1 straight casual blank at middle
         with dissolve
-        with Pause(.1)
+        pause 0.1
         c "..."
-
         "Christeena looks like she wants to say something..."
         "...though I'd hate to put her on the spot and fluster her."
-
-    # Clubhouse
     hide brit
     hide chris
     show don a1 straight casual grin at middle
     with dissolve
-    with Pause(.1)
-    $b_blink = True
+    pause 0.1
+    $ b_blink = True
     $ c_blush = False
     d "Anyway, there's something over here I want you to check out."
     d smile "Follow me!"
     hide don with dissolve
-
+    pause 0.1
     "Donald started walking toward a wooded area near the pond."
     "The girls followed right behind him, as if they knew where he was going."
     "I guess that means it's safe to follow suit."
     "Probably."
-
-    scene bg fade
-    with dissolve
-    pause .1
-
+    scene bg fade with dissolve
+    pause 0.1
     d_o "There it is, in all its glory!"
-
-    scene bg cabin_e
-    with dissolve
+    scene bg cabin_e with dissolve
     pause .1
-
     "Donald then gestured towards what appeared to be some sort of cabin."
     "It didn't look brand-spanking-new, but it didn't look centuries old, either."
-
     show don a1 straight casual grin at close_left_d with dissolve
-    pause .1
+    pause 0.1
     a "..."
     a "Dare I even ask?"
     d raised smile "It's an old, abandoned shack, for starters."
@@ -834,9 +742,7 @@ label tourpond:
     d casual straight "Just enough room for the bare necessities: a bed, a kitchen, a bathroom, and a fireplace."
     a "And you're showing me this because...?"
     hide don
-    show brit a2 straight casual opened_smile:
-        size(720, 1440)
-        xalign 0.5 yalign 0.2
+    show brit a2 straight casual opened_smile at close_b
     with dissolve
     pause .1
     b "Donald likes to drag us out here from time to time to hang out and escape reality."
@@ -848,15 +754,12 @@ label tourpond:
     b a1 small hanging sad "Though hiding from the masked, chainsaw-wielding killer that comes out from time to time can be a pain."
     a "Yeah, very funny."
     show brit:
-        parallel:
-            ease 0.5 size (540, 1080)
-        parallel:
-            ease 0.5 xalign 0.25
+        ease 0.5 twoleft
     show don a1 sad straight blank at tworight with easeinright
-    pause .1
+    pause 0.1
     d "No, she's serious."
     $ current_track = "\"...\""
-    stop music
+    $renpy.music.set_pause(True, channel='music')
     a "..."
     d casual "..."
     b a2 straight casual blank "..."
@@ -870,7 +773,7 @@ label tourpond:
     $b_blink = False
     b a1 closed sad opened_smile "Of course we are, dum-dum!"
     $ current_track = "\"The Pond\""
-    play music the_pond
+    $renpy.music.set_pause(False, channel='music')
     $d_blink = False
     d closed sad smile "But, man, you should've seen the look on your face!"
     $ c_blush = True
@@ -889,29 +792,26 @@ label tourpond:
     d "Anyway, maybe we can all hang out here one day and you can get a good idea of why we like it so much."
     a "Maybe."
     d raised grin "Well, that's pretty much all there is about the pond; what do you say we get out of here?"
-
     $ tour_town += 1
     $ tour_pond = True
-
     jump tourtown
 
+
 label tourdowntown:
-    if persistent.tour_1 == 0:
-        $persistent.tour_1 = 3
-    elif persistent.tour_2 == 0:
-        $persistent.tour_2 = 3
-    elif persistent.tour_3 == 0:
-        $persistent.tour_3 = 3
-    elif persistent.tour_4 == 0:
-        $persistent.tour_4 = 3
+    if persistent.tour["1"] == 0:
+        $persistent.tour["1"] = 3
+    elif persistent.tour["2"] == 0:
+        $persistent.tour["2"] = 3
+    elif persistent.tour["3"] == 0:
+        $persistent.tour["3"] = 3
+    elif persistent.tour["4"] == 0:
+        $persistent.tour["4"] = 3
     scene bg mainstreet
     with dissolve
-
     $ current_track = "\"Outside the Street\""
     play music outside_the_street
-
     show don a1 straight grin casual at middle with dissolve
-    pause .1
+    pause 0.1
     d "And here we have the downtown district, where you can find next to all of your basic needs."
     d level right "Post office, police station, firehouse, grocery stores, etc."
     d straight casual "Truth be told, most of the bigger stuff, like hospitals and bigger restaurants, is in the next town over."
@@ -921,19 +821,16 @@ label tourdowntown:
     pause .1
     b "But that frankly doesn't bother us, because the only restaurant we need is right here!"
     hide brit with dissolve
-
-    scene bg deli_e
-    with dissolve
-    pause .1
-
+    pause 0.5
+    scene bg deli_e with dissolve
+    pause 0.1
     "Brittney then pointed at a small building with a sign reading 'Kelly's Deli'."
-
     show chris a1 straight casual grin at close_left_c with dissolve
     pause .1
     c "Yeah, our mom works here, but that's not why we love it so much."
     c a2 smile "This place has the best food you'll ever eat in your life!"
     show brit a1 straight grin casual at tworight with easeinright
-    pause .1
+    pause 0.1
     b "She ain't exaggeratin', either!"
     b a2 mad closed_smile "One bite of Kelly's signature sandwich is enough to make your mouth orgasm!"
     show chris level blank
@@ -961,15 +858,12 @@ label tourdowntown:
     $d_blink = True
     d left mad grin "No promises."
     if tour_town >= 3:
-        hide chris
-        hide don
-        hide brit
-        with dissolve
-        pause .1
+        scene bg deli_e with dissolve
+        pause 0.1
         scene bg deli_i_e
         show deli_entrance_sign zorder 2
         with dissolve
-        pause .1
+        pause 0.1
         jump lunchatkellys
     else:
         hide brit
@@ -978,30 +872,28 @@ label tourdowntown:
         with easeoutleft
         pause .1
         d "That said, let's hurry it up with the tour!"
-
         $ tour_town += 1
         $ tour_downtown = True
-
-    jump tourtown
+        jump tourtown
 
 label tourschool:
-    if persistent.tour_1 == 0:
-        $persistent.tour_1 = 4
-    elif persistent.tour_2 == 0:
-        $persistent.tour_2 = 4
-    elif persistent.tour_3 == 0:
-        $persistent.tour_3 = 4
-    elif persistent.tour_4 == 0:
-        $persistent.tour_4 = 4
+    if persistent.tour["1"] == 0:
+        $persistent.tour["1"] = 4
+    elif persistent.tour["2"] == 0:
+        $persistent.tour["2"] = 4
+    elif persistent.tour["3"] == 0:
+        $persistent.tour["3"] = 4
+    elif persistent.tour["4"] == 0:
+        $persistent.tour["4"] = 4
     hide don
     show brit a1 mad straight frown at middle
     with dissolve
-    pause .1
+    pause 0.1
     b "I thought I made it clear that any and all mentions of school were to be avoided!"
     show brit at tworight
     show don a1 level grin right at twoleft
     with easeinleft
-    pause .1
+    pause 0.1
     d "Relax, it won't take long."
     d "After all, Alex will need to know how to get there, eventually, right?"
     b a2 level blank right "I suppose..."
@@ -1020,7 +912,7 @@ label tourschool:
     with dissolve
     $ current_track = "\"Scrapbook\" (placeholder)"
     play music scrapbook
-    with Pause(1)
+    pause 1
     show don a1 straight casual grin at close_d
     with dissolve
     pause .1
@@ -1062,7 +954,7 @@ label tourschool:
     hide chris
     show brit a1 mad straight hanging at middle
     with dissolve
-    pause .1
+    pause 0.1
     b "Hey! That's..."
     $b_blink = False
     b a2 closed opened_smile sad "...pretty accurate."
@@ -1070,31 +962,29 @@ label tourschool:
     hide brit
     show don a1 straight casual grin at middle
     with dissolve
-    pause .1
+    pause 0.1
     $b_blink = True
     d "Well, again, it's a small school, which has advantages and disadvantages."
     d blank level right "On one hand, it's easier to get to know everyone, but on the other hand, gossip spreads faster than wildfire."
     hide don
     show chris a2 left mad blank at middle
     with dissolve
-    pause .1
+    pause 0.1
     c "Ugh."
     a "Personal experience?"
     c a1 straight raised "Something like that."
-
     "I'm curious to know what happened, but I have a feeling she may not want to talk about it."
-
     hide chris
     show don a1 straight level grin at middle
     with dissolve
-    pause .1
+    pause 0.1
     d "But overall, it's pretty cool."
     d raised right "The teachers are good, for the most part, homework is homework, so do with that information what you wish..."
     d casual straight "I mean, you'll only have to deal with it for 2 years, so if anything, you're luckier than all of us."
     hide don
     show brit a1 straight level blank at middle
     with dissolve
-    pause .1
+    pause 0.1
     b "That's very true."
     b a2 sad left "Though, it's a shame we'll only be in school together for a year."
     $ b_partial = True
@@ -1102,80 +992,72 @@ label tourschool:
     show brit at tworight
     show chris a1 straight mad blank at twoleft
     with easeinleft
-    pause .1
+    pause 0.1
     c "Oh, Lord..."
     hide brit
     hide chris
     show don a1 straight casual grin at middle
     with dissolve
-    pause .1
+    pause 0.1
     $ b_partial = False
     d "So, now you know how to get to the school and what the general feel of the place is."
     d "Hopefully you'll be able to take care of things from there."
     a "Yeah, hopefully..."
-
     $ tour_town += 1
     $ tour_school = True
-
     jump tourtown
 
 label tourcomplete:
     hide don
     show brit a1 straight grin casual at middle
     with dissolve
-    pause .1
+    pause 0.1
     b "Well, it looks like we've checked out everything that Donald wanted to see!"
     b a2 raised left opened_smile "What do you say we grab our lunch now?"
     show brit at twoleft
     show don a1 raised straight smile at tworight
     with easeinright
-    pause .1
+    pause 0.1
     d "Sounds like a plan!"
     show brit at middle
     show don at threeright
     show chris a1 straight smile casual at threeleft
     with easeinleft
-    pause .1
+    pause 0.1
     c "Yeah! Let's eat!"
     a "Alright, I guess so."
     hide brit
     hide don
     hide chris
     with dissolve
-    pause .1
+    pause 0.1
     scene bg fade with wipeleft
     scene bg deli_i_e
     show deli_entrance_sign zorder 2
     with wipeleft
-    pause .1
+    pause 0.1
 
-    jump lunchatkellys
-
-# Kelly's Deli
 
 label lunchatkellys:
-
     play sound deli_door
     play loop deli_crowd
     $ current_track = "\"Dinin' In\""
     play music dinin_in
-
     "We then entered the deli."
     "The interior looked like your average, small-town diner."
     "There didn't seem to be a lot of customers at the moment, though it was a weekday morning, so maybe it's just a naturally slower time for business."
     "Right near the entrance, a young woman around our age was standing behind a podium. She gave us a grin when she saw us enter."
-
     gr "Welcome back to Kelly's Deli, you three!"
     gr "I see you brought a new friend this time."
     show brit a2 straight grin casual at middle with dissolve
-    pause .1
+    pause 0.1
     b "We have, indeed."
     gr "Would you prefer a booth or a table today?"
     b a1 opened_smile "Booth is fine, thank you."
     show brit at tworight
     show chris a2 straight smile casual at twoleft
     with easeinleft
-    pause .1
+    pause 0.1
     c "Preferably by the window."
     gr "No problem; follow me!"
     hide brit
@@ -1185,29 +1067,26 @@ label lunchatkellys:
     scene bg deli_i_wb
     show deli_table zorder 2
     with dissolve
-
     "The greeter grabbed 4 menus and walked over to the main dining area, with all of us right behind her."
     "She placed the menus on the table and we all sat down, boys on one side, girls on the other."
     "I found myself sitting across from Christeena, both of us right by the window."
-
     gr "Someone will be right over to take your order."
     show brit a1 straight opened_smile casual at middle with dissolve
-    pause .1
+    pause 0.1
     b "Thanks!"
     gr "No problem!"
     hide brit with dissolve
     pause .1
     "The greeter then left, leaving only the 4 of us at the table."
-
     a "So, how often do you guys come here?"
     show don a1 straight casual grin at close_d zorder 3 with dissolve
-    pause .1
+    pause 0.1
     d "As often as we can, though we aim for about once a week at the very least."
     a "Is the food really that good that you come here that often?"
     hide don
     show brit a1 straight level grin at tworight
     with dissolve
-    pause .1
+    pause 0.1
     b "Well, yeah, but that's not the only reason."
     b a2 sad "It just feels nice having a public place where you can just hang out."
     a "You mean a place that isn't a cabin in the woods?"
@@ -1218,7 +1097,7 @@ label lunchatkellys:
     b a2 left level huhu "In fact, we often have bets about who checks their phones first."
     $ c_blush = True
     show chris a1 left mad blank at twoleft with easeinleft
-    pause .1
+    pause 0.1
     c "It's usually me."
     hide chris
     show chris a2 straight hanging mad at twoleft
@@ -1228,7 +1107,7 @@ label lunchatkellys:
     hide brit
     hide chris
     with dissolve
-    pause .1
+    pause 0.1
     $ c_blush = False
     "That's when our waitress approached us with a giant smile."
     show bg deli_i_wb:
@@ -1237,7 +1116,7 @@ label lunchatkellys:
         ease 0.5 xalign 1.0
     pause 0.6
     show martha a1 straight casual grin at m_threeright with dissolve
-    pause .1
+    pause 0.1
     mu "Well, howdy, strangers!"
     show brit a1 straight sad grin at twoleft with easeinleft
     pause .1
@@ -1246,10 +1125,8 @@ label lunchatkellys:
     b a2 mad opened_smile "Nah; we wanted to show Alex how good the food was!"
     show martha casual
     hide brit with easeoutleft
-    pause .1
-
+    pause 0.1
     "The waitress looked at me and smiled."
-
     mu sad "So you're the mysterious new neighbor I've been hearing about?"
     a "..."
     mu sad "Oh, right."
@@ -1282,9 +1159,7 @@ label lunchatkellys:
     pause .1
     d "Hmm..."
     d right "I think I'll go for..."
-
     "Donald then stared at his menu in thought, as if his decision decided the fate of the entire galaxy."
-
     d raised straight grin "...a Swiss Miss and a Hilly Dew."
     show don at close_left_d
     show martha a1 straight raised grin at m_threeright
@@ -1302,7 +1177,7 @@ label lunchatkellys:
     show martha zorder 1:
         ease 0.5 xalign 1.4
     show brit a1 small level derp zorder 1:
-        size (540, 1080)
+        zoom 0.75
         xalign -0.4 yalign 0.5
         ease 0.5 xalign 0.25
     pause .6
@@ -1318,12 +1193,11 @@ label lunchatkellys:
     hide brit
     hide don
     with easeoutleft
-    pause .1
+    pause 0.1
     "Mrs. Truman wrote down the order with a grin."
-
     mu "Brittney?"
     show brit a2 straight raised grin at twoleft with easeinleft
-    pause .1
+    pause 0.1
     b "Well, since I want to see if my hard-earned money is worth it, I shall get a Swiss Miss, as well."
     mu raised "And a water?"
     b a1 casual opened_smile "Of course!"
@@ -1332,7 +1206,7 @@ label lunchatkellys:
     hide brit
     show chris a2 straight casual smile at twoleft
     with dissolve
-    pause .1
+    pause 0.1
     c "I'll get my usual."
     mu casual "As to be expected."
     mu raised "And you, young man?"
@@ -1343,46 +1217,37 @@ label lunchatkellys:
     "Well, there were certainly no shortage of options..."
     "There was the Classic Kelly's Deli Sandwich, which is apparently the Big Mac or Whopper of the place..."
     "'Made with freshly-sliced ham and turkey, topped with sharp white cheddar cheese.'"
-    "Though the Meatball Miracle, which consisted of hot, juicy meatballs, homemade marinara sauce, and shredded mozzerella, certainly caught my eye."
+    "Though the Meatball Miracle, which consisted of hot, juicy meatballs, homemade marinara sauce, and shredded mozzarella, certainly caught my eye."
     "Then again, I could play it safe with some chicken tenders, which was made sure to be advertised as 100\% real chicken meat."
-
     show martha casual a1 straight grin at m_threeright with dissolve
-    pause .1
+    pause 0.1
     mu "Have you made a decision?"
-
-label choice5:
-
-    if persistent.choice_5 == 1:
+    if persistent.choices["5"] == 1:
         a "Hm..."
         jump classicsandwich
-    elif persistent.choice_5 == 2:
+    elif persistent.choices["5"] == 2:
         a "Hm..."
         jump meatballmiracle
-    elif persistent.choice_5 == 3:
+    elif persistent.choices["5"] == 3:
         a "Hm..."
         jump chickentenders
     else:
-
-        a "Hm...{nw}"
-
         menu:
-            a "Hm...{fast}"
-
+            a "Hm..."
             "Classic Sandwich":
-                $ persistent.choice_5 = 1
+                $ persistent.choices["5"] = 1
                 jump classicsandwich
 
             "Meatball Miracle":
-                $ persistent.choice_5 = 2
+                $ persistent.choices["5"] = 2
                 jump meatballmiracle
 
             "Chicken Tenders":
-                $ persistent.choice_5 = 3
+                $ persistent.choices["5"] = 3
                 jump chickentenders
 
     label classicsandwich:
         $ delifoodorder = "a Kelly's Deli Classic Sandwich"
-
         a "I suppose I'll try the Classic Sandwich and see what the fuss is about."
         mu sad "Excellent choice! Your taste buds will thank you."
         hide screen skipchoice
@@ -1390,7 +1255,6 @@ label choice5:
 
     label meatballmiracle:
         $ delifoodorder = "a Meatball Miracle"
-
         a "The Meatball Miracle sounds pretty good, so I'll go with that."
         mu sad "Meatball Miracle it is, then!"
         hide screen skipchoice
@@ -1398,74 +1262,55 @@ label choice5:
 
     label chickentenders:
         $ delifoodorder = "chicken tenders"
-
         a "I'll just go for the chicken tenders, I suppose."
         mu sad "Very well, then. Simplicity never hurt anyone."
         hide screen skipchoice
-        jump orderdrink
 
     label orderdrink:
         mu casual "And to drink?"
-    label choice6:
-        if persistent.choice_6 == 1:
-            a "Hmm..."
+        if persistent.choices["6"] == 1:
             jump soda
-        if persistent.choice_6 == 2:
-            a "Hmm..."
+        if persistent.choices["6"] == 2:
             jump lemonade
-        if persistent.choice_6 == 3:
-            a "Hmm..."
+        if persistent.choices["6"] == 3:
             jump water
         else:
-
-            a "Hmm...{nw}"
-
             menu:
-
-                a "Hmm...{fast}"
+                a "Hmm..."
 
                 "Soda":
-                    $ persistent.choice_6 = 1
+                    $ persistent.choices["6"] = 1
                     jump soda
 
                 "Lemonade":
-                    $ persistent.choice_6 = 2
+                    $ persistent.choices["6"] = 2
                     jump lemonade
 
                 "Water":
-                    $ persistent.choice_6 = 3
+                    $ persistent.choices["6"] = 3
                     jump water
 
     label soda:
         $ delidrinkorder = "Hilly Dew"
-
         a "I could use some caffeine, so I'll just get some Hilly Dew with no ice."
         show martha raised smile
         mu "You got it!"
-        hide screen skipchoice
         jump waitingforfood
 
     label lemonade:
-        $ delidrinkorder = "lemonade"
-
         a "Nothing like some lemonade on a nice, hot day, right?"
         show martha raised smile
         mu "Couldn't agree more!"
-        hide screen skipchoice
         jump waitingforfood
 
     label water:
-        $ delidrinkorder = "water"
-
         a "I'll just take a water, please."
         show martha raised smile
         mu "Yes, sir!"
-        hide screen skipchoice
-        jump waitingforfood
 
     label waitingforfood:
         hide martha with dissolve
-        pause .1
+        pause 0.1
         "Mrs. Truman took all of our menus and let us know that the food would be ready soon."
         "We thanked her, and she was on her way."
         show bg deli_i_wb:
@@ -1474,7 +1319,7 @@ label choice5:
             ease 0.5 xalign 0.0
         pause 0.6
         show brit a2 straight casual blank at middle with dissolve
-        pause .1
+        pause 0.1
         a "Well, she seems cool."
         b a1 opened_smile "Thanks!"
         b a2 left level huhu "Not to brag or anything, but my mom is, like, the coolest mom ever."
@@ -1502,16 +1347,14 @@ label choice5:
         d level grin "That won't stop her."
         b casual grin "Guilty."
         a "Okay, then..."
-
         hide don with easeoutright
-        pause .1
+        pause 0.1
         "Donald then got up and headed to the restroom."
         "Now that it was just me, Brittney, and Christeena, I guess I could finally ask a question that was on my mind."
-
         show chris a2 straight casual blank at twoleft
         show brit at tworight
         with easeinleft
-        pause .1
+        pause 0.1
         $ b_partial = False
         show brit a2 straight casual blank
         a "So, is it alright if I ask you girls a personal question?"
@@ -1519,20 +1362,18 @@ label choice5:
         c a1 sad "...I suppose..."
         a "Martha is Brittney's mom, and she's married to Christeena's dad, right?"
         b casual "That's correct."
+        a "So, if you don't mind me asking, where are your other parents? The biological ones, I mean?"
         $ current_track = "None"
         stop music fadeout 3.0
         stop loop fadeout 3.0
-        a "So, if you don't mind me asking, where are your other parents? The biological ones, I mean?"
-
         show brit a2 blank
         show chris casual
         "The girls paused for a second and looked at each other, seeming to wait for the other to start talking."
         "Finally, Christeena broke the silence."
-
         show chris:
             ease 0.5 middle
         hide brit with dissolve
-        pause .1
+        pause 0.1
         $ current_track = "\"Reflection\""
         play music reflection
         c "Well, my mother's in California."
@@ -1548,8 +1389,7 @@ label choice5:
         $ c_blush = True
         c straight sad grin "It's okay, Alex. I get what you're trying to say."
         $ c_blush = False
-        show chris a2 straight level blank at middle
-        c "Honestly, I suppose living with her could be fun..."
+        c a2 level blank "Honestly, I suppose living with her could be fun..."
         c sad "...but I don't know if I can trust her."
         c a1 level blank "I mean, if I did live with her, would she really love me and treat me like her daughter..."
         c left "...or would I be more of a trophy in this silly contest of 'who's the better parent?' that she's created in her head?"
@@ -1566,13 +1406,13 @@ label choice5:
         show chris:
             ease 0.5 twoleft
         show brit a2 straight blank casual at tworight with dissolve
-        pause .1
+        pause 0.1
         a "So what about you, Brittney?"
         a "Where's your dad?"
         show brit:
             ease 0.5 middle
         hide chris with dissolve
-        pause .1
+        pause 0.1
         b left sad grin "Well, depending on what you believe, he's either in a better place or simply laying six feet under."
         a "Oh."
         a "I'm sorry; I didn't know."
@@ -1602,16 +1442,14 @@ label choice5:
         b a2 sad grin "But we can't keep dwelling in the past forever, right?"
         b left "I've got a new dad now, an amazing one at that, and my birth dad wouldn't want us to just sit and mourn him forever."
         a "Very true."
-
         "I could tell that, despite her smile, she wasn't as happy and energetic as she was a few minutes ago."
-
         a "I'm sorry if I killed your good mood."
         b a1 straight casual blank "Oh, you did no such thing, Alex."
         b sad grin "Besides, even if you did, there still wouldn't be anything to be sorry about."
         b a2 right "I'm sure you were going to figure it out sooner or later, so it's nice to know it now, right?"
         a "I suppose so."
         hide brit with dissolve
-        pause .1
+        pause 0.1
         show bg deli_i_wb:
             ease 0.5 xalign 1.0
         show deli_table:
@@ -1619,19 +1457,17 @@ label choice5:
         pause 0.6
         $ current_track = "None"
         stop music fadeout 3.0
-
         "The men's room door opened up and Donald emerged, quickly finding his way back to the booth."
-
         $ current_track = "\"Dinin' In\""
         play music dinin_in
         play loop deli_crowd
         show don a1 straight mad blank at close_right_d zorder 3 with dissolve
-        pause .1
+        pause 0.1
         d "One thing I must say I dislike about this place is the crappy restroom."
         d "It's just so old and broken down that I'm scared the toilet will overflow every time I flush."
         $ b_partial = True
         show brit a2 straight blank level at twoleft with easeinleft
-        pause .1
+        pause 0.1
         b "Thanks for that, Mr. Waters."
         hide brit
         hide don
@@ -1639,45 +1475,39 @@ label choice5:
         pause .1
         $ b_partial = False
         "It was at that moment when Mrs. Truman arrived carrying a tray of food and drinks."
-
         show martha a1 straight raised grin at m_threeright with dissolve
-        pause .1
+        pause 0.1
         mu "Alright, let's see here..."
         mu casual "We've got a Swiss Miss and Hilly Dew..."
-
         show don a1 straight casual grin at close_left_d zorder 3 with easeinleft
-        pause .1
+        pause 0.1
         "She placed the order in front of Donald."
         hide don with easeoutleft
-        pause .1
+        pause 0.1
         mu level "...Swiss Miss with water..."
-
         show brit a1 straight casual grin at twoleft with easeinleft
-        pause .1
+        pause 0.1
         "Brittney then received her meal."
         hide brit with easeoutleft
-        pause .1
+        pause 0.1
         mu sad "...Grilled Ham n Cheddar with iced tea..."
-
         show chris a1 straight casual grin at twoleft with easeinleft
-        pause .1
+        pause 0.1
         "Huh. So I guess that's Christeena's 'usual'."
         hide chris with easeoutleft
-        pause .1
+        pause 0.1
         mu casual "And [delifoodorder] with [delidrinkorder]."
-
         a "Thanks!"
         mu smile "Enjoy your meal, then!"
         show brit a2 straight casual opened_smile at twoleft with easeinleft
-        pause .1
+        pause 0.1
         b "Thanks, Mom!"
-
         show martha sad grin
         "Mrs. Truman smiled and walked to a nearby table."
         hide martha
         hide brit
         with dissolve
-        pause .1
+        pause 0.1
         show bg deli_i_wb:
             ease 0.5 xalign 0.0
         show deli_table:
@@ -1690,37 +1520,28 @@ label choice5:
         show brit a1 straight raised closed_smile zorder 1 at twoleft
         with easeinleft
         b "Agreed."
-
         show brit at middle zorder 1
         show chris a2 straight grin raised at threeleft zorder 1
         with easeinleft
         pause .1
         "Even Christeena was looking at me with a curious smile."
         "Thanks for putting me on the spot, Don."
-
         if delifoodorder == "chicken tenders":
             "I looked down at my tenders. They certainly did smell delicious."
             "I finally picked one up and took a bite."
         else:
             "I looked down at my sandwich. It certainly did smell delicious."
             "I finally picked it up and took a bite."
-
         "..."
-
         window hide dissolve
         with Pause(2)
         window show
-
         a "Holy crap...!"
         d casual smile "Told ya!"
         a "I mean, you guysh had shaid it wush good, but..."
-
         "I was trying my hardest to not be rude by speaking with my mouth full, but it was just so good that I had to say something!"
-
         b a2 grin "Finish your bite, THEN give your feedback."
-
         "I took a quick drink to wash my bite down."
-
         a "Well, I can certainly see what you guys were talking about!"
         $c_blink = False
         c a1 closed_happy sad smile "There's a reason why this place is so beloved by the townspeople."
@@ -1736,7 +1557,6 @@ label choice5:
         with dissolve
         pause .1
         "We all then began to dig into our meals."
-
         show don a1 casual straight blank at close_d zorder 3 with dissolve
         pause .1
         a "How's the Swiss Miss?"
@@ -1751,7 +1571,7 @@ label choice5:
         show brit:
             ease 0.5 twoleft
         show don a1 left raised grin at close_right_d zorder 3 with dissolve
-        pause .1
+        pause 0.1
         d "Indeed. Nice to know I didn't waste your money, after all!"
         b casual "Same here. Because if you did, indeed, waste my hard-earned money..."
         $ b_partial = True
@@ -1761,66 +1581,54 @@ label choice5:
         $b_blink = False
         show brit a2 closed sad grin at twoleft
         b "Ehehe!"
-
         "These two certainly are quite an odd pair."
-
         hide don
         hide brit
         with dissolve
         $b_blink = True
-        pause .1
+        pause 0.1
         show chris a1 left level dot at middle with dissolve
+        pause 0.1
         a "Anyway, Christeena..."
         c a2 straight casual blank "Hm?"
-
         "She seemed like she was spaced out, only to be brought back into reality by the mention of her name."
-
         a "I take it you order that a lot?"
-
         "I pointed at her food as I asked, to which she nodded with a grin."
-
         c a1 sad grin "I know it's basically a grilled cheese sandwich with ham slices, but it's so good that I don't care."
         c casual blank "..."
         c "Do you want a bite?"
         a "!"
         a "Are you sure?"
         c a2 grin "Yeah, I don't mind."
-
-    label choice7:
-
-        if persistent.choice_7 == 1:
+        if persistent.choices["7"] == 1:
             a "Uh..."
             jump accept_sandwich
-        elif persistent.choice_7 == 2:
+        elif persistent.choices["7"] == 2:
             a "Uh..."
             jump decline_sandwich
         else:
-
-            $ acceptsandwich = False
             menu:
                 a "Uh..."
 
                 "Sure!":
-                    $ persistent.choice_7 = 1
+                    $ persistent.choices["7"] = 1
                     jump accept_sandwich
                 "No, thank you.":
-                    $ persistent.choice_7 = 2
+                    $ persistent.choices["7"] = 2
                     jump decline_sandwich
 
     label accept_sandwich:
         $ C_Points += 1
         $ acceptsandwich = True
         a "Well, okay, then."
-
         hide chris with dissolve
+        pause 0.1
         "She placed her sandwich on her plate and lightly pushed it across to me."
         "I wrapped my fingers around the bottom..."
-        hide screen skipchoice
         a "Ouch!"
-
         "I pulled my hands away and lightly shook them to cool them off."
-
         show chris a1 straight sad dot at middle with dissolve
+        pause 0.1
         c "Oh, I'm sorry! I should've told you it was hot!"
         a "Nah, you're good; I should've figured that out, myself."
         c a2 blank "Are you okay?"
@@ -1838,18 +1646,17 @@ label choice5:
         "How the heck was Christeena able to eat this thing without burning her mouth??"
         "Regardless, I took a small bite."
         "..."
-
         a "Ah!"
         show chris a1 straight sad dot at middle with dissolve
+        pause 0.1
         c "You okay?"
-
         "I partially opened my mouth to try and vent out the steam; it was hot!"
         "Still, I gave a small nod in response to Christeena's question, even though I probably looked like a moron with my mouth open and nodding."
         hide chris with dissolve
+        pause 0.1
         "It only took a second or two to cool down, which is when I closed my mouth and chewed."
         "..."
         "I swallowed the bite, placed the sandwich back on the plate, and passed it back to Christeena."
-
         show chris a2 straight casual blank at middle with dissolve
         a "You were right; it's pretty good!"
         $c_blink = False
@@ -1865,11 +1672,9 @@ label choice5:
         c sad straight hanging "...!!"
         a "What's that supposed to mean?"
         b a1 straight raised closed_smile "Oh, nothing...~"
-
         "Her devilish grin said otherwise."
         show chris a2 left blank
         "Meanwhile, Christeena's face turned slightly pink as she looked down at her plate and ate her sandwich."
-
         jump paythebill
 
     label decline_sandwich:
@@ -1880,12 +1685,9 @@ label choice5:
         else:
             a "Yeah, this sandwich is good enough to know that all the food here must be good."
         c a2 left level blank "O-okay, then."
-        hide screen skipchoice
         "She then took a bite of her sandwich."
         "..."
         "I hope I didn't offend her or something by declining her offer..."
-
-        jump paythebill
 
     label paythebill:
         window hide dissolve
@@ -1896,11 +1698,10 @@ label choice5:
         window show dissolve
         $ c_blush = False
         "Soon, we were all finished with our food."
-
         show don a1 straight casual smile at close_right_d zorder 3
         show brit a2 straight casual grin at twoleft zorder 1
         with dissolve
-        pause .1
+        pause 0.1
         d "Thanks for treating us to lunch, Brit."
         b a1 opened_smile "It's my pleasure, Don."
         b raised "I'm glad Alex enjoyed his food."
@@ -1912,12 +1713,10 @@ label choice5:
         show brit at middle zorder 1
         show chris a2 straight mad blank at threeleft zorder 1
         with easeinleft
-        pause .1
+        pause 0.1
         c "..."
         b a1 level "Yeah, that was a dumb question."
-
         "Brittney then turned to glance at the clock hanging by the entrance."
-
         b casual "On that note, I gotta get ready for work."
         d casual "Already?"
         b a2 sad "Well, I like to get there early if I can help it."
@@ -1934,7 +1733,6 @@ label choice5:
         $c_blink = False
         show chris closed_happy sad
         "Christeena gave a small nod in agreement."
-
         show chris:
             ease 0.5 twoleft
         show brit:
@@ -1944,48 +1742,37 @@ label choice5:
         b a1 sad "Just let me know when you're on your way home, okay, Christeena?"
         $c_blink = True
         c a2 straight casual "Will do."
-
         $ current_track = "None"
         stop music fadeout 3.0
         hide brit
         hide chris
         with dissolve
-        pause .1
+        pause 0.1
         "With that, Brittney paid the bill, as well as left a fair tip, and we left the diner."
-
-        jump help_unbox
-
-    label help_unbox:
         stop loop fadeout 0.5
-        scene bg house_s
-        with dissolve
-
+        scene bg house_s with dissolve
+        pause 0.1
         $ current_track = "\"Home Life\""
         play music home_life
-
         "Brittney, Donald, and I walked back home to Berry Street while Christeena headed to one of the stores."
         "I thanked them for the town tour and entered my house."
-
-        scene bg living_s_m
-        with dissolve
-        pause .1
+        scene bg living_s_m with dissolve
+        pause 0.1
         "I found my parents unboxing stuff in the living room."
         "Mom was surprised that I was home earlier than expected, but she didn't complain."
         "It certainly didn't take her long to try and get me to help unbox."
-
         show ginger a2 casual straight grin at middle with dissolve
-        pause .1
+        pause 0.1
         g "Why don't you at least start on your room, for now?"
         g "You don't have to get the whole thing done today, but at least try to get everything in the general area of where you want it."
         a "Got it."
         hide ginger with dissolve
-        pause .1
+        pause 0.1
         "With that, I went upstairs towards my room."
         "On the way, I could see Harry in his own room, sliding boxes across the floor."
         "I poked my head in the doorway."
-
         show harry a1 straight casual blank at middle with dissolve
-        pause .1
+        pause 0.1
         a "Need help?"
         h level "No, thanks; I got it."
         a "You sure? Some of those seem heavy."
@@ -2000,150 +1787,128 @@ label choice5:
         "I then continued down into my own room."
         "Harry sure can be stubborn at times, but he's at the near-puberty age where he just feels like he needs to show his adulthood."
         "I guess as long as he doesn't do anything stupid, like try to lift a 50-pound weight or hit on an older girl, we'll be fine."
-
-        scene bg bedroom_a_m
-        with dissolve
-        pause .1
+        scene bg bedroom_a_m with dissolve
+        pause 0.1
         "With that, I finally entered my room to begin unpacking."
         "Man, it's crazy how you never realize how much crap you own until you have to pack it all up."
         "I had to give away a lot of my old stuff for the move, stuff I honestly didn't even remember I owned."
         "Then there's the stuff I WANTED to get rid of, but Mom made me keep, like stuffed animals and such."
         "Well, I guess all that matters in the end is I have all my essentials for the move, and it hopefully shouldn't take TOO long to unpack."
-
         play sound phone_vibrate
-
         "Before I could get to the first box, though, I got a text."
         "Looking at the screen revealed it to be from a number I didn't recognize."
-        window hide dissolve
-        unknown_nvl "{font=gui/LemonMilk.otf}{i}Hey is this Alex?{/i}{/font}"
-        a_nvl "{font=gui/LemonMilk.otf}{i}Yeah. Who's asking?{/i}{/font}"
-
+        nvl show dissolve
+        unknown_nvl "{font=fonts/LemonMilk.otf}{i}Hey is this Alex?{/i}{/font}"
+        a_nvl "{font=fonts/LemonMilk.otf}{i}Yeah. Who's asking?{/i}{/font}"
+        nvl hide dissolve
         "I open up the first box I see."
         "Ah, these are all my books."
         "I admittedly don't read as much as I used to, but I've been meaning to get back into it."
         "After all, a good story can really change a person."
-
         play sound phone_vibrate
-
         "I get another text."
-
         nvl show dissolve
         if C_Points == -1 or C_Points == 0:
-            unknown_nvl "{font=gui/LemonMilk.otf}{i}It's Brittney. Swiped your digits from Donnie ;) :P{/i}{/font}"
+            unknown_nvl "{font=fonts/LemonMilk.otf}{i}It's Brittney. Swiped your digits from Donnie ;) :P{/i}{/font}"
             $ have_number = "Brittney"
         else:
-            unknown_nvl "{font=gui/LemonMilk.otf}{i}It's Christeena. Donald gave me your number.{/i}{/font}"
+            unknown_nvl "{font=fonts/LemonMilk.otf}{i}It's Christeena. Donald gave me your number.{/i}{/font}"
             $ have_number = "Christeena"
-
-        a_nvl "{font=gui/LemonMilk.otf}{i}Oh, hey! What's up?{/i}{/font}"
+        a_nvl "{font=fonts/LemonMilk.otf}{i}Oh, hey! What's up?{/i}{/font}"
         nvl hide dissolve
-
         "Let's see here..."
         "Most of these books are books I've read before, though there are still a few I've been meaning to read."
         "Honestly, I don't know why I keep these books when I've finished them; I've never reread a book I've already read."
         "Yeah, it's weird. I'll rewatch a movie multiple times and replay a video game until I've uncovered everything, yet I won't reread a book. I'm just crazy like that."
-
-        # Text Sound
-
+        play sound phone_vibrate
         "Another text."
         "I suppose I should focus more on the conversation than the unboxing, for now."
         "I look at the text."
         nvl clear
-
         nvl show dissolve
         if C_Points == -1:
-            b_nvl "{font=gui/LemonMilk.otf}{i}Just curious if you have anything against my sister{/i}{/font}"
-            a_nvl "{font=gui/LemonMilk.otf}{i}Huh? No. Why do you ask?{/i}{/font}"
-            b_nvl "{font=gui/LemonMilk.otf}{i}Just wondering. She doesn't seem too fond of you{/i}{/font}"
-            b_nvl "{font=gui/LemonMilk.otf}{i}Of course not sure how I feel either with you telling her that I'm not pretty and all{/i}{/font}"
-
+            b_nvl "{font=fonts/LemonMilk.otf}{i}Just curious if you have anything against my sister{/i}{/font}"
+            a_nvl "{font=fonts/LemonMilk.otf}{i}Huh? No. Why do you ask?{/i}{/font}"
+            b_nvl "{font=fonts/LemonMilk.otf}{i}Just wondering. She doesn't seem too fond of you{/i}{/font}"
+            b_nvl "{font=fonts/LemonMilk.otf}{i}Of course not sure how I feel either with you telling her that I'm not pretty and all{/i}{/font}"
             "Ouch..."
-
             nvl clear
-            a_nvl "{font=gui/LemonMilk.otf}{i}I'm sorry about that. Really.{/i}{/font}"
-            b_nvl "{font=gui/LemonMilk.otf}{i}Well I don't really know you that well so I'll give you another chance{/i}{/font}"
-            b_nvl "{font=gui/LemonMilk.otf}{i}Although I'll never forget that you said I'm ugly lol XD{/i}{/font}"
-            a_nvl "{font=gui/LemonMilk.otf}{i}Hey, I never said you were ugly!{/i}{/font}"
-            b_nvl "{font=gui/LemonMilk.otf}{i}You said I wasn't pretty. That's close enough.{/i}{/font}"
-            b_nvl "{font=gui/LemonMilk.otf}{i}Talk to ya later dum-dum!{/i}{/font}"
-            a_nvl "{font=gui/LemonMilk.otf}{i}Okay then...{/i}{/font}"
+            a_nvl "{font=fonts/LemonMilk.otf}{i}I'm sorry about that. Really.{/i}{/font}"
+            b_nvl "{font=fonts/LemonMilk.otf}{i}Well I don't really know you that well so I'll give you another chance{/i}{/font}"
+            b_nvl "{font=fonts/LemonMilk.otf}{i}Although I'll never forget that you said I'm ugly lol XD{/i}{/font}"
+            a_nvl "{font=fonts/LemonMilk.otf}{i}Hey, I never said you were ugly!{/i}{/font}"
+            b_nvl "{font=fonts/LemonMilk.otf}{i}You said I wasn't pretty. That's close enough.{/i}{/font}"
+            b_nvl "{font=fonts/LemonMilk.otf}{i}Talk to ya later dum-dum!{/i}{/font}"
+            a_nvl "{font=fonts/LemonMilk.otf}{i}Okay then...{/i}{/font}"
             nvl clear
             nvl hide dissolve
-
             "Yeah, in hindsight, maybe saying that to Christeena was a bad idea."
             "Honestly, I guess Christeena doesn't really seem too fond of me at the moment, anyway."
             "Although, it has only been a day; bad first impressions happen all the time. I'm sure I can find ways to redeem myself."
         elif C_Points == 0:
             if B_Points == 1:
-                b_nvl "{font=gui/LemonMilk.otf}{i}You seem like a pretty cool dude you know that?{/i}{/font}"
-                a_nvl "{font=gui/LemonMilk.otf}{i}Uh, thanks.{/i}{/font}"
-                b_nvl "{font=gui/LemonMilk.otf}{i}Just being honest XD{/i}{/font}"
-                b_nvl "{font=gui/LemonMilk.otf}{i}Anyway now that you've got my number we can talk whenever we want!{/i}{/font}"
-                b_nvl "{font=gui/LemonMilk.otf}{i}Although I'm not much of a texter{/i}{/font}"
-                b_nvl "{font=gui/LemonMilk.otf}{i}Or a phone-caller{/i}{/font}"
-                a_nvl "{font=gui/LemonMilk.otf}{i}So why even give me your number?{/i}{/font}"
-                b_nvl "{font=gui/LemonMilk.otf}{i}So you'll have a female contact that isn't your mom lol{/i}{/font}"
+                b_nvl "{font=fonts/LemonMilk.otf}{i}You seem like a pretty cool dude you know that?{/i}{/font}"
+                a_nvl "{font=fonts/LemonMilk.otf}{i}Uh, thanks.{/i}{/font}"
+                b_nvl "{font=fonts/LemonMilk.otf}{i}Just being honest XD{/i}{/font}"
+                b_nvl "{font=fonts/LemonMilk.otf}{i}Anyway now that you've got my number we can talk whenever we want!{/i}{/font}"
+                b_nvl "{font=fonts/LemonMilk.otf}{i}Although I'm not much of a texter{/i}{/font}"
+                b_nvl "{font=fonts/LemonMilk.otf}{i}Or a phone-caller{/i}{/font}"
+                a_nvl "{font=fonts/LemonMilk.otf}{i}So why even give me your number?{/i}{/font}"
+                b_nvl "{font=fonts/LemonMilk.otf}{i}So you'll have a female contact that isn't your mom lol{/i}{/font}"
                 if britnotpretty:
-                    b_nvl "{font=gui/LemonMilk.otf}{i}Even if said contact supposedly isn't pretty{/i}{/font}"
-
+                    b_nvl "{font=fonts/LemonMilk.otf}{i}Even if said contact supposedly isn't pretty{/i}{/font}"
                     "Shit..."
-
-                    a_nvl "{font=gui/LemonMilk.otf}{i}I'm sorry. I didn't mean that.{/i}{/font}"
-                    b_nvl "{font=gui/LemonMilk.otf}{i}Oh, I'm sure you didn't. Doesn't mean I'll forget it X'D{/i}{/font}"
-                b_nvl "{font=gui/LemonMilk.otf}{i}Anyway I'll stop buggin you. See ya whenever dum-dum!{/i}{/font}"
+                    a_nvl "{font=fonts/LemonMilk.otf}{i}I'm sorry. I didn't mean that.{/i}{/font}"
+                    b_nvl "{font=fonts/LemonMilk.otf}{i}Oh, I'm sure you didn't. Doesn't mean I'll forget it X'D{/i}{/font}"
+                b_nvl "{font=fonts/LemonMilk.otf}{i}Anyway I'll stop buggin you. See ya whenever dum-dum!{/i}{/font}"
                 nvl clear
-                a_nvl "{font=gui/LemonMilk.otf}{i}Okay...? See you.{/i}{/font}"
+                a_nvl "{font=fonts/LemonMilk.otf}{i}Okay...? See you.{/i}{/font}"
                 nvl clear
-
                 nvl hide dissolve
                 "Man, this girl is weird."
                 "Still, she is pretty cool, and she doesn't seem to hate me, so I suppose there's that."
             else:
-                b_nvl "{font=gui/LemonMilk.otf}{i}Just thought I'd get your number on the off-chance you wanted to talk or something{/i}{/font}"
-                a_nvl "{font=gui/LemonMilk.otf}{i}Ah. Well, I'm unpacking my room right now, so I'm a bit busy with that.{/i}{/font}"
-                b_nvl "{font=gui/LemonMilk.otf}{i}Cool beans. I'll let you get to that then.{/i}{/font}"
-                a_nvl "{font=gui/LemonMilk.otf}{i}Sorry.{/i}{/font}"
-                b_nvl "{font=gui/LemonMilk.otf}{i}Oh no problem at all I promise.{/i}{/font}"
-                a_nvl "{font=gui/LemonMilk.otf}{i}Okay, then. See ya.{/i}{/font}"
-                b_nvl "{font=gui/LemonMilk.otf}{i}See ya!{/i}{/font}"
+                b_nvl "{font=fonts/LemonMilk.otf}{i}Just thought I'd get your number on the off-chance you wanted to talk or something{/i}{/font}"
+                a_nvl "{font=fonts/LemonMilk.otf}{i}Ah. Well, I'm unpacking my room right now, so I'm a bit busy with that.{/i}{/font}"
+                b_nvl "{font=fonts/LemonMilk.otf}{i}Cool beans. I'll let you get to that then.{/i}{/font}"
+                a_nvl "{font=fonts/LemonMilk.otf}{i}Sorry.{/i}{/font}"
+                b_nvl "{font=fonts/LemonMilk.otf}{i}Oh no problem at all I promise.{/i}{/font}"
+                a_nvl "{font=fonts/LemonMilk.otf}{i}Okay, then. See ya.{/i}{/font}"
+                b_nvl "{font=fonts/LemonMilk.otf}{i}See ya!{/i}{/font}"
                 nvl clear
-
                 nvl hide dissolve
                 "I suppose I could've talked to her for a bit, but something about Brittney is just... weird."
                 "I'm sure she's a nice girl, but her personality certainly isn't for everyone. Still, who knows? Maybe I'm judging a book by its cover."
         elif C_Points == 1:
-            c_nvl "{font=gui/LemonMilk.otf}{i}Just wanted to say that I liked hanging out today. You seem pretty cool.{/i}{/font}"
-            a_nvl "{font=gui/LemonMilk.otf}{i}Well, thanks! You seem pretty cool, too.{/i}{/font}"
-            c_nvl "{font=gui/LemonMilk.otf}{i}Lol thanks.{/i}{/font}"
-            c_nvl "{font=gui/LemonMilk.otf}{i}Anyway, that's all I really wanted to say.{/i}{/font}"
-            a_nvl "{font=gui/LemonMilk.otf}{i}Alrighty, then. Talk to you later.{/i}{/font}"
-            c_nvl "{font=gui/LemonMilk.otf}{i}Same.{/i}{/font}"
+            c_nvl "{font=fonts/LemonMilk.otf}{i}Just wanted to say that I liked hanging out today. You seem pretty cool.{/i}{/font}"
+            a_nvl "{font=fonts/LemonMilk.otf}{i}Well, thanks! You seem pretty cool, too.{/i}{/font}"
+            c_nvl "{font=fonts/LemonMilk.otf}{i}Lol thanks.{/i}{/font}"
+            c_nvl "{font=fonts/LemonMilk.otf}{i}Anyway, that's all I really wanted to say.{/i}{/font}"
+            a_nvl "{font=fonts/LemonMilk.otf}{i}Alrighty, then. Talk to you later.{/i}{/font}"
+            c_nvl "{font=fonts/LemonMilk.otf}{i}Same.{/i}{/font}"
             nvl clear
-
             nvl hide dissolve
             "Huh. I kinda took Christeena to be the kind of introverted girl who wouldn't go out of her way to send a text to someone she hardly knew, but I guess I was wrong."
             "Although she was quick to end the conversation, if you even want to call it that. So I guess she's still a little shy."
         else:
-            c_nvl "{font=gui/LemonMilk.otf}{i}Just wanted to say that I liked hanging out today. You're a really sweet guy.{/i}{/font}"
-            a_nvl "{font=gui/LemonMilk.otf}{i}Well, thanks! I try my best.{/i}{/font}"
-            c_nvl "{font=gui/LemonMilk.otf}{i}:){/i}{/font}"
-            c_nvl "{font=gui/LemonMilk.otf}{i}Anyway, what's up?{/i}{/font}"
-            a_nvl "{font=gui/LemonMilk.otf}{i}Unpacking.{/i}{/font}"
-            c_nvl "{font=gui/LemonMilk.otf}{i}Oh, I'm not distracting you, am I?{/i}{/font}"
-            a_nvl "{font=gui/LemonMilk.otf}{i}You're okay, I promise.{/i}{/font}"
-            c_nvl "{font=gui/LemonMilk.otf}{i}You sure?{/i}{/font}"
-            a_nvl "{font=gui/LemonMilk.otf}{i}Positive.{/i}{/font}"
-            c_nvl "{font=gui/LemonMilk.otf}{i}Okay, then. :) still, I should let you work on that; we could always talk later if you wanted.{/i}{/font}"
-            a_nvl "{font=gui/LemonMilk.otf}{i}That sounds great! I'll let you know when I'm done for the night.{/i}{/font}"
-            c_nvl "{font=gui/LemonMilk.otf}{i}Okay :) talk to you later.{/i}{/font}"
-            a_nvl "{font=gui/LemonMilk.otf}{i}Talk to you later!{/i}{/font}"
+            c_nvl "{font=fonts/LemonMilk.otf}{i}Just wanted to say that I liked hanging out today. You're a really sweet guy.{/i}{/font}"
+            a_nvl "{font=fonts/LemonMilk.otf}{i}Well, thanks! I try my best.{/i}{/font}"
+            c_nvl "{font=fonts/LemonMilk.otf}{i}:){/i}{/font}"
+            c_nvl "{font=fonts/LemonMilk.otf}{i}Anyway, what's up?{/i}{/font}"
+            a_nvl "{font=fonts/LemonMilk.otf}{i}Unpacking.{/i}{/font}"
+            c_nvl "{font=fonts/LemonMilk.otf}{i}Oh, I'm not distracting you, am I?{/i}{/font}"
+            a_nvl "{font=fonts/LemonMilk.otf}{i}You're okay, I promise.{/i}{/font}"
+            c_nvl "{font=fonts/LemonMilk.otf}{i}You sure?{/i}{/font}"
+            a_nvl "{font=fonts/LemonMilk.otf}{i}Positive.{/i}{/font}"
+            c_nvl "{font=fonts/LemonMilk.otf}{i}Okay, then. :) still, I should let you work on that; we could always talk later if you wanted.{/i}{/font}"
+            a_nvl "{font=fonts/LemonMilk.otf}{i}That sounds great! I'll let you know when I'm done for the night.{/i}{/font}"
+            c_nvl "{font=fonts/LemonMilk.otf}{i}Okay :) talk to you later.{/i}{/font}"
+            a_nvl "{font=fonts/LemonMilk.otf}{i}Talk to you later!{/i}{/font}"
             nvl clear
-
             nvl hide dissolve
             "Huh. I kinda took Christeena to be the kind of introverted girl who wouldn't go out of her way to send a text to someone she hardly knew, but I guess I was wrong."
             "She really seems happy at the idea of us talking, even though we hardly know each other."
             "I don't know whether to be excited that she's not scared of me or worried that she's some sort of hyper-obsessed girl."
-
         "Anyway, I better keep focused on this unpacking..."
         $ daydesc = 0
         $ replay = False

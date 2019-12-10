@@ -3,7 +3,7 @@ transform credit_scroll:
     linear 15.0 yalign -0.2
 
 style credit_text:
-    font "gui/libel-suit-rg.ttf"
+    font "fonts/libel-suit-rg.ttf"
     color "#ffffff"
     text_align 0.5
     outlines [(absolute(2), "#000000", absolute(2), absolute(2))]

@@ -8,7 +8,7 @@ style nhie_bot_points:
     xalign 0.01
     yalign 0.25
 
-screen timer_c:
+screen timer_c():
     hbox:
         xalign 0.95
         yalign 0.95
@@ -19,12 +19,12 @@ screen timer_c:
                 yalign 0.5
                 text "[hours] hour(s), [minutes] minute(s), [seconds] second(s)"
 
-screen don_points:
+screen don_points():
     hbox:
         style "nhie_top_points"
         text "[nhie_d_points]" size 75
 
-screen finger_points:
+screen finger_points():
     vbox:
         spacing 75
         style "nhie_top_points"
@@ -42,13 +42,13 @@ screen finger_points:
 
 # Development Only
 
-screen char_points:
+screen char_points():
     hbox:
         xalign 0.05
         yalign 0.95
         text "[B_Points] [C_Points] [D_Points]"
 
-screen route_select:
+screen route_select():
     hbox:
         xalign 0.05
         yalign 0.05
@@ -90,7 +90,7 @@ screen dayselectmenu():
             xysize(240,128)
             xalign 0.5
             yalign 0.5
-            text "{size=+10}[dayselectmenuvalue]" xalign 0.5 yalign 0.5
+            text "{size=+10}[dayselectmenuvalue]{/size}" xalign 0.5 yalign 0.5
         frame:
             xysize(450,525)
             vbox:
@@ -99,73 +99,73 @@ screen dayselectmenu():
                 spacing 5
                 if dayselectmenuvalue == "June, 2013":
                     if day_2 == True:
-                        textbutton "{size=+5}{b}June 3rd, 2013":
+                        textbutton "{size=+5}{b}June 3rd, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 1)
                             unhovered SetVariable("daydesc", 0)
                             action Replay("firstdayreplay", scope={"B_Points": 0, "D_Points": 0, "h_hair": True, "replay": True})
                     else:
-                        textbutton "{size=+20}{font=gui/libel-suit-rg.ttf}???" xalign 0.5:
+                        textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
                     if day_3 == True:
-                        textbutton "{size=+5}{b}June 4th, 2013":
+                        textbutton "{size=+5}{b}June 4th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 2)
                             unhovered SetVariable("daydesc", 0)
                             action Replay("tour", scope={"B_Points": June3B, "C_Points": June3C, "D_Points": June3D, "h_hair": True, "b_hat": True, "replay": True, "progress": 1})
                     else:
-                        textbutton "{size=+20}{font=gui/libel-suit-rg.ttf}???" xalign 0.5:
+                        textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
                     if day_4 == True:
-                        textbutton "{size=+5}{b}June 11th, 2013":
+                        textbutton "{size=+5}{b}June 11th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 3)
                             unhovered SetVariable("daydesc", 0)
                             action Replay("shoppingwithharry", scope={"B_Points": June4B, "delifoodorder": delifoodorder, "acceptsandwich": acceptsandwich, "britnotpretty": britnotpretty, "b_hat": False, "replay": True, "progress": 2})
                     else:
-                        textbutton "{size=+20}{font=gui/libel-suit-rg.ttf}???" xalign 0.5:
+                        textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
                     if day_5 == True:
-                        textbutton "{size=+5}{b}June 21st, 2013":
+                        textbutton "{size=+5}{b}June 21st, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 4)
                             unhovered SetVariable("daydesc", 0)
                             action Replay("unpack0621", scope={"C_Points": June11C, "D_Points": June11D, "delihangout": delihangout, "replay": True, "progress": 3})
                     else:
-                        textbutton "{size=+20}{font=gui/libel-suit-rg.ttf}???" xalign 0.5:
+                        textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
                     if day_6 == True:
-                        textbutton "{size=+5}{b}June 23rd, 2013":
+                        textbutton "{size=+5}{b}June 23rd, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 5)
                             unhovered SetVariable("daydesc", 0)
                             action Replay("churchends", scope={"B_Points": June21B, "C_Points": June21C, "D_Points": June21D, "E_Points": June21E, "B_Basketball": B_Basketball, "britnotpretty": britnotpretty, "cleaningpartner": cleaningpartner, "b_hat": False, "replay": True, "progress": 4})
                     else:
-                        textbutton "{size=+20}{font=gui/libel-suit-rg.ttf}???" xalign 0.5:
+                        textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
                     if day_7 == True:
-                        textbutton "{size=+5}{b}June 30th, 2013":
+                        textbutton "{size=+5}{b}June 30th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 6)
                             unhovered SetVariable("daydesc", 0)
                             action Replay("nhie_start", scope={"B_Points": June23B, "C_Points": June23C, "D_Points": June23D, "b_hat": False, "replay": True, "progress": 5})
                     else:
-                        textbutton "{size=+20}{font=gui/libel-suit-rg.ttf}???" xalign 0.5:
+                        textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
                 elif dayselectmenuvalue == "July, 2013":
                     if day_8 == True:
-                        textbutton "{size=+5}{b}July 4th, 2013":
+                        textbutton "{size=+5}{b}July 4th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 1)
                             unhovered SetVariable("daydesc", 0)
                             action Replay("donbirthday", scope={"B_Points": June30B, "C_Points": June30C, "D_Points": June30D, "h_hair": True, "b_hat": True, "replay": True})
                     else:
-                        textbutton "{size=+20}{font=gui/libel-suit-rg.ttf}???" xalign 0.5:
+                        textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
@@ -175,7 +175,7 @@ screen dayselectmenu():
                             unhovered SetVariable("daydesc", 0)
                             action Replay("swimming", scope={"B_Points": July4B, "C_Points": July4C, "D_Points": July4D, "b_hat": False, "c_hair": 1, "replay": True})
                     else:
-                        textbutton "{size=+20}{font=gui/libel-suit-rg.ttf}???" xalign 0.5:
+                        textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
@@ -238,33 +238,33 @@ screen dayselectmenu():
 
 # Music Room
 
-screen music_room:
+screen music_room():
     tag menu
     add 'gui/main_menu.png'
     add 'gui/pause_bg.png' xalign 0.5 yalign 0.5
     vbox:
         xalign 0.8 yalign 0.5
         null height 5
-        textbutton "1. Welcome to Berry Street!" action [ToggleVariable('persistent.current_track', 'Welcome to Berry Street!'), mr.Play("<to 76 loop 8>music/Welcome to Berry Street.ogg")]
-        textbutton "2. New Life" action [ToggleVariable('persistent.current_track', 'New Life'), mr.Play("<loop 14.769>music/New Life.ogg")]
-        textbutton "3. Oddball" action [ToggleVariable('persistent.current_track', 'Oddball'), mr.Play("music/Oddball.ogg")]
-        textbutton "4. Violet Wonder" action [ToggleVariable('persistent.current_track', 'Violet Wonder'), mr.Play("<loop 9.6>music/Violet Wonder.ogg")]
-        textbutton "5. Brotato Chips" action [ToggleVariable('persistent.current_track', 'Brotato Chips'), mr.Play("<to 68 loop 12>music/Brotato Chips.ogg")]
-        textbutton "6. Chaotic Evil" action [ToggleVariable('persistent.current_track', 'Chaotic Evil'), mr.Play("music/Chaotic Evil.ogg")]
-        textbutton "7. Ivories and Ebony" action [ToggleVariable('persistent.current_track', 'Ivories and Ebony'), mr.Play("<loop 3>music/Ivories and Ebony.ogg")]
-        textbutton "8. Different Yet Equal" action [ToggleVariable('persistent.current_track', "Different Yet Equal"), mr.Play("music/Different Yet Equal.ogg")]
-        textbutton "9. Home Life" action [ToggleVariable('persistent.current_track', "Home Life"), mr.Play("<to 112 loop 5.32>music/Home Life.ogg")]
-        textbutton "10. Relaxation in the Country" action [ToggleVariable('persistent.current_track', 'Relaxation in the Country'), mr.Play("<loop 5.333>music/Relaxation in the Country.ogg")]
-        textbutton "11. Reflection" action [ToggleVariable('persistent.current_track', 'Reflection'), mr.Play("music/Reflection.ogg")]
-        textbutton "12. Chillaxin\'" action [ToggleVariable('persistent.current_track', 'Chillaxin\''), mr.Play("<loop 18>music/Chillaxin.ogg")]
-        textbutton "13. The Pond" action [ToggleVariable('persistent.current_track', 'The Pond'), mr.Play("music/The Pond.ogg")]
-        textbutton "14. Outside the Street" action [ToggleVariable('persistent.current_track', 'Outside the Street'), mr.Play("music/Outside the Street.ogg")]
-        textbutton "15. Dinin' In" action [ToggleVariable('persistent.current_track', 'Dinin\' In'), mr.Play("<loop 9.6>music/Dinin' In.ogg")]
-        textbutton "16. The Mall" action [ToggleVariable('persistent.current_track', 'The Mall'), mr.Play("<loop 15>music/The Mall.ogg")]
-        textbutton "17. Friendly Competition" action [ToggleVariable('persistent.current_track', 'Friendly Competition'), mr.Play("music/Friendly Competition.ogg")]
-        textbutton "18. Cabin Fever" action [ToggleVariable('persistent.current_track', 'Cabin Fever'), mr.Play("<loop 8>music/Cabin Fever.ogg")]
-        textbutton "19. Sunday Service" action [ToggleVariable('persistent.current_track', 'Sunday Service'), mr.Play("music/Sunday Service.ogg")]
-        textbutton "20. Generic 80s Song" action [ToggleVariable('persistent.current_track', 'Generic 80s Song'), mr.Play("music/Generic 80s Song.ogg")]
+        textbutton "1. Welcome to Berry Street!" action [ToggleVariable('persistent.current_track', 'Welcome to Berry Street!'), mr.Play("<to 76 loop 8>audio/music/Welcome to Berry Street.ogg")]
+        textbutton "2. New Life" action [ToggleVariable('persistent.current_track', 'New Life'), mr.Play("<loop 14.769>audio/music/New Life.ogg")]
+        textbutton "3. Oddball" action [ToggleVariable('persistent.current_track', 'Oddball'), mr.Play("audio/music/Oddball.ogg")]
+        textbutton "4. Violet Wonder" action [ToggleVariable('persistent.current_track', 'Violet Wonder'), mr.Play("<loop 9.6>audio/music/Violet Wonder.ogg")]
+        textbutton "5. Brotato Chips" action [ToggleVariable('persistent.current_track', 'Brotato Chips'), mr.Play("<to 68 loop 12>audio/music/Brotato Chips.ogg")]
+        textbutton "6. Chaotic Evil" action [ToggleVariable('persistent.current_track', 'Chaotic Evil'), mr.Play("audio/music/Chaotic Evil.ogg")]
+        textbutton "7. Ivories and Ebony" action [ToggleVariable('persistent.current_track', 'Ivories and Ebony'), mr.Play("<loop 3>audio/music/Ivories and Ebony.ogg")]
+        textbutton "8. Different Yet Equal" action [ToggleVariable('persistent.current_track', "Different Yet Equal"), mr.Play("audio/music/Different Yet Equal.ogg")]
+        textbutton "9. Home Life" action [ToggleVariable('persistent.current_track', "Home Life"), mr.Play("<to 112 loop 5.32>audio/music/Home Life.ogg")]
+        textbutton "10. Relaxation in the Country" action [ToggleVariable('persistent.current_track', 'Relaxation in the Country'), mr.Play("<loop 5.333>audio/music/Relaxation in the Country.ogg")]
+        textbutton "11. Reflection" action [ToggleVariable('persistent.current_track', 'Reflection'), mr.Play("audio/music/Reflection.ogg")]
+        textbutton "12. Chillaxin\'" action [ToggleVariable('persistent.current_track', 'Chillaxin\''), mr.Play("<loop 18>audio/music/Chillaxin.ogg")]
+        textbutton "13. The Pond" action [ToggleVariable('persistent.current_track', 'The Pond'), mr.Play("audio/music/The Pond.ogg")]
+        textbutton "14. Outside the Street" action [ToggleVariable('persistent.current_track', 'Outside the Street'), mr.Play("audio/music/Outside the Street.ogg")]
+        textbutton "15. Dinin' In" action [ToggleVariable('persistent.current_track', 'Dinin\' In'), mr.Play("<loop 9.6>audio/music/Dinin' In.ogg")]
+        textbutton "16. The Mall" action [ToggleVariable('persistent.current_track', 'The Mall'), mr.Play("<loop 15>audio/music/The Mall.ogg")]
+        textbutton "17. Friendly Competition" action [ToggleVariable('persistent.current_track', 'Friendly Competition'), mr.Play("audio/music/Friendly Competition.ogg")]
+        textbutton "18. Cabin Fever" action [ToggleVariable('persistent.current_track', 'Cabin Fever'), mr.Play("<loop 8>audio/music/Cabin Fever.ogg")]
+        textbutton "19. Sunday Service" action [ToggleVariable('persistent.current_track', 'Sunday Service'), mr.Play("audio/music/Sunday Service.ogg")]
+        textbutton "20. Generic 80s Song" action [ToggleVariable('persistent.current_track', 'Generic 80s Song'), mr.Play("audio/music/Generic 80s Song.ogg")]
 
         null height 20
 
@@ -274,7 +274,7 @@ screen music_room:
 
     add "gui/record.png" at record_move_musicroom
 
-screen extras:
+screen extras():
     tag menu
     add "gui/pause_bg.png" xalign 0.5 yalign 0.5
     frame:
@@ -292,7 +292,7 @@ screen extras:
             null height 10
             textbutton "Back" action ShowMenu('main_menu')
 
-screen social_media:
+screen social_media():
     tag menu
     add 'gui/main_menu.png'
     add "gui/pause_bg.png"
@@ -336,7 +336,7 @@ screen ctc():
     zorder 100
     add "ctc_arrow"
 
-screen skipchoice:
+screen skipchoice():
     hbox:
         xalign 0.95
         yalign 0.95

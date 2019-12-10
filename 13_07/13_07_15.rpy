@@ -905,3 +905,5 @@ label gamestart:
     window show dissolve
     pause 0.1
     "The 5th inning ended."
+    call newgame
+    return

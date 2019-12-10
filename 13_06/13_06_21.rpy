@@ -43,21 +43,21 @@ label unpack0621:
     stop loop
 
     a "Yeah?"
-    d_o "{font=gui/LemonMilk.otf}{i}Hey, wassup?{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Hey, wassup?{/i}{/font}"
     a "Unpacking."
-    d_o "{font=gui/LemonMilk.otf}{i}Again??{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Again??{/i}{/font}"
     a "Can't help it; Mom wants everything unpacked ASAP."
-    d_o "{font=gui/LemonMilk.otf}{i}Well, that blows.{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Well, that blows.{/i}{/font}"
     a "Yeah, tell me about it."
-    d_o "{font=gui/LemonMilk.otf}{i}Well, how much more do you have?{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Well, how much more do you have?{/i}{/font}"
     a "In the whole house? I mean, not too much more; just some stuff in the living room and then our bedrooms."
-    d_o "{font=gui/LemonMilk.otf}{i}But it's easier said than done?{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}But it's easier said than done?{/i}{/font}"
     a "Heh. Pretty much."
-    d_o "{font=gui/LemonMilk.otf}{i}Hm...{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Hm...{/i}{/font}"
 
     "Uh oh. {w=.5}I've heard that 'Hm' before; that's Donald's 'I've got an idea' noise."
 
-    d_o "{font=gui/LemonMilk.otf}{i}Alright, Man. I'll talk to you later.{/i}{/font}"
+    d_o "{font=fonts/LemonMilk.otf}{i}Alright, Man. I'll talk to you later.{/i}{/font}"
     a "Alright. See ya!"
 
     "We then hung up, and I got back to work."
