@@ -2,40 +2,52 @@
 # Characters #
 ##############
 
-define a = Character(" Alex ", callback=a_voice, what_prefix='"', what_suffix='"')
-define b = Character(" [B_Name] ", callback=b_voice, image="brit", what_prefix='"', what_suffix='"')
-define bc = Character(" Brit and Chris ", what_prefix='"', what_suffix='"')
-define bd = Character(" Brit and Don ", callback=bd_voice, what_prefix='"', what_suffix='"')
-define c = Character(" [C_Name] ", callback=c_voice, image="chris", what_prefix='"', what_suffix='"')
-define ct = Character(" Mr. Truman ", callback=ct_voice, image="chad", what_prefix='"', what_suffix='"')
-define da = Character(" Daniel ", callback=da_voice, image="daniel", what_prefix='"', what_suffix='"')
-define d = Character(" Donald ", callback=d_voice, image="don", what_prefix='"', what_suffix='"')
-define e = Character(" [E_Name] ", callback=e_voice, image="elie", what_prefix='"', what_suffix='"')
-define f = Character(" Dad ", callback=f_voice, image="fred", what_prefix='"', what_suffix='"')
-define g = Character(" Mom ", callback=g_voice, image="ginger", what_prefix='"', what_suffix='"')
-define gr = Character(" Greeter ", what_prefix='"', what_suffix='"')
-define h = Character(" Harry ", callback=h_voice, image="harry", what_prefix='"', what_suffix='"')
-define hr = Character(" Mr. Rodriguez ", image="hector", what_prefix='"', what_suffix='"')
-define j = Character(" Mrs. Waters ", callback=j_voice, image="janice", what_prefix='"', what_suffix='"')
-define k = Character(" [K_Name] ", callback=k_voice, image="kelly", what_prefix='"', what_suffix='"')
-define l = Character(" Mr. Waters ", callback=l_voice, image="latrell", what_prefix='"', what_suffix='"')
-define mu = Character(" [M_Name] ", callback=m_voice, image="martha", what_prefix='"', what_suffix='"')
-define p = Character(" [P_Name] ", callback=p_voice, image="percy", what_prefix='"', what_suffix='"')
-define ump = Character(" Umpire ", what_prefix='"', what_suffix='"')
-define unknown = Character(" ??? ", what_prefix='"', what_suffix='"')
-define wo = Character(" Woman ", what_prefix='"', what_suffix='"')
+# Main
+define a = Character("Alex", callback=a_voice, what_prefix='"', what_suffix='"')
+define b = Character("[B_Name]", callback=b_voice, image="brit", what_prefix='"', what_suffix='"')
+define bc = Character("Brit and Chris", what_prefix='"', what_suffix='"')
+define bd = Character("Brit and Don", callback=bd_voice, what_prefix='"', what_suffix='"')
+define c = Character("[C_Name]", callback=c_voice, image="chris", what_prefix='"', what_suffix='"')
+define ct = Character("Mr. Truman", callback=ct_voice, image="chad", what_prefix='"', what_suffix='"')
+define da = Character("Daniel", callback=da_voice, image="daniel", what_prefix='"', what_suffix='"')
+define d = Character("Donald", callback=d_voice, image="don", what_prefix='"', what_suffix='"')
+define e = Character("[E_Name]", callback=e_voice, image="elie", what_prefix='"', what_suffix='"')
+define f = Character("Dad", callback=f_voice, image="fred", what_prefix='"', what_suffix='"')
+define g = Character("Mom", callback=g_voice, image="ginger", what_prefix='"', what_suffix='"')
+define gr = Character("Greeter", what_prefix='"', what_suffix='"')
+define h = Character("Harry", callback=h_voice, image="harry", what_prefix='"', what_suffix='"')
+define hr = Character("Mr. Rodriguez", image="hector", what_prefix='"', what_suffix='"')
+define j = Character("Mrs. Waters", callback=j_voice, image="janice", what_prefix='"', what_suffix='"')
+define k = Character("[K_Name]", callback=k_voice, image="kelly", what_prefix='"', what_suffix='"')
+define l = Character("Mr. Waters", callback=l_voice, image="latrell", what_prefix='"', what_suffix='"')
+define mu = Character("[M_Name]", callback=m_voice, image="martha", what_prefix='"', what_suffix='"')
+define p = Character("[P_Name]", callback=p_voice, image="percy", what_prefix='"', what_suffix='"')
+define ump = Character("Umpire", what_prefix='"', what_suffix='"')
+define unknown = Character(" ???", what_prefix='"', what_suffix='"')
+define wo = Character("Woman", what_prefix='"', what_suffix='"')
 
-define b_o = Character(" [B_Name] ", callback=b_offscreen, what_prefix='"', what_suffix='"')
-define c_o = Character(" [C_Name] ", callback=c_offscreen, what_prefix='"', what_suffix='"')
-define da_o = Character(" Daniel ", callback=da_offscreen, what_prefix='"', what_suffix='"')
-define d_o = Character(" Donald ", callback=d_offscreen, what_prefix='"', what_suffix='"')
-define e_o = Character(" [E_Name] ", callback=e_offscreen, what_prefix='"', what_suffix='"')
-define f_o = Character(" Dad ", callback=f_offscreen, what_prefix='"', what_suffix='"')
-define g_o = Character(" Mom ", callback=g_offscreen, what_prefix='"', what_suffix='"')
-define h_o = Character(" Harry ", callback=h_offscreen, what_prefix='"', what_suffix='"')
-define m_o = Character(" [M_Name] ", callback=m_offscreen, what_prefix='"', what_suffix='"')
-define p_o = Character(" [P_Name] ", callback=p_offscreen, what_prefix='"', what_suffix='"')
+# Offscreen
+define b_o = Character("[B_Name]", callback=b_offscreen, what_prefix='"', what_suffix='"')
+define c_o = Character("[C_Name]", callback=c_offscreen, what_prefix='"', what_suffix='"')
+define da_o = Character("Daniel", callback=da_offscreen, what_prefix='"', what_suffix='"')
+define d_o = Character("Donald", callback=d_offscreen, what_prefix='"', what_suffix='"')
+define e_o = Character("[E_Name]", callback=e_offscreen, what_prefix='"', what_suffix='"')
+define f_o = Character("Dad", callback=f_offscreen, what_prefix='"', what_suffix='"')
+define g_o = Character("Mom", callback=g_offscreen, what_prefix='"', what_suffix='"')
+define h_o = Character("Harry", callback=h_offscreen, what_prefix='"', what_suffix='"')
+define m_o = Character("[M_Name]", callback=m_offscreen, what_prefix='"', what_suffix='"')
+define p_o = Character("[P_Name]", callback=p_offscreen, what_prefix='"', what_suffix='"')
 
+# Silent
+define a_s = Character("Alex", what_prefix='"', what_suffix='"')
+define b_s = Character("[B_Name]", image="brit", what_prefix='"', what_suffix='"')
+define c_s = Character("[C_Name]", image="chris", what_prefix='"', what_suffix='"')
+define d_s = Character("Donald", image="don", what_prefix='"', what_suffix='"')
+define e_s = Character("[E_Name]", image="elie", what_prefix='"', what_suffix='"')
+define h_s = Character("Harry", image="harry", what_prefix='"', what_suffix='"')
+define mu_s = Character("[M_Name", image="martha", what_prefix='"', what_suffix='"')
+
+# Texting
 define narrate = nvl_narrator
 define a_nvl = Character("Alex", what_color="#d7d400", what_outlines=[(1, "#000000")], kind=nvl)
 define b_nvl = Character("Brittney", what_color="#7c0000", what_outlines=[(1, "#000000")], kind=nvl)
@@ -51,148 +63,148 @@ image bg fade = "#000000"
 image bg white = "#ffffff"
 image bg car:
     "BG/Backseat View.png"
-    size (1920, 1080)
+    zoom 0.75
 image bg house_s:
-    size (1920, 1080)
+    zoom 0.75
     "BG/Sprouse House.png"
 image bg house_ut:
-    size (1920, 1080)
+    zoom 0.75
     "BG/Usher Truman House.png"
 image bg house_w:
     "BG/Waters House.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg house_w_s:
     "BG/Waters House Sunset.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg living_w:
     "BG/Waters Living Room.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg basketball_w:
     "BG/Waters Basketball Hoop.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg living_s_m:
     "BG/Living Room Moving.png"
     size(1920, 1080)
 image bg bedroom_a_m:
     "BG/Alex Bedroom Moving.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg living_ut:
     "BG/Usher Truman Living Room.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg house_ro:
     "BG/Rodriguez House.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg house_z:
     "BG/Ziphon House.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg house_re:
     "BG/Reagan House.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg house_y:
-    size (1920, 1080)
+    zoom 0.75
     "BG/Yellman House.png"
 image bg house_n:
     "BG/Nanner House.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg pond:
-    size (1920, 1080)
+    zoom 0.75
     "BG/Pond.png"
 image bg pond_n:
-    size (1920, 1080)
+    zoom 0.75
     "BG/Pond Night.png"
 image bg cabin_e:
     "BG/Cabin Exterior.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg cabin_e_s:
     "BG/Cabin Exterior Sunset.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg cabin_i:
     "BG/Cabin Interior.png"
-    size(2880, 1080)
+    zoom 0.75
     xalign 0.5
 image bg cabin_i_s:
     "BG/Cabin Interior Sunset.png"
-    size(2880, 1080)
+    zoom 0.75
     xalign 0.5
 image bg cabin_i_n:
     "BG/Cabin Interior Night.png"
-    size(2880, 1080)
+    zoom 0.75
     xalign 0.5
 image bg mainstreet:
     "BG/Main Street.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg deli_e:
     "BG/Kelly's Deli Exterior.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg deli_i_e:
     "BG/Kelly's Deli Entrance.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg deli_i_wb:
     "BG/Kelly's Deli Window Booth.png"
-    size(2258.25, 1080)
+    zoom 0.75
     xalign 0.0
 image deli_table:
     "BG/Kelly's Deli Window Booth Table.png"
-    size(2258.25, 1080)
+    zoom 0.75
     xalign 0.0
 image bg porch_ut:
     "BG/Porch Usher Truman.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg bs:
     "BG/Berry Street.png"
     yalign 1.0
-    size(1920, 2160)
+    zoom 0.75
 image bg school_e:
     "BG/School Entrance.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg dolmart_e:
     "BG/Dolmart Exterior.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg dolmart_i:
     "BG/Dolmart Interior.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg game_menu:
     "BG/game_menu.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg church_e:
     "BG/Church Exterior.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg mall_e:
     "BG/Mall Exterior.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg mall_i:
     "BG/Mall Interior.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg sports:
     "BG/Sport Store.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg games:
     "BG/Game Store.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg art:
     "BG/Art Store.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg mall_fc:
     "BG/Food Court.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg backyard_w:
     "BG/Backyard_Waters.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg anna:
     "CG/CG 03/CG_03.png"
-    size (1920, 1080)
+    zoom 0.75
 image bg woods:
-    size (1920, 1080)
+    zoom 0.75
     "BG/Woods.png"
 image bg baseball:
     "BG/Baseball Field.png"
-    size(1920, 1080)
+    zoom 0.75
 image baseball_overlay:
     "BG/Baseball Field Overlay.png"
-    size(1920, 1080)
+    zoom 0.75
 image bg conveniencestore:
     "BG/Convenience Store.png"
-    size(1920, 1080)
+    zoom 0.75
 
 ##########
 # Images #
@@ -226,10 +238,10 @@ image phone_sender = "Phone/sender.png"
 
 image pond_foreground:
     "BG/Pond_02.png"
-    size (1920, 1080)
+    zoom 0.75
 image deli_entrance_sign:
     "BG/Kelly's Deli Entrance Sign.png"
-    size(1920, 1080)
+    zoom 0.75
 
 image calendar_circle:
     size(136.5, 121.5)
@@ -463,6 +475,21 @@ default m_glasses = True
 default m_partial = False
 default p_glasses = 1
 
+default outfit_b = "b"
+default outfit_ch = "a"
+default outfit_c = "a"
+default outfit_da = "a"
+default outfit_d = "b"
+default outfit_e = "a"
+default outfit_f = "a"
+default outfit_g = "a"
+default outfit_h = "a"
+default outfit_j = "a"
+default outfit_k = "a"
+default outfit_l = "a"
+default outfit_m = "a"
+default outfit_p = "a"
+
 default nhie_a_points = 5
 default nhie_b_points = 5
 default nhie_c_points = 5
@@ -475,54 +502,16 @@ default daydesc = 0
 
 default current_track = "None"
 
-default day_2 = False
-default day_3 = False
-default day_4 = False
-default day_5 = False
-default day_6 = False
-default day_7 = False
-default day_8 = False
-default day_9 = False
+default day = 1
 
-default June3B = 0
-default June3C = 0
-default June3D = 0
-default June3E = 0
-
-default June4B = 0
-default June4C = 0
-default June4D = 0
-default June4E = 0
-
-default June11B = 0
-default June11C = 0
-default June11D = 0
-default June11E = 0
-
-default June21B = 0
-default June21C = 0
-default June21D = 0
-default June21E = 0
-
-default June23B = 0
-default June23C = 0
-default June23D = 0
-default June23E = 0
-
-default June30B = 0
-default June30C = 0
-default June30D = 0
-default June30E = 0
-
-default July04B = 0
-default July04C = 0
-default July04D = 0
-default July04E = 0
-
-default July10B = 0
-default July10C = 0
-default July10D = 0
-default July10E = 0
+default monthpoints = {"June3B": 0, "June3D": 0, 
+"June4B": 0, "June4C": 0, "June4D": 0, 
+"June11B": 0, 
+"June21C": 0, "June21D": 0, 
+"June23B": 0, "June23C": 0, "June23E": 0, 
+"June30B": 0, "June30C": 0, "June30D": 0, 
+"July4B": 0, "July4C": 0, "July4D": 0, 
+"July10B": 0, "July10C": 0, "July10D": 0, "July10E": 0}
 
 #####################
 # Character Sprites #
@@ -582,30 +571,10 @@ layeredimage brit:
     else:
         "Characters/Brittney/Brittney_HairTie_03.png"
     group body:
-        attribute a1:
-            "Characters/Brittney/Brittney_Body_a01.png"
-        attribute a2:
-            "Characters/Brittney/Brittney_Body_a02.png"
-        attribute b1:
-            "Characters/Brittney/Brittney_Body_b01.png"
-        attribute b2:
-            "Characters/Brittney/Brittney_Body_b02.png"
-        attribute c1:
-            "Characters/Brittney/Brittney_Body_c01.png"
-        attribute c2:
-            "Characters/Brittney/Brittney_Body_c02.png"
-        attribute d1:
-            "Characters/Brittney/Brittney_Body_d01.png"
-        attribute d2:
-            "Characters/Brittney/Brittney_Body_d02.png"
-        attribute e1:
-            "Characters/Brittney/Brittney_Body_e01.png"
-        attribute e2:
-            "Characters/Brittney/Brittney_Body_e02.png"
-        attribute f1:
-            "Characters/Brittney/Brittney_Body_f01.png"
-        attribute f2:
-            "Characters/Brittney/Brittney_Body_f02.png"
+        attribute p1:
+            "Characters/Brittney/Brittney_Body_[outfit_b]01.png"
+        attribute p2:
+            "Characters/Brittney/Brittney_Body_[outfit_b]02.png"
     group eyes:
         attribute straight:
             "Characters/Brittney/Brittney_Pupils_01.png"
@@ -685,6 +654,89 @@ layeredimage brit:
         attribute shorts:
             "Characters/Brittney/Brittney_Shorts.png"
 
+# Chad Truman
+image chad_blink:
+    "Characters/Brittney/Brittney_Blinking_00.png"
+    block:
+        pause 2.0
+        choice:
+            pass
+        choice:
+            pause 0.5
+        choice:
+            pause 1.0
+        choice:
+            pause 1.5
+        choice:
+            pause 2.0
+        choice:
+            pause 2.5
+        choice:
+            pause 3.0
+        "Characters/Chad/Chad_Blink_04.png"
+        pause 0.025
+        "Characters/Chad/Chad_Blink_03.png"
+        pause 0.025
+        "Characters/Chad/Chad_Blink_02.png"
+        pause 0.025
+        "Characters/Chad/Chad_Blink_01.png"
+        pause 0.025
+        "Characters/Brittney/Brittney_Blinking_00.png"
+        repeat
+
+image chad_talking:
+    choice:
+        "Characters/Chad/Chad_Lip_A.png"
+    choice:
+        "Characters/Chad/Chad_Lip_E.png"
+    choice:
+        "Characters/Chad/Chad_Lip_O.png"
+    choice:
+        "Characters/Chad/Chad_Lip_U.png"
+    pause 0.1
+    repeat
+
+layeredimage chad:
+    group body:
+        ypos 0.1
+        attribute p1:
+            "Characters/Chad/Chad_Body_[outfit_ch]01.png"
+    group mouth:
+        ypos 0.1
+        attribute grin:
+            "Characters/Chad/Chad_Mouth_01.png"
+        attribute blank:
+            "Characters/Chad/Chad_Mouth_02.png"
+    group lip:
+        ypos 0.1
+        attribute talking:
+            "chad_talking"
+        attribute notalking:
+            "Characters/Brittney/Brittney_Lip_None.png"
+    group eyes:
+        ypos 0.1
+        attribute straight:
+            "Characters/Chad/Chad_Pupils_01.png"
+        attribute left:
+            "Characters/Chad/Chad_Pupils_02.png"
+        attribute right:
+            "Characters/Chad/Chad_Pupils_03.png"
+    always:
+        "chad_blink"
+        ypos 0.1
+    group eyebrows:
+        ypos 0.1
+        attribute sad:
+            "Characters/Chad/Chad_Eyebrows_01.png"
+        attribute casual:
+            "Characters/Chad/Chad_Eyebrows_02.png"
+        attribute mad:
+            "Characters/Chad/Chad_Eyebrows_03.png"
+        attribute raised:
+            "Characters/Chad/Chad_Eyebrows_04.png"
+        attribute level:
+            "Characters/Chad/Chad_Eyebrows_05.png"
+
 # Christeena
 image chris_blink:
     "Characters/Christeena/Christeena_Blinking_00.png"
@@ -736,26 +788,10 @@ layeredimage chris:
         ypos 0.1
     group body:
         ypos 0.1
-        attribute a1:
-            "Characters/Christeena/Christeena_Body_a01.png"
-        attribute a2:
-            "Characters/Christeena/Christeena_Body_a02.png"
-        attribute b1:
-            "Characters/Christeena/Christeena_Body_b01.png"
-        attribute b2:
-            "Characters/Christeena/Christeena_Body_b02.png"
-        attribute c1:
-            "Characters/Christeena/Christeena_Body_c01.png"
-        attribute c2:
-            "Characters/Christeena/Christeena_Body_c02.png"
-        attribute d1:
-            "Characters/Christeena/Christeena_Body_d01.png"
-        attribute d2:
-            "Characters/Christeena/Christeena_Body_d02.png"
-        attribute e1:
-            "Characters/Christeena/Christeena_Body_e01.png"
-        attribute e2:
-            "Characters/Christeena/Christeena_Body_e02.png"
+        attribute p1:
+            "Characters/Christeena/Christeena_Body_[outfit_c]01.png"
+        attribute p2:
+            "Characters/Christeena/Christeena_Body_[outfit_c]02.png"
     group eyes:
         ypos 0.1
         attribute straight:
@@ -823,91 +859,6 @@ layeredimage chris:
         attribute tears:
             "Characters/Christeena/Christeena_Tears_01.png"
 
-# Chad Truman
-image chad_blink:
-    "Characters/Brittney/Brittney_Blinking_00.png"
-    block:
-        pause 2.0
-        choice:
-            pass
-        choice:
-            pause 0.5
-        choice:
-            pause 1.0
-        choice:
-            pause 1.5
-        choice:
-            pause 2.0
-        choice:
-            pause 2.5
-        choice:
-            pause 3.0
-        "Characters/Chad/Chad_Blink_04.png"
-        pause 0.025
-        "Characters/Chad/Chad_Blink_03.png"
-        pause 0.025
-        "Characters/Chad/Chad_Blink_02.png"
-        pause 0.025
-        "Characters/Chad/Chad_Blink_01.png"
-        pause 0.025
-        "Characters/Brittney/Brittney_Blinking_00.png"
-        repeat
-
-image chad_talking:
-    choice:
-        "Characters/Chad/Chad_Lip_A.png"
-    choice:
-        "Characters/Chad/Chad_Lip_E.png"
-    choice:
-        "Characters/Chad/Chad_Lip_O.png"
-    choice:
-        "Characters/Chad/Chad_Lip_U.png"
-    pause 0.1
-    repeat
-
-layeredimage chad:
-    group body:
-        ypos 0.1
-        attribute a1:
-            "Characters/Chad/Chad_Body_a01.png"
-        attribute b1:
-            "Characters/Chad/Chad_Body_b01.png"
-    group mouth:
-        ypos 0.1
-        attribute grin:
-            "Characters/Chad/Chad_Mouth_01.png"
-        attribute blank:
-            "Characters/Chad/Chad_Mouth_02.png"
-    group lip:
-        ypos 0.1
-        attribute talking:
-            "chad_talking"
-        attribute notalking:
-            "Characters/Brittney/Brittney_Lip_None.png"
-    group eyes:
-        ypos 0.1
-        attribute straight:
-            "Characters/Chad/Chad_Pupils_01.png"
-        attribute left:
-            "Characters/Chad/Chad_Pupils_02.png"
-        attribute right:
-            "Characters/Chad/Chad_Pupils_03.png"
-    always:
-        "chad_blink"
-        ypos 0.1
-    group eyebrows:
-        ypos 0.1
-        attribute sad:
-            "Characters/Chad/Chad_Eyebrows_01.png"
-        attribute casual:
-            "Characters/Chad/Chad_Eyebrows_02.png"
-        attribute mad:
-            "Characters/Chad/Chad_Eyebrows_03.png"
-        attribute raised:
-            "Characters/Chad/Chad_Eyebrows_04.png"
-        attribute level:
-            "Characters/Chad/Chad_Eyebrows_05.png"
-
 # Daniel
 image daniel_blink:
     "Characters/Christeena/Christeena_Blinking_00.png"
@@ -952,8 +903,8 @@ image daniel_talking:
 
 layeredimage daniel:
     group body:
-        attribute a1:
-            "Characters/Daniel/Daniel_Body_a01.png"
+        attribute p1:
+            "Characters/Daniel/Daniel_Body_[outfit_da]01.png"
     group eyes:
         attribute straight:
             "Characters/Daniel/Daniel_Pupils_01.png"
@@ -1023,22 +974,10 @@ image don_talking:
 
 layeredimage don:
     group body:
-        attribute a1:
-            "Characters/Donald/Donald_Body_a01.png"
-        attribute a2:
-            "Characters/Donald/Donald_Body_a02.png"
-        attribute b1:
-            "Characters/Donald/Donald_Body_b01.png"
-        attribute c1:
-            "Characters/Donald/Donald_Body_c01.png"
-        attribute d1:
-            "Characters/Donald/Donald_Body_d01.png"
-        attribute d2:
-            "Characters/Donald/Donald_Body_d02.png"
-        attribute e1:
-            "Characters/Donald/Donald_Body_e01.png"
-        attribute e2:
-            "Characters/Donald/Donald_Body_e02.png"
+        attribute p1:
+            "Characters/Donald/Donald_Body_[outfit_d]01.png"
+        attribute p2:
+            "Characters/Donald/Donald_Body_[outfit_d]02.png"
     group eyes:
         attribute straight:
             "Characters/Donald/Donald_Pupils_01.png"
@@ -1131,11 +1070,7 @@ layeredimage elie:
         "Characters/Eleanor/Eleanor_Hair_Bottom.png"
     group body:
         attribute a1:
-            "Characters/Eleanor/Eleanor_Body_a01.png"
-        attribute b1:
-            "Characters/Eleanor/Eleanor_Body_b01.png"
-        attribute c1:
-            "Characters/Eleanor/Eleanor_Body_c01.png"
+            "Characters/Eleanor/Eleanor_Body_[outfit_e]01.png"
     group eyes:
         attribute straight:
             "Characters/Eleanor/Eleanor_Pupils_01.png"
@@ -1223,8 +1158,8 @@ image fred_talking:
 
 layeredimage fred:
     group body:
-        attribute a1:
-            "Characters/Fred/Fred_Body_a01.png"
+        attribute p1:
+            "Characters/Fred/Fred_Body_[outfit_f]01.png"
     group mouth:
         attribute grin:
             "Characters/Fred/Fred_Mouth_01.png"
@@ -1299,10 +1234,10 @@ image ginger_talking:
 
 layeredimage ginger:
     group body:
-        attribute a1:
-            "Characters/Ginger/Ginger_Body_a01.png"
-        attribute a2:
-            "Characters/Ginger/Ginger_Body_a02.png"
+        attribute p1:
+            "Characters/Ginger/Ginger_Body_[outfit_g]01.png"
+        attribute p2:
+            "Characters/Ginger/Ginger_Body_[outfit_g]02.png"
     group mouth:
         attribute grin:
             "Characters/Ginger/Ginger_Mouth_01.png"
@@ -1378,10 +1313,8 @@ layeredimage harry:
     if h_hair:
         "Characters/Harry/Harry_Hair_02.png"
     group body:
-        attribute a1:
-            "Characters/Harry/Harry_Body_a01.png"
-        attribute b1:
-            "Characters/Harry/Harry_Body_b01.png"
+        attribute p1:
+            "Characters/Harry/Harry_Body_[outfit_h]01.png"
     group mouth:
         attribute blank:
             "Characters/Harry/Harry_Mouth_01.png"
@@ -1469,8 +1402,8 @@ image janice_talking:
 
 layeredimage janice:
     group body:
-        attribute a1:
-            "Characters/Janice/Janice_Body_a01.png"
+        attribute p1:
+            "Characters/Janice/Janice_Body_[outfit_j]01.png"
     group mouth:
         attribute grin:
             "Characters/Janice/Janice_Mouth_01.png"
@@ -1540,12 +1473,10 @@ layeredimage kelly:
     if k_hair == 0:
         "Characters/Kelly/Kelly_Hair_02.png"
     group body:
-        attribute a1:
-            "Characters/Kelly/Kelly_Body_a01.png"
-        attribute a2:
-            "Characters/Kelly/Kelly_Body_a02.png"
-        attribute b1:
-            "Characters/Kelly/Kelly_Body_b01.png"
+        attribute p1:
+            "Characters/Kelly/Kelly_Body_[outfit_k]01.png"
+        attribute p2:
+            "Characters/Kelly/Kelly_Body_[outfit_k]02.png"
     group eyes:
         attribute straight:
             "Characters/Kelly/Kelly_Pupils_01.png"
@@ -1643,8 +1574,8 @@ image latrell_talking:
 
 layeredimage latrell:
     group body:
-        attribute a1:
-            "Characters/Latrell/Latrell_Body_a01.png"
+        attribute p1:
+            "Characters/Latrell/Latrell_Body_[outfit_l]01.png"
     group mouth:
         attribute grin:
             "Characters/Latrell/Latrell_Mouth_01.png"
@@ -1721,10 +1652,8 @@ image martha_talking:
 layeredimage martha:
     group body:
         ypos 40
-        attribute a1:
-            "Characters/Martha/Martha_Body_a01.png"
-        attribute b1:
-            "Characters/Martha/Martha_Body_b01.png"
+        attribute p1:
+            "Characters/Martha/Martha_Body_[outfit_m]01.png"
     group eyes:
         ypos 40
         attribute straight:
@@ -1837,8 +1766,8 @@ image percy_talking:
 
 layeredimage percy:
     group body:
-        attribute a1:
-            "Characters/Percy/Percy_Body_a01.png"
+        attribute p1:
+            "Characters/Percy/Percy_Body_[outfit_p]01.png"
     group mouth:
         attribute grin:
             "Characters/Percy/Percy_Mouth_01.png"
@@ -2286,6 +2215,22 @@ transform record_pause:
     xanchor 0.5 yanchor 0.5
     xalign 0.05 yalign 0.75
 
+transform choices(delay):
+    alpha 0.0
+    xpos 100
+    yalign 0.5
+    pause delay
+    parallel:
+        ease 0.5 alpha 1.0
+    parallel:
+        ease 0.5 xpos 0
+
+transform gallery:
+    zoom 0.25
+
+transform fullscreen:
+    size(1920, 1080)
+
 ##########
 # Styles #
 ##########
@@ -2595,7 +2540,7 @@ init -1 python:
 #########
 
 init -1 python:
-    mr = MusicRoom(fadeout=0.5, loop=True, single_track=True)
+    mr = MusicRoom(channel="music", fadeout=0.5, loop=True, single_track=True)
 
     mr.add("<to 76 loop 8>audio/music/Welcome to Berry Street.ogg", always_unlocked=True)
     mr.add("audio/music/Oddball.ogg")
@@ -2619,6 +2564,27 @@ init -1 python:
     mr.add("<loop 15>audio/music/The Mall.ogg")
 
 init python:
+    gal = Gallery()
+    gal.transition = dissolve
+    gal.locked_button = "gui/gallery/locked.png"
+    gal.idle_border = "gui/gallery/idle.png"
+    gal.hover_border = "gui/gallery/hover.png"
+
+    gal.button("cg_1")
+    gal.condition("persistent.cg_1")
+    gal.image("cg1_gal")
+    gal.transform(fullscreen)
+    
+    gal.button("cg_2")
+    gal.unlock_image("bg cg_02")
+
+image cg1_gal:
+    "cg_01 a_right a_level a_blank b_raised b_right b_grin c_left c_casual c_blank"
+    size(2560, 1440)
+
+image idle = "gui/gallery/idle.png"
+
+init python:
     renpy.music.register_channel('blip', mixer="voice")
     renpy.music.register_channel("loop","sfx",True,tight=True)
 
@@ -2627,7 +2593,6 @@ define moveinoutdissolve = ComposeTransition(dissolve, before=moveoutleft, after
 
 define config.enter_yesno_transition = dissolve
 
-#define loadgame = ComposeTransition(dissolve, before=)
 
 init python:
     config.keymap['game_menu'].remove('mouseup_3')

@@ -5,6 +5,7 @@ label shoppingwithharry:
         E_Name = "???"
         b_hat = 0
         b_hairtie = renpy.random.randint(0, 2)
+        outfit_b = "a"
     show text "{size=+50}June, 2013{/size}":
         xalign 0.5 yalign 0.05
     show screen calendarOs
@@ -44,7 +45,7 @@ label shoppingwithharry:
     "Regardless, I followed orders and went downstairs to the living room."
     scene bg living_s_m with dissolve
     pause 0.1
-    show ginger a2 straight casual grin at close_c with dissolve
+    show ginger p2 straight casual grin at close_c with dissolve
     pause 0.1
     "When I got downstairs, I saw Mom looking at me with a smile."
     "On the bright side, that's a sign that she wasn't angry at me.{w} On the dark side, that's a sign that she wants me to do a favor that I probably won't enjoy."
@@ -63,7 +64,7 @@ label shoppingwithharry:
     show ginger blank
     h_o "Hey!!"
     show ginger at close_left_c
-    show harry a1 small mad scream at tworight
+    show harry p1 small mad scream at tworight
     with easeinright
     pause 0.1
     "It didn't take long for my younger brother to rush in at the mention of spending money because of good behavior."
@@ -90,7 +91,7 @@ label shoppingwithharry:
     pause 0.1
     $ current_track = "\"Outside the Street\""
     play music outside_the_street
-    show harry a1 straight closed_smile casual at close_h with dissolve
+    show harry p1 straight closed_smile casual at close_h with dissolve
     pause 0.1
     h "I call shotgun!"
     a "Darn, and here I was hoping I could get shotgun so YOU could drive, instead!"
@@ -125,7 +126,7 @@ label shoppingwithharry:
     "So, we had to resort to the next town over, Trenburg, which was slightly bigger than Smalltown, but not too far away to where it felt like a trek."
     "It was certainly a lot closer than Chicago, that's for sure."
     "Anyway, they had a Dolmart there that basically sold anything on God's Green Earth, and that's where Harry and I found ourselves."
-    show harry a1 straight casual blank at close_h with dissolve
+    show harry p1 straight casual blank at close_h with dissolve
     pause 0.1
     a "Now, remember, we have to get everything on the list, THEN we can buy the stuff for us, so I don't wanna see you run straight to the videogame aisle."
     h mad "I know that!"
@@ -140,7 +141,7 @@ label shoppingwithharry:
     "I had only been in this building once before now, so I wasn't fully lost, but I certainly didn't remember where everything was."
     "Still, all the groceries seemed to be on one side of the store, aka the side we were in, so there's a start."
     "Harry grabbed an empty cart and rushed over next to me."
-    show harry a1 straight casual blank at close_h with easeinleft
+    show harry p1 straight casual blank at close_h with easeinleft
     pause 0.1
     h "So, what's on the list?"
     a "Let's see..."
@@ -156,7 +157,7 @@ label shoppingwithharry:
     "I couldn't believe just how many different kinds of meat there were. Things like ground beef and chicken legs make sense..."
     "...but pig hooves and chicken paws? People really eat those? Is there really enough meat on those things that you can eat??"
     "Ah, whatever. For now, I just grabbed two packages of the chicken and threw them into our cart."
-    show harry a1 straight casual blank at close_h with dissolve
+    show harry p1 straight casual blank at close_h with dissolve
     pause 0.1
     h "Okay. Now what?"
     a "Next up is Alfredo sauce."
@@ -177,12 +178,12 @@ label shoppingwithharry:
     play sound shopping_cart
     "But it was too late; Harry ran the cart right into someone."
     e_o "{b}{i}OWW!{/i}{/b}"
-    show elie a1 straight mad blank at middle with dissolve
+    show elie p1 straight mad blank at middle with dissolve
     pause 0.1
     $ current_track = "\"Chaotic Evil\""
     play music chaotic_evil
     "It was a young woman that looked around her early twenties, and her expression was rightfully a furious one."
-    show harry a1 small sad scream at twoleft
+    show harry p1 small sad scream at twoleft
     show elie at tworight
     with easeinleft
     pause 0.1
@@ -201,15 +202,15 @@ label shoppingwithharry:
     show harry straight blank:
         ease 0.5 close_h
     pause 0.6
-    h "..."
+    h_s "..."
     a "You okay?"
     h right "...let's just go get the sauce."
     "His tone was soft. I could barely make out what he said."
     a "Alright. It should be right over here."
     a "And hey...{w} don't let her bother you. She just overreacted."
-    h "..."
+    h_s "..."
     a "Besides, what are the odds of seeing her ever again?"
-    h "..."
+    h_s "..."
     a "*sigh*"
     "I guess there isn't really anything I could say to cheer him up at the moment, but I'm sure he'll get over it pretty quickly."
     window hide dissolve
@@ -221,7 +222,7 @@ label shoppingwithharry:
     play loop dolmart
     window show dissolve
     a "Okay, we've got the chicken, the Alfredo sauce, the cheese, the noodles, the pesto, and the milk.{w} I believe that's everything."
-    show harry a1 straight raised blank at close_h with dissolve
+    show harry p1 straight raised blank at close_h with dissolve
     pause 0.1
     h "I'd hope so; you're the one with the list."
     a "So, I suppose now that we have that out of the way, it's time to decide what to do with the rest of the money."
@@ -239,7 +240,7 @@ label shoppingwithharry:
     "Harry then pushed the cart of groceries towards the other side of the store, making sure to go slowly and carefully."
     "Even though he seemed to be in a better mood, he still had that bitchy woman on his mind, and I can't really fault him for that."
     "Regardless, we made it to the electronics section with no issues. The game cabinet had quite a large selection, I must admit."
-    show harry a1 straight casual blank at close_h with dissolve
+    show harry p1 straight casual blank at close_h with dissolve
     pause .1
     h "How much money do we have left to spend?"
     a "Taking tax into consideration, I'd say maybe...{w=0.5}$45?"
@@ -268,7 +269,7 @@ label shoppingwithharry:
     "After we checked out and bought both the game and groceries, not adding anything else to the list, our leftover amount was around $20."
     stop loop fadeout 0.5
     scene bg dolmart_e with dissolve
-    show harry a1 straight casual blank at close_h with dissolve
+    show harry p1 straight casual blank at close_h with dissolve
     pause 0.1
     h "So, now what?"
     a "Well, Mom didn't say we had to spend ALL the money, so we could always just head home and give her the rest."
@@ -297,7 +298,7 @@ label shoppingwithharry:
     gr "I'll let you know when a table is available. Please wait here patiently."
     a "No problem."
     "She gave a relieved smile and nod as she walked away to the main dining area."
-    show harry a1 straight level dot at close_h with dissolve
+    show harry p1 straight level dot at close_h with dissolve
     pause 0.1
     h "Wow. It's really busy in here."
     a "Indeed. It's nothing like when I first came here a week ago with Donald and the girls."
@@ -307,7 +308,7 @@ label shoppingwithharry:
     hide harry with dissolve
     pause 0.1
     "Harry and I turned towards a table nearby, where we could see a middle-aged woman holding her hand in the air, looking at a waitress passing by."
-    show kelly a2 straight casual blank at k_middle with dissolve
+    show kelly p2 straight casual blank at k_middle with dissolve
     pause 0.1
     k "Can I help you?"
     wo "Yes, I just want to say that you've passed by my table twice now and haven't refilled my drink, even though my glass is clearly empty."
@@ -319,7 +320,7 @@ label shoppingwithharry:
     k raised grin "Certainly. Just give me a second."
     show kelly at k_threeright with easeinleft
     "The waitress then started walking towards the kitchen area. {w}Halfway there, though, she did an exaggerated 180 turn and walked back to the table, putting on an innocent yet cunning smile."
-    show kelly casual a1 at k_middle with easeinright
+    show kelly casual p1 at k_middle with easeinright
     k "Hi! I'm Kelly, the manager of Kelly's Deli. I heard you wanted to speak with me?"
     $ K_Name = "Kelly"
     "The woman just glared at her face for a second before shifting her eyes to her name tag."
@@ -344,7 +345,7 @@ label shoppingwithharry:
     a "This is my brother, Harry. Thought I'd treat him to lunch."
     k "Well, it's certainly nice to make your acquaintance, Harry."
     show kelly at k_twoleft
-    show harry a1 straight mad closed_smile at tworight
+    show harry p1 straight mad closed_smile at tworight
     with easeinright
     pause 0.1
     h "Do you always treat rude customers like that?"
@@ -367,7 +368,7 @@ label shoppingwithharry:
     "Kelly quickly cleaned up the table, clearly not bothered by the obvious dine-and-dash that had occurred, and handed us our menus."
     "She said that the deli was a little understaffed today, so service might not be fast.{w} Harry and I both told her that there was no problem."
     "She gave us a thumbs-up and told us to call her over when we're ready to order."
-    show harry a1 straight closed_smile sad at middle zorder 1 with dissolve
+    show harry p1 straight closed_smile sad at middle zorder 1 with dissolve
     pause 0.1
     h "Man, that woman is awesome!"
     a "I told you you'd love the owner."
@@ -398,7 +399,7 @@ label shoppingwithharry:
     "It was a tough choice, but I decided on the Tuna Melt; it was different, and my curiosity was tingling."
     "She let us know that our sandwiches and soda would be out soon, to which we thanked her and she was on her way."
     "After a few minutes of silence between Harry and I, I spoke up, trying to make conversation."
-    show harry a1 straight casual blank at middle with dissolve
+    show harry p1 straight casual blank at middle with dissolve
     pause 0.1
     a "So, Harry, what do you think of Smalltown so far?"
     h level right "Eh. It's not as bad as I thought it would be."
@@ -418,8 +419,8 @@ label shoppingwithharry:
     a "Not anymore."
     h straight frown "Jerk!"
     a "Apologize, and I may reconsider it."
-    h blank ".{w=0.5}.{w=0.5}.{w=0.5}{nw}"
-    h right level "...{fast}Whatever. It's just a dumb game, anyway."
+    h_s blank ".{w=0.5}.{w=0.5}.{w=0.5}{nw}"
+    h right level "...{fast}whatever. It's just a dumb game, anyway."
     "Wow. Now THAT'S hurtful."
     a "Well, I still think you should be properly introduced to the girls."
     h raised straight "Why?"
@@ -436,7 +437,7 @@ label shoppingwithharry:
         ease 0.5 xalign 1.0
     show harry:
         ease 0.5 twoleft
-    show kelly a2 casual straight grin at k_threeright with easeinright
+    show kelly p2 casual straight grin at k_threeright with easeinright
     pause 0.1
     k "Here you boys are!"
     a "That was quicker than I expected."
@@ -469,7 +470,7 @@ label shoppingwithharry:
     a "Amen."
     scene bg deli_i_wb
     show deli_table zorder 2
-    show harry a1 straight casual grin at middle zorder 1
+    show harry p1 straight casual grin at middle zorder 1
     with dissolve
     pause 0.1
     h "There! NOW we can eat!"
@@ -498,8 +499,8 @@ label shoppingwithharry:
     show deli_table:
         ease 0.5 xalign 1.0
     pause 0.6
-    show harry a1 straight casual grin at twoleft
-    show kelly a1 straight raised grin at k_threeright
+    show harry p1 straight casual grin at twoleft
+    show kelly p1 straight raised grin at k_threeright
     with dissolve
     pause 0.1
     k "Well?"
@@ -512,7 +513,7 @@ label shoppingwithharry:
     scene bg deli_e with dissolve
     $ current_track = "\"Outside the Street\""
     play music outside_the_street
-    show harry a1 straight raised grin at close_h with dissolve
+    show harry p1 straight raised grin at close_h with dissolve
     pause .1
     h "Okay, I'll admit it: that was pretty good."
     a "What's this? Harold Sprouse admitting that I'm right? Next you'll tell me that Satan had a snow day!"
@@ -524,26 +525,26 @@ label shoppingwithharry:
     "I jumped what felt like a mile in the air as that voice spoke from right by my ear! I turned around and found the source."
     $b_blink = False
     hide harry with easeoutright
-    show brit a1 closed opened_smile sad at close_b with easeinleft
+    show brit p1 closed opened_smile sad at close_b with easeinleft
     pause .1
     $ B_Name = "Brittney"
     b "Hehehe! Did I scare you?"
     "Now that my heart rate was slowly going back to normal, I cracked a joking grin."
     a "Nah, I just felt like jumping and screaming."
     $b_blink = True
-    b a2 left derp level "Darn. I'll just have to try harder next time."
+    b p2 left derp level "Darn. I'll just have to try harder next time."
     a "Anyway, what are you doing here?"
-    b a1 straight casual grin "I just got done with work, so I thought I'd grab a quick bite."
+    b p1 straight casual grin "I just got done with work, so I thought I'd grab a quick bite."
     a "What, does sitting in a chair and blowing a whistle all day build up an appetite?"
-    b a2 level "I'll remember that when you start drowning on my watch."
+    b p2 level "I'll remember that when you start drowning on my watch."
     a "Don't you mean 'if'?"
     $ b_partial = True
     b closed_smile mad "I know what I said."
     $ b_partial = False
-    show brit a2 right casual grin
+    show brit p2 right casual grin
     b "Oh, hey! Who's this?"
     show brit at close_left_b
-    show harry a1 straight blank casual at tworight
+    show harry p1 straight blank casual at tworight
     with easeinright
     pause 0.1
     "Oh, yeah; Harry's here."
@@ -551,9 +552,9 @@ label shoppingwithharry:
         ease 0.5 twoleft
     pause .6
     a "This is Harry, my brother. Harry, this is Brittney, our next-door neighbor."
-    b straight a1 opened_smile "Nice to meet ya!"
+    b straight p1 opened_smile "Nice to meet ya!"
     h raised left grin "Yeah, same here, with as much as Alex talks about you!"
-    b a2 straight raised grin "Is that so? What does he say?"
+    b p2 straight raised grin "Is that so? What does he say?"
     h straight closed_smile mad "He said that he thinks you're cute!"
     a "Hey!! I said no such thing!!"
     if britnotpretty:
@@ -563,23 +564,23 @@ label shoppingwithharry:
         b mad opened_smile "Nope."
         $ b_partial = False
     else:
-        b a1 sad blank "Aww, so you don't think I'm cute?"
+        b p1 sad blank "Aww, so you don't think I'm cute?"
         a "Hey! I-I didn't say that, either!"
-        b a2 raised grin "So you DO think I'm cute?"
+        b p2 raised grin "So you DO think I'm cute?"
         a "I...! {w}Ugh..."
         $b_blink = False
-        b a2 sad closed opened_smile "Ehehe. Your face is so red right now!"
+        b p2 sad closed opened_smile "Ehehe. Your face is so red right now!"
         a "*urk*"
         $b_blink = True
-    show brit a1 straight casual grin
+    show brit p1 straight casual grin
     b "Anyway, did you guys just finish eating?"
     a "Yep. Which sucks; if I had known you were coming, I would've made sure to meet you here at the same time."
-    b a2 sad "Oh, that's okay, Alex. I'm fine with eating alone."
+    b p2 sad "Oh, that's okay, Alex. I'm fine with eating alone."
     a "You sure? I wouldn't mind hanging out with you so you don't feel lonely."
     h blank "But I wanna go home!"
     a "Harry, that's rude!"
     $ choicevbox = 5
-    b a1 opened_smile "No, it's fine. You don't have to inconvenience yourselves on my account. I'll be fine."
+    b p1 opened_smile "No, it's fine. You don't have to inconvenience yourselves on my account. I'll be fine."
     if persistent.choices["8"] == 1:
         "Hmm..."
         jump brithangout
@@ -607,12 +608,12 @@ label shoppingwithharry:
         b small level hanging "Alex, I just said-"
         a "Don't worry, it's not an inconvenience."
         hide screen skipchoice
-        b a2 straight sad blank "I told you I'm fine eating alone."
+        b p2 straight sad blank "I told you I'm fine eating alone."
         a "I know, but I still wanna hang out with you. Is that a problem?"
-        b "..."
-        b a1 level grin "I guess not."
+        b_s "..."
+        b p1 level grin "I guess not."
         a "The deli's not too far from home, anyway. I'll be right back."
-        b a2 raised "If you insist. But I'm not waiting until you get back to order."
+        b p2 raised "If you insist. But I'm not waiting until you get back to order."
         a "I'm not eating, anyway, so go for it."
         b "Alrighty, then!"
         scene bg deli_e with dissolve
@@ -631,16 +632,16 @@ label shoppingwithharry:
         scene bg deli_i_wb
         show deli_table zorder 2
         with dissolve
-        show brit a2 straight raised grin at middle zorder 1 with dissolve
+        show brit p2 straight raised grin at middle zorder 1 with dissolve
         pause .1
         b "And here I thought you had changed your mind!"
         a "What do you take me for, a liar?"
         b left level huhu "Maybe not a 'liar'; more of a 'dum-dum'."
         a "Don't you know any insults other than that one?"
-        b a1 straight raised opened_smile "Sure, but they're not as effective."
+        b p1 straight raised opened_smile "Sure, but they're not as effective."
         a "If you say so, Miss Usher."
         $b_blink = False
-        show brit a2 closed sad grin
+        show brit p2 closed sad grin
         "She gave a small giggle before she took a sip of her water."
         a "So, can I ask why you always drink water with your meals?"
         $ b_blink = True
@@ -648,41 +649,41 @@ label shoppingwithharry:
         b straight raised "What, do you have something against water?"
         a "No, I'm just curious."
         $ b_partial = False
-        show brit straight level a1 grin
+        show brit straight level p1 grin
         b "Well, I'm not a fan of soda, to start with."
         a "Why?"
-        b a2 right blank "I just don't like how unhealthy it is. The sugar, the caffeine, the who-knows-what..."
+        b p2 right blank "I just don't like how unhealthy it is. The sugar, the caffeine, the who-knows-what..."
         b straight raised "I'm no health nut by any means, but I wanna make sure what I'm putting in my body doesn't hurt me, you know?"
         a "I guess so. Athletes certainly do like to pay attention to what's in their bodies, right?"
         b level grin "Right."
         b raised "And you can't get much healthier than water, can you?"
         a "I suppose not."
-        b a1 casual "You know, you may wanna pay attention to what you're eating and drinking, yourself."
+        b p1 casual "You know, you may wanna pay attention to what you're eating and drinking, yourself."
         a "What do you mean?"
-        b a2 level "Well, not to be offensive, but you seem out of shape and unhealthy."
+        b p2 level "Well, not to be offensive, but you seem out of shape and unhealthy."
         a "Which part of that wasn't supposed to be offensive?"
-        b a2 left huhu level "Well, okay, maybe I was being a little offensive, but my point still remains!"
-        b a1 straight casual blank "I've seen how out of breath you get when you walk for a while. You get exhausted too quickly."
-        b a2 sad "At the very least, you could try exercising a little bit to build your stamina up."
+        b p2 left huhu level "Well, okay, maybe I was being a little offensive, but my point still remains!"
+        b p1 straight casual blank "I've seen how out of breath you get when you walk for a while. You get exhausted too quickly."
+        b p2 sad "At the very least, you could try exercising a little bit to build your stamina up."
         a "Yeah, I'll consider that."
-        b a1 raised opened_smile "Is that sarcasm I hear, Alexander?"
+        b p1 raised opened_smile "Is that sarcasm I hear, Alexander?"
         a "Not at all, Brittney."
-        b a2 left huhu level "If you say so."
+        b p2 left huhu level "If you say so."
         hide brit with dissolve
         pause 0.1
         "She then continued to eat her Turkey Takeover, leaving us both in silence for a little bit."
         "Kelly had come over to ask if I wanted anything, but I passed.{w} Even if I wanted something, I didn't have any money on me, anyway, and I wasn't going to make Brittney pay for me."
         "Brittney finally finished her food and looked at the time."
-        show brit a1 straight casual grin at middle zorder 1 with dissolve
+        show brit p1 straight casual grin at middle zorder 1 with dissolve
         pause 0.1
         b "It's getting pretty late. I better head home."
         a "Yeah, same here. Still, it was nice to hang out with you."
-        b a2 raised "Even if most of it was just watching me eat?"
+        b p2 raised "Even if most of it was just watching me eat?"
         a "Hey, even you can make that entertaining, Miss Messy-Eater."
-        b a1 mad opened_smile "It was a couple drops of cheese on my pant leg!"
+        b p1 mad opened_smile "It was a couple drops of cheese on my pant leg!"
         a "Still a mess, albeit a small one."
         $ b_wink = True
-        show brit a2 tongue
+        show brit p2 tongue
         "She stuck her tongue out at me and picked up the check."
         hide brit with dissolve
         pause 0.1
@@ -698,7 +699,7 @@ label shoppingwithharry:
     label leavebritalone:
         $ delihangout = False
         a "Well, alright, if you insist. Have a good night, Brittney!"
-        b a2 level grin "You, too, Al! And it was nice to meet you, Harry!"
+        b p2 level grin "You, too, Al! And it was nice to meet you, Harry!"
         h casual grin "Nice to meet you, too!"
         hide screen skipchoice
         hide brit
@@ -717,7 +718,7 @@ label shoppingwithharry:
         pause 0.1
         "As deduced, we were having chicken Alfredo tonight, which instantly got Harry excited."
         "I offered to help Mom make it, but she insisted she was fine."
-        show ginger a2 straight casual grin at middle with dissolve
+        show ginger p2 straight casual grin at middle with dissolve
         pause 0.1
         g "Though, if you want to be helpful, would you mind taking the garbage out for me? They're picking it up tomorrow morning."
         a "I don't mind at all."
@@ -733,7 +734,7 @@ label shoppingwithharry:
         stop music fadeout 3.0
         "...{w}no...!"
         pause 1
-        show elie a1 straight casual blank at middle with dissolve
+        show elie p1 straight casual blank at middle with dissolve
         pause 1
         $ current_track = "\"Chaotic Evil\""
         play music chaotic_evil
@@ -743,7 +744,7 @@ label shoppingwithharry:
         play sound woosh
         scene bg white with dissolve
         scene bg house_y
-        show don a1 straight grin casual at middle
+        show don p1 straight grin casual at middle
         with dissolve
         window show dissolve
         pause .1
@@ -751,7 +752,7 @@ label shoppingwithharry:
         d "There's only one resident, Eleanor. She's in Brittney's class."
         d raised blank "It's really no secret that not a lot of people like her, ourselves included."
         hide don
-        show chris a2 straight mad blank at middle
+        show chris p2 straight mad blank at middle
         with dissolve
         pause 0.1
         c "She's a slut who will constantly treat everyone like useless garbage."

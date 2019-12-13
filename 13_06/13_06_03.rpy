@@ -59,14 +59,14 @@ label firstdayreplay:
     play music new_life
     scene bg car with dissolve
     window show dissolve
-    show harry a1 mad straight blank at close_left_h with dissolve
+    show harry p1 mad straight blank at close_left_h with dissolve
     pause 0.1
     h "Are we there yet?"
-    show ginger a2 straight sad grin at tworight with dissolve
+    show ginger p2 straight sad grin at tworight with dissolve
     g "Not yet. {w}But we'll be there soon, I promise!"
     h small scream "You've been saying that for hours!"
     hide ginger
-    show fred a1 straight casual grin glasses at tworight
+    show fred p1 straight casual grin glasses at tworight
     with dissolve
     pause 0.1
     f "Just be patient, Son. Okay?"
@@ -80,16 +80,16 @@ label firstdayreplay:
     "I slowly watched the big city transform to nothing but corn fields and dirt roads."
     "It was like going from your home planet to another, going from comfort to the unknown."
     "It truly terrified me."
-    show ginger a2 straight casual blank at middle with dissolve
+    show ginger p2 straight casual blank at middle with dissolve
     pause 0.1
     g "You're awfully quiet back there, Alex."
     a "Hm?"
     hide ginger
-    show fred a1 straight mad glasses blank at middle
+    show fred p1 straight mad glasses blank at middle
     with dissolve
     pause 0.1
     f "Daydreaming again?"
-    a "..."
+    a_s "..."
     f sad "Look, I know you're still upset about the move, but think of this as a fresh new start for the Sprouse family!"
     if persistent.choices["1"] == 1:
         jump whateveryousay
@@ -124,12 +124,12 @@ label continuemoveconvo:
     "Heck, the one true friend I actually had moved away years ago."
     "But when you've spent all 16 years of your life in the same home in the same city, only to have it taken away from you..."
     "...it's just not easy."
-    show fred a1 straight glasses casual grin at middle with dissolve
+    show fred p1 straight glasses casual grin at middle with dissolve
     pause 0.1
     f "Well, I still want to thank you for being cooperative about this."
     f "I know this isn't easy, but it's going to be for the better."
     show fred at twoleft
-    show ginger a2 straight raised grin at tworight
+    show ginger p2 straight raised grin at tworight
     with easeinright
     pause 0.1
     g "Besides..."
@@ -142,11 +142,11 @@ label continuemoveconvo:
     "Donald happens to be the 'one friend' I just mentioned. The one who had moved away years ago."
     "We'd stayed in touch a little bit, but we were both so busy with school and such, we never really got to actually see each other."
     "But by some miracle, his dad managed to get my dad a job at the same company as him. And the rest is history."
-    show fred a1 straight glasses casual grin at middle with dissolve
+    show fred p1 straight glasses casual grin at middle with dissolve
     pause 0.1
     f "Anyway, according to the GPS, we should be arriving in about another half hour."
     show fred at tworight
-    show harry a1 sad closed_smile straight at close_left_h
+    show harry p1 sad closed_smile straight at close_left_h
     with easeinleft
     pause .1
     h "Hallelujah!"
@@ -205,12 +205,12 @@ label continuemoveconvo:
     "...a house."
     "It was a pretty simple-looking house, but I suppose saying you live in a house is better than saying you live in a cramped apartment."
     "That was admittedly one thing I liked about the move."
-    show ginger a2 raised straight grin at middle with dissolve
+    show ginger p2 raised straight grin at middle with dissolve
     pause 0.1
     g "Well, go on!"
     g "Let's get out there and take a look!"
     hide ginger
-    show harry a1 straight casual closed_smile at middle
+    show harry p1 straight casual closed_smile at middle
     with dissolve
     pause 0.1
     h "Yay!"
@@ -219,7 +219,7 @@ label continuemoveconvo:
     "We exited the car and I got a better look of the house."
     "Two stories, one garage."
     "Definitely an improvement from an apartment in the city."
-    show ginger a2 straight casual grin at middle with dissolve
+    show ginger p2 straight casual grin at middle with dissolve
     pause 0.1
     g "Hey, Alex?"
     a "Yeah?"
@@ -230,11 +230,11 @@ label continuemoveconvo:
     pause 0.1
     "I looked to where she was pointing."
     "At first, I couldn't see what she was referring to, but then..."
-    a "..."
+    a_s "..."
     a "NO WAY!"
     $ current_track = "\"Brotato Chips\""
     play music donald
-    show don b1 straight grin casual at middle with dissolve
+    show don p1 straight grin casual at middle with dissolve
     pause 0.1
     "I couldn't believe my eyes..."
     "He was really here!"
@@ -244,7 +244,7 @@ label continuemoveconvo:
     pause 0.1
     "He jogged over, and we hugged tightly."
     "Even though I knew he'd be here, the fact that he truly was right here in front of me was certainly a relief!"
-    show don b1 straight grin casual at close_d
+    show don p1 straight grin casual at close_d
     with dissolve
     pause 0.1
     a "I haven't seen you in years!"
@@ -254,21 +254,21 @@ label continuemoveconvo:
     d straight grin sad "You should've seen my face when my parents told me that you were moving here!"
     a "You should've seen MY face when my parents told me we were moving here!"
     show don at close_right_d zorder 2
-    show fred a1 straight glasses raised grin at threeleft zorder 1
-    show ginger a2 straight level grin at middle zorder 1
+    show fred p1 straight glasses raised grin at threeleft zorder 1
+    show ginger p2 straight level grin at middle zorder 1
     with easeinleft
     pause 0.1
     f "Really? Because I seem to recall that you were against the idea of moving."
     a "That was before you mentioned Donald!"
     g mad "Even then, we basically had to drag you here!"
-    a "..."
+    a_s "..."
     hide fred
     hide ginger
     show don at close_d
     with easeoutleft
     pause 0.1
     $d_blink = False
-    d b1 closed smile sad "Don't sweat it, man; I get it. Moving away from what you know is hard."
+    d p1 closed smile sad "Don't sweat it, man; I get it. Moving away from what you know is hard."
     $d_blink = True
     d straight grin level "At least you had the advantage of knowing a guy. I had nobody when I moved here."
     a "I suppose that's a fair argument."
@@ -276,7 +276,7 @@ label continuemoveconvo:
     "Donald then noticed my brother, and his smile grew even bigger."
     show don:
         ease 0.5 tworight
-    show harry a1 casual blank straight at twoleft with easeinleft
+    show harry p1 casual blank straight at twoleft with easeinleft
     pause 0.1
     d smile "Holy smokes! Is that little Harry?"
     h mad frown small "Hey! I'm not little!"
@@ -289,13 +289,13 @@ label continuemoveconvo:
     a "Definitely!"
     a "But we still gotta get our stuff into the house..."
     hide don
-    show ginger a2 straight sad grin at middle
+    show ginger p2 straight sad grin at middle
     with dissolve
     pause 0.1
     g "Why don't you boys go to Donald's house to talk and have some fun? Dad and I will take care of the boxes."
     a "Are you sure? Because I can help if you-"
     show ginger at tworight
-    show fred a1 straight casual grin glasses at twoleft
+    show fred p1 straight casual grin glasses at twoleft
     with easeinleft
     pause 0.1
     f "Son, like Donald said, you guys have some catching up to do."
@@ -308,7 +308,7 @@ label continuemoveconvo:
     g sad "It was nice to see you again, Donald!"
     show fred at threeleft
     show ginger at middle
-    show don b1 straight grin casual at threeright
+    show don p1 straight grin casual at threeright
     with easeinright
     pause 0.1
     d "Same here, Mrs. Sprouse!"
@@ -318,7 +318,7 @@ label continuemoveconvo:
     pause 0.1
     show ginger:
         ease 0.5 xalign 0.9
-    show harry a1 casual straight blank at middle with dissolve
+    show harry p1 casual straight blank at middle with dissolve
     pause .1
     g casual "So, Harry, let's see who can get the most boxes in the house!"
     f raised "Well, it's obvious that I will."
@@ -329,7 +329,7 @@ label continuemoveconvo:
     with dissolve
     pause 0.1
     "Harry then ran to the trailer and grabbed a box."
-    show don b1 grin straight casual at close_d with dissolve
+    show don p1 grin straight casual at close_d with dissolve
     pause 0.1
     a "Well, that was easy."
     d level right "C'mon; let's walk over to my place. It's just a couple houses over."
@@ -343,18 +343,18 @@ label continuemoveconvo:
     with dissolve
     pause 0.1
     "When we were in front of the house between ours, he started talking."
-    show don b1 straight sad grin at close_d with dissolve
+    show don p1 straight sad grin at close_d with dissolve
     pause 0.1
     d smile "You're lucky you moved here in the summer; that gives you a chance to explore what all there is to offer here!"
     a "How much is there to offer?"
-    d level blank "..."
+    d_s level blank "..."
     d left "Well, not that much, if I'm being honest."
     d straight sad grin "But it's certainly better than nothing!"
     a "Point taken."
     $ current_track = "None"
     stop music fadeout 2.0
     b_o "Hey, Donnie!"
-    show brit b1 straight casual grin zorder 1:
+    show brit p1 straight casual grin zorder 1:
         middle
         ease 0.5 twoleft
     show don casual at close_right_d zorder 2 with easeinleft
@@ -373,11 +373,11 @@ label continuemoveconvo:
     "I don't suppose there's a way to put that without sounding offensive."
     "Regardless, she quickly jogged over to us."
     hide brit
-    show don b1 left casual smile at tworight
+    show don p1 left casual smile at tworight
     with dissolve
     pause 0.1
     d "Hey there, stranger!"
-    show brit b2 straight raised grin at twoleft with easeinleft
+    show brit p2 straight raised grin at twoleft with easeinleft
     pause 0.1
     b "Aren't you going to introduce me to your new friend?"
     d dot small level "'New'?"
@@ -385,7 +385,7 @@ label continuemoveconvo:
     b casual "No kidding?"
     b right "Would this happen to be the old childhood friend you mention every now and then?"
     d casual left "It would, indeed!"
-    b b1 straight raised grin "Well, that's all the more reason to meet him!"
+    b p1 straight raised grin "Well, that's all the more reason to meet him!"
     d straight "Very well, then!"
     d "Alex, this is Brittney."
     $ B_Name = "Brittney"
@@ -402,10 +402,10 @@ label continuemoveconvo:
     d small sad wide "OUCH!"
     "She punched Donald in the shoulder."
     "It wasn't a light, playful punch, either; she really was trying to hurt him."
-    b b2 "How about you try that again?"
+    b p2 "How about you try that again?"
     d straight blank "Fine. You're right, I'm sorry."
     d grin casual "We've actually been together for a few weeks{nw}"
-    show brit b1 small at punchleft
+    show brit p1 small at punchleft
     pause 0.15
     play sound punch
     show white
@@ -416,9 +416,9 @@ label continuemoveconvo:
     show brit straight frown
     "She held up her fist again."
     d level blank "Okay, okay! We're not dating!"
-    b b2 straight casual opened_smile "That's better."
+    b p2 straight casual opened_smile "That's better."
     hide don
-    show brit b1 grin at middle
+    show brit p1 grin at middle
     with easeoutright
     pause 0.1
     "She then looked at me with a grin."
@@ -431,26 +431,26 @@ label continuemoveconvo:
     "She then held her fist in front of her. Following suit, I bumped her fist with my own."
     "As we shook hands, I couldn't help but notice that there was something off about her mouth..."
     "Was that... a chipped tooth?"
-    b b2 huhu right level "It's a pleasure to meet someone else capable of putting up with Donald Waters for longer than 5 seconds."
+    b p2 huhu right level "It's a pleasure to meet someone else capable of putting up with Donald Waters for longer than 5 seconds."
     show brit zorder 2:
         ease 0.5 xalign 0.1 yalign 0.2
-    show don b1 straight mad blank at tworight zorder 1 with easeinright
+    show don p1 straight mad blank at tworight zorder 1 with easeinright
     pause 0.1
     d "Hardy-har-har."
     show brit:
         ease 0.5 twoleft
     pause 0.6
     show brit at twoleft
-    b b1 straight sad grin "So, what are you boys up to?"
+    b p1 straight sad grin "So, what are you boys up to?"
     d casual grin "We were just going to head to my house to hang out and catch up."
     b level "I see, I see."
-    b b2 "Then I'll just leave you boys to do your thing."
+    b p2 "Then I'll just leave you boys to do your thing."
     d blank "Oh, you don't want to hang out with us?"
-    b b1 sad opened_smile "Nah, it's cool, dude. I understand."
+    b p1 sad opened_smile "Nah, it's cool, dude. I understand."
     b "If I saw my friend for the first time in years, I'd want to spend time with just them."
     d raised grin "You sure? I mean, I'm sure Alex wouldn't mind getting to know you better."
-    b b2 mad grin "Unless he plans on moving again tomorrow, he'll have plenty of time to get to know me."
-    d level blank "..."
+    b p2 mad grin "Unless he plans on moving again tomorrow, he'll have plenty of time to get to know me."
+    d_s level blank "..."
     d grin "Well, Alex, what do you think?"
     show brit raised
     "Brittney looked over at me with a curious smile, anticipating my answer."
@@ -461,12 +461,12 @@ label continuemoveconvo:
     "Well, she does look relatively harmless..."
     "Besides, if she's a friend of Donald's, how bad can she be?"
     show brit at twoleft
-    show don b1 straight grin level at tworight
+    show don p1 straight grin level at tworight
     with easeinright
     pause 0.1
     a "Well, I don't mind hanging out with a friend of Donald's."
     d left smile "See?"
-    b b1 mad opened_smile "Alright, alright, if you insist. I'll let my mom know real quick, and I'll be right over!"
+    b p1 mad opened_smile "Alright, alright, if you insist. I'll let my mom know real quick, and I'll be right over!"
     d straight sad grin "Sounds like a plan!"
     show brit grin at punchleft zorder 3
     pause 0.15
@@ -500,11 +500,11 @@ label continuemoveconvo:
     "At least, I'm assuming so, since I haven't even entered my own home yet."
     scene bg living_w
     with dissolve
-    show don b1 straight grin casual at close_d with dissolve
+    show don p1 straight grin casual at close_d with dissolve
     pause 0.1
     d "Brittney should be on her way by now."
     a "Sounds good."
-    a "..."
+    a_s "..."
     a "Where are your parents?"
     d level "On a cruise for their anniversary."
     a "They just let you stay at home by yourself??"
@@ -529,21 +529,21 @@ label continuemoveconvo:
     pause .1
     play sound door_open
     "The door then opened up, revealing Brittney Usher in all her glory."
-    show don b1 straight casual smile at tworight with dissolve
+    show don p1 straight casual smile at tworight with dissolve
     d "Hey, speak of the devil!"
     $ b_partial = True
-    show brit b2 straight level blank at twoleft with easeinleft
+    show brit p2 straight level blank at twoleft with easeinleft
     pause 0.1
     b "Nice to see you, too, Donnie."
     d blank "It's just an expression."
     $ b_partial = False
-    show brit b1 straight raised grin
+    show brit p1 straight raised grin
     b "I know. I just like to mess with you."
     $ current_track = "\"Oddball\""
     play music oddball
-    b b2 casual "So, you guys were just talking about me, then?"
+    b p2 casual "So, you guys were just talking about me, then?"
     a "Yeah, about how you pretty much keep Donald in line."
-    b b1 casual opened_smile "'Pretty much'? That's, like, my sole purpose in life!"
+    b p1 casual opened_smile "'Pretty much'? That's, like, my sole purpose in life!"
     $d_blink = False
     d closed sad smile "If that's your sole purpose, then you're kinda failing at life."
     show brit mad blank at punchleft
@@ -555,69 +555,69 @@ label continuemoveconvo:
     $d_blink = True
     d small wide "OUCH!"
     d straight mad blank "Stop punching me!"
-    b b2 frown "Stop giving me reasons to punch you!"
-    a "..."
+    b p2 frown "Stop giving me reasons to punch you!"
+    a_s "..."
     a "So, how exactly are you two friends, if I may ask?"
-    show brit b1 casual blank
+    show brit p1 casual blank
     d raised blank "What do you mean?"
     a "You seem more like you don't get along."
-    b b2 opened_smile "Oh, that's just how our friendship rolls."
+    b p2 opened_smile "Oh, that's just how our friendship rolls."
     b "In fact, it all started when my family first moved here and I introduced myself, with him responding with the worst pickup line I'd ever heard."
     b raised "What was it, again?"
-    d small sad "..."
+    d_s small sad "..."
     "Donald quickly got an embarrassed look on his face."
     "That doesn't seem like him at all."
     b huhu right level "C'mon, Donnie; you remember."
-    d "..."
+    d_s "..."
     b raised straight opened_smile "Fine, I'LL tell him."
-    d "..."
+    d_s "..."
     "I don't feel like this is going to end well."
     b "He said..."
-    b b1 mad "{i}'Are your parents retarded? Because you sure look special!'{/i}"
+    b p1 mad "{i}'Are your parents retarded? Because you sure look special!'{/i}"
     a "Donald!!"
     d straight mad wide "I thought it was funny!"
-    b b2 right grin "Well, it was, afterwards."
+    b p2 right grin "Well, it was, afterwards."
     d blank left "Because you slapped me across the face!"
     $b_blink = False
-    b b1 closed opened_smile sad "Of course!"
+    b p1 closed opened_smile sad "Of course!"
     a "That doesn't really answer my question. If anything, it only makes me ask it even more."
     hide don
     show brit at middle
     with easeoutright
     $b_blink = True
-    b b2 straight level blank "Well, after I slapped him, I ran back to my house."
+    b p2 straight level blank "Well, after I slapped him, I ran back to my house."
     b left "I honestly didn't want to see him again."
-    b b1 straight casual "But a half hour or so later, there was a knock on my door."
+    b p1 straight casual "But a half hour or so later, there was a knock on my door."
     b "Lo and behold, he was standing on my porch with the biggest look of embarrassment I'd ever seen."
     $b_blink = False
-    b b2 closed sad opened_smile "The red mark on his cheek was a cute touch."
+    b p2 closed sad opened_smile "The red mark on his cheek was a cute touch."
     $b_blink = True
     b straight level grin "And it was then that he apologized and started his introduction over, this time a little less offensive."
     "{i}'A little??'{/i}"
-    b b1 blank "It was clear that Donald was the kind of guy to speak before thinking."
+    b p1 blank "It was clear that Donald was the kind of guy to speak before thinking."
     b casual "But the fact that he apologized and truly meant it?"
     b grin "I thought that maybe this guy has something good in him, after all."
     $b_blink = False
-    b b2 closed closed_smile sad "So, I unofficially became his 'tutor', for a lack of a better term."
+    b p2 closed closed_smile sad "So, I unofficially became his 'tutor', for a lack of a better term."
     a "'Tutor'? For what?"
     $b_blink = True
     b straight casual grin "For behavior!"
-    b b1 "I help make sure he doesn't act like a jerk to people who don't deserve it."
+    b p1 "I help make sure he doesn't act like a jerk to people who don't deserve it."
     b raised"And if he DOES act like a jerk, I correct him."
     a "By punching him the arm?"
     b opened_smile "Hey, it works, right?"
     show brit at twoleft
-    show don b1 mad blank straight at tworight
+    show don p1 mad blank straight at tworight
     with easeinright
     d "Not really."
     $ b_partial = True
-    show brit b1 level blank
+    show brit p1 level blank
     "Brittney raised her fist."
     d sad "I mean, yes! Definitely!"
-    a "..."
+    a_s "..."
     a "You guys are weird."
     $ b_partial = False
-    show brit b1 straight casual opened_smile at twoleft
+    show brit p1 straight casual opened_smile at twoleft
     show don casual smile
     bd "Thank you!"
     "That wasn't a compliment."
@@ -627,7 +627,7 @@ label continuemoveconvo:
     $ current_track = "\"Ivories and Ebony\""
     play music ivories_and_ebony
     d grin raised "Alright; what did you have in mind?"
-    b b2 right "I'm up for anything you guys want."
+    b p2 right "I'm up for anything you guys want."
     d "Hm..."
     a "No way!"
     show brit straight blank
@@ -635,39 +635,39 @@ label continuemoveconvo:
     scene bg living_w with dissolve
     pause 0.1
     "I glanced into Donald's living room and saw an old yet nostalgic gaming console hooked up to the TV."
-    show don b1 straight casual blank at middle with dissolve
+    show don p1 straight casual blank at middle with dissolve
     pause 0.1
     a "You still have the 64??"
     d raised smile "Well, DUH!"
     d "Everyone knows that's where the best games of all time can be found!"
     show don at tworight
-    show brit b1 straight sad grin at twoleft
+    show brit p1 straight sad grin at twoleft
     with easeinleft
     pause 0.1
     b "Ah, video games..."
-    b b2 left "Not gonna lie, they're not really my thing."
+    b p2 left "Not gonna lie, they're not really my thing."
     b "I'm more of a physical activity kind of gal."
     a "Oh."
     a "Well, I suppose we could do something else..."
-    b b1 small hanging "No, no!"
-    b b2 straight grin "If you guys wanna play together, I'd be happy to watch. Maybe I'll even learn why men like them so much."
+    b p1 small hanging "No, no!"
+    b p2 straight grin "If you guys wanna play together, I'd be happy to watch. Maybe I'll even learn why men like them so much."
     d straight casual grin "Well, we could always go shoot some hoops in the driveway if you'd be more interested in that."
     b left level derp "Hmm... {w}That does sound pretty tempting."
     b straight blank "But I get the feeling that Alex here isn't a fan of sports."
     a "Huh? What gave you that impression?"
     $ b_partial = True
-    b b1 closed_smile mad "Call it a hunch."
-    a "..."
+    b p1 closed_smile mad "Call it a hunch."
+    a_s "..."
     a "Well, I mean, I swam competitively in the summertime for a few years."
     $ b_partial = False
-    show brit b2 straight casual grin at twoleft
+    show brit p2 straight casual grin at twoleft
     b "Huh. That's one more sport than I thought you'd be in."
     a "I only said one."
     $ b_wink = True
     b mad tongue "That's the joke, dum-dum."
     d level "Anyway, what's it going to be? Video games or basketball?"
     $ b_wink = False
-    show brit b2 straight casual opened_smile at twoleft
+    show brit p2 straight casual opened_smile at twoleft
     b "I vote hoops."
     d casual "I vote gaming."
     show brit raised
@@ -700,7 +700,7 @@ label continuemoveconvo:
         a "So my vote is on video games."
         d casual smile "Then it's decided!"
         d grin "Let's all go find a game to play."
-        b b1 casual grin "Very well."
+        b p1 casual grin "Very well."
         b right "Who knows? Maybe you guys can get me into a new hobby."
         jump hangout_b
 
@@ -712,7 +712,7 @@ label continuemoveconvo:
         a "So my vote is on basketball."
         d casual smile "Then it's decided!"
         d grin "I'll go grab a ball from the garage."
-        b b1 casual grin "Sounds great!"
+        b p1 casual grin "Sounds great!"
         b mad closed_smile "Can't wait to kick you guys' butts out there!"
 
     label hangout_b:
@@ -768,21 +768,21 @@ label continuemoveconvo:
         nvl hide dissolve
         window show dissolve
         pause 0.1
-        show brit b2 casual straight grin at twoleft
-        show don b1 straight casual grin at tworight
+        show brit p2 casual straight grin at twoleft
+        show don p1 straight casual grin at tworight
         with dissolve
         pause 0.1
         a "Well, I think it's about time I head home."
-        b b1 opened_smile "Same; I told my mom I'd only be gone for a few hours."
+        b p1 opened_smile "Same; I told my mom I'd only be gone for a few hours."
         b grin right "It was nice hanging out with you again, Donald."
         d left smile "Likewise, Brittney!"
         b straight "And it was nice to meet you, Alex!"
         if B_Videogames:
-            b b2 mad opened_smile "Thanks for showing how nerdy you and Donald can get!"
+            b p2 mad opened_smile "Thanks for showing how nerdy you and Donald can get!"
         if B_Basketball:
-            b b2 mad opened_smile "Thanks for proving that you're not as weak and nonathletic as you look!"
+            b p2 mad opened_smile "Thanks for proving that you're not as weak and nonathletic as you look!"
         a "Uh... thanks?"
-        b b1 casual grin "Well, adios, amigos!"
+        b p1 casual grin "Well, adios, amigos!"
         hide brit with easeoutleft
         pause 0.1
         if B_Videogames:
@@ -902,15 +902,15 @@ label continuemoveconvo:
         extend raised grin " But there's something different about her that just makes me want to be with her."
         d right "Maybe it's God, maybe it's fate..."
         d straight "...but I just get this feeling that Brit and I are meant to be together."
-        a "..."
+        a_s "..."
         d mad blank "What's that look for?"
         a "What look?"
         d raised "You looked like I was crazy or something."
         a "I just don't want you to set yourself up for disappointment, that's all."
         a "Again, she shows no signs of romance around you."
         d level left "Still... if I could go on just one date with her..."
-        a "..."
-        d "..."
+        a_s "..."
+        d_s "..."
         $ current_track = "\"Chillaxin'\""
         play music chillaxin
         a "Anyway, I should probably get home."
@@ -922,7 +922,7 @@ label continuemoveconvo:
         "Donald and I bro-hugged and I started walking home."
         d_o "Hey, Al!"
         "I turned back around to my childhood friend."
-        show don b1 mad straight grin at middle with dissolve
+        show don p1 mad straight grin at middle with dissolve
         pause 0.1
         a "Yeah?"
         d "It was nice to see you again!"
@@ -942,7 +942,7 @@ label continuemoveconvo:
         scene bg living_s_m with dissolve
         pause 0.1
         "I opened up the door and saw my mom opening up a box in the living room."
-        show ginger a2 casual straight grin at middle with dissolve
+        show ginger p2 casual straight grin at middle with dissolve
         pause 0.1
         g "Hey, Alex!"
         a "Hi, Mom."

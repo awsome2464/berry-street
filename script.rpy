@@ -200,12 +200,9 @@ label progress:
             #\/\/\/ 13_06_04.rpy
             python:
                 persistent.progress = 1
-                day_2 = True
-                June3B = B_Points
-                June3C = C_Points
-                June3D = D_Points
-                June3E = E_Points
-                
+                day = 2
+                monthpoints["June3B"] = B_Points
+                monthpoints["June3D"] = D_Points            
             jump tour
 
         elif progress == 2:
@@ -213,11 +210,10 @@ label progress:
             #\/\/\/ 13_06_11.rpy
             python:
                 persistent.progress = 2
-                day_3 = True
-                June4B = B_Points
-                June4C = C_Points
-                June4D = D_Points
-                June4E = E_Points
+                day = 3
+                monthpoints["June4B"] = B_Points
+                monthpoints["June4C"] = C_Points
+                monthpoints["June4D"] = D_Points
                 
             jump shoppingwithharry
 
@@ -226,11 +222,8 @@ label progress:
             #\/\/\/ 13_06_21.rpy
             python:
                 persistent.progress = 3
-                day_4 = True
-                June11B = B_Points
-                June11C = C_Points
-                June11D = D_Points
-                June11E = E_Points
+                day = 4
+                monthpoints["June11B"] = B_Points
                 
             jump unpack0621
 
@@ -239,11 +232,9 @@ label progress:
             #\/\/\/ 13_06_23.rpy
             python:
                 persistent.progress = 4
-                day_5 = True
-                June21B = B_Points
-                June21C = C_Points
-                June21D = D_Points
-                June21E = E_Points
+                day = 5
+                monthpoints["June21C"] = C_Points
+                monthpoints["June21D"] = D_Points
                 
             jump churchends
 
@@ -252,11 +243,10 @@ label progress:
             #\/\/\/ 13_06_30.rpy
             python:
                 persistent.progress = 5
-                day_6 = True
-                June23B = B_Points
-                June23C = C_Points
-                June23D = D_Points
-                June23E = E_Points
+                day = 6
+                monthpoints["June23B"] = B_Points
+                monthpoints["June23C"] = C_Points
+                monthpoints["June23E"] = E_Points
                 
             jump nhie_start
 
@@ -266,11 +256,10 @@ label progress:
             #\/\/\/ 13_07_04.rpy
             python:
                 persistent.progress = 6
-                day_7 = True
-                June30B = B_Points
-                June30C = C_Points
-                June30D = D_Points
-                June30E = E_Points
+                day = 7
+                monthpoints["June30B"] = B_Points
+                monthpoints["June30C"] = C_Points
+                monthpoints["June30D"] = D_Points
                 current_track = "None"
                 
             jump donbirthday
@@ -280,11 +269,10 @@ label progress:
             #\/\/\/ 13_07_10.rpy
             python:
                 persistent.progress = 7
-                day_8 = True
-                July4B = B_Points
-                July4C = C_Points
-                July4D = D_Points
-                July4E = E_Points
+                day = 8
+                monthpoints["July4B"] = B_Points
+                monthpoints["July4C"] = C_Points
+                monthpoints["July4D"] = D_Points
                 current_track = "None"
             jump swimming
 
@@ -293,11 +281,11 @@ label progress:
             #\/\/\/ 13_07_15.rpy
             python:
                 persistent.progress = 8
-                day_9 = True
-                July10B = B_Points
-                July10C = C_Points
-                July10D = D_Points
-                July10E = E_Points
+                day = 9
+                monthpoints["July10B"] = B_Points
+                monthpoints["July10C"] = C_Points
+                monthpoints["July10D"] = D_Points
+                monthpoints["July10E"] = E_Points
                 current_track = "None"
             jump baseball
 

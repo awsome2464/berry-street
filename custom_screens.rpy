@@ -83,22 +83,19 @@ screen dayselectmenu():
     tag menu
     add 'gui/pause_bg.png' xalign 0.5 yalign 0.5
     vbox:
-        xalign 0.25
-        yalign 0.5
+        xalign 0.25 yalign 0.5
         spacing 5
         frame:
             xysize(240,128)
-            xalign 0.5
-            yalign 0.5
+            xalign 0.5 yalign 0.5
             text "{size=+10}[dayselectmenuvalue]{/size}" xalign 0.5 yalign 0.5
         frame:
             xysize(450,525)
             vbox:
-                xalign 0.5
-                yalign 0.5
+                xalign 0.5 yalign 0.5
                 spacing 5
                 if dayselectmenuvalue == "June, 2013":
-                    if day_2 == True:
+                    if day >= 2:
                         textbutton "{size=+5}{b}June 3rd, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 1)
                             unhovered SetVariable("daydesc", 0)
@@ -108,80 +105,79 @@ screen dayselectmenu():
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
-                    if day_3 == True:
+                    if day >= 3:
                         textbutton "{size=+5}{b}June 4th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 2)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("tour", scope={"B_Points": June3B, "C_Points": June3C, "D_Points": June3D, "h_hair": True, "b_hat": True, "replay": True, "progress": 1})
+                            action Replay("tour", scope={"B_Points": monthpoints["June3B"], "D_Points": monthpoints["June3D"], "h_hair": True, "b_hat": True, "replay": True, "progress": 1})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
-                    if day_4 == True:
+                    if day >= 4:
                         textbutton "{size=+5}{b}June 11th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 3)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("shoppingwithharry", scope={"B_Points": June4B, "delifoodorder": delifoodorder, "acceptsandwich": acceptsandwich, "britnotpretty": britnotpretty, "b_hat": False, "replay": True, "progress": 2})
+                            action Replay("shoppingwithharry", scope={"B_Points": monthpoints["June4B"], "delifoodorder": delifoodorder, "acceptsandwich": acceptsandwich, "britnotpretty": britnotpretty, "b_hat": False, "replay": True, "progress": 2})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
-                    if day_5 == True:
+                    if day >= 5:
                         textbutton "{size=+5}{b}June 21st, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 4)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("unpack0621", scope={"C_Points": June11C, "D_Points": June11D, "delihangout": delihangout, "replay": True, "progress": 3})
+                            action Replay("unpack0621", scope={"C_Points": monthpoints["June3B"], "D_Points": monthpoints["June3D"], "delihangout": delihangout, "replay": True, "progress": 3})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
-                    if day_6 == True:
+                    if day >= 6:
                         textbutton "{size=+5}{b}June 23rd, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 5)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("churchends", scope={"B_Points": June21B, "C_Points": June21C, "D_Points": June21D, "E_Points": June21E, "B_Basketball": B_Basketball, "britnotpretty": britnotpretty, "cleaningpartner": cleaningpartner, "b_hat": False, "replay": True, "progress": 4})
+                            action Replay("churchends", scope={"B_Points": monthpoints["June11B"], "C_Points": monthpoints["June21C"], "B_Basketball": B_Basketball, "britnotpretty": britnotpretty, "cleaningpartner": cleaningpartner, "b_hat": False, "replay": True, "progress": 4})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
-                    if day_7 == True:
+                    if day >= 7:
                         textbutton "{size=+5}{b}June 30th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 6)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("nhie_start", scope={"B_Points": June23B, "C_Points": June23C, "D_Points": June23D, "b_hat": False, "replay": True, "progress": 5})
+                            action Replay("nhie_start", scope={"B_Points": monthpoints["June23B"], "C_Points": monthpoints["June23C"], "D_Points": monthpoints["June21D"], "b_hat": False, "replay": True, "progress": 5})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
                 elif dayselectmenuvalue == "July, 2013":
-                    if day_8 == True:
+                    if day >= 8:
                         textbutton "{size=+5}{b}July 4th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 1)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("donbirthday", scope={"B_Points": June30B, "C_Points": June30C, "D_Points": June30D, "h_hair": True, "b_hat": True, "replay": True})
+                            action Replay("donbirthday", scope={"B_Points": monthpoints["June30B"], "C_Points": monthpoints["June30C"], "D_Points": monthpoints["June30D"], "h_hair": True, "b_hat": True, "replay": True})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
-                    if day_9 == True:
+                    if day >= 9:
                         textbutton "{size=+5}{b}July 10th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 2)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("swimming", scope={"B_Points": July4B, "C_Points": July4C, "D_Points": July4D, "b_hat": False, "c_hair": 1, "replay": True})
+                            action Replay("swimming", scope={"B_Points": monthpoints["July4B"], "C_Points": monthpoints["July4C"], "D_Points": monthpoints["July4D"], "b_hat": False, "c_hair": 1, "replay": True})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
                             unhovered SetVariable("daydesc", 0)
                             action NullAction()
     vbox:
-        xalign 0.85
-        yalign 0.55
+        xalign 0.85 yalign 0.55
         frame:
             xysize(750, 225)
             if daydesc == -1:
@@ -226,7 +222,7 @@ screen dayselectmenu():
                     action ToggleVariable('dayselectmenuvalue', 'June, 2013') xalign 0.5 yalign 0.5
 
 
-    if day_8 == True and dayselectmenuvalue != "July, 2013":
+    if day >= 8 and dayselectmenuvalue != "July, 2013":
         hbox:
             xalign 0.95
             yalign 0.95
@@ -274,18 +270,28 @@ screen music_room():
 
     add "gui/record.png" at record_move_musicroom
 
+screen gallery():
+    tag menu
+    add "gui/main_menu.png"
+    add "gui/pause_bg.png" xalign 0.5 yalign 0.5
+    hbox:
+        xalign 0.5 yalign 0.5
+        spacing 50
+        add gal.make_button("cg_1", "cg1_gal", xalign=0.5, yalign=0.5) at gallery
+        add gal.make_button("cg_2", "CG/CG 02/CG_02.png", xalign=0.5, yalign=0.5) at gallery
+    textbutton "Back" action ShowMenu('extras') xalign 0.5 yalign 0.99
+
 screen extras():
     tag menu
     add "gui/pause_bg.png" xalign 0.5 yalign 0.5
     frame:
-        xysize(450,450)
-        xalign 0.5
-        yalign 0.5
+        xpadding 50 ypadding 25
+        xalign 0.5 yalign 0.5
         vbox:
-            xalign 0.5
-            yalign 0.5
+            xalign 0.5 yalign 0.5
             spacing 25
             textbutton "Music Room" action ShowMenu('music_room')
+            textbutton "Gallery" action ShowMenu('gallery')
             textbutton "Good Tales Social Media" action ShowMenu('social_media')
             textbutton "Patreon" action OpenURL('https://www.patreon.com/goodtalesvn')
             textbutton "Credits" action [ToggleVariable('persistent.credits', True), Jump('credits')]
@@ -298,11 +304,9 @@ screen social_media():
     add "gui/pause_bg.png"
     frame:
         xysize(450,300)
-        xalign 0.5
-        yalign 0.5
+        xalign 0.5 yalign 0.5
         vbox:
-            xalign 0.5
-            yalign 0.5
+            xalign 0.5 yalign 0.5
             spacing 10
             textbutton "Discord Server" action OpenURL('https://discord.gg/zZhPrkC')
             textbutton "Instagram" action OpenURL('https://instagram.com/goodtalesvn')
@@ -335,53 +339,6 @@ image ctc_arrow:
 screen ctc():
     zorder 100
     add "ctc_arrow"
-
-screen skipchoice():
-    hbox:
-        xalign 0.95
-        yalign 0.95
-        textbutton "Next Choice":
-            if nextchoice == 1:
-                action Jump("choice2")
-            elif nextchoice == 2:
-                action Jump("choice3")
-            elif nextchoice == 3:
-                action Jump("progressday01")
-            elif nextchoice == 4:
-                action Jump("choice4")
-            elif nextchoice == 5:
-                action Jump("choice5")
-            elif nextchoice == 6:
-                action Jump("choice6")
-            elif nextchoice == 7:
-                action Jump("choice7")
-            elif nextchoice == 8:
-                action Jump("progressday02")
-            elif nextchoice == 9:
-                action Jump("choice8")
-            elif nextchoice == 10:
-                action Jump("progressday03")
-            elif nextchoice == 11:
-                action Jump("choice9")
-            elif nextchoice == 12:
-                action Jump("progressday04")
-
-label show_phone:
-
-
-
-    show phone_bg zorder 1:
-        alpha 0.0
-        xalign 0.5
-        linear 0.5 alpha 1.0
-    show phone_base zorder 3:
-        alpha 0.0
-        xalign 0.5
-        linear 0.5 alpha 1.0
-    show phone_sender zorder 2:
-        alpha 0.0
-        xalign 0.47 yalign 0.98
-        linear 0.5 alpha 1.0
 
 # screen reset:
 #     hbox:

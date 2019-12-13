@@ -9,6 +9,11 @@ label donbirthday:
         b_partial = False
         b_hat = 1
         c_blush = False
+        outfit_b = "a"
+        outfit_c = "b"
+        outfit_d = "a"
+        outfit_k = "b"
+        outfit_m = "b"
     show text "{size=+50}June, 2013{/size}":
         xalign 0.5 yalign 0.05
     show screen calendarOs
@@ -41,34 +46,34 @@ label donbirthday:
     pause 1
     scene bg living_w with dissolve
     window show dissolve
-    with Pause(.1)
+    pause 0.1
     $d_blink = True
     $ renpy.block_rollback()
     a "Hellooo?"
     with Pause(.1)
     $ current_track = "\"Brotato Chips\""
     play music donald
-    show don a1 straight casual smile at middle with dissolve
-    with Pause(.1)
+    show don p1 straight casual smile at middle with dissolve
+    pause 0.1
     d "Hey, man! Thanks for coming!"
     a "No problem! Happy birthday!"
     $d_blink = False
     d closed grin sad "Thanks!"
     show don at twoleft
-    show ginger a2 straight sad grin at tworight
+    show ginger p2 straight sad grin at tworight
     with easeinright
-    with Pause(.1)
+    pause 0.1
     g "Happy birthday, Donald!"
     $d_blink = True
     d straight casual "Thanks, Mrs. Sprouse."
     hide ginger with easeoutright
-    show fred a1 straight casual glasses grin at tworight with easeinright
-    with Pause(.1)
+    show fred p1 straight casual glasses grin at tworight with easeinright
+    pause 0.1
     f "Happy birthday, Don."
     d smile "Thanks, Mr. Sprouse."
     hide fred with easeoutright
-    show harry a1 straight mad closed_smile at tworight with easeinright
-    with Pause(.1)
+    show harry p1 straight mad closed_smile at tworight with easeinright
+    pause 0.1
     h "Happy anniversary of the day you exited your mom's vagina!"
     g_o "Harold!"
     h casual "What? It is!"
@@ -77,39 +82,36 @@ label donbirthday:
     show harry mad blank
     "Donald then rustled Harry's hair, which my brother didn't seem to be a big fan of."
     hide harry with easeoutright
-    show ginger a2 sad grin straight at tworight with easeinright
+    show ginger p2 sad grin straight at tworight with easeinright
     g "Gosh, 17 years old... Where does time go?"
     $d_blink = True
     d raised smile straight "Shouldn't you be saving that speech for when your son turns 17 next year?"
     g blank "And make myself feel even older?"
     d level right grin "I mean, you're how old right now? 24? 25?"
     g level grin "Oh, stop it, you."
-    show fred glasses a1 straight raised grin at threeleft
+    show fred glasses p1 straight raised grin at threeleft
     show don at middle
     show ginger at threeright
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     f "If you're done flirting with my wife, Donald..."
     f "If you're done flirting with my wife, Donald{fast}, where can we put your presents?"
     d straight casual "There's a table over there by the TV."
-    hide fred
-    hide ginger
-    hide don
-    with dissolve
-    with Pause(.1)
+    scene bg living_w with dissolve
+    pause 0.1
     "Getting the mental image of my mother cheating on my father with Donald out of my head, I walked over to the table with my family, where we each placed our gifts on the table."
     "By the time they were on the table, two more people had entered the living room."
-    with Pause(.1)
-    show janice a1 straight casual grin at twoleft
-    show latrell a1 straight casual grin at l_tworight
+    pause 0.1
+    show janice p1 straight casual grin at twoleft
+    show latrell p1 straight casual grin at l_tworight
     with dissolve
-    with Pause(.1)
+    pause 0.1
     j "Well, hello there, Sprouses!"
-    show ginger a2 straight casual grin at threeleft
+    show ginger p2 straight casual grin at threeleft
     show janice at middle
     show latrell at l_threeright
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     g "Good morning, you two! Sorry for just bursting into your house like this."
     l level "Ah, no worries. You guys are always welcome."
     g sad "It looks like we're the first ones here. I hope we're not too early."
@@ -117,21 +119,18 @@ label donbirthday:
     g casual "That would be lovely."
     $ current_track = "None"
     stop music fadeout(1)
-    hide ginger
-    hide janice
-    hide latrell
-    with dissolve
-    with Pause(.5)
+    scene bg living_w with dissolve
+    pause 0.5
     scene bg backyard_w with dissolve
-    with Pause(.5)
+    pause 0.5
     $ current_track = "\"Relaxation in the Country\""
     play music relaxation_in_the_country
     "The Waters' backyard was hardly 'decorated', as you'd call it, but for a 17th birthday party for a guy, you can't be too surprised, especially for a simple guy like Donald."
     "There were coolers alongside the back of the house, a grill that was waiting to do its job, a bag toss game near the back of the property, and several lawn chairs spread around."
     "My parents and Donald's parents all sat near each other by the grill while Donald and I gathered near the middle of the yard."
     "Harry, meanwhile, stayed in the house to play on his TS. Turns out he hadn't given up on that Doctor Letton deal after all..."
-    show don a1 straight casual grin at close_d with dissolve
-    with Pause(.1)
+    show don p1 straight casual grin at close_d with dissolve
+    pause 0.1
     a "Man, you know you're a big deal when everyone here seems to forget that it's America's birthday, too."
     $d_blink = False
     d closed sad smile "Ahahaha. I wouldn't call myself a 'big deal'..."
@@ -140,7 +139,6 @@ label donbirthday:
     $ brit_dare = False
     $ chris_dare = False
     $ don_dare = False
-
     if persistent.choices["18"] == 1:
         if persistent.choices["20"]== 1 or persistent.choices["20"] == 3:
             $ brit_dare = True
@@ -162,7 +160,6 @@ label donbirthday:
             jump bad_dare_discussion
         else:
             jump no_dare_discussion
-
     label bad_dare_discussion:
         a "Hey, while we've got a minute alone..."
         a "I wanted to talk about that night at the cabin..."
@@ -170,7 +167,6 @@ label donbirthday:
         a "Look, about that dare..."
         d level grin "Hey, man. It's alright."
         d right "I'll be honest; I had it coming."
-
         if brit_dare == True:
             if persistent.choices["20"] == 1:
                 a "Yeah, but having your crush kiss me in front of you was kinda harsh."
@@ -237,7 +233,7 @@ label donbirthday:
     label good_dare_discussion:
         a "Hey, while we've got a minute alone, I've been meaning to ask:"
         a "How did it feel to finally kiss her?"
-        d level blank "..."
+        d_s level blank "..."
         d "...to be honest..."
         a "Oh, no.{w=.5} Don't tell me you didn't enjoy it..."
         d raised "Well, it was too quick to really feel anything, for starters."
@@ -249,7 +245,7 @@ label donbirthday:
         d mad "I feel like if me and her are going to kiss, it should be because we both want to."
         a "That's fair."
         a "Maybe I should've tried to stop the dare, or not even have suggested it in the first place..."
-        d level grin "Hey, don't beat yourself up over it. You were just trying to help me out, and I can't get mad at you for that."
+        d level grin "Hey, don't beat yourself up over it. You were just trying to do me a solid, and I can't get mad at you for that."
         d right "The past is the past, man. Nothing we can do about it, right?"
         a "Yeah, I guess."
         "With the awkwardness increasing quickly, I decided to change the conversation."
@@ -268,22 +264,22 @@ label no_dare_discussion:
     d casual "What do you say we meet them at the door?"
     a "Sounds good."
     hide don with dissolve
-    with Pause(.1)
+    pause 0.1
     scene bg living_w with dissolve
-    with Pause(.1)
+    pause 0.1
     play sound door_knock
     "By the time Donald and I got to the living room, there was a knock on the door."
     "Donald walked over to it and opened it up."
     play sound door_open
-    with Pause(.3)
-    show chad a1 straight casual grin at four1 zorder 2
-    show chris b1 straight casual grin at four2 zorder 3
-    show brit a1 straight casual grin at four3 zorder 3
-    show martha b1 straight casual grin at m_four4 zorder 2
+    pause 0.3
+    show chad p1 straight casual grin at four1 zorder 2
+    show chris p1 straight casual grin at four2 zorder 3
+    show brit p1 straight casual grin at four3 zorder 3
+    show martha p1 straight casual grin at m_four4 zorder 2
     with dissolve
-    with Pause(.5)
-    b a2 raised opened_smile "Ah, there's the birthday boy!"
-    c b2 smile "Happy birthday, Donald!"
+    pause 0.5
+    b p2 raised opened_smile "Ah, there's the birthday boy!"
+    c p2 smile "Happy birthday, Donald!"
     ct sad "Happy birthday, Don!"
     mu sad smile "Happy birthday, Donnie!"
     $b_blink = False
@@ -293,32 +289,32 @@ label no_dare_discussion:
     hide martha
     with dissolve
     show brit at twoleft
-    show don a1 closed sad smile at tworight
+    show don p1 closed sad smile at tworight
     with easeinright
-    with Pause(.1)
+    pause 0.1
     d "Sorry, Brit; someone already beat you to it!"
     $b_blink = True
-    b a1 small level hanging "Wha...? Who?"
+    b p1 small level hanging "Wha...? Who?"
     "Donald then pointed to my brother, who was sitting on the couch, oblivious to us."
     hide don with easeoutright
-    show harry a1 level blank right at tworight with easeinright
-    with Pause(.1)
-    b a2 mad blank straight "What the hell, Harry?"
+    show harry p1 level blank right at tworight with easeinright
+    pause 0.1
+    b p2 mad blank straight "What the hell, Harry?"
     h sad small frown "Huh?"
     "He finally seemed to notice that there were other people in the room."
     b raised hanging "The 'exit the vagina' line is MY line!"
     h mad straight closed_smile "Well, I don't see your name on it!"
-    b a1 level grin "Heh. Typical 12-year-old response."
-    b a2 left huhu "No...{w=0.5} That's a typical 5-year-old response."
+    b p1 level grin "Heh. Typical 12-year-old response."
+    b p2 left huhu "No...{w=0.5} That's a typical 5-year-old response."
     a "And a response you probably would've made if you were in Harry's position."
-    b straight blank "..."
+    b_s straight blank "..."
     b left huhu "Yeah, you're right."
-    b a1 straight mad grin "Alright, I'll let it slide this time."
+    b p1 straight mad grin "Alright, I'll let it slide this time."
     $ b_partial = True
     b level huhu "Mostly because you're cute."
     h mad small frown "I told you, guys are not 'cute'!!"
     $ b_partial = False
-    show brit a2 straight raised grin at twoleft
+    show brit p2 straight raised grin at twoleft
     b "Except you."
     h blank right "Gr..."
     "Flustered, Harry continued with his game."
@@ -326,7 +322,7 @@ label no_dare_discussion:
     "Though, as I've also learned, that can backfire pretty quickly."
     hide brit
     hide harry
-    show don a1 straight casual grin at middle
+    show don p1 straight casual grin at middle
     with dissolve
     with Pause(.1)
     d smile "Well, anyway, thank you all for coming!"
@@ -335,9 +331,9 @@ label no_dare_discussion:
     d straight casual "Once more guests get here, we'll start grillin'."
     d mad "Mr. T, I assume you brought the brats?"
     show don at tworight
-    show chad a1 left sad blank at twoleft
+    show chad p1 left sad blank at twoleft
     with easeinleft
-    with Pause(.1)
+    pause 0.1
     ct "Oh, shoot! I..."
     ct mad straight grin "...have them right here."
     "He then tapped on a paper bag he had been holding."
@@ -347,72 +343,70 @@ label no_dare_discussion:
     if persistent.choices["18"] == 2 and persistent.choices["19"] == 2 and persistent.choices["20"] == 2:
         hide chad
         hide don
-        show brit a1 straight casual grin at middle
+        show brit p1 straight casual grin at middle
         with dissolve
-        with Pause(.1)
+        pause 0.1
         b "They're deer brats. Christeena's uncle is a hunter who makes his own meat products."
         a "Deer meat? I don't think I've ever tried that."
     else:
         hide chad
         hide don
-        show chris b2 straight smile casual at middle
+        show chris p2 straight smile casual at middle
         with dissolve
-        with Pause(.1)
+        pause 0.1
         c "My uncle likes to hunt deer and turn the meat into burgers, brats, meatballs, etc."
         c raised grin "He normally keeps a good portion to himself, but he does tend to give us some if we ask nicely."
         a "Deer meat? I don't think I've ever tried that."
         hide chris
-        show brit a2 straight raised grin at middle
+        show brit p2 straight raised grin at middle
         with dissolve
-        with Pause(.1)
+        pause 0.1
     $d_blink = True
-    b a2 straight raised grin "Well, if you're smart, you'll try it today."
+    b p2 straight raised grin "Well, if you're smart, you'll try it today."
     a "Right, because that's the only thing in the world that shows how smart I can be."
-    b a1 casual "Yep!"
+    b p1 casual "Yep!"
     hide brit
-    show don a1 straight casual grin at tworight
-    show chad a1 straight casual grin at twoleft
+    show don p1 straight casual grin at tworight
+    show chad p1 straight casual grin at twoleft
     with dissolve
-    with Pause(.1)
+    pause 0.1
     d "Anyway, you can put those in the fridge until we're ready."
     ct raised "Roger that!"
-    hide don
-    hide chad
-    with dissolve
-    with Pause(.1)
+    scene bg living_w with dissolve
+    pause 0.1
     "Mr. Truman went towards the kitchen while Donald led the rest of us outside."
     scene bg backyard_w with dissolve
-    with Pause(.1)
-    show chris b1 straight casual blank at twoleft
-    show ginger a2 straight casual grin at tworight
+    pause 0.1
+    show chris p1 straight casual blank at twoleft
+    show ginger p2 straight casual grin at tworight
     with dissolve
-    with Pause(.1)
+    pause 0.1
     g "Ah, hello again, Christeena!"
-    c b2 grin "Hi, Mrs. Sprouse!"
+    c p2 grin "Hi, Mrs. Sprouse!"
     g "And this is your sister, Brittney, I take it?"
     hide chris
-    show brit a1 straight casual grin at twoleft
+    show brit p1 straight casual grin at twoleft
     with dissolve
-    with Pause(.1)
-    b a2 raised "Yes, Ma'am! Brittney Usher."
+    pause 0.1
+    b p2 raised "Yes, Ma'am! Brittney Usher."
     b level huhu left "I'm the one WITHOUT the uniquely-spelled name."
     g sad "Ahaha! Well, I'm Ginger, Alex's mom. And over by the grill is Fred, Alex's dad."
-    b a1 straight casual grin "Oh, so HE'S the one Chris thought was, like, 60?"
+    b p1 straight casual grin "Oh, so HE'S the one Chris thought was, like, 60?"
     g level "Yes, that would be him."
-    show chris b1 level straight blank at threeleft
+    show chris p1 level straight blank at threeleft
     show brit at middle
     show ginger at threeright
     with easeinleft
-    with Pause(.1)
-    c "..."
+    pause 0.1
+    c_s "..."
     g sad "Don't worry, Christeena; you're not the first person to ever make that mistake."
-    c b2 left "Still... I still feel bad about that."
-    b a2 level "Hey, as far as first impressions go, it could've been worse."
+    c p2 left "Still... I still feel bad about that."
+    b p2 level "Hey, as far as first impressions go, it could've been worse."
     b huhu left "It's not like you called him or his family retarded, right?"
     hide chris
-    show don a1 mad grin straight at threeleft
+    show don p1 mad grin straight at threeleft
     with dissolve
-    with Pause(.1)
+    pause 0.1
     d "Yeah, yeah..."
     g casual wide "...what?"
     d casual "Inside joke."
@@ -421,25 +415,23 @@ label no_dare_discussion:
     "We could then hear the doorbell ring."
     d casual "I'll get it!"
     hide don with easeoutleft
-    show chris b1 straight casual blank at threeleft with dissolve
-    with Pause(.1)
+    show chris p1 straight casual blank at threeleft with dissolve
+    pause 0.1
     g casual grin "Well, I suppose I should leave you kids to hang out with each other while us adults talk."
-    b a1 straight raised grin "Yeah, that's probably for the best. I don't feel like talking about politics or the weather or whatever you old people talk about."
+    b p1 straight raised grin "Yeah, that's probably for the best. I don't feel like talking about politics or the weather or whatever you old people talk about."
     show ginger sad
     "Mom just chuckled as she walked towards the other parents. By then, Mr. Truman had already entered the backyard."
     hide ginger
     show brit at tworight
     show chris at twoleft
     with easeoutright
-    with Pause(.1)
-    b a2 casual "Anyhoo, I'm thirsty. You guys want anything from the cooler?"
+    pause 0.1
+    b p2 casual "Anyhoo, I'm thirsty. You guys want anything from the cooler?"
     c sad grin "Can you see if they have any Hilly Dew?"
-    b a1 raised "I can, and I will!"
+    b p1 raised "I can, and I will!"
     b "Alex, you want anything?"
-
     $ b_dare_talk = False
     $ c_dare_talk = False
-
     if persistent.choices["23"] == 1:
         jump girltalk_b
     elif persistent.choices["23"] == 2:
@@ -458,13 +450,13 @@ label no_dare_discussion:
         $ c_dare_talk = True
         a "Nah, I'm good. Thanks, though."
         $ b_partial = True
-        b a2 casual grin "Alright, then."
+        b p2 casual grin "Alright, then."
         hide brit with easeoutright
-        with Pause(.25)
+        pause 0.25
         $ b_partial = False
         show chris:
            ease 0.5 close_c
-        with Pause(.6)
+        pause 0.6
         if persistent.choices["18"] == 1:
             if persistent.choices["19"] == 2:
                 jump animetalk_c
@@ -496,11 +488,9 @@ label no_dare_discussion:
         $ b_dare_talk = True
         a "You know what? Sure. I'll head over there with you and see what they've got."
         $ b_partial = True
-        b a2 grin casual "Good deal."
-        hide brit
-        hide chris
-        with dissolve
-        with Pause(.1)
+        b p2 grin casual "Good deal."
+        scene bg backyard_w with dissolve
+        pause 0.1
         $ b_partial = False
         "Brittney and I started walking towards the coolers."
         if persistent.choices["18"] == 1:
@@ -533,36 +523,36 @@ label no_dare_discussion:
                 jump kisstalk_b_d_d
 
 label britreturns:
-    if b_dare_talk == True:
+    if b_dare_talk:
         "We had almost reached Christeena, who was turned away from us."
         "Brittney then leaned towards me and whispered."
         $b_blink = True
-        b a2 level right huhu "I've got an idea. Play along."
+        b p2 level right huhu "I've got an idea. Play along."
         "She then slid the soda into her pocket, but it was sticking out halfway."
         hide brit with dissolve
-        with Pause(.1)
+        pause 0.1
         "We finally made our way back to Christeena, who seemed relieved to see us."
-        show chris b1 straight casual blank at twoleft with dissolve
-        with Pause(.1)
-        show brit a1 straight casual grin at tworight with easeinright
-        with Pause(.1)
-    if b_dare_talk == True:
+        show chris p1 straight casual blank at twoleft with dissolve
+        pause 0.1
+        show brit p1 straight casual grin at tworight with easeinright
+        pause 0.1
+    if b_dare_talk:
         b "Good news, Chris!"
     else:
         b_o "Good news, Chris!"
-    if c_dare_talk == True:
+    if c_dare_talk:
         "I turned and saw that Brittney had returned with a water bottle in her hand."
         $c_blink = True
         show chris casual straight blank:
             ease 0.5 twoleft
-        show brit a1 straight casual grin at tworight with easeinright
-        with Pause(.1)
+        show brit p1 straight casual grin at tworight with easeinright
+        pause 0.1
     b "They do have Hilly Dew!"
-    c b2 grin "Yeah, I figured as much."
-    c blank "..."
+    c p2 grin "Yeah, I figured as much."
+    c_s blank "..."
     c "Where is it?"
-    b a2 blank "Oh, you mean you wanted me to get you one?"
-    c b2 mad hanging "What the hell did you think I wanted?"
+    b p2 blank "Oh, you mean you wanted me to get you one?"
+    c p2 mad hanging "What the hell did you think I wanted?"
     b level huhu left "You just told me to see if they had any!"
     c blank "Brittney!"
     if b_dare_talk == True:
@@ -584,7 +574,7 @@ label britreturns:
             "I gave a small grin and looked down at Brittney's pocket."
             show chris casual
             "Christeena then looked down at Brittney's pocket, as well, and a smile arose on her face."
-            c raised grin b1 "Brit, what's that in your pocket?"
+            c raised grin p1 "Brit, what's that in your pocket?"
             jump endofprank
         label playalong_b:
             $ B_Points += 1
@@ -593,9 +583,9 @@ label britreturns:
             c hanging "What?!"
             c blank "There is no way you both are that stu--"
             $ c_blush = False
-            show chris b2 straight casual blank at twoleft
+            show chris p2 straight casual blank at twoleft
             "Christeena then looked down at Brittney's pocket, and the gig was up."
-            c raised grin b1 "Brit, what's that in your pocket?"
+            c raised grin p1 "Brit, what's that in your pocket?"
             jump endofprank
     else:
         "Surely Brittney wouldn't be THAT much of a jerk, would she?"
@@ -630,46 +620,46 @@ label britreturns:
         $ B_Points += 1
         "I suppose it couldn't hurt to play along."
         a "Brittney, I can't believe you didn't grab a soda for her!"
-        b a1 level opened_smile "Hey, I was just following her orders!"
-        c b1 hanging "Brittney, you--!"
+        b p1 level opened_smile "Hey, I was just following her orders!"
+        c p1 hanging "Brittney, you--!"
         show chris casual blank
         "That's when she happened to look down, something seeming to catch her attention."
-        show chris raised grin b2
+        show chris raised grin p2
         "The gig's officially up."
         c "Brit, what's that in your pocket?"
         jump endofprank
 
 label endofprank:
-    b a2 right level grin "Nothing. I'm just happy to see you."
-    c level b1 grin "C'mon, Brit. Hand it over."
+    b p2 right level grin "Nothing. I'm just happy to see you."
+    c level p1 grin "C'mon, Brit. Hand it over."
     $ b_partial = True
     b level huhu straight "Fine."
     "She then pulled the can out of her pocket and handed it to Christeena, who rolled her eyes and accepted the soda."
     $ b_partial = False
-    show brit a1 straight level grin at tworight
+    show brit p1 straight level grin at tworight
     "Brittney then looked towards the back door and her eyebrows raised."
-    b a2 casual "Hey, look who it is!"
+    b p2 casual "Hey, look who it is!"
     "I turned towards the back door to see Donald entering the yard with a familiar woman behind him."
     show brit zorder 1:
         ease 0.5 xalign 1.0
     show chris zorder 1:
         ease 0.5 xalign 0.0
-    with Pause(0.5)
-    show don a1 straight casual grin at four2 zorder 2
-    show kelly b1 straight casual grin at k_four3 zorder 2
+    pause 0.5
+    show don p1 straight casual grin at four2 zorder 2
+    show kelly p1 straight casual grin at k_four3 zorder 2
     with dissolve
-    with Pause(.1)
-    b a1 casual opened_smile straight "Hey, Kelly!"
+    pause 0.1
+    b p1 casual opened_smile straight "Hey, Kelly!"
     k raised "Howdy!"
     a "Huh. Didn't expect to see you here, Kelly."
     k level "Well, you won't be seein' me for long; I just came to drop those off."
     "Donald held up a plastic bag with {i}'Kelly's Deli'{/i} plastered all over it."
-    c b2 casual dot straight "What is it?"
+    c p2 casual dot straight "What is it?"
     k raised "Well, the deli 'accidentally' made too many buns last night, so I figured Don might have use for them for his cookout birthday party."
     a "Since when do you sell hot dogs?"
     k mad "That's the other strange thing! We don't, yet someone somehow made brat buns instead of sandwich buns!"
     $ b_partial = True
-    b a2 raised grin "Quite the unusual blunder."
+    b p2 raised grin "Quite the unusual blunder."
     k level "Indeed."
     k sad "Anyway, I just wanted to come back here to say hi to y'all."
     d sad blank "You sure you can't stay for a little bit?"
@@ -683,40 +673,40 @@ label endofprank:
     k casual "Well, I'll catch y'all later!"
     d casual smile "See ya, Kelly!"
     $ b_partial = False
-    show brit a1 straight casual opened_smile at four4 zorder 1
+    show brit p1 straight casual opened_smile at four4 zorder 1
     b "Later!"
-    c b1 grin "Bye, Kelly!"
+    c p1 grin "Bye, Kelly!"
     a "See you later!"
     "Kelly waved to us all before entering the house."
     hide kelly
     with dissolve
-    with Pause(.1)
+    pause 0.1
     show don:
         ease 0.5 xalign 0.5
     show brit:
         ease 0.5 xalign 0.9
     show chris:
         ease 0.5 xalign 0.1
-    with Pause(0.6)
+    pause 0.6
     a "So why didn't Kelly just say she made those buns for Donald?"
-    b a2 raised grin "And risk word getting out that she used deli supplies for personal reasons?"
+    b p2 raised grin "And risk word getting out that she used deli supplies for personal reasons?"
     a "Right, because THAT'S what would get Kelly in legal trouble."
     b right level huhu "Fair enough."
-    c b2 dot "Guys... I just realized something."
+    c p2 dot "Guys... I just realized something."
     show brit left casual blank
     d left blank "What?"
-    c b1 hanging "Deer brats...{w=.5} on fresh Kelly's Deli buns..."
+    c p1 hanging "Deer brats...{w=.5} on fresh Kelly's Deli buns..."
     show don straight dot
     b small hanging "*gasp*"
-    b a1 sad opened_smile straight "That sounds like the most perfect food combination to ever exist!"
-    c b2 smile "Exactly!"
+    b p1 sad opened_smile straight "That sounds like the most perfect food combination to ever exist!"
+    c p2 smile "Exactly!"
     d left level grin "Well, what do you say I set the buns on the table, and we test this theory once it's time to eat?"
-    b a2 raised grin "Sounds excellent!"
+    b p2 raised grin "Sounds excellent!"
     hide brit
     hide don
     hide chris
     with dissolve
-    with Pause(0.1)
+    pause 0.1
     nvl clear
     window hide dissolve
     nvl show dissolve
@@ -753,19 +743,19 @@ label endofprank:
     nvl clear
     nvl hide dissolve
     window show dissolve
-    with Pause(.1)
-    show brit a1 straight raised grin at middle
-    show don a1 straight casual grin at threeright
-    show chris b2 straight casual blank at threeleft
+    pause 0.1
+    show brit p1 straight raised grin at middle
+    show don p1 straight casual grin at threeright
+    show chris p2 straight casual blank at threeleft
     with dissolve
-    with Pause(.1)
+    pause 0.1
     b opened_smile "Alright, let's all take a bite at the same time!"
     d raised smile "Alright!"
     "We each held up our brat to our mouths and looked at each other, waiting for a countdown."
-    b grin a1 "One...{w=1} Two...{w=1} Three!"
+    b grin p1 "One...{w=1} Two...{w=1} Three!"
     "Each of us took a bite."
     "We each had the same immediate reaction."
-    show brit a1 sad dot
+    show brit p1 sad dot
     show don level blank
     c small sad hanging "Ah! Hot!!"
     "I spat my bite onto my plate on reflex and turned to Christeena."
@@ -775,92 +765,92 @@ label endofprank:
     "I ran my tongue across and tasted."
     a "Huh."
     a "That tastes pretty good!"
-    show chris b1 dot straight casual
+    show chris p1 dot straight casual
     show don raised grin
-    b a2 closed_smile raised "Told ya!"
-    b a1 mad opened_smile "Though adding the bun is the real test!"
+    b p2 closed_smile raised "Told ya!"
+    b p1 mad opened_smile "Though adding the bun is the real test!"
     "I picked up the bite from my plate and blew on it. The steam seemed to die down a bit."
     "Ripping a bit of my bun off, I wrapped it around the bite and put the whole thing in my mouth."
     "Nearly following suit, Brittney took a bite of her brat."
     "..."
     $b_blink = False
-    b a2 closed huhu sad "{cps=6}Ohhhhh{/cps} yeah!{w=.5} That's incredible!"
+    b p2 closed huhu sad "{cps=6}Ohhhhh{/cps} yeah!{w=.5} That's incredible!"
     a "*cough*"
     d sad grin "You alright, dude?"
     a "The brat has a bit of a kick."
     $b_blink = True
-    b a1 casual straight opened_smile "I know, right? It's, like, the best part!"
+    b p1 casual straight opened_smile "I know, right? It's, like, the best part!"
     "I looked and saw that Christeena had finished chewing her bite with a grin."
-    c raised b2 grin "I swear we really need to get Mom to steal this bread recipe."
-    b raised a2 grin "You think I haven't tried convincing her?"
+    c raised p2 grin "I swear we really need to get Mom to steal this bread recipe."
+    b raised p2 grin "You think I haven't tried convincing her?"
     c smile "Well, we should try harder!"
     $ m_partial = True
     show brit zorder 2
     show don zorder 2
     show chris zorder 2
-    show martha b1 straight raised grin zorder 1 at m_four2 with dissolve
+    show martha p1 straight raised grin zorder 1 at m_four2 with dissolve
     pause .1
     show chris casual dot
     show brit casual blank
     mu "Not happening."
     "She had seemingly teleported behind her daughters and placed a hand on each of their shoulders."
     $ b_partial = True
-    b a2 level blank "You're no fun."
+    b p2 level blank "You're no fun."
     $ m_partial = False
-    show martha b1 level straight grin at m_four2
+    show martha p1 level straight grin at m_four2
     mu "It's called 'Not Being Fired', sweetie."
     $ b_partial = False
-    show brit a2 straight raised grin at middle zorder 2
+    show brit p2 straight raised grin at middle zorder 2
     b "Who needs a job when you can have bread?"
     show martha sad
     "Mrs. Truman gave her daughter a pat on the shoulder before chuckling and walking off."
     hide martha with easeoutright
-    with Pause(.1)
+    pause 0.1
     "With no new conversation ideas at the moment, we continued our lunch."
     hide chris
     hide don
     hide brit
     with dissolve
-    with Pause(.1)
+    pause 0.1
     window hide dissolve
     scene bg fade with wipeleft
-    with Pause(1)
+    pause 1
     scene bg backyard_w with wipeleft
     window show dissolve
-    show brit a2 straight raised grin at middle with dissolve
-    with Pause(.1)
+    show brit p2 straight raised grin at middle with dissolve
+    pause 0.1
     b "Well, as tempted as I am to get seconds, I need to watch my figure."
     show brit:
         ease 0.5 xalign 0.75
-    show chris b2 straight raised blank at twoleft with dissolve
-    with Pause(.1)
+    show chris p2 straight raised blank at twoleft with dissolve
+    pause 0.1
     c "You mean the thin, blocky figure you've always had despite once eating a 3 pound burger in one sitting?"
     a "Three pounds?!"
     $ b_wink = True
-    b a1 tongue raised "Even the best athletes get a cheat day!"
+    b p1 tongue raised "Even the best athletes get a cheat day!"
     $ b_wink = False
-    show brit a1 straight casual grin
+    show brit p1 straight casual grin
     b "Anyway, I think I'm gonna burn these calories by playing some bags."
-    b a2 right level huhu "Or, as Kelly calls it, {i}corn-haul{/i}."
+    b p2 right level huhu "Or, as Kelly calls it, {i}corn-haul{/i}."
     a "...what?"
     show brit:
         ease 0.5 xalign 0.5
     show chris:
         ease 0.5 xalign 0.1
-    show don a1 straight raised grin at threeright with dissolve
-    with Pause(.1)
+    show don p1 straight raised grin at threeright with dissolve
+    pause 0.1
     d "{i}Cornhole{/i}, as we non-southeners pronounce it."
-    b a1 left casual grin "Anyone wanna play?"
-    c b2 level blank "I think I'm just gonna go inside for a bit, if that's alright. The heat's getting to me a little."
+    b p1 left casual grin "Anyone wanna play?"
+    c p2 level blank "I think I'm just gonna go inside for a bit, if that's alright. The heat's getting to me a little."
     "Now that she mentioned it, the temperature certainly did seem to get higher over the past hour."
-    b a1 straight mad grin "Yeah, I wasn't expecting you to play, anyway."
+    b p1 straight mad grin "Yeah, I wasn't expecting you to play, anyway."
     b casual "What about you, Donnie?"
     d left sad "Maybe later. Not in the mood for physical activity right now."
-    b level a2 "Scared of getting your ass beat?"
+    b level p2 "Scared of getting your ass beat?"
     d raised smile "What if I said 'yes'?"
-    b blank "..."
+    b_s blank "..."
     b left huhu "I dunno. Nobody's ever told me that in response."
-    b straight casual a1 grin "But, I won't force ya to play."
+    b straight casual p1 grin "But, I won't force ya to play."
     b level "Alex? Whaddaya say?"
     if persistent.choices["25"] == 1:
         jump bagswithbrit
@@ -882,23 +872,23 @@ label endofprank:
 
 label bagswithbrit:
     a "Yeah, that sounds fun."
-    b a2 opened_smile casual "Awesome!"
+    b p2 opened_smile casual "Awesome!"
     scene bg backyard_w with dissolve
-    with Pause(.1)
+    pause 0.1
     "And so, Christeena went inside while Donald stayed sitting."
     "Meanwhile, Brittney and I stood up and walked over towards the bags setup."
-    show brit a2 level blank straight at close_b with dissolve
+    show brit p2 level blank straight at close_b with dissolve
     b "Hey, Alex?"
     a "Yeah?"
     b "Be honest."
     if persistent.choices["26"] == 1:
-        b raised hanging a1 "Did you just want to play because you felt bad for me or something?"
+        b raised hanging p1 "Did you just want to play because you felt bad for me or something?"
         jump feltbad
     if persistent.choices["26"] == 2:
-        b raised hanging a1 "Did you just want to play because you felt bad for me or something?"
+        b raised hanging p1 "Did you just want to play because you felt bad for me or something?"
         jump didntfeelbad
     else:
-        b raised hanging a1 "Did you just want to play because you felt bad for me or something?{nw}"
+        b raised hanging p1 "Did you just want to play because you felt bad for me or something?{nw}"
         menu:
             b "Did you just want to play because you felt bad for me or something?{fast}"
             "Yes":
@@ -910,21 +900,21 @@ label bagswithbrit:
 
     label feltbad:
         a "Maybe just a little."
-        b a2 right blank "Hm..."
+        b p2 right blank "Hm..."
         a "But it's not like I don't want to play. I swear."
         jump bagsgame
     label didntfeelbad:
         $ B_Points += 1
         a "No, of course not!"
-        b blank a2 raised "Are you sure?"
+        b blank p2 raised "Are you sure?"
         a "Positive."
         jump bagsgame
     label bagsgame:
-        b straight level blank "..."
+        b_s straight level blank "..."
         b grin "Alright. I'll believe you."
         a "Why do you ask?"
-        b a1 casual "Just curious."
-        b a2 raised opened_smile "Alright, let's play!"
+        b p1 casual "Just curious."
+        b p2 raised opened_smile "Alright, let's play!"
         "Brittney and I got behind one of the boards so that we were facing the other one in the distance."
         b casual grin "Who's going first?"
         a "Well, it's always ladies first."
@@ -934,7 +924,7 @@ label bagswithbrit:
         a "I guess it does!"
         $ b_wink = False
         $b_blink = False
-        show brit a2 closed sad opened_smile
+        show brit p2 closed sad opened_smile
         "We both gave a chuckle as I held my bag in front of me and focused."
         hide brit with dissolve
         pause .1
@@ -944,13 +934,13 @@ label bagswithbrit:
         play sound bag_hit
         "It smacked onto the board and slid off the side."
         $ b_partial = True
-        show brit a2 straight level huhu at close_b with dissolve
+        show brit p2 straight level huhu at close_b with dissolve
         pause .1
         b "Awwww, nice try~!"
         "Her belittling tone wasn't helpful."
         a "Let's see you do better!"
         $ b_partial = False
-        show brit a1 mad grin straight at close_b
+        show brit p1 mad grin straight at close_b
         b "Gladly!"
         "Brittney picked up her bag and stared at the wooden box."
         show brit level blank
@@ -980,7 +970,7 @@ label bagswithbrit:
         b level huhu straight "And I'm already in a 3-point lead!"
         a "It's anyone's game."
         $ b_partial = False
-        show brit a2 raised grin straight at close_b
+        show brit p2 raised grin straight at close_b
         b "Nah. {w=.5}It's MINE."
         "Alright.{w=.5} Challenge accepted."
         hide brit with dissolve
@@ -988,7 +978,6 @@ label bagswithbrit:
         play music friendly_competition
         window hide dissolve
         nvl show dissolve
-        with Pause(.1)
         narrate """
         At first, it truly was a more playful competition.
 
@@ -1009,8 +998,8 @@ label bagswithbrit:
         nvl clear
         nvl hide dissolve
         window show dissolve
-        with Pause(.1)
-        show brit a2 straight level blank at close_b with dissolve
+        pause 0.1
+        show brit p2 straight level blank at close_b with dissolve
         pause .1
         b ".{w=1}.{w=1}."
         "She was staring at the board harder than I ever could have imagined."
@@ -1028,7 +1017,7 @@ label bagswithbrit:
         "{i}THUD{/i}"
         "The bag smacked into the board... {w}and bounced right off, into the grass."
         "A moderate groan of disappointment could be heard from the crowd, as well as a few 'Yeah!'s."
-        show brit a1 mad frown
+        show brit p1 mad frown
         "Brittney, herself, clenched her fists and let out a grunt of anger."
         b "Damn it...!"
         "To say she's a little annoyed is a bit of an understatement."
@@ -1055,7 +1044,8 @@ label bagswithbrit:
         "Right before it slid off, it stopped."
         "The crowd cheered, and even applauded, as I jumped in excitement."
         a "Yes! I won!"
-        show brit a2 straight level grin at close_b with dissolve
+        show brit p2 straight level grin at close_b with dissolve
+        pause 0.1
         "Brittney looked at me with a face that simultaneously said {i}'Good game.'{/i} and {i}'Fuck you.'{/i}."
         hide brit with dissolve
         $ current_track = "None"
@@ -1065,18 +1055,18 @@ label bagswithbrit:
         $ b_partial = True
         $ current_track = "\"Relaxation in the Country\""
         play music relaxation_in_the_country
-        show brit a2 straight level huhu at close_b with dissolve
+        show brit p2 straight level huhu at close_b with dissolve
         pause .1
         b "Well played, Alexander."
         $ b_partial = False
-        show brit a1 straight raised opened_smile at close_b
+        show brit p1 straight raised opened_smile at close_b
         b "I guess I underestimated ya."
         a "I guess you did."
         show brit casual blank
         p_o "Nice throwin' out there, Ush!"
         show brit zorder 2:
             ease 0.5 xalign 0.1
-        show percy a1 straight casual grin zorder 1:
+        show percy p1 straight casual grin zorder 1:
             alpha 0.0
             middle
             parallel:
@@ -1089,7 +1079,7 @@ label bagswithbrit:
             ease 0.5 twoleft
         pause .6
         $ P_Name = "Percy"
-        b a2 raised grin "Alex, you remember Percy, right?"
+        b p2 raised grin "Alex, you remember Percy, right?"
         a "Kinda hard to forget someone who's the lead singer of a cover band, don't ya think?"
         b left level huhu "Fair enough."
         "Brittney had introduced me to The Reagans properly about a week or so after I moved here."
@@ -1097,7 +1087,7 @@ label bagswithbrit:
         "Well, there's really no other way to say it:{w} 80s."
         "Their appearance wasn't just limited to their performances. If you had seen them in public, you'd think they were lost time travelers."
         "Still, they're pretty good at what they do, giving us a small performance to show off their skill."
-        b straight a1 casual grin "Where's the rest of the band?"
+        b straight p1 casual grin "Where's the rest of the band?"
         p raised "Mike and Karrie are visitin' his family back in New York for the holiday, and James is practicin' for a new song."
         p level "Nicole's just runnin' some errands, though; she said she'd try to be here soon."
         a "{i}'New song'{/i}? I thought you guys were a cover band."
@@ -1107,10 +1097,10 @@ label bagswithbrit:
         p "Especially you, Al."
         a "Meh. I just got lucky."
         a "I would've lost if Brittney hadn't sucked ass."
-        b a2 left level derp "I blame my lack of practice."
+        b p2 left level derp "I blame my lack of practice."
         p casual "Nah. You both did great out there!"
         p "Certainly better than I could do."
-        b straight blank "..."
+        b_s straight blank "..."
         b left huhu "Yeah, let's be real."
         $ b_partial = True
         b straight grin "The best thing you can throw is your back."
@@ -1120,65 +1110,65 @@ label bagswithbrit:
         b tongue raised "I rest my case."
         p casual "Well, I'm still pretty hungry, so I'm gonna grab some more grub."
         $ b_wink = False
-        show brit a1 casual right grin at twoleft
+        show brit p1 casual right grin at twoleft
         b "Alright, then. Talk to you later, Percy!"
         a "Yeah, see ya!"
         "Percy gave a nod as he walked towards the food line."
         hide percy with easeoutright
-        pause .1
+        pause 0.1
         show brit straight:
             ease 0.5 close_b
         pause 0.6
         show brit blank
         a "You seem to get along with Percy pretty well."
-        b a2 raised opened_smile "Yeah, you could say that."
+        b p2 raised opened_smile "Yeah, you could say that."
         b level right huhu "You might not believe it, but I'm a sucker for a good 80's song, so I suppose you could call it a match made in Heaven."
         a "Well, I hate to be THAT guy, but..."
         a "...doesn't it get suspicious to see a 17-year-old girl hanging out with a guy in his mid-20s?"
         $ b_partial = True
-        b straight level blank "..."
+        b_s straight level blank "..."
         a "It's an honest question!"
-        b raised "..."
+        b_s raised "..."
         a "..."
         b mad "Honestly, I feel like I should be insulted..."
         $ b_partial = False
-        show brit level right huhu a2 at close_b
+        show brit level right huhu p2 at close_b
         b "...but you do raise a good outsider's perspective."
-        b a1 straight raised hanging "But if you think that either A. Percy is a pedophile or B. I would do anything of the sort with a guy a decade older than me..."
+        b p1 straight raised hanging "But if you think that either A. Percy is a pedophile or B. I would do anything of the sort with a guy a decade older than me..."
         a "I don't recall accusing anyone of anything. I just asked if it seemed odd."
-        b a2 left level blank "Eh."
-        b a1 raised straight grin "We're neighbors. Everyone on this street knows enough about each other to know if anyone comes off as suspicious."
+        b p2 left level blank "Eh."
+        b p1 raised straight grin "We're neighbors. Everyone on this street knows enough about each other to know if anyone comes off as suspicious."
         b "And nobody really fits the bill."
         a "We're talking about the same street that houses a mad scientist."
-        b a2 right level derp "Oh, yeah."
+        b p2 right level derp "Oh, yeah."
         b "I keep forgetting about her..."
-        b a1 straight raised opened_smile "Anyway, my point is that Percy and rest of the Reagans are clean and harmless."
+        b p1 straight raised opened_smile "Anyway, my point is that Percy and rest of the Reagans are clean and harmless."
         $ b_partial = True
         b huhu level "Besides, do you really think they'd let pedophiles live right by this many minors?"
         a "Do you want the honest answer or the one that makes your point?"
-        b blank "..."
+        b_s blank "..."
         a "Hey, you'd be surprised."
-        b raised "..."
-        a "..."
+        b_s raised "..."
+        a_s "..."
         $ b_partial = False
-        show brit casual left a1 blank at close_b
+        show brit casual left p1 blank at close_b
         "We could then hear some cheering from the bags boards. Sounds like someone scored some points."
-        b a2 straight raised grin "Whaddaya say we see who's winning?"
+        b p2 straight raised grin "Whaddaya say we see who's winning?"
         a "Sounds good to me!"
         jump presenttime
 
 label chillinsidewithchris:
     a "Thanks, but I think I'll follow Chris's lead and head inside."
     $ b_wink = True
-    b a2 mad tongue "{cps=15}Laaaaaaame.{/cps}"
+    b p2 mad tongue "{cps=15}Laaaaaaame.{/cps}"
     $ b_wink = False
-    show brit a1 level grin straight
+    show brit p1 level grin straight
     b "Well, I'm sure someone out here wouldn't mind playing a round or two."
     b left huhu "Enjoy your time inside, you two~!"
     $ c_blush = True
-    c mad blank "..."
+    c_s mad blank "..."
     scene bg backyard_w with dissolve
-    with Pause(.1)
+    pause 0.1
     $ c_blush = False
     "And so, Brittney walked towards the crowd of people to find someone to play bags with while Donald stayed sitting."
     "Meanwhile, Christeena and I walked inside of the house."
@@ -1192,27 +1182,24 @@ label chillinsidewithchris:
     play music chillaxin
     "We made it to the living room, where a familiar sibling of mine could still be found on the couch playing on the TS."
     "Although, this time, he has company sitting next to him, equally as glued to the screens."
-    show harry a1 casual straight grin at tworight
-    show daniel a1 straight casual grin at twoleft
+    show harry p1 casual straight grin at tworight
+    show daniel p1 straight casual grin at twoleft
     with dissolve
     pause 0.5
     a "Oh, hey, Daniel! I didn't know your family was here."
     da "We got here about 10 minutes ago."
     h raised blank "I thought it was 20."
     da level "Ah, whatever. Doesn't matter."
-    show chris b2 straight raised grin at close_right_c
+    show chris p2 straight raised grin at close_right_c
     show harry at middle
     show daniel at threeleft
     with easeinright
-    pause .1
+    pause 0.1
     c "I'm honestly a little shocked that neither of their mothers have forced them outside."
     a "Between the choice of forcing them outside, where they'll do nothing but complain, and letting them stay inside, where they'll be quiet, what would you do?"
     c level left "I guess."
-    hide chris
-    hide daniel
-    hide harry
-    with dissolve
-    pause .1
+    scene bg living_w with dissolve
+    pause 0.1
     "Christeena and I sat on the couch perpendicular to Harry and Daniel's."
     "They seemed to be minding their business with the game, so I don't think they'll be too much of an issue."
     if cutoff:
@@ -1220,15 +1207,14 @@ label chillinsidewithchris:
         "Then again, even if they weren't here, maybe a party isn't the best place to keep talking about it."
         "We're supposed to have fun, so we should just do that and not worry about anything else, at least right now."
     "But the question now is what to do..."
-    show chris b1 straight casual grin at close_c with dissolve
-    pause .1
+    show chris p1 straight casual grin at close_c with dissolve
+    pause 0.1
     c "Let's see what's on TV."
     a "That'll work."
     hide chris with dissolve
-    pause .1
+    pause 0.1
     window hide dissolve
     nvl show dissolve
-    with Pause(.1)
     narrate """
     Christeena turned on the TV.
 
@@ -1249,39 +1235,40 @@ label chillinsidewithchris:
     nvl clear
     nvl hide dissolve
     window show dissolve
-    pause .1
-    show chris b2 straight casual blank at close_c with dissolve
-    pause .1
+    pause 0.1
+    show chris p2 straight casual blank at close_c with dissolve
+    pause 0.1
     a "Hey, do they have any firework shows around here?"
-    c b1 grin "Yeah, there's a farmer in Smalltown who does the honors."
+    c p1 grin "Yeah, there's a farmer in Smalltown who does the honors."
     c "I think they start at around 8 or 9."
     a "Cool! You going?"
     c level blank "Maybe."
     a "What do you mean?"
-    c b2 left "Eh. I'm not really into fireworks."
+    c p2 left "Eh. I'm not really into fireworks."
     c straight raised "I mean, yeah, they were cool when I was younger, but now it's just the same old thing."
     c hanging "{i}\'Ooo, look! A large explosion and pretty colors!\'{/i}"
     a "Yeah, I get what you mean; I've picked up on that recently, as well."
     da_o "So?"
     show chris casual dot zorder 2 at close_right_c
-    show harry a1 straight casual blank zorder 1 at middle
-    show daniel a1 straight casual grin zorder 1 at threeleft
+    show harry p1 straight casual blank zorder 1 at middle
+    show daniel p1 straight casual grin zorder 1 at threeleft
     with easeinleft
     pause .1
     "We turned towards Daniel. Even Harry was looking at him with curiosity."
     da smile "It's still cool to watch things blow up in the sky! Especially when they look like they're about to fall down onto you!"
     show chris sad blank:
         ease 0.1 xalign 0.91
-        ease 0.2 xalign 0.89
-        ease 0.2 xalign 0.91
-        ease 0.2 xalign 0.89
+        block:
+            ease 0.2 xalign 0.89
+            ease 0.2 xalign 0.91
+            repeat 2
         ease 0.1 xalign 0.9
     "Christeena shivered."
-    c b1 level "To each their own, but that's the thing that freaks me out the most."
+    c p1 level "To each their own, but that's the thing that freaks me out the most."
     da level grin "Pft. I hope I don't become as lame as you when I grow up."
     show chris mad hanging
     "Christeena stared at the little Hispanic boy with a forced offended look."
-    c b2 raised smile "Harry, I think you're being a bad influence on this precious child!"
+    c p2 raised smile "Harry, I think you're being a bad influence on this precious child!"
     h mad frown "Hey! I am not!"
     da mad blank "Yeah, he is not!"
     a "Whatever you boys say..."
@@ -1291,20 +1278,20 @@ label chillinsidewithchris:
     hide harry
     hide daniel
     with easeoutright
-    pause .1
+    pause 0.1
     $c_blink = False
     show chris closed_happy sad smile at close_c with easeinright
     "Christeena and I just laughed quietly."
     a "I guess it's kinda nice to see Harry be the big brother figure for once."
     $c_blink = True
-    c b1 raised straight grin "Well, from what I know about him, I hope he doesn't corrupt poor little Daniel Rodriguez."
+    c p1 raised straight grin "Well, from what I know about him, I hope he doesn't corrupt poor little Daniel Rodriguez."
     a "Hey, every child's innocence is lost soon enough."
     show chris level
-    c "..."
+    c_s "..."
     a "You know what I meant."
     if C_Points >= 6:
         $ c_blush = True
-        show chris sad b2
+        show chris sad p2
         "She just chuckled, though she still looked me in the eye with a smile."
         "I looked back at her, sporting my own smile, albeit it being a bit more of a forced, confused one."
         "..."
@@ -1312,7 +1299,7 @@ label chillinsidewithchris:
         "..."
         if C_Kiss == True:
             show chris:
-                ease 0.5 size (792, 1584)
+                ease 0.5 zoom 1.1
             pause .6
             "She got a little bit closer to me."
             "I could feel my heart pounding a bit faster."
@@ -1323,8 +1310,8 @@ label chillinsidewithchris:
             else:
                 c right "I know this might sound a bit weird, but..."
             c straight "Do you think that maybe we could... you know..."
-            c b1 left "...do THAT... {w=0.5}again...?"
-            a "...!"
+            c p1 left "...do THAT... {w=0.5}again...?"
+            a_s "...!"
             "Well, way to be subtle, Chris."
             "But to answer her question..."
             if persistent.choices["26"] == 1:
@@ -1343,18 +1330,18 @@ label chillinsidewithchris:
                 $ C_Points += 1
                 "Well, without any more hesitation, I leaned towards her."
                 show chris straight:
-                    ease 0.5 size (864 ,1728)
+                    ease 0.5 zoom 1.2
                 pause 1
                 show fade zorder 2 with dissolve
                 pause 1
                 $c_blink = False
-                show chris closed_happy b2
+                show chris closed_happy p2
                 hide fade with dissolve
                 pause .1
                 c "..."
                 "Well, we were both smiling like idiots, but oh well."
                 show chris:
-                    ease 0.5 size (792, 1584)
+                    ease 0.5 zoom 1.1
                 pause .6
                 $c_blink = True
                 c straight "T-Thanks."
@@ -1365,7 +1352,7 @@ label chillinsidewithchris:
                 c sad dot "Eh?"
                 "I then pointed behind me towards the kitchen doorway."
                 a "I'd hate for them to waltz in unexpectedly."
-                c grin b2 "O-Oh. Right."
+                c grin p2 "O-Oh. Right."
                 c right "Sorry. I know that was weird to ask, but..."
                 jump kissexplanation
             label kissexplanation:
@@ -1373,56 +1360,56 @@ label chillinsidewithchris:
                 a "Wait, you mean that kiss at the cabin was...?!"
                 c left "Yeah..."
                 a "Why didn't you say something? I would've totally had you wait for a more special occasion!"
-                c b1 straight "It's okay, Alex. Really."
+                c p1 straight "It's okay, Alex. Really."
                 $ c_blush = False
-                c b1 level blank straight "It gets kinda embarrassing being one of the few girls your age who hasn't even done so much as a kiss."
+                c p1 level blank straight "It gets kinda embarrassing being one of the few girls your age who hasn't even done so much as a kiss."
                 c right dot "I mean, yeah, that wasn't exactly the way I planned on doing it, but..."
                 c sad straight grin "...I'm glad it was with a gentleman like you."
                 a "Gentleman? What do you mean?"
-                c level blank b2 "Well, you could've dared me to do something much worse."
+                c level blank p2 "Well, you could've dared me to do something much worse."
                 c grin "And you even offered to fake the kiss just so I could feel more comfortable."
                 a "But, you haven't really known me for that long..."
                 c sad right "Well, yeah, but..."
                 c casual straight blank "Wait..."
-                c mad "Wait... {fast}is there something I should know that you're not telling me?"
+                extend mad " is there something I should know that you're not telling me?"
                 a "Like what?"
                 c level blank "I don't know... I just didn't like the way you said that."
                 a "I'm sorry."
                 c sad dot "No, don't be; I can over think at times."
                 c grin "But anyway, even though I haven't known you for that long..."
                 c level blank "...and I still wouldn't consider doing anything like dating yet..."
-                c b1 sad grin "...it's still nice to get that out of the way."
+                c p1 sad grin "...it's still nice to get that out of the way."
                 "..."
                 "Am I crazy, or did I just get used to mark a box on a to-do list?"
                 "..."
                 "Ah, whatever. I got my first kiss out of the way now, too, so I can't complain too much."
         "Finally, she cleared her throat and turned back to the TV, which was still showing both the TV guide and the news."
-        c b1 left sad grin "A-Anyway, we should probably pick something."
+        c p1 left sad grin "A-Anyway, we should probably pick something."
         a "Probably."
     else:
         "She just chuckled in response."
-        c b1 raised smile "Anyway, we should probably pick something."
+        c p1 raised smile "Anyway, we should probably pick something."
         a "Probably."
     hide chris with dissolve
-    pause .1
+    pause 0.1
     jump presenttime
 
 label hangoutwithdon:
     a "Thanks, but I'll pass."
     $ b_wink = True
-    b a2 mad tongue "{cps=15}Laaaaaaame.{/cps}"
+    b p2 mad tongue "{cps=15}Laaaaaaame.{/cps}"
     $ b_wink = False
-    show brit a1 level grin straight
+    show brit p1 level grin straight
     b "Well, I'm sure someone out here wouldn't mind playing a round or two."
-    b a2 raised opened_smile "Catch you losers later!"
+    b p2 raised opened_smile "Catch you losers later!"
     scene bg backyard_w with dissolve
-    with Pause(.1)
+    pause 0.1
     "And so, Brittney walked towards the crowd of people to find someone to play bags with while Christeena walked into the house."
     "Meanwhile, Donald and I continued to stay sitting at our chairs in silence."
     "I took this moment to actually look around the backyard."
     "There were a decent amount of guests, maybe around 30 or so?"
-    show don a1 straight casual blank at close_d with dissolve
-    pause .1
+    show don p1 straight casual blank at close_d with dissolve
+    pause 0.1
     a "Man, it must be nice having so many people here."
     d level right "A little."
     d raised straight "But it's a bit cramped at times."
@@ -1432,13 +1419,13 @@ label hangoutwithdon:
     d grin "You in?"
     a "Totally."
     hide don with dissolve
-    pause .1
+    pause 0.1
     "We got up from our seats and walked through the house seemingly unnoticed, where we eventually found ourselves on the front porch."
     scene bg house_w with dissolve
-    pause .1
+    pause 0.1
     $d_blink = False
-    show don a1 closed casual wide at close_d with dissolve
-    pause .1
+    show don p1 closed casual wide at close_d with dissolve
+    pause 0.1
     "Donald stretched his arms and yawned when he sat down on the steps."
     a "Long day?"
     $d_blink = True
@@ -1458,8 +1445,8 @@ label hangoutwithdon:
     d blank "I guess I'm partially to blame, though. After 2 years of you guys not being able to come down, I kinda just gave up a bit too quickly..."
     $ current_track = "None"
     stop music fadeout(5)
-    d "..."
-    a "..."
+    d_s "..."
+    a_s "..."
     a "Man, it's weird."
     show don straight
     a "We used to be so close back in Chicago. We were basically brothers."
@@ -1471,7 +1458,7 @@ label hangoutwithdon:
     a "I mean, for crying out loud, I basically had to guess on what I was going to get you for today."
     show don raised blank
     "He raised an eyebrow in what seemed to be both confusion and pain."
-    a "I mean, I'm not trying to act like a dick here, but my point is I just feel bad for not trying harder to stay in touch over the years."
+    a "I mean, I'm not trying to act like a dick here, but I just feel bad for not trying harder to stay in touch over the years."
     show don level grin
     "He then smiled and gave me a pat on the shoulder."
     $ current_track = "\"Reflection\""
@@ -1510,7 +1497,7 @@ label hangoutwithdon:
     d grin "At the end of the day, I'm in a good town with good neighbors."
     d raised left "Especially the one in that house."
     "As he said that, he pointed to the house next door."
-    a "Yeah, Martha certainly is something."
+    a "Yeah, that Martha certainly is something."
     $d_blink = False
     show don sad closed
     "Clearly not expecting that response, Donald closed his eyes and gave a large grin and chuckle."
@@ -1524,14 +1511,14 @@ label hangoutwithdon:
     a "Wow. You like Smalltown that much?"
     d blank "Well..."
     d "It's less about liking life in Smalltown and more about..."
-    d "...{w}not liking life in Chicago."
+    d "...not liking life in Chicago."
     a "Ah."
-    d "..."
-    a "..."
+    d_s "..."
+    a_s "..."
     "He then got up and stretched again."
     d raised smile straight "Anyway, enough depressing stuff. Let's head back to the party."
     d level grin right "I kinda wanna see how Brit's doing in her bags game."
-    a "Alright. Let's--{w=.25}{nw}"
+    a "Alright. Let's--"
     show don straight casual blank
     play sound phone_vibrate
     "We could then hear a buzz coming from Donald's pocket."
@@ -1542,18 +1529,18 @@ label hangoutwithdon:
     "He kept staring, his eyes moving across the screen as he read the message."
     d left "On second thought, you go on back to the party without me. I gotta go do something."
     a "Like what?"
-    d straight "..."
+    d_s straight "..."
     a "Don, what's up?"
     d left "I..."
     play sound phone_vibrate
     "The phone buzzed again."
     d straight "I'm sorry, man. I can't tell you."
     d sad right "If anyone asks where I am, just say you don't know."
-    "That won't be hard to say."
+    "That won't be hard to do."
     a "Alright, then..."
     d straight "Sorry."
     hide don with easeoutleft
-    pause .5
+    pause 0.5
     "..."
     "I slowly walked to Donald's front door, as to not seem suspicious."
     "Right as I put my hand on the handle, I turned around to see Donald going towards the end of the street."
@@ -1584,16 +1571,16 @@ label presenttime:
     $ current_track = "\"Brotato Chips\""
     play music donald
     "Donald started with Brittney's gift, first."
-    show don a1 level blank straight at middle with dissolve
+    show don p1 level blank straight at middle with dissolve
     pause .1
-    d "..."
+    d_s "..."
     "It was wrapped in a shoe box, as to not give it away."
-    d casual dot "...!"
+    d_s casual dot "...!"
     d smile "Whoa! A new baseball glove!"
     show don at twoleft
-    show brit a2 straight sad grin at tworight
+    show brit p2 straight sad grin at tworight
     with easeinright
-    pause .1
+    pause 0.1
     b "I figured since you're always saying you want a new one..."
     d sad right grin "No, I get it! Thank you!"
     $b_blink = True
@@ -1611,14 +1598,14 @@ label presenttime:
     d "A $50 Vapor card?!"
     d sad smile "Chris, that's awesome! Thanks!"
     show don at twoleft
-    show chris b2 straight sad grin at tworight
+    show chris p2 straight sad grin at tworight
     with easeinright
     pause .1
     c "N-No problem, Don! I'm glad you like it!"
     d raised left blank "I mean, I can't really get anything triple-A..."
     $d_blink = False
     d closed sad grin "...but there are actually a few indie titles I've been wanting, and this'll cover it nicely!"
-    show chris left b1
+    show chris left p1
     "You could see the weight of fear lifted off of her at the sight of Donald's excitement."
     "I turned towards Brittney, who looked just as surprised at Donald's happiness."
     hide chris
@@ -1628,7 +1615,7 @@ label presenttime:
     "Next up, he grabbed my gift."
     "Oh, boy...{w} I hope he enjoys it..."
     $d_blink = True
-    d straight level blank "..."
+    d_s straight level blank "..."
     if persistent.choices["12"] == 1:
         d casual dot "A Bulls jersey?"
         d smile "Thanks, Al!"
@@ -1674,7 +1661,7 @@ label presenttime:
     $ current_track = "\"Chillaxin'\""
     play music chillaxin
     hide don with dissolve
-    pause .1
+    pause 0.1
     window hide dissolve
     nvl show dissolve
     narrate """
@@ -1685,9 +1672,9 @@ label presenttime:
     He thanked everyone for the gifts, and after that, it was time for cake.
 
     After singing the birthday song, with Brittney singing much louder and obnoxiously, Donald blew out his candles and we began eating.
-    """
-    nvl clear
-    narrate """
+    
+    {clear}
+
     The rest of the day went by pretty smoothly, all things considered.
 
     Guests slowly started to leave, with Donald being sure to thank each one for coming.
@@ -1699,22 +1686,22 @@ label presenttime:
     nvl clear
     nvl hide dissolve
     window show dissolve
-    pause .1
-    show don a1 straight casual grin at threeright
-    show brit a1 straight casual grin at middle
-    show chris b1 straight casual grin at threeleft
+    pause 0.1
+    show don p1 straight casual grin at threeright
+    show brit p1 straight casual grin at middle
+    show chris p1 straight casual grin at threeleft
     with dissolve
-    pause .1
-    b a2 raised opened_smile "Not a bad birthday, right, Donnie?"
+    pause 0.1
+    b p2 raised opened_smile "Not a bad birthday, right, Donnie?"
     d raised left smile "Far from it!"
     d straight sad grin "Thanks again for coming, guys. Really means a lot to me."
-    c b2 smile "No problem, Donald!"
+    c p2 smile "No problem, Donald!"
     b left level derp "Well, I only came because I didn't have any other plans until the fireworks."
     d level left "Oh, yeah. That reminds me: I'm gonna be out of town on October 5th."
-    b straight mad opened_smile a1 "I was kidding, dum-dum!"
+    b straight mad opened_smile p1 "I was kidding, dum-dum!"
     $d_blink = False
     d closed sad smile "So was I!"
-    show chris level b2 left grin
+    show chris level p2 left grin
     "Christeena just rolled her eyes as she grinned and gave a disappointed shake of the head."
     a "So, now what?"
     $d_blink = True
@@ -1727,18 +1714,18 @@ label presenttime:
     hide brit
     hide chris
     with dissolve
-    pause .1
+    pause 0.1
     "And so, all three of our families had pizza for dinner."
     "Two meat lovers', two plain cheeses, and two Hawaiians."
     "Hey, pineapple DOES belong on pizza, and I will literally fight anyone who says otherwise. {w}Just ask Christeena."
     "Anyway, after that, my family left to get dressed into warmer clothes, with the Trumans right behind."
     window hide dissolve
     scene bg white with dissolve
-    with Pause(.5)
+    pause 0.5
     scene bg cg_02
     with dissolve
     window show dissolve
-    pause .1
+    pause 0.1
     "We all eventually made it to the spot that was said to be 'good' for the show."
     "It was along a gravel road surrounded by corn fields."
     "I swear, Smalltown consists of 55\% fields, 40\% wooded area, and 5\% 'town'."

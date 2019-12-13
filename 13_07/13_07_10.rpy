@@ -7,6 +7,11 @@ label swimming:
         b_hat = 0
         b_hair = 1
         c_hair = 1
+        outfit_b = "e"
+        outfit_c = "e"
+        outfit_d = "d"
+        outfit_e = "c"
+        outfit_h = "a"
     show text "{size=+20}Act 2\n{size=-5}\"Summertime Shenanigans\"{/size}" with dissolve
     pause 3
     hide text with dissolve
@@ -35,7 +40,7 @@ label swimming:
     $ current_track = "\"Home Life\""
     play music home_life
     $ renpy.block_rollback()
-    " Anchor " "\"{i}I hope your ACs are up and running, because the heat wave isn't going away, folks!{/i}\""
+    "Anchor" "\"{i}I hope your ACs are up and running, because the heat wave isn't going away, folks!{/i}\""
     "I groaned in annoyance."
     "I suppose it's normal for it to be really hot outside in July, but nobody expected it to be THIS bad."
     "Even Brittney has admitted to not being outside as much. {w}Or, at least, without a large water bottle and restroom in the immediate area."
@@ -71,8 +76,8 @@ label swimming:
     g_o "And that's the kind of overconfidence that causes accidents!"
     "I rolled my eyes again and started walking up the stairs."
     "On my way past my room, Harry poked his head out of his doorway."
-    show harry a1 straight casual blank at close_h with dissolve
-    pause .1
+    show harry p1 straight casual blank at close_h with dissolve
+    pause 0.1
     h "You're going swimming?"
     "I suppose I wasn't exactly subtle about my plans."
     a "Yep. At the pond at the end of the street."
@@ -83,11 +88,11 @@ label swimming:
     a "Well, I'm not sure how the guys would feel about having to essentially babysit you."
     h small scream "Hey! I don't need to be babysat! I can take care of myself!"
     a "They might not see it that way."
-    h straight blank "..."
+    h_s straight blank "..."
     h right level "...okay, then. Whatever."
     hide harry with dissolve
     play sound door_slam
-    pause .1
+    pause 0.1
     "He then slammed the door, but not so hard that Mom will yell."
     "..."
     play sound door_knock
@@ -96,14 +101,14 @@ label swimming:
     "..."
     play sound door_open
     "After a few seconds of silence, the door opened."
-    show harry a1 straight level blank at close_h with dissolve
-    pause .1
+    show harry p1 straight level blank at close_h with dissolve
+    pause 0.1
     h "Really?"
     a "Really. I'm sure they won't care."
     h "..."
     h casual closed_smile "Okay, then!"
     hide harry with easeoutright
-    pause .1
+    pause 0.1
     "He then ran towards the bathroom, where I remember seeing his swimming trunks hanging over the shower rod to dry."
     "..."
     "I then took out my phone and dialed."
@@ -126,22 +131,26 @@ label swimming:
     $ current_track = "\"Relaxation in the Country\""
     play music relaxation_in_the_country
     scene bg house_ut with dissolve
-    pause .1
+    pause 0.1
+    $outfit_h = "b"
     "We were just about to pass the girls' house before we heard the door open."
     "I turned to see Brittney exiting the house, waving at us with a smile as she did."
     "Waving back, Harry and I paused and let her catch up to us."
-    show brit e1 straight casual opened_smile shorts at twoleft with easeinleft
-    pause .1
+    show brit p1 straight casual opened_smile shorts at twoleft with easeinleft
+    pause 0.1
     $ choicevbox = 2
-    b "Wassup, homeboys?"
 
     if persistent.choices["27"] == 1:
+        b "Wassup, homeboys?"
         jump thesky
     elif persistent.choices["27"] == 2:
+        b "Wassup, homeboys?"
         jump notmuchgirlfriend
     elif persistent.choices["27"] == 3:
+        b "Wassup, homeboys?"
         jump likethetopless
     else:
+        b "Wassup, homeboys?{nw}"
         menu:
             b "Wassup, homeboys?{fast}"
 
@@ -160,13 +169,12 @@ label swimming:
 label thesky:
     a "The sky, duh!"
     $ b_wink = True
-    b e2 raised tongue "Psh. What are you, a middle schooler?"
-    show harry b1 raised left grin at tworight with easeinright
-    pause .1
+    b p2 raised tongue "Psh. What are you, a middle schooler?"
+    show harry p1 raised left grin at tworight with easeinright
+    pause 0.1
     h "Mentally, yes."
     $ b_wink = False
-    show brit e2 straight level grin shorts at twoleft
-    b "Ha! Called out by the little brother, eh?"
+    b level grin "Ha! Called out by the little brother, eh?"
     a "Not exactly 'called out'; I don't hide it."
     b raised "Point taken."
     jump chrishasears
@@ -174,113 +182,110 @@ label thesky:
 label notmuchgirlfriend:
     a "Not much, girlfriend!"
     $ b_wink = True
-    b e2 raised "Ayyyy!"
-    show harry b1 raised straight grin at tworight with easeinright
-    pause .1
+    b p2 raised "Ayyyy!"
+    show harry p1 raised straight grin at tworight with easeinright
+    pause 0.1
     h "You WISH she was your girlfriend!"
     a "Harry!"
     $ b_wink = False
-    show brit e1 raised grin straight shorts at twoleft
-    b "Ooo, you got awfully defensive there, Alex!"
+    b p1 grin "Ooo, you got awfully defensive there, Alex!"
     a "What, you wouldn't be when someone accuses you of liking your friend like that?"
     b level "Eh."
-    a "..."
+    a_s "..."
     jump chrishasears
 
 label likethetopless:
     a "Hey! Diggin' the topless style you got there!"
-    b raised grin e2 "Thanks!"
+    b raised grin p2 "Thanks!"
     $ b_partial = True
     b level huhu "If you're patient, next year I can show you the proper topless look~"
     a "I'll hold you to it!"
     $ b_partial = False
-    show brit e2 level right huhu shorts
-    b "Or maybe it'll happen today. Who knows."
-    show harry b1 left raised closed_smile at tworight with easeinright
-    pause .1
+    b p2 right "Or maybe it'll happen today. Who knows."
+    show harry p1 left raised closed_smile at tworight with easeinright
+    pause 0.1
     h "Even better!"
     $ b_wink = True
-    b e1 straight mad tongue "Perv."
+    b p1 straight mad tongue "Perv."
     jump chrishasears
 
 label chrishasears:
     $ choicevbox = 1
-    hide brit
-    hide harry
-    with dissolve
-    pause .1
+    scene bg house_ut with dissolve
+    pause 0.1
     $ b_wink = False
     "The front door opened up again, this time the other sister headed our way."
     "Though, if I'm being honest, it took a second to recognize her."
-    show brit e1 straight casual grin shorts at twoleft with dissolve
+    show brit p1 straight casual grin shorts at twoleft with dissolve
     pause 0.1
-    show chris e1 straight casual grin at tworight with easeinright
+    show chris p1 straight casual grin at tworight with easeinright
     pause 1
     a "Holy crap!"
-    show brit e2 blank
+    show brit p2 blank
     $ c_blush = True
     c sad dot "W-What??"
     "I then pointed at the side of her head."
     a "I didn't know you had ears!"
     $ c_blush = False
-    show chris e1 straight casual blank at tworight
-    c "..."
+    show chris p1 straight casual blank at tworight
+    c_s "..."
     $c_blink = False
-    show chris e2 closed_happy sad grin
+    show chris p2 closed_happy sad grin
     "She gave a small smile and chuckle of relief after a second."
     $c_blink = True
-    show chris e2 straight sad grin at tworight
+    show chris p2 straight sad grin at tworight
     c "Well, with as hot as it is, I wanted my hair out of my face, you know?"
     a "Sure, I get it."
     $ b_wink = True
     b tongue raised "Not me."
-    c e1 level blank "That's because you're weird."
+    c p1 level blank "That's because you're weird."
     $ b_wink = False
-    show brit e1 level straight grin shorts at twoleft
+    show brit p1 level straight grin shorts at twoleft
     b "And proud!"
     show brit:
         ease 0.5 offscreenleft
     show chris at twoleft
-    show harry b1 straight casual blank at tworight
+    show harry p1 straight casual blank at tworight
     with easeinright
     hide brit
-    pause .1
+    pause 0.1
     h "What's up with your swimsuit, Christeena?"
     c casual "What do you mean?"
     h level "I've never seen a one-piece suit look like that. It's usually sleeveless and stuff."
-    c e2 smile "Well, it's a special thermal suit; it keeps me from getting too cold."
+    c p2 smile "Well, it's a special thermal suit; it keeps me from getting too cold."
     c level left grin "And trust me, for the pond, this thing is a necessity."
     show harry:
         ease 0.5 offscreenright
     show chris at tworight
-    show brit e2 raised grin straight shorts at twoleft
+    show brit p2 raised grin straight shorts at twoleft
     with easeinleft
-    pause .1
+    hide harry
+    pause 0.1
     b "It's also because you hate feeling exposed."
     c straight mad hanging "B-Brittney!"
-    b level e1 "What? You said it, not me!"
+    b level p1 "What? You said it, not me!"
     c left blank "Still, you didn't have to say it like that..."
     $ b_partial = True
-    b level e2 huhu "Well, maybe if you were actually comfortable with your body--!"
+    b level p2 huhu "Well, maybe if you were actually comfortable with your body--!"
     $ c_blush = True
-    c straight scream e1 "BRITTNEY!!"
+    c straight scream p1 "BRITTNEY!!"
     $ b_partial = False
-    show brit e1 straight level grin shorts
+    show brit p1 straight level grin shorts
     b "I'm just saying that you look better than you think you do!"
-    c blank left "..."
-    b raised opened_smile e2 "Back me up, Al!"
-    a "...!!"
+    c_s blank left "..."
+    b raised opened_smile p2 "Back me up, Al!"
+    a_s "...!!"
     a "H-Huh?"
     b "Do you think she should show off that sexy body of hers?"
-    c e2 scream straight "Brittney, shut up!!"
-    b e1 casual grin "I just want his honest opinion!"
-    c left blank "..."
+    c p2 scream straight "Brittney, shut up!!"
+    b p1 casual grin "I just want his honest opinion!"
+    c_s left blank "..."
     "Poor Christeena..."
     "I get Brittney's trying to help, but she could be handling this a lot better."
     "Still, I get the feeling we're not going anywhere until I answer the question."
     $ c_blush = False
     show brit level
-    show chris e1 straight level blank at tworight
+    show chris p1 straight level blank at tworight
     a "Well, uh..."
     a "I think..."
     $ choicevbox = 3
@@ -308,16 +313,16 @@ label chrishasears:
 label shelooksfineassheis:
     $ C_Points += 1
     a "...she looks fine as she is."
-    show brit e2 casual blank
+    show brit p2 casual blank
     c casual dot "Huh?"
-    c blank e2 "You... do?"
+    c blank p2 "You... do?"
     a "Yeah!"
     b level grin "Huh. I guess I'm the odd one out, then."
     show brit at threeleft
     show chris at middle
-    show harry b1 level straight grin at threeright
+    show harry p1 level straight grin at threeright
     with easeinright
-    pause .1
+    pause 0.1
     h "Yep!"
     show brit casual blank
     a "Really? You agree with me, Harry?"
@@ -326,24 +331,24 @@ label shelooksfineassheis:
 label sheshouldshowoffmore:
     $ B_Points += 1
     a "...she should show off a bit more."
-    b e2 raised opened_smile "See?"
-    c e1 sad "..."
+    b p2 raised opened_smile "See?"
+    c_s p1 sad "..."
     a "I mean, you don't gotta wear a bikini or something, but maybe something like a traditional one-piece suit might be worth looking into."
     c right "Eh...{w} I don't know..."
     show brit at threeleft
     show chris at middle
-    show harry b1 level straight grin at threeright
+    show harry p1 level straight grin at threeright
     with easeinright
     pause 0.1
     h "I think the suit looks good as it is."
     show brit casual blank
-    show chris e1 casual straight
+    show chris p1 casual straight
     a "You think so?"
     jump shesnotfatharry
 
 label gotodonaldshouse:
     a "...we should just go to Donald's house."
-    b e2 raised opened_smile "Oh, you think you can get out of this?"
+    b p2 raised opened_smile "Oh, you think you can get out of this?"
     c mad "Brittney, can you just leave him alone?"
     b grin "Fine, fine."
     $ b_partial = True
@@ -351,13 +356,13 @@ label gotodonaldshouse:
     a "Assume what you will, then."
     show brit at threeleft
     show chris at middle
-    show harry b1 straight level grin at threeright
+    show harry p1 straight level grin at threeright
     with easeinright
     pause 0.1
     h "I think the suit looks good as it is."
     $ b_partial = False
-    show brit casual blank straight e2 shorts
-    show chris e1 casual straight
+    show brit casual blank straight p2 shorts
+    show chris p1 casual straight
     a "You think so?"
     jump shesnotfatharry
 
@@ -366,7 +371,7 @@ label shesnotfatharry:
     h casual closed_smile "Yeah!"
     h mad "I mean, I wouldn't want to show everyone my fat self, either!"
     $ c_blush = True
-    show brit e1 mad hanging
+    show brit p1 mad hanging
     show chris mad hanging
     a "HARRY!!"
     play sound punch
@@ -377,15 +382,12 @@ label shesnotfatharry:
     "Almost on instinct, I slapped Harry on the back of the head."
     a "Apologize! {w=0.5}Now!"
     h blank "S-Sorry."
-    c level blank e1 "..."
-    c left "..."
+    c_s level blank p1 "..."
+    c_s left "..."
     "Christeena just looked down, though I'm not sure if she was looking at the ground or herself."
-    b e2 level blank "Anyway, let's not keep Donald waiting any longer."
+    b p2 level blank "Anyway, let's not keep Donald waiting any longer."
     a "Agreed."
-    hide harry
-    hide chris
-    hide brit
-    with dissolve
+    scene bg house_ut with dissolve
     pause 0.5
     scene bg house_w with dissolve
     pause 0.1
@@ -394,13 +396,13 @@ label shesnotfatharry:
     "Thankfully, that silence went away when we entered the house."
     scene bg living_w with dissolve
     pause 0.5
-    show don d1 straight raised smile at middle with dissolve
+    show don p1 straight raised smile at middle with dissolve
     pause 0.1
     d "There you guys are! I was starting to think you got lost!"
-    show brit e1 straight casual opened_smile shorts at twoleft
+    show brit p1 straight casual opened_smile shorts at twoleft
     show don at tworight
     with easeinleft
-    pause .1
+    pause 0.1
     b "We did, actually, but a magic fairy brought us back on track!"
     d level grin "Well, thank God she did!"
     d casual "So, we all ready?"
@@ -421,22 +423,22 @@ label shesnotfatharry:
     "Within less than a minute, we were at the pond."
     "After placing our towels along the grass, we all walked over to a small dock that was used as a diving board."
     "We stared at the water and then at each other, waiting for someone to head in."
-    show chris e1 straight casual blank at four1 zorder 1
-    show brit e2 straight casual blank at four2 zorder 2
-    show don d1 straight casual blank at four3 zorder 2
-    show harry b1 straight casual blank at four4 zorder 1
+    show chris p1 straight casual blank at four1 zorder 1
+    show brit p2 straight casual blank at four2 zorder 2
+    show don p1 straight casual blank at four3 zorder 2
+    show harry p1 straight casual blank at four4 zorder 1
     with dissolve
     pause 0.1
-    a "..."
+    a_s "..."
     b level grin "Donald, you're the one who first wanted to swim; you do the honors!"
     d left raised grin "Ever hear of 'ladies first'?"
-    b e1 mad opened_smile "Don't say that like I'm the only female here!"
+    b p1 mad opened_smile "Don't say that like I'm the only female here!"
     h mad left closed_smile "Yeah, Christeena! Let's see if that thermal suit of yours works!"
-    c mad "..."
+    c_s mad "..."
     a "I actually say YOU should go in first, Harry. Call it punishment for your comment from earlier!"
-    b e2 level huhu "Ooo! Fair point!"
+    b p2 level huhu "Ooo! Fair point!"
     d straight casual blank "What comment?"
-    b e1 raised opened_smile "Harry called Christeena fat!"
+    b p1 raised opened_smile "Harry called Christeena fat!"
     d dot "He what??"
     d mad grin "Oh, Harry's totally going in first."
     h mad small scream "No, I'm not!"
@@ -451,7 +453,7 @@ label shesnotfatharry:
     pause 0.5
     hide harry
     "With little effort, Donald was able to pick Harry up and start walking to the pond."
-    show brit e2 grin
+    show brit p2 grin
     show chris casual
     h_o "Let me go!!!"
     d_o "Hwup!!"
@@ -466,7 +468,7 @@ label shesnotfatharry:
     with easeinleft
     pause 0.1
     d "Man, that was priceless!"
-    b e1 mad closed_smile "So is this!"
+    b p1 mad closed_smile "So is this!"
     show brit:
         linear 0.2 xalign 0.85
     pause 0.15
@@ -479,8 +481,8 @@ label shesnotfatharry:
     "Before anyone could react, Brittney had ran and pushed Donald in!"
     d_o "N-Not c-c-cool, Brittney!!"
     $b_blink = False
-    b e2 closed sad closed_smile "Says you! Ahahaha!!"
-    c raised grin e2 "..."
+    b p2 closed sad closed_smile "Says you! Ahahaha!!"
+    c_s raised grin p2 "..."
     show chris:
         linear 0.3 xalign 0.8
     pause 0.25
@@ -492,14 +494,14 @@ label shesnotfatharry:
     play sound splash
     "And so, Brittney was the next one in."
     $c_blink = False
-    c e1 sad closed_happy smile "Ahahahaha!!!!"
+    c p1 sad closed_happy smile "Ahahahaha!!!!"
     b_o "Alright, fine! You won that time!"
     b_o "So which one of you losers is next?"
     $c_blink = True
     show chris raised straight grin at middle with easeinright
     pause 0.1
-    c "..."
-    a "..."
+    c_s "..."
+    a_s "..."
     "We both looked at each other with the same competitive grin."
     "Her back was facing the pond, and I was staring directly at everyone else wading in the water behind her."
     "One quick charge could knock her in, should she stand still."
@@ -516,8 +518,9 @@ label shesnotfatharry:
     elif persistent.choices["29"] == 3:
         jump standstillanddontresist
     else:
-        "How should I approach this?"
         menu:
+            "How should I approach this?"
+
             "Charge at her.":
                 $ persistent.choices["29"] = 1
                 jump chargeather
@@ -540,7 +543,7 @@ label chargeather:
         ease 0.3 close_c
     pause 0.3
     "I charged towards Christeena with all my stamina."
-    show chris mad e2
+    show chris mad p2
     "She still stared at me, not moving an inch."
     show chris:
         ease 0.2 zoom 1.1
@@ -588,12 +591,15 @@ label standstillandresist:
     pause 0.1
     show pond_foreground:
         ease 0.5 ycenter 1.0
+    show bg pond:
+        xalign 0.5 yalign 0.5
+        ease 0.5 zoom 1.1
     pause 1.0
     hide pond_foreground
     $ c_blush = True
     play sound splash
     pause 1.5
-    show chris e2 straight mad blank:
+    show chris p2 straight mad blank:
         zoom 1.0
         xalign 0.5 yalign -2.0
         ease 0.3 yalign 0.5
@@ -619,13 +625,13 @@ label standstillandresist:
     show chris:
         ease 0.5 yalign 0.25
         close_c_float_2
-    show don straight raised smile d1:
+    show don straight raised smile p1:
         zoom 1.0
         offscreenleft
         yalign 0.2
         ease 0.5 close_left_d_2
         close_left_d_2_float
-    show brit e1 straight casual grin:
+    show brit p1 straight casual grin:
         zoom 1.0
         offscreenright
         yalign 0.1
@@ -665,24 +671,26 @@ label splashchris:
     a "KYAAA!!!!"
     show pond_foreground:
         ease 0.5 ycenter 1.0
+    show bg pond:
+        ease 0.5 zoom 1.1
     pause 0.5
     hide pond_foreground
     play sound splash
     pause 2
     "After poking my head back up out of the ice-cold water, I stared at Christeena and gave a small golf-clap."
-    show chris e1 straight mad grin at middle with dissolve
+    show chris p1 straight mad grin at middle with dissolve
     pause 0.1
     $ current_track = "\"The Pond\""
     play music the_pond
     a "Now why don't you come in, yourself, coward?"
     show chris at twoleft
-    show brit e1 straight level opened_smile at close_right_b_float
+    show brit p1 straight level opened_smile at close_right_b_float
     with easeinright
     pause 0.1
     b "Yeah, Chris! You didn't come out here to just watch us, did you?"
-    c e2 level "I'll come in on my own time!"
+    c p2 level "I'll come in on my own time!"
     $ b_partial = True
-    b e2 huhu "Not on my watch!"
+    b p2 huhu "Not on my watch!"
     "Brittney then quickly threw her arms out of the water and towards Christeena!"
     play sound splash
     show chris sad small scream:
@@ -696,7 +704,7 @@ label splashchris:
     "The water landed on her in a large splash!"
     show brit at close_right_b_2_float
     show chris at middle
-    show don d1 mad straight grin at close_left_d_2_float
+    show don p1 mad straight grin at close_left_d_2_float
     with easeinleft
     pause 0.1
     d "C'mon, Chris! The water's fine!"
@@ -710,11 +718,11 @@ label splashchris:
         linear 0.05 xalign 0.5
     pause 0.5
     $ c_blush = True
-    c e1 straight mad blank "C-Cut that out!!!"
+    c p1 straight mad blank "C-Cut that out!!!"
     "It didn't take long for Harry and I to start splashing Christeena, as well."
     c tightly_shut scream "STOP!!!"
     $ b_partial = False
-    show brit e1 straight mad opened_smile
+    show brit p1 straight mad opened_smile
     b "We will when you come in!!"
     play sound splash
     show chris:
@@ -725,13 +733,13 @@ label splashchris:
             repeat 2
         linear 0.05 xalign 0.5
     pause 0.5
-    c e2 straight blank "Grr...!!"
+    c p2 straight blank "Grr...!!"
     c scream "Fine!"
     show don casual
     show brit casual grin
     "Everyone stopped splashing as Christeena looked at the water, took a step back, ran forward, and jumped in."
     $ c_blush = False
-    show chris e1 closed_happy sad grin:
+    show chris p1 closed_happy sad grin:
         xalign 0.5 yalign 0.5
         parallel:
             ease 0.5 zoom 1.0
@@ -756,14 +764,14 @@ label splashchris:
         close_c_float_2
     c "B-B-B-Brrrr!!"
     a "Glad to see the suit is working!"
-    c e2 mad "Sh-Shut up!"
+    c p2 mad "Sh-Shut up!"
     jump wereallinnow
 
 label wereallinnow:
     $ choicevbox = 1
     d straight raised smile "Well, now that we're all in..."
     d casual "...let's get swimmin'!"
-    b e2 raised opened_smile "Roger that!"
+    b p2 raised opened_smile "Roger that!"
     show brit:
         ease 0.2 yalign 0.25
         ease 0.3 yalign -3.0
@@ -772,7 +780,7 @@ label wereallinnow:
     "Brittney then ducked into the water and started undulating away on her back."
     play sound splash
     $b_blink = False
-    show brit e2 closed_sad sad frown:
+    show brit p2 closed_sad sad frown:
         zoom 0.75
         xalign 0.9 ycenter 2.0
         ease 0.3 ycenter 0.5
@@ -791,7 +799,7 @@ label wereallinnow:
         ease 0.5 xalign -0.5
     show chris:
         ease 0.5 xalign -0.5
-    show harry b1 left raised grin at close_right_h_float with easeinright
+    show harry p1 left raised grin at close_right_h_float with easeinright
     pause 0.1
     hide don
     hide chris
@@ -801,14 +809,14 @@ label wereallinnow:
     b straight "What, not a fan of a mostly-naked girl?"
     h straight mad scream "That's not what I--!!"
     $ b_partial = False
-    show brit e1 straight mad closed_smile
+    show brit p1 straight mad closed_smile
     b "Anything you wanna tell us, Harry? It's okay! We won't judge!"
     a "Oh, I'll certainly judge."
     h level grin "Oh, please. If I was gay, wouldn't I ENJOY seeing a masculine body like hers all exposed?"
     a "HARRY!"
     h mad small scream "What?!"
-    b level blank "..."
-    b e2 grin "Alright, fair enough."
+    b_s level blank "..."
+    b p2 grin "Alright, fair enough."
     h raised left closed_smile "Thank you!"
     $ b_partial = True
     b huhu "So, tell me. If you don't like Christeena's body, and you don't like my body, then what DO you like?"
@@ -817,7 +825,7 @@ label wereallinnow:
     b mad closed_smile "Maybe there IS something you aren't telling us!"
     h mad scream "I-I didn't say I hated the way either of you looked!"
     $ b_partial = False
-    show brit e2 straight raised grin
+    show brit p2 straight raised grin
     b "Oh? So which one do you prefer?"
     h straight blank "I...!!"
     show harry:
@@ -826,7 +834,7 @@ label wereallinnow:
             ease 1.0 yalign 0.5
             ease 1.0 yalign 0.45
             repeat
-    show chris e2 straight mad blank:
+    show chris p2 straight mad blank:
         zoom 1.0
         offscreenleft
         yalign 0.4
@@ -846,7 +854,7 @@ label wereallinnow:
     pause 0.5
     play sound splash
     $ b_wink = True
-    show brit e1 dot mad:
+    show brit p1 dot mad:
         ease 0.4 ycenter 0.5
         block:
             ease 1.0 ycenter 0.52
@@ -867,9 +875,9 @@ label wereallinnow:
     c "AHH!!"
     "Brittney had bent down and spat water on her sister."
     $ b_wink = False
-    show brit e1 level straight grin
+    show brit p1 level straight grin
     b "Fine, if you insist."
-    b e2 raised opened_smile "We'll just have to pick this up later."
+    b p2 raised opened_smile "We'll just have to pick this up later."
     h mad right blank "Grr..."
     hide brit
     hide chris
@@ -910,8 +918,8 @@ label wereallinnow:
 label b_pond:
     "With that, Brittney ducked back under the water and swam back towards us."
     play sound splash
-    show brit e1 straight casual grin:
-        size (720, 1440)
+    show brit p1 straight casual grin:
+        zoom 1.0
         xalign 0.5 yalign -2.0
         ease 0.3 yalign 0.25
         ease 0.3 yalign 0.15
@@ -921,9 +929,9 @@ label b_pond:
             ease 1.0 yalign 0.2
             repeat
     pause 0.9
-    b e2 raised "Hey, Alex, you said you were on a swim team, right?"
+    b p2 raised "Hey, Alex, you said you were on a swim team, right?"
     a "Yeah...?"
-    b e1 "Competitive swimming is actually a sport I've never really tried."
+    b p1 "Competitive swimming is actually a sport I've never really tried."
     b mad closed_smile "So, how about you and me race so I can get a feel for it?"
     a "Well, I mean, I haven't swam in forever, and I don't have any goggles or a cap, but sure, I'll race ya!"
     b opened_smile "Still think you got any skill in ya?"
@@ -935,11 +943,12 @@ label b_pond:
     a "Alright! We'll do a 25 from there to there!"
     "I challenged as I pointed to the dock and the opposite shoreline."
     $ b_partial = False
-    b blank e2 "...{w}a what?"
+    b_s blank p2 "..."
+    b "...{fast}a what?"
     a "Whoever gets there first wins."
     b level grin "Gotcha."
     show brit at close_right_b_float
-    show don d1 straight raised grin at close_left_d_float
+    show don p1 straight raised grin at close_left_d_float
     with easeinleft
     pause 0.1
     d "Alright, this is gonna be a good one!"
@@ -948,25 +957,27 @@ label b_pond:
     hide brit
     hide don
     with dissolve
-    pause .1
+    pause 0.1
+    show bg pond:
+        ease 0.5 zoom 1.0
     show pond_foreground with dissolve
     pause 0.1
     "Brittney and I got out of the pond and back onto the dock."
     "It was just big enough for the two of us to stand side-by-side, like it was one giant starting block."
-    show harry b1 straight mad closed_smile at twoleft_float
-    show chris e1 straight casual blank at tworight_float
+    show harry p1 straight mad closed_smile at twoleft_float
+    show chris p1 straight casual blank at tworight_float
     with dissolve
     pause 0.1
     h "Who you bettin' on, Christeena?"
-    c e2 level "I mean, Alex has more experience, so I guess it would make more sense for him to win..."
+    c p2 level "I mean, Alex has more experience, so I guess it would make more sense for him to win..."
     $ b_partial = True
     show chris at threeright_float
     show harry at middle_float
-    show brit e2 level blank straight at close_left_b zorder 2
+    show brit p2 level blank straight at close_left_b zorder 2
     with easeinleft
     pause 0.1
     b "Glad to see you have so much faith in your sister, Chris!"
-    c e1 mad hanging "I'm just being honest!"
+    c p1 mad hanging "I'm just being honest!"
     c level grin "Then again, you've been known to be sneaky when it comes to a competition."
     b casual grin "Hehehe."
     a "Should I be worried?"
@@ -976,11 +987,11 @@ label b_pond:
     hide chris
     with dissolve
     pause 0.1
-    show don d1 straight raised smile at tworight_float zorder 1 with dissolve
+    show don p1 straight raised smile at tworight_float zorder 1 with dissolve
     pause 0.1
     d "You two ready?"
     $ b_partial = False
-    b e1 grin "Yep!"
+    b p1 grin "Yep!"
     a "I suppose..."
     d casual "Alright!"
     d "Swimmers, on the block!"
@@ -989,7 +1000,7 @@ label b_pond:
     hide don with dissolve
     pause 0.1
     "Brittney and I lined up next to each other at the edge of the dock."
-    b e2 blank "So, do we start this like a track race or something?"
+    b p2 blank "So, do we start this like a track race or something?"
     a "Basically. We just bend down as if we were gonna do a sprint, and when the race starts, we just dive right in and go."
     a "You're a lifeguard, so I'm sure you get the idea of how to dive properly."
     b level grin "Well, if you say that, then I guess it's not too much different, then."
@@ -1007,12 +1018,12 @@ label b_pond:
     "..."
     "What's she planning...?"
     window hide dissolve
-    pause 2.0
+    pause 2
     window show
     d_o "GO!"
     "I quickly looked forward, about to lunge."
     "Right before I did, though, I saw movement to my left.{w} Only it wasn't going towards the water; it was going towards ME."
-    a "Wha--{w=0.5}{nw}"
+    a "Wha--"
     "I felt a swift tug on my swim trunks."
     "I then quickly felt the breeze against my lower body."
     a "GAH!"
@@ -1023,6 +1034,8 @@ label b_pond:
     "Drawers still pulled down, I dove right in after her."
     show pond_foreground:
         ease 0.5 ycenter 1.0
+    show bg pond:
+        ease 0.5 zoom 1.1
     $ current_track = "\"Friendly Competition\""
     play music friendly_competition
     play sound splash
@@ -1036,10 +1049,8 @@ label b_pond:
     Having them down there would certainly hinder my ability to kick well...
 
     Sucking it up, I quickly kicked off my trunks and rose up to the surface.
-    """
-    hide pond_foreground
-    nvl clear
-    narrate """
+    
+    {clear}
 
     Once up, I kicked as hard as I could and turned my head to the side, seeing if I could find any sign of Brittney.
 
@@ -1060,9 +1071,9 @@ label b_pond:
     I mean, I know the length I had selected wasn't the standard 25 meters (honestly, it might've been more of a 50), but I feel like I've been swimming too long.
 
     Unless I really am that out of practice...
-    """
-    nvl clear
-    narrate """
+    
+    {clear}
+
     Right as I thought that, though, I could feel my legs touch something as I kicked.
 
     It was the ground!
@@ -1077,6 +1088,7 @@ label b_pond:
 
     She was certainly getting closer, but it was too late; I had already won!
     """
+    hide pond_foreground
     $ current_track = "None"
     stop music fadeout(3)
     nvl hide dissolve
@@ -1086,7 +1098,7 @@ label b_pond:
     "When she had finally arrived, I had my bottom half underwater, but my top half leaning back in a mock seductive pose."
     $ current_track = "\"The Pond\""
     play music the_pond
-    show brit e2 straight level hanging at close_b_float with dissolve
+    show brit p2 straight level hanging at close_b_float with dissolve
     pause 0.1
     a "Like what ya see~?"
     $ b_partial = True
@@ -1097,19 +1109,19 @@ label b_pond:
     b raised tongue "Oops."
     $ b_wink = False
     b casual grin "Still, late start AND no shorts, yet you still won?"
-    b e1 sad opened_smile "Kudos to you, man."
+    b p1 sad opened_smile "Kudos to you, man."
     "She held out her fist for a bump, a gesture I politely accepted."
     "I turned towards everyone else, who was still at the dock area where we had started."
     "Well, MOST of them were there; Donald was a bit further ahead, holding up my trunks in one hand and giving a thumbs-up with the other."
     a "Well, we should probably get back there."
     b blank "Aw, so soon?"
     a "What, you wanna be over here alone with a naked guy?"
-    a "..."
-    a "Actually, now that I say that out loud..."
+    a_s "..."
+    a "Actually..."
     $ b_partial = True
-    b e2 level huhu "Huhuhu. You wish."
+    b p2 level huhu "Huhuhu. You wish."
     $ b_partial = False
-    b grin left e1 "But I guess you're right; don't wanna keep them waiting for too long."
+    b grin left p1 "But I guess you're right; don't wanna keep them waiting for too long."
     b straight raised closed_smile "I'll try not to look at your little dick, though."
     a "Hey, that's what happens when men go in cold water!"
     $b_blink = False
@@ -1117,17 +1129,17 @@ label b_pond:
     $b_blink = True
     b small casual hanging "Ah!"
     b sad straight blank "S-Sorry. That was..."
-    b e2 right "Sorry."
+    b p2 right "Sorry."
     "..."
     "Talk about a one-eighty."
     a "You're good, Brittney."
     b straight grin "O-Okay."
     play sound splash
     "We could then hear splashing from nearby."
-    b casual left blank e1 "Eh?"
+    b casual left blank p1 "Eh?"
     "We turned and could see Donald walking towards us in the water."
     show brit at close_right_b_float
-    show don d1 straight raised smile at twoleft_float
+    show don p1 straight raised smile at twoleft_float
     with easeinleft
     pause 0.1
     d "Figured you could use these!"
@@ -1141,12 +1153,12 @@ label b_pond:
     "In hindsight, I suppose a cooldown lap after the race might've helped."
     "Then again, when you're unwillingly naked in the water, you have other things on your mind."
     a "Brit, you ready?"
-    b e2 straight sad grin "Well, I'm not gonna lie..."
+    b p2 straight sad grin "Well, I'm not gonna lie..."
     b right "...I'm still a bit pooped."
     b "I feel like I might get exhausted and drown on the way back..."
     d blank "Really? You don't seem that tired."
     b straight level "I'm an athlete. I do my best to hide how exhausted I really am."
-    b e1 sad "I think I'll walk around back to you guys, if that's okay."
+    b p1 sad "I think I'll walk around back to you guys, if that's okay."
     d sad grin "Sure, as long as you're okay."
     b "Yeah, I'll be fine."
     show brit:
@@ -1168,49 +1180,49 @@ label b_pond:
         ease 1.0 yalign 0.2
     pause 1.1
     d blank "Brittney, are you sure you're okay?"
-    b e2 straight grin "Y-Yeah! I promise!"
+    b p2 straight grin "Y-Yeah! I promise!"
     "She then shook us off her, allowing her to stand on her legs by herself, albeit a bit unstable."
     "Still, at least she was standing up."
-    d level "..."
-    b e1 "Donald. I'm fine."
+    d_s level "..."
+    b p1 "Donald. I'm fine."
     b "It's just exhaustion from the race! That's all!"
-    d "..."
+    d_s "..."
     a "I think we should walk back with you."
     b blank "You guys don't have to--"
     d mad "Yes, we do."
-    b mad "..."
-    b e2 level right "...fine."
+    b_s mad "..."
+    b p2 level right "...fine."
     b "If it'll please you, I'll walk back with you."
     b straight raised hanging "But don't expect me to need your help."
     d level "Brittney, now's not the time to boost your ego."
     b mad "I'm not--!"
     d mad "We're only trying to help you, Brittney!"
-    b e1 "I get that, and I appreciate it, but I don't...!"
-    b level blank "..."
+    b p1 "I get that, and I appreciate it, but I don't...!"
+    b_s level blank "..."
     $b_blink = False
     b closed_sad "*sigh*"
     b "On second thought, I can make it back with only one of you."
     b "Alex, will you walk back with me?"
-    d level "..."
+    d_s level "..."
     a "Uh, yeah. No problem."
     $b_blink = True
     b straight "Thanks."
-    d left "..."
+    d_s left "..."
     d straight grin "I'll meet you guys back there, then."
     a "Alright."
     hide don with easeoutleft
     pause 0.5
     show brit at close_b with easeinright
     pause 0.1
-    b "..."
+    b_s "..."
     "She just stared at Donald as he walked towards the other side before finally breaking into a swim."
-    a "..."
+    a_s "..."
     a "Brittney, be honest with me."
-    a "Are you--{nw}"
-    b mad e2 hanging "I'm fine, Alex!!"
-    a "..."
+    a "Are you--"
+    b mad p2 hanging "I'm fine, Alex!!"
+    a_s "..."
     a "Alright. If you don't need my help, then go walk onto the shore."
-    b level grin e1 "Fine. I will."
+    b level grin p1 "Fine. I will."
     "Brittney then started walking towards the edge."
     show brit sad
     "I could see that she looked uncomfortable with something."
@@ -1228,10 +1240,10 @@ label b_pond:
     a "Okay, Brittney. Stop bullshitting."
     a "What's wrong?"
     $b_blink = True
-    b straight blank "..."
+    b_s straight blank "..."
     $ current_track = "\"Reflection\""
     play music reflection
-    b right e2 "Okay, fine."
+    b right p2 "Okay, fine."
     b "When I got closer to the shore, I was kicking, and..."
     b "...I don't know what exactly I hit, but..."
     $ b_wince = True
@@ -1242,7 +1254,7 @@ label b_pond:
     b "I thought it would stop by now, but it's still bad."
     $ b_wince = True
     b right hanging "It's not broken or anything, but it still hurts."
-    a "..."
+    a_s "..."
     a "Okay, next question:"
     a "Why didn't you just say that?"
     $ b_wince = False
@@ -1253,29 +1265,28 @@ label b_pond:
     b straight "I didn't want you guys to worry, okay?"
     b right "Especially Donald."
     a "So Donald was right? This was more of a way for you to save face or something?"
-    b e1 straight mad hanging "I..."
-    b level blank "..."
-    b e2 left "...It's complicated, Alex."
+    b p1 straight mad hanging "I..."
+    b_s level blank "..."
+    b p2 left "...It's complicated, Alex."
     a "How?"
     b straight mad hanging "Alex, just--!!"
     $b_blink = False
-    b closed_sad level blank e1 "..."
+    b closed_sad level blank p1 "..."
     "She lightly growled at herself as she placed her face in her hands."
-    b "..."
-    a "..."
+    b_s "..."
+    a_s "..."
     a "Okay."
     a "If you don't wanna tell me, then you don't have to."
     a "Just..."
     a "Let me help you get back. Please."
     $b_blink = True
-    b straight "..."
-    b e2 grin "...okay. Sure."
+    b_s straight "..."
+    b p2 grin "...okay. Sure."
     hide brit with dissolve
     pause 0.1
     nvl clear
     window hide dissolve
     nvl show dissolve
-    pause 0.1
     narrate """
     With that, I helped her stand up.
 
@@ -1286,9 +1297,9 @@ label b_pond:
     Occasionally, we had to stop for a few seconds so she could give her leg a rest.
 
     We were silent the entire time, if you don't count things like 'You good?' and 'Hold on.'.
-    """
-    nvl clear
-    narrate """
+    
+    {clear}
+
     Brittney sure can be stubborn, but this whole thing seems too off.
 
     Not wanting to tell her best friend about something minor to keep him from worrying makes sense.
@@ -1309,6 +1320,8 @@ label b_pond:
     """
     $ current_track = "None"
     stop music fadeout(3)
+    show bg pond:
+        ease 0.5 zoom 1.0
     nvl hide dissolve
     window show dissolve
     show pond_foreground with dissolve
@@ -1318,34 +1331,34 @@ label b_pond:
     $ current_track = "\"The Pond\""
     $ c_blush = True
     play music the_pond
-    show chris e1 sad straight dot at middle with easeinleft
+    show chris p1 sad straight dot at middle with easeinleft
     pause 0.1
     c "Brittney, are you alright?!"
-    show brit e1 straight sad grin at tworight
+    show brit p1 straight sad grin at tworight
     show chris at twoleft
     with easeinright
     pause 0.1
     b "Yeah, I'm fine, I promise."
     hide chris
-    show don d1 level straight blank at twoleft
+    show don p1 level straight blank at twoleft
     with dissolve
     pause 0.1
     $ c_blush = False
-    d "..."
-    b blank "..."
-    b e2 "Hey, Donald?"
+    d_s "..."
+    b_s blank "..."
+    b p2 "Hey, Donald?"
     d casual "Yeah?"
     b "I..."
     b right "I'm sorry for how I acted back there."
     b straight grin "I truly am thankful that you tried to help."
-    d "..."
-    d grin "..."
+    d_s "..."
+    d_s grin "..."
     d "You sure you're okay, then?"
     b "Yeah!"
     d level "Really? Because that limping says otherwise."
     b blank "W-Well, uh..."
     d "C'mon Brit."
-    b e1 "...okay."
+    b p1 "...okay."
     b level right "I hit my shin, and it hurt really bad."
     b straight grin sad "But it doesn't hurt that much anymore, so I think it'll be okay."
     d raised "Promise?"
@@ -1355,21 +1368,21 @@ label b_pond:
     "Donald gave a small chuckle in response as he wrapped his own pinkie around hers."
     $d_blink = True
     d straight casual "Alright, then. If you want to get back in, feel free!"
-    b e2 raised opened_smile "Feel free, I do!"
+    b p2 raised opened_smile "Feel free, I do!"
     $ b_partial = True
     b level huhu "Oh, and by the way, Christeena, you're welcome."
     hide don
-    show chris e1 straight raised blank at twoleft
+    show chris p1 straight raised blank at twoleft
     with dissolve
     pause 0.1
     c "Huh?"
     b closed_smile "Because of me, you finally got to see a naked guy in person!"
     $ c_blush = True
-    c mad scream "...!!!"
+    c_s mad scream "...!!!"
     $ b_partial = False
     $b_blink = False
-    b e1 closed sad "So, once again, you're welcome!"
-    c left blank "..."
+    b p1 closed sad "So, once again, you're welcome!"
+    c_s left blank "..."
     hide chris
     hide brit
     with dissolve
@@ -1379,7 +1392,7 @@ label b_pond:
     "And so, Brittney jumped back into the water, as if nothing had happened."
     "Christeena just closed her eyes and shook her head."
     "Donald looked like he was about to go in, himself, but he turned to me, first."
-    show don d1 level straight blank at close_left_d with dissolve
+    show don p1 level straight blank at close_left_d with dissolve
     pause 0.1
     d "Hey, Alex?"
     a "Yeah?"
@@ -1402,39 +1415,39 @@ label b_pond:
 
 label c_pond:
     "Brittney then floated around on her back, acting completely oblivious to our presence."
-    show chris e2 left mad blank at close_c_float with dissolve
+    show chris p2 left mad blank at close_c_float with dissolve
     pause 0.1
     c "That girl..."
     a "If I had a nickel for every time you said that..."
-    c e2 straight raised "Well, there's a reason I constantly say it."
+    c p2 straight raised "Well, there's a reason I constantly say it."
     a "Yeah, I know."
     show chris at close_left_c_float
-    show harry b1 straight casual grin at close_right_h_float
+    show harry p1 straight casual grin at close_right_h_float
     with easeinright
     pause 0.1
     h "I like her. She's my kind of crazy."
-    a "Harry, she literally just accused you of being gay. {w=0.5}TWICE!"
+    a "Harry, she literally just accused you of being gay. TWICE!"
     h level "Yeah, but she's just messing with me."
-    h "..."
+    h_s "..."
     h small blank "...right?"
     "I gave my brother a pat on the back."
     a "I'll leave that for you to decide."
-    h sad "..."
+    h_s sad "..."
     h "Christeena, she doesn't really think I'm gay, does she??"
-    c level e1 "..."
-    h "..."
-    c left "..."
-    h casual straight "..."
+    c_s level p1 "..."
+    h_s "..."
+    c_s left "..."
+    h_s casual straight "..."
     h level "...Are you still mad about earlier?"
-    c straight "..."
+    c_s straight "..."
     h sad "Christeena, I really am sorry!"
     $ current_track = "None"
     stop music fadeout(3)
-    c "..."
-    h "..."
-    a "..."
+    c_s "..."
+    h_s "..."
+    a_s "..."
     a "Harry, why don't you go hang out with Brittney and Donald for a bit?"
-    h level "..."
+    h_s level "..."
     h right "...okay."
     pause 0.5
     hide harry with easeoutright
@@ -1443,52 +1456,52 @@ label c_pond:
     pause 0.1
     "And so, as Harry wandered towards Brittney and Donald, who were treading in the water nearby, talking about who-knows, Christeena looked at me awkwardly."
     $ c_blush = True
-    c "..."
-    a "..."
+    c_s "..."
+    a_s "..."
     $ current_track = "\"Reflection\""
     play music reflection
     a "Look, Chris, you don't gotta say anything if you don't want to..."
     a "...but just know that Harry really is sorry."
     a "Trust me. I can tell."
-    c level "..."
+    c_s level "..."
     a "I know he still shouldn't have said what he did, but--"
-    c e2 "But he still said it."
-    c right "And he only would've said it if that's what he really thought."
+    c p2 "But he still said it."
+    c right "And he wouldn't have said it if that wasn't what he really thought."
     a "Not necessarily. In all honestly, he probably was just trying to be funny."
     a "A very poor attempt at comedy, sure, but..."
-    c straight "..."
-    a "..."
+    c_s straight "..."
+    a_s "..."
     a "So, forgive me if I'm digging a little too far, but..."
     a "...Brittney's comment about you not liking your body..."
-    c sad left e1 "..."
+    c_s sad left p1 "..."
     c "...I mean..."
     c straight "I don't exactly HATE the way I look, but..."
     $ c_blush = False
-    c level right e2 "...I guess maybe I just wish I could look better."
+    c level right p2 "...I guess maybe I just wish I could look better."
     a "Why? You look great!"
     c straight "How?"
-    c left e1 "I mean... what kind of guy would go for a fat girl?"
+    c left p1 "I mean... what kind of guy would like a fat girl?"
     a "Christeena, you're not fat!"
     $ c_blush = True
     c mad straight hanging "Alex, look at me!"
     "She stood up out of the water a bit and gestured at herself."
     window hide
-    show chris e2:
+    show chris p2:
         ease 0.5 yalign 0.6
-    $ renpy.pause(delay=3)
+    pause 3
     window show
     "..."
     "Honestly, in this swimsuit of hers, it's giving a better idea of how she actually looks."
     "I suppose she has a bigger belly than I had thought, but still..."
     a "Christeena, I promise you I've seen bodies worse than that."
-    c blank "And I'm sure you've seen bodies better."
+    c blank "And you've seen bodies better."
     c level "I mean, look at her."
     "She pointed towards Brittney."
     "She, Donald, and Harry were all chatting in a circle. I could hear some laughs coming from the area."
     $ c_blush = False
-    c e1 sad "I give her crap about being a bit too revealing in her outfit choices at times, but..."
+    c p1 sad "I give her crap about being a bit too revealing in her outfit choices at times, but..."
     c left "...at least she has a body worth showing off."
-    a "..."
+    a_s "..."
     if persistent.choices["28"] == 1:
         a "Chris, I was serious when I said that you look fine the way you do now."
         a "In a way, I'm glad that you respect yourself enough to not walk out of the house essentially naked."
@@ -1498,8 +1511,8 @@ label c_pond:
     elif persistent.choices["28"] == 3:
         "She really is upset about this..."
         "Maybe I should've answered Brittney's question when I had the chance..."
-    c "..."
-    a "..."
+    c_s "..."
+    a_s "..."
     show chris:
         ease 1.0 yalign 0.35
         ease 1.0 yalign 0.4
@@ -1509,10 +1522,8 @@ label c_pond:
     c "Eh..."
     c straight "Honestly, I'm not really too much in a swimming mood."
     a "Well, do you wanna take a walk or something?"
-    c casual "..."
-    c e2 grin "Okay. That might be nice."
-    c mad "Just don't try to murder me while we're alone."
-    a "Fine, only because you asked nicely."
+    c_s casual "..."
+    c p2 grin "Okay. That might be nice."
     hide chris with dissolve
     pause 1.0
     scene bg woods with dissolve
@@ -1522,27 +1533,27 @@ label c_pond:
     play loop forest_daytime
     "After grabbing our towels and putting on our sandals, we took a walk through a path in the wooded area around the pond."
     "We could hear the sounds of birds and other animals nearby. Honestly, it was kind of relaxing."
-    show chris straight casual blank e1 at close_c with dissolve
+    show chris straight casual blank p1 at close_c with dissolve
     pause 0.1
     a "Feeling better?"
     c left level grin "A little."
     a "Well, it's a start."
     c straight blank "Hey, Alex?"
     a "Yeah?"
-    c raised e2 "Why are you being so nice to me?"
+    c raised p2 "Why are you being so nice to me?"
     a "What kind of question is that? Would you prefer I be a dick?"
     c mad "Well, no, but..."
-    c left level e1 "I dunno. I guess it's because ever since we've met, you've wanted to spend so much time with me."
+    c left level p1 "I dunno. I guess it's because ever since we've met, you've wanted to spend so much time with me."
     a "Is that a problem?"
     c straight raised "No."
     c sad grin "In fact, I..."
     $ c_blush = True
-    c right e2 "I actually appreciate it a lot."
+    c right p2 "I actually appreciate it a lot."
     c "It's nice to have someone else I consider a good friend."
     a "Aw, stop. You're gonna make me tear up."
     $ c_blush = False
     c straight casual blank "But I guess what I don't fully understand is..."
-    c e1 sad "...why me?"
+    c p1 sad "...why me?"
     c left "Donald is your close friend from your childhood, Brittney is a funny cute girl..."
     c "...yet you prefer spending time with me?"
     a "Christeena..."
@@ -1550,27 +1561,27 @@ label c_pond:
     stop music fadeout(3)
     "I cut her off and stopped right in front of her, placing my hands on her shoulders."
     $ c_blush = True
-    c straight casual blank "..."
-    a "..."
+    c_s straight casual blank "..."
+    a_s "..."
     "She was starting to blink quickly, and I think her breathing got a little shallower."
     a "Christeena..."
-    c "..."
+    c_s "..."
     "I'm not gonna lie, I kinda did all this on impulse."
     "Still, she seems calm enough."
     show chris:
-        ease 0.5 size(792, 1584)
+        ease 0.5 zoom 1.1
     pause 0.6
     "I moved a bit closer to her, all while never breaking eye contact."
-    c "..."
-    a "..."
+    c_s "..."
+    a_s "..."
     $ current_track = "\"Reflection\""
     play music reflection
     a "Christeena, you're not as bad as you think you are."
-    c sad "..."
+    c_s sad "..."
     a "I like spending time with you because you're a great person."
     a "You're honest. You care about your friends."
     a "And dare I say you look very cute."
-    c grin "..."
+    c_s grin "..."
     if persistent.choices["4"] == 2:
         a "When I said I thought you were pretty that day I first met you..."
         a "...I wasn't lying."
@@ -1583,8 +1594,8 @@ label c_pond:
     a "I certainly don't. In fact, I've only been noticing the other stuff."
     a "Honesty, kindness, and cuteness."
     a "Add all those things together, and you have Christeena Truman, a great person who I'm glad to have met."
-    c "..."
-    c straight "..."
+    c_s "..."
+    c_s straight "..."
     hide chris with dissolve
     pause 0.1
     "The next thing I knew, she was hugging me tightly."
@@ -1592,13 +1603,13 @@ label c_pond:
     "..."
     "It's a bit weird having that wet swimsuit of hers against my bare chest, but eh."
     "We must've been hugging for about 30 seconds or so before she finally broke it and looked at me."
-    show chris e1 straight sad grin at close_c with dissolve
+    show chris p1 straight sad grin at close_c with dissolve
     pause 0.1
     c "Thank you, Alex."
     a "Just being honest."
-    c e2 right "Not just for what you just said."
+    c p2 right "Not just for what you just said."
     c straight "For just being a great person, yourself."
-    c e1 raised left "Not gonna lie, when I learned you were an old childhood friend of Donald's, I wasn't really sure what to expect."
+    c p1 raised left "Not gonna lie, when I learned you were an old childhood friend of Donald's, I wasn't really sure what to expect."
     c straight sad "But I'm glad it was you."
     "Okay, I'm definitely smiling like a dumbass now."
     a "Thanks, Christeena."
@@ -1612,16 +1623,16 @@ label c_pond:
     play sound twig_snap
     pause 0.5
     "Suddenly, we heard what sounded like movement in the trees nearby."
-    show chris e1 straight casual dot at close_c zorder 2 with dissolve
+    show chris p1 straight casual dot at close_c zorder 2 with dissolve
     pause 0.1
-    c "..."
-    a "..."
+    c_s "..."
+    a_s "..."
     c level grin "Probably just a deer or something."
     a "Probably."
     a "Anyway, what were we just{nw}"
     play sound scare_and_scream
-    show brit e1 small mad frown zorder 1:
-        size (720, 1440)
+    show brit p1 small mad frown zorder 1:
+        zoom 1.0
         xalign 1.5 yalign 0.2
         linear 0.1 xalign 0.75
     pause 0.1
@@ -1641,7 +1652,7 @@ label c_pond:
     play music oddball
     play loop forest_daytime
     $b_blink = False
-    b e2 closed sad opened_smile "AHAHAHAHAHA!!!!"
+    b p2 closed sad opened_smile "AHAHAHAHAHA!!!!"
     show chris:
         ease 0.5 xalign 0.1 yalign 0.25
     show brit at close_right_b with easeinleft
@@ -1666,17 +1677,17 @@ label c_pond:
     "She was hardly putting up a fight against the punches being thrown at her."
     "Finally, though, she took a deep breath, wiped her eyes, and looked at us."
     $b_blink = True
-    b e1 straight "God, that was fuckin' priceless!!"
-    c left blank "!!!"
+    b p1 straight "God, that was fuckin' priceless!!"
+    c_s left blank "!!!"
     a "Brittney, what are you even doing here?"
     b straight casual blank "Well, we noticed you two were gone, so I went out looking for you."
-    b e2 raised grin "I soon heard your voices, came over to investigate..."
+    b p2 raised grin "I then heard your voices, came over to investigate..."
     $ b_partial = True
     b level left huhu "...and decided to have some fun."
     b straight raised "But clearly not as much fun as you two were having~"
-    c straight hanging "...!!"
+    c_s straight hanging "...!!"
     $ b_partial = False
-    b e1 mad closed_smile "You really enjoyed having a nice, long hug like that, didn't you, Alex?"
+    b p1 mad closed_smile "You really enjoyed having a nice, long hug like that, didn't you, Alex?"
     a "Wh-What makes you say that?"
     $ b_partial = True
     b level huhu "What, you can't tell that you have a massive boner right now?"
@@ -1684,8 +1695,8 @@ label c_pond:
     "With that, I quickly looked down."
     $ b_partial = False
     $b_blink = False
-    b e2 closed sad opened_smile "Oh, my God! You actually thought you did!!"
-    a "..."
+    b p2 closed sad opened_smile "Oh, my God! You actually thought you did!!"
+    a_s "..."
     $b_blink = True
     b level straight grin "Well, you should still thank me."
     a "For...?"
@@ -1695,7 +1706,7 @@ label c_pond:
     b level left huhu "You totally were, Christeena. Don't deny it."
     c scream "Brittney, just go away!!"
     $ b_partial = False
-    b e1 straight level grin "Okay, then."
+    b p1 straight level grin "Okay, then."
     $ b_partial = True
     b "I'll give you two your privacy~"
     c "GO AWAY!!!!"
@@ -1703,35 +1714,35 @@ label c_pond:
     $ current_track = "None"
     stop music fadeout(3)
     $ b_partial = False
-    b blank "..."
-    c blank "..."
-    b e2 right "...okay, then. Sorry."
+    b_s blank "..."
+    c_s blank "..."
+    b p2 right "...okay, then. Sorry."
     pause 0.5
     hide brit with easeoutright
     pause 0.5
     show chris at close_c with easeinleft
     pause 0.1
-    c left "..."
-    a "..."
+    c_s left "..."
+    a_s "..."
     $c_blink = False
-    c closed_sad sad "..."
+    c_s closed_sad sad "..."
     c "Why would she do that?"
     a "It doesn't seem unlike her to get me to think I--"
     c "Not that."
     c "Interrupting us, in general."
     c "She could clearly tell we were having a serious moment..."
-    a "..."
+    a_s "..."
     "Well, I'm glad I'm not the only one who noticed how special that conversation we had was."
     "But she's right; thanks to Brittney, that moment is now gone."
     "...unless..."
     show chris:
-        ease 0.5 size (792, 1584)
+        ease 0.5 zoom 1.1
     pause 0.6
     $c_blink = True
-    c straight "..."
+    c_s straight "..."
     "I brought her into another hug."
-    c "..."
-    c grin "..."
+    c_s "..."
+    c_s grin "..."
     "It took a second, but she accepted it and grabbed onto me."
     a "We probably should get back to the pond, though."
     a "I mean, who knows what Brittney is going to tell the guys that we're doing?"
@@ -1763,8 +1774,8 @@ label c_pond:
     $ c_blush = False
     "And so, Christeena and I made our way back to the pond."
     "Brittney, Donald, and Harry were all talking by the dock, but smiled and waved when they saw us come over."
-    show chris e1 straight level grin at twoleft
-    show don d1 straight raised smile at tworight
+    show chris p1 straight level grin at twoleft
+    show don p1 straight raised smile at tworight
     with dissolve
     pause 0.1
     d "There you are!"
@@ -1773,40 +1784,40 @@ label c_pond:
     d raised grin "Really? That's ALL you did?"
     c blank "...what are you implying?"
     d sad "I'm not implying anything."
-    d level "Though Brittney did mention something about a long hug..."
-    c mad "..."
-    a "Hey, man; don't worry about it."
+    d level "Though Brittney did mention something about a hug..."
+    c_s mad "..."
+    a "Don't worry about it."
     a "The point is we're back and ready to swim."
     d raised smile "Alright, fair enough."
     hide don
-    show brit e2 straight level blank at tworight
+    show brit p2 straight level blank at tworight
     with dissolve
     pause 0.1
-    b "..."
-    c level "..."
+    b_s "..."
+    c_s level "..."
     b sad "Chris, can I talk to you for a second?"
-    c "..."
+    c_s "..."
     c "...sure."
     hide chris
     hide brit
     with dissolve
     pause 0.1
     "And so, both girls walked away from the pond and towards Berry Street. Brittney started talking quietly when they were a fair distance away."
-    show harry b1 straight mad closed_smile at close_h with dissolve
+    show harry p1 straight mad closed_smile at close_h with dissolve
     pause 0.1
     h "You two made out, didn't you?"
     "I was startled by my brother's seemingly random appearance, but regardless, I rolled my eyes."
     a "No, Harry, we did not make out."
     h level grin "Did you at least kiss her?"
     a "No, Harry! It was nothing like that!"
-    h blank "..."
+    h_s blank "..."
     h closed_smile "You're lying."
     "I groaned and pinched the bridge of my nose."
     a "Why do I bother trying to explain myself? You'll only believe what you want to believe."
-    h casual blank "..."
+    h_s casual blank "..."
     h "You... really didn't kiss her or anything?"
     a "Once again, no, Harry!"
-    h "..."
+    h_s "..."
     h level grin "And I'M the gay one?"
     a "Yep."
     h mad scream small "Hey!"
@@ -1825,7 +1836,7 @@ label c_pond:
 label d_pond:
     "Before I could do anything else, I could hear movement from behind me."
     "I turned around and saw it was Donald coming closer."
-    show don d1 straight raised grin at close_d_float with dissolve
+    show don p1 straight raised grin at close_d_float with dissolve
     pause 0.1
     d "Hey, can I talk to you for a second?"
     a "Yeah, sure."
@@ -1835,7 +1846,7 @@ label d_pond:
     d right "Every year, Brittney and I have a little challenge of sorts."
     a "Oh?"
     d straight raised "Basically, every time we go swimming, I have to sneak up behind her and undo her top."
-    a "!!"
+    a_s "!!"
     a "And she's okay with that...?"
     d level "She says I'll never be able to do it, so yeah, she's up for it."
     a "And let me guess; you've never actually done it."
@@ -1847,8 +1858,8 @@ label d_pond:
     d raised "It won't be completely off, sure, but we agreed that getting her boobs exposed still counts."
     d raised smile "But in order to do it, I'll need your help."
     a "Why would I help you do something like this?"
-    d mad "You're telling me you don't wanna potentially see a topless girl today?"
-    a "..."
+    d mad "You're telling me you don't wanna see boobs?"
+    a_s "..."
     a "Alright, so what's the plan?"
     d casual grin "I need you to distract everyone."
     d raised "No witnesses means not getting caught sneaking behind her."
@@ -1863,21 +1874,21 @@ label d_pond:
     hide don with dissolve
     pause 0.1
     "We then made our way back to my brother and the girls."
-    show chris e1 straight casual blank at threeleft_float
-    show brit e2 straight casual blank at middle_float
-    show harry b1 straight casual blank at threeright_float
+    show chris p1 straight casual blank at threeleft_float
+    show brit p2 straight casual blank at middle_float
+    show harry p1 straight casual blank at threeright_float
     with dissolve
     pause 0.1
     b "What was that about?"
     hide harry
-    show don casual straight blank d1 at close_right_d_float zorder 2
+    show don casual straight blank p1 at close_right_d_float zorder 2
     with dissolve
     pause 0.1
     d "What was what about?"
     b level "You two being all secretive. What were you talking about?"
     d raised left grin "Guy stuff."
     show chris level
-    b "..."
+    b_s "..."
     "I mean, technically, that's the truth."
     "Still, both girls are clearly suspicious..."
     "That's gonna make getting their guard down that much harder."
@@ -1887,29 +1898,29 @@ label d_pond:
     "Man, he said that really casually. It's kinda scary how normal he can act when he's being sneaky."
     a "Well, uh..."
     a "Not much. I've been spending my time watching TV and playing games."
-    b grin "..."
-    b e1 "Sounds like quite a boring life."
+    b_s grin "..."
+    b p1 "Sounds like quite a boring life."
     "Either Brittney is stupider than she looks, or she's smarter than she looks."
     a "Oh, really? Can't be more boring than spending your time working out."
     b raised opened_smile "Is that right?"
     a "Yep!"
     hide don
-    show harry b1 straight casual blank at threeright_float
+    show harry p1 straight casual blank at threeright_float
     with dissolve
     pause 0.1
     "As I spoke, I could see Donald get closer and closer to Brittney."
     "In typical Donald Waters fashion, he was very smooth and sneaky about it."
     show harry left
-    b e2 level grin "Well, at least I'm being productive with my time."
+    b p2 level grin "Well, at least I'm being productive with my time."
     $ b_wink = True
     b tongue "Though, at times, I feel like there's only one person in my household that's NOT."
     $ c_blush = True
     c mad hanging "Hey!!"
     $ b_wink = False
-    b e1 mad grin "I didn't even say who, did I?"
+    b p1 mad grin "I didn't even say who, did I?"
     c level blank "Well, uh..."
     $ b_partial = True
-    b e2 level huhu "Exactly."
+    b p2 level huhu "Exactly."
     $ c_blush = False
     c mad hanging "Well, so what? Just because I--!"
     c casual blank "!!!"
@@ -1918,9 +1929,9 @@ label d_pond:
     stop music fadeout(3)
     "Oh, shit."
     show brit zorder 2
-    show don d1 mad straight grin zorder 1:
+    show don p1 mad straight grin zorder 1:
         alpha 0.0
-        size (540, 1080)
+        zoom 0.75
         xalign 0.6 yalign 0.5
         ease 0.5 alpha 1.0
         block:
@@ -1930,13 +1941,13 @@ label d_pond:
     pause 0.5
     "Realizing he's been busted, Donald quickly grabbed Brittney's top by the sides in a last-minute attempt to win."
     $ b_partial = False
-    show brit e1 mad frown
+    show brit p1 mad frown
     "Almost on cue, Brittney placed one arm across her chest and used the other to quickly jerk her fist towards his face."
     show white zorder 3
     play sound punch
     hide don
-    show don d2 small sad zorder 1:
-        size (540, 1080)
+    show don p2 small sad zorder 1:
+        zoom 0.75
         xalign 0.6 yalign 0.5
         block:
             ease 1.0 ycenter 0.52
@@ -1957,45 +1968,45 @@ label d_pond:
     pause 0.6
     "Brittney showed no remorse as she glared at him angrily."
     b "What the fuck, Donald?!"
-    b e2 hanging "I'm fine with the casual teasing, but that's crossing a fucking line!!"
+    b p2 hanging "I'm fine with the casual teasing, but that's crossing a fucking line!!"
     show don straight
     "Donald didn't respond as he cupped his mouth."
     a "Brittney, calm down! He was just doing the challenge you guys had set up!"
-    b level blank "..."
+    b_s level blank "..."
     b raised "...What challenge?"
-    a "..."
+    a_s "..."
     "I then glared at Donald, myself."
     a "Okay, my turn:{w=0.5} What the fuck, Donald?!"
-    d mad left "..."
+    d_s mad left "..."
     "Everyone's eyes were on him as he continued to cover up his face."
     "His eyes, though, were on Brittney, and he did not look happy."
     "Finally, since he knew some sort of response was in order, he looked at all of us, though he still looked angry."
-    d straight "..."
+    d_s straight "..."
     d right level "...sorry."
     "His response was muffled, but understandable."
     show brit at threeleft_float
     show don at middle_float
-    show harry b1 casual left blank at threeright_float
+    show harry p1 casual left blank at threeright_float
     with easeinright
     pause 0.1
     h "Donald, are you okay??"
     hide brit
-    show chris e2 straight mad scream at threeleft_float
+    show chris p2 straight mad scream at threeleft_float
     with dissolve
     pause 0.1
-    c "Who cares? The perverted bastard deserves it!"
+    c "Who cares? The bastard deserves it!"
     c blank "It's moments like this that make me wonder why you bother wearing that necklace!"
-    d straight "..."
-    d right "..."
-    pause 1.0
+    d_s straight "..."
+    d_s right "..."
+    pause 1
     hide don with dissolve
-    pause 1.0
-    show brit e1 level straight blank at middle_float with dissolve
+    pause 1
+    show brit p1 level straight blank at middle_float with dissolve
     pause 0.1
     "Defeated and embarrassed, Donald slowly floated towards the dock."
     $ current_track = "\"Reflection\""
     play music reflection
-    c e1 "Yeah, just run away like the coward you are!"
+    c p1 "Yeah, just run away like the coward you are!"
     a "Christeena, just let it go."
     c scream "And you! Don't think I forgot about you!"
     c "You were helping him! Why the fuck would you do that?!"
@@ -2005,17 +2016,17 @@ label d_pond:
     c blank "What kind of sick fuck thinks it's funny to do that to a girl?!"
     a "Okay, fine. So I'm not innocent."
     a "I'm sorry, Brittney. I really thought this was something you knew about."
-    b "..."
-    b e2 level grin "It's okay, Alex."
+    b_s "..."
+    b p2 level grin "It's okay, Alex."
     h straight level "...Guys, he really does look hurt."
     $ c_blush = False
     show chris straight casual
     show brit straight casual blank
     "We all turned to the dock, where we could see Donald sitting and opening his mouth."
     "...it looked awfully red inside."
-    b e2 sad hanging "Oh, shit..."
+    b p2 sad hanging "Oh, shit..."
     b "I didn't think I hit him THAT hard!"
-    c mad e1 "I still say he deserves it."
+    c mad p1 "I still say he deserves it."
     hide chris
     hide brit
     hide harry
@@ -2024,30 +2035,30 @@ label d_pond:
     "Ignoring Christeena's comment, I started heading towards Donald."
     "After hearing movement behind me, I turned and saw Brittney wasn't too far back."
     "She seems less angry than I had thought she would've been, given the circumstances."
-    show pond_foreground
-    show don d1 straight mad blank at close_left_d
-    with dissolve
+    show bg pond:
+        ease 0.5 zoom 1.0
+    show pond_foreground with dissolve
+    show don p1 straight mad blank at close_left_d with dissolve
     pause 0.1
-    d "..."
+    d_s "..."
     a "You okay, man?"
     "He replied by spitting red saliva into the pond."
     "At least, I'm hoping most of it was saliva..."
     $ b_wince = True
-    show brit e2 sad straight hanging at close_right_b with dissolve
+    show brit p2 sad straight hanging at close_right_b with dissolve
     pause 0.1
     b "Jesus Christ, Donald..."
     b blank "I'm so sorry!"
-    d right "..."
-    d "Why would you do that to me, Brittney?!"
+    d right "Why would you do that to me, Brittney?!"
     $ b_wince = False
-    b e1 hanging "I said I'm sorry! I didn't see where I was aiming!"
+    b p1 hanging "I said I'm sorry! I didn't see where I was aiming!"
     d "I meant throwing me under the bus!"
-    b e2 blank "..."
+    b_s p2 blank "..."
     d wide "You made me look like a lying sicko!"
     $b_blink = False
     b closed_sad "I-I know... I'm really sorry..."
-    a "..."
-    a "Hold on a second..."
+    a_s "..."
+    a "Hold on..."
     a "So you're telling me that the challenge WAS real?!"
     d straight blank "Of course it was!"
     a "Brittney! Why would you act like it wasn't?!"
@@ -2056,31 +2067,31 @@ label d_pond:
     $ b_wince = True
     b right "I just..."
     d right wide "You just what?!"
-    b "..."
+    b_s "..."
     d "Well?!"
     b straight hanging "I don't know, okay?!"
     b "I clearly wasn't thinking!!"
-    d casual blank "..."
+    d_s casual blank "..."
     $ b_wince = False
     $b_blink = False
-    show brit closed_sad blank e1
+    show brit closed_sad blank p1
     "She then placed her face in her hands and shook her head."
-    d sad "..."
-    a "..."
-    b "..."
+    d_s sad "..."
+    a_s "..."
+    b_s "..."
     d grin "Hey..."
     "He then reached over and gave her a pat on the shoulder."
     d "Look, just..."
     d "Just know that I don't hate you or anything."
     $b_blink = True
-    b straight "..."
+    b_s straight "..."
     d "I'm serious."
-    b "..."
-    b grin "..."
+    b_s "..."
+    b_s grin "..."
     d level "But you probably should tell Christeena and Harry the truth."
     b "Heh."
-    b e2 right "Yeah, I probably should..."
-    b blank "..."
+    b p2 right "Yeah, I probably should..."
+    b_s blank "..."
     b straight "I really am sorry, Donald."
     d level "Apology accepted."
     b grin "O-Okay..."
@@ -2090,8 +2101,8 @@ label d_pond:
     pause 0.5
     show don at close_d with easeinleft
     pause 0.1
-    d "..."
-    a "..."
+    d_s "..."
+    a_s "..."
     $ current_track = "\"The Pond\""
     play music the_pond
     a "You know what I still don't get?"
@@ -2158,7 +2169,7 @@ label d_pond:
         d left level "I dunno. It's hard to know for sure what she's thinking."
         d sad grin "But..."
         d straight "Even if I knew everyone would've believed me if I had told them the truth..."
-        d "...I wouldn't have said anything."
+        d "...I don't think I would have have said anything."
         a "Why?"
         d "You saw how embarrassed she was over here."
         d right "I could never make her feel that way in front of more people than necessary."
@@ -2168,7 +2179,7 @@ label d_pond:
         d "If I had called her out right then and there..."
         d left blank "...she would not have taken that well."
         d straight grin "I figure it's better for her to get that temporary victory before setting things right."
-        a "..."
+        a_s "..."
         a "So, if I'm understanding you correctly, you would've rather looked like the bad guy so she could look like the good guy?"
         d sad "More or less."
         a "Wow."
@@ -2184,7 +2195,7 @@ label d_pond:
         "Unfortunately, neither of us can pinpoint what exactly she DOESN'T see in him..."
         "..."
         "Donald spit some more into the pond, only this time, less red."
-        a "Oh, I almost forgot; how's your mouth doing?"
+        a "Oh, I totally forgot; how's your mouth doing?"
         d straight raised "Still tastes bloody, but I think I'll be good. No broken teeth or anything."
         a "Darn. You and Brit could've been matchers."
         $d_blink = False
@@ -2194,36 +2205,37 @@ label d_pond:
         a "Well, anyway, the fire seems to have died down. What do you say we head back over there?"
         $d_blink = True
         d casual straight "Sounds good to me."
-        hide don
-        hide pond_foreground
-        with dissolve
+        hide don with dissolve
+        show bg pond:
+            ease 0.5 zoom 1.1
+        hide pond_foreground with dissolve
         pause 1.0
-        show chris e1 straight level blank at threeleft_float
-        show brit e2 straight sad blank at middle_float
-        show harry b1 straight casual blank at threeright_float
+        show chris p1 straight level blank at threeleft_float
+        show brit p2 straight sad blank at middle_float
+        show harry p1 straight casual blank at threeright_float
         with dissolve
         pause 0.1
         b "H-How are you feeling, Donald?"
         hide harry
-        show don d1 straight sad grin at close_right_d_float
+        show don p1 straight sad grin at close_right_d_float
         with dissolve
         pause 0.1
         d "I'll survive."
         d left raised smile "Still mighty impressed that you got me that good from behind!"
         d "You really are stronger than you look!"
-        b "..."
+        b_s "..."
         b level grin "W-Well, if I wasn't strong, I'd never be able to punch you in the arm the way I do!"
         $d_blink = False
         d closed sad grin "Very true!"
-        c "..."
+        c_s "..."
         c left "I'll never understand you two..."
         "Well, I'm glad things seem back to normal."
         "Though, Brittney still doesn't seem quite like herself..."
         a "Hey, we're all here to swim, right? Let's have some fun and forget about this whole thing."
         $d_blink = True
         d straight casual "I'm with Alex; let's enjoy ourselves!"
-        b e1 casual "Yeah!"
-        c "..."
+        b p1 casual "Yeah!"
+        c_s "..."
         jump pond_end
 
 ################################################################################
@@ -2231,11 +2243,11 @@ label d_pond:
 label e_pond:
     "With that, Brittney ducked under the water and swam towards Donald."
     "Christeena quickly followed behind, leaving Harry and I by ourselves."
-    show harry b1 straight casual grin at close_h_float with dissolve
+    show harry p1 straight casual grin at close_h_float with dissolve
     pause 0.1
     h "You coming?"
     a "Yeah, I just--"
-    a "..."
+    a_s "..."
     a "Shit..."
     h blank "What?"
     a "I forgot my goggles back home."
@@ -2258,7 +2270,7 @@ label e_pond:
     scene bg house_y with dissolve
     pause 0.5
     $ E_Name = "Eleanor"
-    show elie c1 straight mad scream at middle with dissolve
+    show elie p1 straight mad scream at middle with dissolve
     pause 1.0
     $ current_track = "\"Chaotic Evil\""
     play music chaotic_evil
@@ -2296,7 +2308,7 @@ label e_pond:
     stop music fadeout(3)
     "That's when I heard a loud clanking sound behind me."
     "I turned and saw her holding a garbage bag that was completely ripped along the bottom, its contents spilled all over."
-    show elie c1 straight mad scream at middle with dissolve
+    show elie p1 straight mad scream at middle with dissolve
     pause 0.1
     e "MotherFUCKER!!!"
     "She threw the bag on the ground in defeat before kicking the spilled garbage still remaining on the sidewalk."
@@ -2320,10 +2332,10 @@ label e_pond:
     "The door opened back up."
     "I looked and saw her shaking open a new garbage bag."
     "About halfway down the sidewalk, she looked up and stared at me."
-    show elie c1 straight level blank at close_e with dissolve
+    show elie p1 straight level blank at close_e with dissolve
     pause 0.1
-    e "..."
-    a "..."
+    e_s "..."
+    a_s "..."
     "We just looked at each other awkwardly."
     "At least, I found it awkward."
     "She might just simply be pissed. I don't know."
@@ -2352,8 +2364,8 @@ label e_pond:
     else:
         a "I'm Alex, by the way."
     e neutral frown "Cool. I don't care."
-    a "..."
-    e "..."
+    a_s "..."
+    e_s "..."
     a "A-Anyway, I'll just, uh... be going now."
     e level blank "Okay."
     hide elie with dissolve
@@ -2375,9 +2387,9 @@ label e_pond:
     $ current_track = "\"The Pond\""
     play music the_pond
     "All eyes were on me as I made my way back to the pond."
-    show chris e1 straight casual blank at threeleft_float
-    show brit e2 straight casual blank at middle_float
-    show don d1 straight raised blank at threeright_float
+    show chris p1 straight casual blank at threeleft_float
+    show brit p2 straight casual blank at middle_float
+    show don p1 straight raised blank at threeright_float
     with dissolve
     pause 0.1
     d "There you are!"
@@ -2385,27 +2397,27 @@ label e_pond:
     a "I had a little run-in with Eleanor on the way back."
     $ c_blush = True
     show don level
-    show brit e1 level
+    show brit p1 level
     c mad "Ugh..."
     c "What happened?"
     a "Well, she was picking up trash that had been knocked out of the can, and I helped her out."
     $ c_blush = False
     show don casual
     show brit casual
-    c casual "..."
+    c_s casual "..."
     c "You what?"
     a "What? What's the problem with helping someone out?"
-    c e2 mad hanging "The problem is that she's a fucking bitch!"
+    c p2 mad hanging "The problem is that she's a fucking bitch!"
     d raised left "Chris, even the worst of people deserve kindness."
     c blank "Well, SHE doesn't!"
     c "She's just so fucking rude for literally no reason!!"
-    c "She just makes our lives hell every time she's near!!"
+    c "She makes our lives hell every time she's near!!"
     b raised "Honestly, the only thing I'm confused about is the fact she let you help her."
     a "Well, she didn't, at first, but I tried again, and she just rolled with it."
-    b e2 left level "Huh."
+    b p2 left level "Huh."
     d straight casual grin "Well, I'm glad you did the neighborly thing, Al."
     $ c_blush = True
-    c e2 left "..."
+    c_s p2 left "..."
     d raised "Since you're back, I suppose that means we can swim now."
     a "Oh, I didn't want you guys to feel like you had to wait for me or anything!"
     b casual straight grin "Nah, it's cool, dude. Just being in the water was good enough for me."
@@ -2420,7 +2432,7 @@ label e_pond:
     $ b_partial = False
     $ c_blush = False
     "As the guys started moving towards the middle of the pond, I could see Harry come closer."
-    show harry b1 straight casual blank at close_h_float with dissolve
+    show harry p1 straight casual blank at close_h_float with dissolve
     pause 0.1
     h "Isn't Eleanor that girl who screamed at us at Dolmart that one day?"
     a "Yeah, that's her."
@@ -2442,43 +2454,51 @@ label pond_end:
     pause 0.5
     scene bg fade with wipeleft
     pause 1.0
-    scene bg pond with wipeleft
+    scene bg pond:
+        zoom 1.1
+    with wipeleft
     pause 0.5
     nvl clear
     $ c_blush = False
     nvl show dissolve
-    pause 0.1
-    narrate "The rest of the time went pretty smoothly."
-    narrate "There really wasn't much actual 'swimming' most of the time, just treading in the water and talking about this and that."
-    narrate "Though, we did have some occasional moments of doing flips off the dock."
-    narrate "Well, in the case of some of us, we TRIED."
-    narrate "Still, we were enjoying ourselves to the point where we hadn't really paid attention to what time it was."
-    narrate "Finally, at around 3:00, we decided to wrap it up for the day."
+    narrate """
+    The rest of the time went pretty smoothly.
+
+    There really wasn't much actual 'swimming' most of the time, just treading in the water and talking about this and that.
+
+    Though, we did have some occasional moments of doing flips off the dock.
+
+    Well, in the case of some of us, we TRIED.
+
+    Still, we were enjoying ourselves to the point where we hadn't really paid attention to what time it was.
+
+    Finally, at around 3:00, we decided to wrap it up for the day.
+    """
     nvl hide dissolve
     window show dissolve
     pause 0.1
-    show chris e1 straight casual grin at threeleft_float
-    show don d1 straight casual smile at middle_float
-    show brit e1 straight casual grin at threeright_float
+    show chris p1 straight casual grin at threeleft_float
+    show don p1 straight casual smile at middle_float
+    show brit p1 straight casual grin at threeright_float
     with dissolve
     pause 0.1
     d "What do you guys say we head to Kelly's, if you're up for it?"
-    b e2 opened_smile "Sounds good to me!"
+    b p2 opened_smile "Sounds good to me!"
     b level right derp "I'm sure she won't mind if we show up in wet swimsuits, right?"
     d right level grin "I mean, I'm sure she wants to keep SOME level of professionalism in her business."
     $ b_partial = True
     b straight huhu "{cps=15}FIIIIINE{/cps}."
     $ b_partial = False
-    b e1 mad opened_smile "But if I starve to death in the time it takes me to get dressed and over there, I'll haunt you forever."
+    b p1 mad opened_smile "But if I starve to death in the time it takes me to get dressed and over there, I'll haunt you forever."
     $d_blink = False
     d closed sad "Ooooo, so scary!"
     play sound splash
     $ b_wink = True
-    show brit e2 raised tongue
+    show brit p2 raised tongue
     "She splashed him in response."
     a "Alright, then. Let's get out of here."
     hide chris
-    show harry b1 straight sad blank at threeleft_float
+    show harry p1 straight sad blank at threeleft_float
     with dissolve
     pause 0.1
     h "Wait!"
@@ -2487,7 +2507,7 @@ label pond_end:
     $d_blink = True
     d left casual "Sure, bud! You got it this time!"
     $ b_wink = False
-    b e1 level grin "I dunno..."
+    b p1 level grin "I dunno..."
     $ b_partial = True
     b raised closed_smile "It'll have to take a miracle in order to pull that off, at this point."
     h mad closed_smile "Heh! I'll show you!"
@@ -2499,15 +2519,15 @@ label pond_end:
     $ b_partial = False
     "Harry then got out of the water and onto the dock."
     "All eyes were on him as he looked down at the water."
-    show chris e1 straight casual blank at close_left_c_float with dissolve
+    show chris p1 straight casual blank at close_left_c_float with dissolve
     pause 0.1
     c "Do you really think he'll be able to do a flip?"
     c level left dot "The best he's done so far is what looked like a partial cartwheel..."
     a "Hey, it's better than your attempt at a flip, Ms. BellyFlop!"
     c straight mad smile "Well, at least I actually went up and tried!"
     a "Alright, fair enough; that's better than I thought you would've done."
-    c e2 raised grin "Exactly."
-    show harry b1 straight mad closed_smile at tworight with dissolve
+    c p2 raised grin "Exactly."
+    show harry p1 straight mad closed_smile at tworight with dissolve
     pause 0.1
     h "You two done? I wanna make sure you all see this!"
     a "Alright, alright! We're watching!"
@@ -2541,13 +2561,13 @@ label pond_end:
     $ current_track = "None"
     stop music fadeout(3)
     "..."
-    show brit e2 straight casual blank at close_right_b_2_float
-    show don d1 straight sad blank at close_left_d_2_float
-    show chris e1 straight sad dot at close_c_float_2
+    show brit p2 straight casual blank at close_right_b_2_float
+    show don p1 straight sad blank at close_left_d_2_float
+    show chris p1 straight sad dot at close_c_float_2
     with dissolve
     pause 0.1
     c "Uh, g-guys...?"
-    b e1 sad "Let me go down and check."
+    b p1 sad "Let me go down and check."
     show brit:
         ease 0.2 yalign 0.25
     pause 0.2
@@ -2561,11 +2581,11 @@ label pond_end:
     "..."
     "Maybe..."
     "Oh, God, please let him be okay...!"
-    c e2 casual hanging "There!"
+    c p2 casual hanging "There!"
     "Christeena then pointed to some movement from the water."
     $ b_wince = True
     play sound splash
-    show brit e1 straight sad blank:
+    show brit p1 straight sad blank:
         zoom 0.75
         xalign 0.9 ycenter 2.0
         ease 0.3 ycenter 0.5
@@ -2577,7 +2597,7 @@ label pond_end:
     "Harry was in her arms."
     "But he wasn't moving."
     $ c_blush = True
-    show chris e1 sad dot
+    show chris p1 sad dot
     show don wide
     a "No..."
     a "NononononoNO!!!"
@@ -2589,7 +2609,7 @@ label pond_end:
     a "Oh, God... Wh-What am I gonna tell my parents?!"
     d "Alex, please stay calm! Try to breathe!"
     $b_wince = False
-    b e2 hanging "Someone get out and call 911! I'll try and do CPR!"
+    b p2 hanging "Someone get out and call 911! I'll try and do CPR!"
     h_o "Sounds good to me!"
     $ b_wince = False
     $ c_blush = False
@@ -2604,7 +2624,7 @@ label pond_end:
     with dissolve
     pause 0.1
     "I quickly swam over to Brittney and proceeded to yank my brother out of her arms."
-    show harry b1 sad small blank at close_h_float with dissolve
+    show harry p1 sad small blank at close_h_float with dissolve
     pause 0.1
     h sad small blank "Urk!"
     "I gripped onto my brother's shoulders tightly."
@@ -2612,13 +2632,13 @@ label pond_end:
     h mad straight "Dude, calm down!"
     a "Calm down?!"
     a "CALM DOWN?!"
-    h sad small "...!"
+    h_s sad small "...!"
     "I could feel tears coming out of my eyes, as well as large lump in my throat."
     a "That wasn't fucking funny at all, Harry!!"
     a "It's never funny to pretend to fucking DIE!!"
     a "Don't ever pull shit like that again, Harry! You hear me?!"
     h "Y-Yes!!"
-    a "..."
+    a_s "..."
     "I then let him go and took a deep breath."
     "..."
     "..."
@@ -2626,9 +2646,9 @@ label pond_end:
     a "I'm sorry. I just..."
     "I gave another small sigh."
     a "Please never do that again.{w} Please."
-    h straight "..."
+    h_s straight "..."
     show harry at close_left_h_float
-    show don d1 straight sad blank at tworight_float
+    show don p1 straight sad blank at tworight_float
     with easeinright
     pause 0.1
     d "You ARE okay, right Harry?"

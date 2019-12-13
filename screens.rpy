@@ -208,7 +208,7 @@ style input:
 screen choice(items):
 
     style_prefix "choice"
-
+    default delay = 0.0
     vbox:
         if choicevbox == 1:
             style "choice_vbox"
@@ -221,7 +221,13 @@ screen choice(items):
         elif choicevbox == 5:
             style "choice_vbox_5"
         for i in items:
-            textbutton i.caption action i.action
+            if not i.chosen:
+                textbutton i.caption at choices(delay) action i.action
+            else:
+                textbutton "{color=#000000}[i.caption]{/color}" at choices(delay) action i.action
+            $ delay += 0.1
+        $ delay = 0.0
+            
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -243,7 +249,6 @@ style choice_vbox_2:
     xalign 0.8
     yalign 0.5
     yanchor 0.7
-
     spacing gui.choice_spacing
 
 style choice_vbox_3:
@@ -255,7 +260,6 @@ style choice_vbox_3:
 style choice_vbox_4:
     xalign 0.3
     yalign 0.5
-
     spacing gui.choice_spacing
 
 style choice_vbox_5:
@@ -687,9 +691,11 @@ screen save():
                 spacing 25
                 #textbutton "{size=+10}{b}Save" action ShowMenu("save_c") xalign 0.5
                 #textbutton "{size=+10}{b}Load" action ShowMenu("load") xalign 0.5
-                textbutton "{size=+10}{b}Options{/b}" action ShowMenu("preferences") xalign 0.5
-                textbutton "{size=+10}{b}Replay{/b}" action ShowMenu("dayselectmenu") xalign 0.5
-                textbutton "{size=+10}{b}Main Menu{/b}" action MainMenu()
+                textbutton "{size=+10}{b}Options{/b}{/size}" action ShowMenu("preferences") xalign 0.5
+                textbutton "{size=+10}{b}Replay{/b}{/size}" action ShowMenu("dayselectmenu") xalign 0.5
+                textbutton "{size=+10}{b}Main Menu{/b}{/size}" action MainMenu() xalign 0.5
+                null height 10
+                textbutton "{size=+10}{b}Quit{/b}{/size}" action Quit() xalign 0.5
                 #textbutton "{size=+10}{b}Music Room" action ShowMenu("music_room")
 
 
