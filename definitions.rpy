@@ -63,7 +63,7 @@ image bg fade = "#000000"
 image bg white = "#ffffff"
 image bg car:
     "BG/Backseat View.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg house_s:
     zoom 0.75
     "BG/Sprouse House.png"
@@ -72,16 +72,16 @@ image bg house_ut:
     "BG/Usher Truman House.png"
 image bg house_w:
     "BG/Waters House.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg house_w_s:
     "BG/Waters House Sunset.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg living_w:
     "BG/Waters Living Room.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg basketball_w:
     "BG/Waters Basketball Hoop.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg living_s_m:
     "BG/Living Room Moving.png"
     size(1920, 1080)
@@ -93,19 +93,19 @@ image bg living_ut:
     zoom 0.75
 image bg house_ro:
     "BG/Rodriguez House.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg house_z:
     "BG/Ziphon House.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg house_re:
     "BG/Reagan House.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg house_y:
     zoom 0.75
     "BG/Yellman House.png"
 image bg house_n:
     "BG/Nanner House.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg pond:
     zoom 0.75
     "BG/Pond.png"
@@ -114,10 +114,10 @@ image bg pond_n:
     "BG/Pond Night.png"
 image bg cabin_e:
     "BG/Cabin Exterior.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg cabin_e_s:
     "BG/Cabin Exterior Sunset.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg cabin_i:
     "BG/Cabin Interior.png"
     zoom 0.75
@@ -132,10 +132,10 @@ image bg cabin_i_n:
     xalign 0.5
 image bg mainstreet:
     "BG/Main Street.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg deli_e:
     "BG/Kelly's Deli Exterior.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg deli_i_e:
     "BG/Kelly's Deli Entrance.png"
     zoom 0.75
@@ -149,44 +149,44 @@ image deli_table:
     xalign 0.0
 image bg porch_ut:
     "BG/Porch Usher Truman.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg bs:
     "BG/Berry Street.png"
     yalign 1.0
     zoom 0.75
 image bg school_e:
     "BG/School Entrance.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg dolmart_e:
     "BG/Dolmart Exterior.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg dolmart_i:
     "BG/Dolmart Interior.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg game_menu:
     "BG/game_menu.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg church_e:
     "BG/Church Exterior.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg mall_e:
     "BG/Mall Exterior.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg mall_i:
     "BG/Mall Interior.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg sports:
     "BG/Sport Store.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg games:
     "BG/Game Store.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg art:
     "BG/Art Store.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg mall_fc:
     "BG/Food Court.png"
-    zoom 0.75
+    size(1920, 1080)
 image bg backyard_w:
     "BG/Backyard_Waters.png"
     zoom 0.75
@@ -204,7 +204,7 @@ image baseball_overlay:
     zoom 0.75
 image bg conveniencestore:
     "BG/Convenience Store.png"
-    zoom 0.75
+    size(1920, 1080)
 
 ##########
 # Images #
@@ -363,7 +363,7 @@ define audio.cabin_fever = "<loop 8>audio/music/Cabin Fever.ogg" # Cabin
 define audio.friendly_competition = "audio/music/Friendly Competition.ogg" # Heavy Workout
 define audio.outside_the_street = "audio/music/Outside the Street.ogg" # Downtown
 define audio.the_pond = "audio/music/The Pond.ogg" # Pond
-define audio.scrapbook = "audio/music/Scrapbook.mp3" # School
+define audio.getting_educated = "<to 108 loop 4>audio/music/Getting Educated.ogg" # School
 define audio.sunday_service = "audio/music/Sunday Service.ogg" # Church
 define audio.generic_80s_song = "audio/music/Generic 80s Song.ogg" # Generic 80's Song
 define audio.different_yet_equal = "audio/music/Different Yet Equal.ogg" # Sisters
@@ -2228,9 +2228,6 @@ transform choices(delay):
 transform gallery:
     zoom 0.25
 
-transform fullscreen:
-    size(1920, 1080)
-
 ##########
 # Styles #
 ##########
@@ -2540,6 +2537,7 @@ init -1 python:
 #########
 
 init -1 python:
+# Music Room
     mr = MusicRoom(channel="music", fadeout=0.5, loop=True, single_track=True)
 
     mr.add("<to 76 loop 8>audio/music/Welcome to Berry Street.ogg", always_unlocked=True)
@@ -2562,8 +2560,10 @@ init -1 python:
     mr.add("audio/music/Generic 80s Song.ogg")
     mr.add("<loop 14.769>audio/music/New Life.ogg")
     mr.add("<loop 15>audio/music/The Mall.ogg")
+    mr.add("<to 108 loop 4>audio/music/Getting Educated.ogg")
 
-init python:
+
+# CG Gallery
     gal = Gallery()
     gal.transition = dissolve
     gal.locked_button = "gui/gallery/locked.png"
@@ -2582,7 +2582,15 @@ image cg1_gal:
     "cg_01 a_right a_level a_blank b_raised b_right b_grin c_left c_casual c_blank"
     size(2560, 1440)
 
-image idle = "gui/gallery/idle.png"
+init -2:
+    transform fullscreen:
+        size(1920, 1080)
+
+# Multi-Persistent
+init python:
+    if not renpy.mobile:
+        mp = MultiPersistent("berry-street")
+
 
 init python:
     renpy.music.register_channel('blip', mixer="voice")

@@ -913,8 +913,8 @@ label tourschool:
     pause .1
     scene bg school_e
     with dissolve
-    $ current_track = "\"Scrapbook\" (placeholder)"
-    play music scrapbook
+    $ current_track = "\"Getting Educated\""
+    play music getting_educated
     pause 1
     show don p1 straight casual grin at close_d
     with dissolve

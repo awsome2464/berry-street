@@ -238,35 +238,39 @@ screen music_room():
     tag menu
     add 'gui/main_menu.png'
     add 'gui/pause_bg.png' xalign 0.5 yalign 0.5
-    vbox:
+    frame:
+        xpadding 50 ypadding 25
         xalign 0.8 yalign 0.5
-        null height 5
-        textbutton "1. Welcome to Berry Street!" action [ToggleVariable('persistent.current_track', 'Welcome to Berry Street!'), mr.Play("<to 76 loop 8>audio/music/Welcome to Berry Street.ogg")]
-        textbutton "2. New Life" action [ToggleVariable('persistent.current_track', 'New Life'), mr.Play("<loop 14.769>audio/music/New Life.ogg")]
-        textbutton "3. Oddball" action [ToggleVariable('persistent.current_track', 'Oddball'), mr.Play("audio/music/Oddball.ogg")]
-        textbutton "4. Violet Wonder" action [ToggleVariable('persistent.current_track', 'Violet Wonder'), mr.Play("<loop 9.6>audio/music/Violet Wonder.ogg")]
-        textbutton "5. Brotato Chips" action [ToggleVariable('persistent.current_track', 'Brotato Chips'), mr.Play("<to 68 loop 12>audio/music/Brotato Chips.ogg")]
-        textbutton "6. Chaotic Evil" action [ToggleVariable('persistent.current_track', 'Chaotic Evil'), mr.Play("audio/music/Chaotic Evil.ogg")]
-        textbutton "7. Ivories and Ebony" action [ToggleVariable('persistent.current_track', 'Ivories and Ebony'), mr.Play("<loop 3>audio/music/Ivories and Ebony.ogg")]
-        textbutton "8. Different Yet Equal" action [ToggleVariable('persistent.current_track', "Different Yet Equal"), mr.Play("audio/music/Different Yet Equal.ogg")]
-        textbutton "9. Home Life" action [ToggleVariable('persistent.current_track', "Home Life"), mr.Play("<to 112 loop 5.32>audio/music/Home Life.ogg")]
-        textbutton "10. Relaxation in the Country" action [ToggleVariable('persistent.current_track', 'Relaxation in the Country'), mr.Play("<loop 5.333>audio/music/Relaxation in the Country.ogg")]
-        textbutton "11. Reflection" action [ToggleVariable('persistent.current_track', 'Reflection'), mr.Play("audio/music/Reflection.ogg")]
-        textbutton "12. Chillaxin\'" action [ToggleVariable('persistent.current_track', 'Chillaxin\''), mr.Play("<loop 18>audio/music/Chillaxin.ogg")]
-        textbutton "13. The Pond" action [ToggleVariable('persistent.current_track', 'The Pond'), mr.Play("audio/music/The Pond.ogg")]
-        textbutton "14. Outside the Street" action [ToggleVariable('persistent.current_track', 'Outside the Street'), mr.Play("audio/music/Outside the Street.ogg")]
-        textbutton "15. Dinin' In" action [ToggleVariable('persistent.current_track', 'Dinin\' In'), mr.Play("<loop 9.6>audio/music/Dinin' In.ogg")]
-        textbutton "16. The Mall" action [ToggleVariable('persistent.current_track', 'The Mall'), mr.Play("<loop 15>audio/music/The Mall.ogg")]
-        textbutton "17. Friendly Competition" action [ToggleVariable('persistent.current_track', 'Friendly Competition'), mr.Play("audio/music/Friendly Competition.ogg")]
-        textbutton "18. Cabin Fever" action [ToggleVariable('persistent.current_track', 'Cabin Fever'), mr.Play("<loop 8>audio/music/Cabin Fever.ogg")]
-        textbutton "19. Sunday Service" action [ToggleVariable('persistent.current_track', 'Sunday Service'), mr.Play("audio/music/Sunday Service.ogg")]
-        textbutton "20. Generic 80s Song" action [ToggleVariable('persistent.current_track', 'Generic 80s Song'), mr.Play("audio/music/Generic 80s Song.ogg")]
+        vbox:
+            xalign 0.5 yalign 0.5
+            null height 5
+            textbutton "01. Welcome to Berry Street!" action [ToggleVariable('persistent.current_track', 'Welcome to Berry Street!'), mr.Play("<to 76 loop 8>audio/music/Welcome to Berry Street.ogg")]
+            textbutton "02. New Life" action [ToggleVariable('persistent.current_track', 'New Life'), mr.Play("<loop 14.769>audio/music/New Life.ogg")]
+            textbutton "03. Oddball" action [ToggleVariable('persistent.current_track', 'Oddball'), mr.Play("audio/music/Oddball.ogg")]
+            textbutton "04. Violet Wonder" action [ToggleVariable('persistent.current_track', 'Violet Wonder'), mr.Play("<loop 9.6>audio/music/Violet Wonder.ogg")]
+            textbutton "05. Brotato Chips" action [ToggleVariable('persistent.current_track', 'Brotato Chips'), mr.Play("<to 68 loop 12>audio/music/Brotato Chips.ogg")]
+            textbutton "06. Chaotic Evil" action [ToggleVariable('persistent.current_track', 'Chaotic Evil'), mr.Play("audio/music/Chaotic Evil.ogg")]
+            textbutton "07. Ivories and Ebony" action [ToggleVariable('persistent.current_track', 'Ivories and Ebony'), mr.Play("<loop 3>audio/music/Ivories and Ebony.ogg")]
+            textbutton "08. Different Yet Equal" action [ToggleVariable('persistent.current_track', "Different Yet Equal"), mr.Play("audio/music/Different Yet Equal.ogg")]
+            textbutton "09. Home Life" action [ToggleVariable('persistent.current_track', "Home Life"), mr.Play("<to 112 loop 5.32>audio/music/Home Life.ogg")]
+            textbutton "10. Relaxation in the Country" action [ToggleVariable('persistent.current_track', 'Relaxation in the Country'), mr.Play("<loop 5.333>audio/music/Relaxation in the Country.ogg")]
+            textbutton "11. Reflection" action [ToggleVariable('persistent.current_track', 'Reflection'), mr.Play("audio/music/Reflection.ogg")]
+            textbutton "12. Chillaxin\'" action [ToggleVariable('persistent.current_track', 'Chillaxin\''), mr.Play("<loop 18>audio/music/Chillaxin.ogg")]
+            textbutton "13. The Pond" action [ToggleVariable('persistent.current_track', 'The Pond'), mr.Play("audio/music/The Pond.ogg")]
+            textbutton "14. Outside the Street" action [ToggleVariable('persistent.current_track', 'Outside the Street'), mr.Play("audio/music/Outside the Street.ogg")]
+            textbutton "15. Dinin' In" action [ToggleVariable('persistent.current_track', 'Dinin\' In'), mr.Play("<loop 9.6>audio/music/Dinin' In.ogg")]
+            textbutton "16. Getting Educated" action [ToggleVariable('persistent.current_track', 'Getting Educated'), mr.Play("<to 108 loop 4>audio/music/Getting Educated.ogg")]
+            textbutton "17. The Mall" action [ToggleVariable('persistent.current_track', 'The Mall'), mr.Play("<loop 15>audio/music/The Mall.ogg")]
+            textbutton "18. Friendly Competition" action [ToggleVariable('persistent.current_track', 'Friendly Competition'), mr.Play("audio/music/Friendly Competition.ogg")]
+            textbutton "19. Cabin Fever" action [ToggleVariable('persistent.current_track', 'Cabin Fever'), mr.Play("<loop 8>audio/music/Cabin Fever.ogg")]
+            textbutton "20. Sunday Service" action [ToggleVariable('persistent.current_track', 'Sunday Service'), mr.Play("audio/music/Sunday Service.ogg")]
+            textbutton "21. Generic 80s Song" action [ToggleVariable('persistent.current_track', 'Generic 80s Song'), mr.Play("audio/music/Generic 80s Song.ogg")]
 
-        null height 20
+            null height 20
 
-        textbutton "Back" action ShowMenu('extras')
+            textbutton "Back" action ShowMenu('extras')
 
-        null height 5
+            null height 5
 
     add "gui/record.png" at record_move_musicroom
 
@@ -274,12 +278,18 @@ screen gallery():
     tag menu
     add "gui/main_menu.png"
     add "gui/pause_bg.png" xalign 0.5 yalign 0.5
-    hbox:
+    frame:
+        xpadding 50 ypadding 25
         xalign 0.5 yalign 0.5
-        spacing 50
-        add gal.make_button("cg_1", "cg1_gal", xalign=0.5, yalign=0.5) at gallery
-        add gal.make_button("cg_2", "CG/CG 02/CG_02.png", xalign=0.5, yalign=0.5) at gallery
-    textbutton "Back" action ShowMenu('extras') xalign 0.5 yalign 0.99
+        hbox:
+            xalign 0.5 yalign 0.5
+            spacing 50
+            add gal.make_button("cg_1", "cg1_gal", xalign=0.5, yalign=0.5) at gallery
+            add gal.make_button("cg_2", "CG/CG 02/CG_02.png", xalign=0.5, yalign=0.5) at gallery
+    frame:
+        xalign 0.5 yalign 0.99
+        xpadding 5 ypadding 5
+        textbutton "Back" action ShowMenu('extras') xalign 0.5 yalign 0.5
 
 screen extras():
     tag menu
