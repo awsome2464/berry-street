@@ -205,13 +205,34 @@ style input:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
-screen choice(items):
+transform choices(delay):
+    alpha 0.0
+    xpos 100
+    yalign 0.5
+    pause delay
+    parallel:
+        ease 0.5 alpha 1.0
+    parallel:
+        ease 0.5 xpos 0
 
+transform choice_hide:
+    on hide:
+        parallel:
+            ease 0.5 alpha 0.0 
+        parallel:
+            ease 0.5 xalign choice_xalign - 0.1
+
+default choice_xalign = 0.5
+
+style chosenchoice:
+    color "#000000"
+
+screen choice(items):
     style_prefix "choice"
     default delay = 0.0
-    vbox:
+    vbox at choice_hide:
         if choicevbox == 1:
-            style "choice_vbox"
+            style "choice_vbox_1"
         elif choicevbox == 2:
             style "choice_vbox_2"
         elif choicevbox == 3:
@@ -224,11 +245,10 @@ screen choice(items):
             if not i.chosen:
                 textbutton i.caption at choices(delay) action i.action
             else:
-                textbutton "{color=#000000}[i.caption]{/color}" at choices(delay) action i.action
-            $ delay += 0.1
+                textbutton i.caption style "chosenchoice" at choices(delay) action i.action
+            $ delay += 0.2
         $ delay = 0.0
-            
-
+        
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
 ## menu captions will be displayed as empty buttons.
@@ -239,7 +259,7 @@ style choice_vbox is vbox
 style choice_button is button
 style choice_button_text is button_text
 
-style choice_vbox:
+style choice_vbox_1:
     xalign 0.5
     yalign 0.6
     yanchor 0.7
@@ -671,7 +691,7 @@ style about_label_text:
 ## https://www.renpy.org/doc/html/screen_special.html#save https://
 ## www.renpy.org/doc/html/screen_special.html#load
 
-screen save():
+screen pause():
 
     tag menu
 
@@ -684,77 +704,66 @@ screen save():
         yalign 0.5
         spacing 10
         frame:
-            xysize(450,450)
+            xpadding 50 ypadding 50
             vbox:
-                xalign 0.5
-                yalign 0.5
+                xalign 0.5 yalign 0.5
                 spacing 25
-                #textbutton "{size=+10}{b}Save" action ShowMenu("save_c") xalign 0.5
-                #textbutton "{size=+10}{b}Load" action ShowMenu("load") xalign 0.5
+                textbutton "{size=+10}{b}Save{/b}{/size}" action ShowMenu("save") xalign 0.5
                 textbutton "{size=+10}{b}Options{/b}{/size}" action ShowMenu("preferences") xalign 0.5
                 textbutton "{size=+10}{b}Replay{/b}{/size}" action ShowMenu("dayselectmenu") xalign 0.5
                 textbutton "{size=+10}{b}Main Menu{/b}{/size}" action MainMenu() xalign 0.5
                 null height 10
                 textbutton "{size=+10}{b}Quit{/b}{/size}" action Quit() xalign 0.5
-                #textbutton "{size=+10}{b}Music Room" action ShowMenu("music_room")
 
-
-    hbox:
-        xalign 0.95
-        yalign 0.05
-        frame:
-            ysize 113
-            hbox:
-                xalign 0.5
-                yalign 0.5
+    frame:
+        ysize 113
+        xalign 0.95 yalign 0.05
+        hbox:
+            xalign 0.5 yalign 0.5
+            if not replay:
                 text "   Today's Date: [persistent.todays_date]   "
-
-    hbox:
-        xalign 0.95
-        yalign 0.95
+            else:
+                text "   Today's Date: [todays_date_replay]   "
+    if not replay:
         frame:
             xysize(200, 113)
+            xalign 0.95 yalign 0.95
             hbox:
                 xalign 0.5
                 yalign 0.5
                 text "   [hours] : [minutes] : [seconds]   "
 
-    hbox:
+    frame:
+        ysize 113
         xalign 0.05 yalign 0.95
-        frame:
-            ysize 113
-            xalign 0.05
-            yalign 0.95
-            text "   Current Track: [current_track]   " xalign 0.05 yalign 0.5
+        text "   Current Track: [current_track]   " xalign 0.05 yalign 0.5
 
     if current_track != "None" and current_track != "\"...\"":
         add "gui/record.png" at record_move
     else:
         add "gui/record.png" at record_pause
 
-# screen save_c():
-#
-#     tag menu
-#     $ persistent.save_or_load = "Save"
-#     use file_slots(_("Save"))
-#
-#     add "gui/save.png" xalign 0.95 yalign 0.05
-#
-#
-#     hbox:
-#         xalign 0.5
-#         yalign 0.1
-#         spacing 25
-#         frame:
-#             xysize(320,45)
-#             hbox:
-#                 xalign 0.5
-#                 yalign 0.5
-#                 spacing 10
-#                 textbutton "Back" action ShowMenu('save') xalign 1.0
-#                 textbutton "Load" action ShowMenu('load')
-#                 textbutton "Options" action ShowMenu('preferences')
-#                 textbutton "Title" action MainMenu(confirm=True)
+screen save():
+
+    tag menu
+    $ persistent.save_or_load = "Save"
+    use file_slots(_("Save"))
+
+    add "gui/save.png" xalign 0.95 yalign 0.05
+
+    hbox:
+        xalign 0.5 yalign 0.1
+        spacing 25
+        frame:
+            xpadding 10 ypadding 5
+            hbox:
+                xalign 0.5
+                yalign 0.5
+                spacing 10
+                textbutton "Back" action ShowMenu('pause') xalign 1.0
+                textbutton "Load" action ShowMenu('load')
+                textbutton "Options" action ShowMenu('preferences')
+                textbutton "Title" action MainMenu(confirm=True)
 
 screen load():
 
@@ -767,21 +776,25 @@ screen load():
     add "gui/load_idle.png" xalign 0.95 yalign 0.05
 
     hbox:
-        xalign 0.5
-        yalign 0.1
+        xalign 0.5 yalign 0.1
         spacing 25
         frame:
-            xysize(350,70)
+            xpadding 10 ypadding 5
             hbox:
-                xalign 0.5
-                yalign 0.5
+                xalign 0.5 yalign 0.5
                 spacing 10
                 if main_menu:
                     textbutton "Back" action ShowMenu('main_menu')
                 else:
-                    textbutton "Back" action ShowMenu('save') xalign 1.0
+                    textbutton "Back" action ShowMenu('pause') xalign 1.0
                 textbutton "Options" action ShowMenu('preferences')
                 textbutton "Title" action MainMenu(confirm=True)
+
+layeredimage save_pond:
+    always:
+        "bg pond"
+    always:
+        "pond_foreground"
 
 
 screen file_slots(title):
@@ -801,14 +814,12 @@ screen file_slots(title):
             $ slot = i + 1
 
             vbox:
-                xalign 0.5
-                yalign 0.5
+                xalign 0.5 yalign 0.5
                 spacing 10
                 frame:
-                    xysize(1050,637)
+                    xysize(1050,690)
                     button:
-                        xsize 960
-                        ysize 540
+                        xysize(960,540)
                         xalign 0.5 yalign 0.5
                         action FileAction(slot)
                         vbox:
@@ -829,30 +840,12 @@ screen file_slots(title):
                             elif persistent.progress == 6:
                                 add "BG/Backyard_Waters.png" size (960, 540)
                             elif persistent.progress == 7:
-                                add "BG/Pond.png" size (960, 540)
+                                add "save_pond" size (960, 540)
                             elif persistent.progress == 8:
                                 add "BG/Baseball Field.png" size (960, 540)
                             null height 5
-                            text "[persistent.todays_date]" xalign 0.5
-
-            # button:
-            #     xsize 640
-            #     ysize 360
-            #     action FileAction(slot)
-            #     vbox:
-            #         add FileScreenshot(slot) xalign 0.5 size(640,360)
-            #         text FileTime(slot, format=_("{#file_time} %B %d, %Y, %H:%M"), empty=_("Empty Slot")):
-            #             xalign 0.5
-            #     key "save_delete" action FileDelete(slot)
-
-
-        # frame:
-        #     xysize(120,45)
-        #     hbox:
-        #         xalign 0.5
-        #         yalign 0.5
-        #         textbutton "{size=+10}Load":
-        #             action FileLoad(slot)
+                            text "Scene: [persistent.todays_date]" xalign 0.5
+                            text FileTime(slot, format=_("Saved: {#file_time} %B %d, %Y, %H:%M")) xalign 0.5
 
     hbox:
         xalign 0.5
@@ -1004,7 +997,7 @@ screen preferences():
                 if main_menu:
                     textbutton "Back" action ShowMenu('main_menu')
                 else:
-                    textbutton "Back" action ShowMenu('save') xalign 1.0
+                    textbutton "Back" action ShowMenu('pause') xalign 1.0
                 # if main_menu:
                 #     pass
                 # else:

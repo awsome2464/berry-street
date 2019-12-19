@@ -910,6 +910,7 @@ label vgstore:
     $c_blink = True
     c straight raised grin "If we did, all the little horndog nine-year-olds wouldn't leave us alone."
     a "Fair enough.{w} Hey, maybe we could play together some time."
+    $ choice_xalign = 0.3
     $ choicevbox = 4
     c p1 smile "Maybe, if you're prepared to be dominated."
     if persistent.choices["13"] == 1:
@@ -975,6 +976,7 @@ label vgstore:
         pause 0.1
 
     label pickagame:
+        $ choice_xalign = 0.5
         $ choicevbox = 1
         $ c_blush = False
         "We looked back at the game selections."

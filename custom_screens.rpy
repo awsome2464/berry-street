@@ -79,6 +79,8 @@ screen calendarOs():
 
 # Day Select
 
+define config.replay_scope = {"_game_menu_screen": "pause", "replay": True}
+
 screen dayselectmenu():
     tag menu
     add 'gui/pause_bg.png' xalign 0.5 yalign 0.5
@@ -99,7 +101,7 @@ screen dayselectmenu():
                         textbutton "{size=+5}{b}June 3rd, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 1)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("firstdayreplay", scope={"B_Points": 0, "D_Points": 0, "h_hair": True, "replay": True})
+                            action Replay("firstdayreplay", scope={"B_Points": 0, "D_Points": 0, "h_hair": True, "todays_date_replay": "June 3rd, 2013"})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
@@ -109,7 +111,7 @@ screen dayselectmenu():
                         textbutton "{size=+5}{b}June 4th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 2)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("tour", scope={"B_Points": monthpoints["June3B"], "D_Points": monthpoints["June3D"], "h_hair": True, "b_hat": True, "replay": True, "progress": 1})
+                            action Replay("tour", scope={"B_Points": monthpoints["June3B"], "D_Points": monthpoints["June3D"], "h_hair": True, "b_hat": True, "progress": 1, "todays_date_replay": "June 4th, 2013"})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
@@ -119,7 +121,7 @@ screen dayselectmenu():
                         textbutton "{size=+5}{b}June 11th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 3)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("shoppingwithharry", scope={"B_Points": monthpoints["June4B"], "delifoodorder": delifoodorder, "acceptsandwich": acceptsandwich, "britnotpretty": britnotpretty, "b_hat": False, "replay": True, "progress": 2})
+                            action Replay("shoppingwithharry", scope={"B_Points": monthpoints["June4B"], "delifoodorder": delifoodorder, "acceptsandwich": acceptsandwich, "britnotpretty": britnotpretty, "b_hat": False, "progress": 2, "todays_date_replay": "June 11th, 2013"})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
@@ -129,7 +131,7 @@ screen dayselectmenu():
                         textbutton "{size=+5}{b}June 21st, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 4)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("unpack0621", scope={"C_Points": monthpoints["June3B"], "D_Points": monthpoints["June3D"], "delihangout": delihangout, "replay": True, "progress": 3})
+                            action Replay("unpack0621", scope={"C_Points": monthpoints["June3B"], "D_Points": monthpoints["June3D"], "delihangout": delihangout, "progress": 3, "todays_date_replay": "June 21st, 2013"})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
@@ -139,7 +141,7 @@ screen dayselectmenu():
                         textbutton "{size=+5}{b}June 23rd, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 5)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("churchends", scope={"B_Points": monthpoints["June11B"], "C_Points": monthpoints["June21C"], "B_Basketball": B_Basketball, "britnotpretty": britnotpretty, "cleaningpartner": cleaningpartner, "b_hat": False, "replay": True, "progress": 4})
+                            action Replay("churchends", scope={"B_Points": monthpoints["June11B"], "C_Points": monthpoints["June21C"], "B_Basketball": B_Basketball, "britnotpretty": britnotpretty, "cleaningpartner": cleaningpartner, "b_hat": False, "progress": 4, "todays_date_replay": "June 23rd, 2013"})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
@@ -149,7 +151,7 @@ screen dayselectmenu():
                         textbutton "{size=+5}{b}June 30th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 6)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("nhie_start", scope={"B_Points": monthpoints["June23B"], "C_Points": monthpoints["June23C"], "D_Points": monthpoints["June21D"], "b_hat": False, "replay": True, "progress": 5})
+                            action Replay("nhie_start", scope={"B_Points": monthpoints["June23B"], "C_Points": monthpoints["June23C"], "D_Points": monthpoints["June21D"], "b_hat": False, "progress": 5, "todays_date_replay": "June 30th, 2013"})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
@@ -160,7 +162,7 @@ screen dayselectmenu():
                         textbutton "{size=+5}{b}July 4th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 1)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("donbirthday", scope={"B_Points": monthpoints["June30B"], "C_Points": monthpoints["June30C"], "D_Points": monthpoints["June30D"], "h_hair": True, "b_hat": True, "replay": True})
+                            action Replay("donbirthday", scope={"B_Points": monthpoints["June30B"], "C_Points": monthpoints["June30C"], "D_Points": monthpoints["June30D"], "h_hair": True, "b_hat": True, "todays_date_replay": "July 4th, 2013"})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
@@ -170,7 +172,7 @@ screen dayselectmenu():
                         textbutton "{size=+5}{b}July 10th, 2013{/b}{/size}":
                             hovered SetVariable("daydesc", 2)
                             unhovered SetVariable("daydesc", 0)
-                            action Replay("swimming", scope={"B_Points": monthpoints["July4B"], "C_Points": monthpoints["July4C"], "D_Points": monthpoints["July4D"], "b_hat": False, "c_hair": 1, "replay": True})
+                            action Replay("swimming", scope={"B_Points": monthpoints["July4B"], "C_Points": monthpoints["July4C"], "D_Points": monthpoints["July4D"], "b_hat": False, "c_hair": 1, "todays_date_replay": "July 10th, 2013"})
                     else:
                         textbutton "{size=+20}{font=fonts/libel-suit-rg.ttf}???{/font}{/size}" xalign 0.5:
                             hovered SetVariable("daydesc", -1)
@@ -210,7 +212,8 @@ screen dayselectmenu():
         yalign 0.95
         frame:
             ysize 75
-            textbutton "  {b}Back{/b}  " action ShowMenu('save') xalign 0.5 yalign 0.5
+            xpadding 10
+            textbutton "{b}Back{/b}" action ShowMenu('pause') xalign 0.5 yalign 0.5
 
     if dayselectmenuvalue != "June, 2013":
         hbox:

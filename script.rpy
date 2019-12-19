@@ -15,6 +15,7 @@ init -999 python:
 default persistent.playthroughs = 0
 default persistent.progress = -1
 default persistent.customdialogue = False
+define _game_menu_screen = "pause"
 
 style build:
     font "fonts/LibbyRegular.ttf"
@@ -41,20 +42,20 @@ label splashscreen:
 
             "I Agree":
                 $ persistent.agree = True
-                with Pause(1)
+                pause 1
             "I Don't Agree":
                 $ renpy.quit()
 
-    if persistent.Build_Name != "May 1st, 2019 Build":
+    if persistent.Build_Name != config.version:
         show text "Berry Street is currently in development. Everything you see and hear is subject to change." with dissolve
         $renpy.pause(delay=5)
         hide text with dissolve
-        $ persistent.Build_Name = "May 1st, 2019 Build"
+        $ persistent.Build_Name = config.version
 
     play music main_theme
-    with Pause(1)
+    pause 1
     show splash at truecenter zorder 2 with dissolve
-    with Pause(2)
+    pause 2
     hide splash with dissolve
     pause 0.5
     return
@@ -77,7 +78,7 @@ label before_main_menu:
         show menu_02 zorder 4:
             xalign 0.5 yalign 1.25
             ease 2.0 yalign 0.9
-    show build "[persistent.Build_Name]" zorder 4:
+    show build "[config.version]" zorder 4:
         xalign 0.99 yalign 1.34
         ease 2.0 yalign 0.99
     if persistent.elie_completed:
@@ -162,7 +163,7 @@ label progress:
     #     call logs from _call_logs
     #     window hide dissolve
     #     stop music fadeout 5
-    #     with Pause(1)
+    #     pause 1
     #     show white zorder 3:
     #         alpha 0.0
     #         ease 3.0 alpha 1.0

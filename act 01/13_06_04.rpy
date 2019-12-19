@@ -156,6 +156,7 @@ label tour:
     c right "I mean, she's tall, thin, blonde, pretty..."
     c "And then you have..."
     "She then pointed at herself with her thumbs."
+    $ choice_xalign = 0.52
     $ choicevbox = 3
     c p1 sad straight "...NOT that."
     hide screen skipchoice
@@ -206,6 +207,7 @@ label britisntpretty:
     "I have a feeling I accidentally insulted both sisters at once."
 
 label waitingforbrit:
+    $ choice_xalign = 0.5
     $ choicevbox = 1
     hide chris with dissolve
     pause 0.1
@@ -290,7 +292,7 @@ label waitingforbrit:
     show brit p2 huhu left level at tworight
     with easeinright
     b "C'mon, some exercise never killed anyone."
-    if persistent.tour_1 == 0:
+    if persistent.tour["1"] == 0:
         hide chris
         hide brit
         show don p1 straight casual grin at middle

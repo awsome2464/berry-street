@@ -100,9 +100,7 @@ image bg house_z:
 image bg house_re:
     "BG/Reagan House.png"
     size(1920, 1080)
-image bg house_y:
-    zoom 0.75
-    "BG/Yellman House.png"
+image bg house_y = "BG/Yellman House.png"
 image bg house_n:
     "BG/Nanner House.png"
     size(1920, 1080)
@@ -194,7 +192,7 @@ image bg anna:
     "CG/CG 03/CG_03.png"
     zoom 0.75
 image bg woods:
-    zoom 0.75
+    size(1920, 1080)
     "BG/Woods.png"
 image bg baseball:
     "BG/Baseball Field.png"
@@ -238,6 +236,12 @@ image phone_sender = "Phone/sender.png"
 
 image pond_foreground:
     "BG/Pond_02.png"
+    zoom 0.75
+image pond_water:
+    "BG/Pond_03.png"
+    zoom 0.75
+image pond_water_2:
+    "BG/Pond_04.png"
     zoom 0.75
 image deli_entrance_sign:
     "BG/Kelly's Deli Entrance Sign.png"
@@ -497,6 +501,7 @@ default nhie_d_points = 5
 
 default replay = False
 default dayselectmenuvalue = "June, 2013"
+default todays_date_replay = ""
 
 default daydesc = 0
 
@@ -1069,7 +1074,7 @@ layeredimage elie:
     if e_hair == 0:
         "Characters/Eleanor/Eleanor_Hair_Bottom.png"
     group body:
-        attribute a1:
+        attribute p1:
             "Characters/Eleanor/Eleanor_Body_[outfit_e]01.png"
     group eyes:
         attribute straight:
@@ -2214,16 +2219,6 @@ transform record_pause:
     size(270, 270)
     xanchor 0.5 yanchor 0.5
     xalign 0.05 yalign 0.75
-
-transform choices(delay):
-    alpha 0.0
-    xpos 100
-    yalign 0.5
-    pause delay
-    parallel:
-        ease 0.5 alpha 1.0
-    parallel:
-        ease 0.5 xpos 0
 
 transform gallery:
     zoom 0.25

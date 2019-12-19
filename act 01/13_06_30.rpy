@@ -126,7 +126,7 @@ label nhie_start:
     scene bg cabin_i_s with dissolve
     pause 0.1
     show bg cabin_i_s:
-        ease 0.5 xalign 1.0
+        ease 1.0 xalign 1.0
     "Donald walked over to the kitchen area, where he sat down at a small table."
     "There was a chair on each side, one for each of us."
     show don p1 straight raised grin at middle with dissolve
