@@ -226,6 +226,7 @@ default choice_xalign = 0.5
 
 style chosenchoice:
     color "#000000"
+    xalign 0.5
 
 screen choice(items):
     style_prefix "choice"
@@ -245,7 +246,7 @@ screen choice(items):
             if not i.chosen:
                 textbutton i.caption at choices(delay) action i.action
             else:
-                textbutton i.caption style "chosenchoice" at choices(delay) action i.action
+                textbutton i.caption at choices(delay) text_style "chosenchoice" action i.action
             $ delay += 0.2
         $ delay = 0.0
         
@@ -796,6 +797,12 @@ layeredimage save_pond:
     always:
         "pond_foreground"
 
+layeredimage save_baseball:
+    always:
+        "bg baseball"
+    always:
+        "baseball_overlay"
+
 
 screen file_slots(title):
 
@@ -842,7 +849,7 @@ screen file_slots(title):
                             elif persistent.progress == 7:
                                 add "save_pond" size (960, 540)
                             elif persistent.progress == 8:
-                                add "BG/Baseball Field.png" size (960, 540)
+                                add "save_baseball" size (960, 540)
                             null height 5
                             text "Scene: [persistent.todays_date]" xalign 0.5
                             text FileTime(slot, format=_("Saved: {#file_time} %B %d, %Y, %H:%M")) xalign 0.5

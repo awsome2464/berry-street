@@ -45,7 +45,7 @@ define c_s = Character("[C_Name]", image="chris", what_prefix='"', what_suffix='
 define d_s = Character("Donald", image="don", what_prefix='"', what_suffix='"')
 define e_s = Character("[E_Name]", image="elie", what_prefix='"', what_suffix='"')
 define h_s = Character("Harry", image="harry", what_prefix='"', what_suffix='"')
-define mu_s = Character("[M_Name", image="martha", what_prefix='"', what_suffix='"')
+define mu_s = Character("[M_Name]", image="martha", what_prefix='"', what_suffix='"')
 
 # Texting
 define narrate = nvl_narrator
@@ -703,23 +703,23 @@ image chad_talking:
 
 layeredimage chad:
     group body:
-        ypos 0.1
+        ypos 0.2
         attribute p1:
             "Characters/Chad/Chad_Body_[outfit_ch]01.png"
     group mouth:
-        ypos 0.1
+        ypos 0.2
         attribute grin:
             "Characters/Chad/Chad_Mouth_01.png"
         attribute blank:
             "Characters/Chad/Chad_Mouth_02.png"
     group lip:
-        ypos 0.1
+        ypos 0.2
         attribute talking:
             "chad_talking"
         attribute notalking:
             "Characters/Brittney/Brittney_Lip_None.png"
     group eyes:
-        ypos 0.1
+        ypos 0.2
         attribute straight:
             "Characters/Chad/Chad_Pupils_01.png"
         attribute left:
@@ -728,9 +728,9 @@ layeredimage chad:
             "Characters/Chad/Chad_Pupils_03.png"
     always:
         "chad_blink"
-        ypos 0.1
+        ypos 0.2
     group eyebrows:
-        ypos 0.1
+        ypos 0.2
         attribute sad:
             "Characters/Chad/Chad_Eyebrows_01.png"
         attribute casual:
@@ -1656,21 +1656,21 @@ image martha_talking:
 
 layeredimage martha:
     group body:
-        ypos 40
+        ypos 100
         attribute p1:
             "Characters/Martha/Martha_Body_[outfit_m]01.png"
     group eyes:
-        ypos 40
+        ypos 100
         attribute straight:
             "Characters/Martha/Martha_Pupils_01.png"
     always:
         "martha_blinking"
-        ypos 40
+        ypos 100
     if m_partial:
         "Characters/Martha/Martha_Eyelids_01.png"
-        ypos 40
+        ypos 100
     group mouth:
-        ypos 40
+        ypos 100
         attribute grin:
             "Characters/Martha/Martha_Mouth_01.png"
         attribute blank:
@@ -1678,16 +1678,16 @@ layeredimage martha:
         attribute smile:
             "Characters/Martha/Martha_Mouth_03.png"
     group lips:
-        ypos 40
+        ypos 100
         attribute talking:
             "martha_talking"
         attribute notalking:
             "Characters/Martha/Martha_Blinking_00.png"
     if m_glasses:
         "Characters/Martha/Martha_Glasses_01.png"
-        ypos 40
+        ypos 100
     group eyebrows:
-        ypos 40
+        ypos 100
         attribute casual:
             "Characters/Martha/Martha_Eyebrows_01.png"
         attribute raised:
@@ -1700,31 +1700,31 @@ layeredimage martha:
             "Characters/Martha/Martha_Eyebrows_05.png"
 
 transform m_middle:
-    size (540, 1080)
+    zoom 0.86
     xalign 0.5
 
 transform m_twoleft:
-    size (540, 1080)
+    zoom 0.86
     xalign 0.25
 
 transform m_tworight:
-    size (540, 1080)
+    zoom 0.86
     xalign 0.75
 
 transform m_threeleft:
-    size (540, 1080)
+    zoom 0.86
     xalign 0.1
 
 transform m_threeright:
-    size (540, 1080)
+    zoom 0.86
     xalign 0.9
 
 transform m_four2:
-    size (540, 1080)
+    zoom 0.86
     xalign 0.3
 
 transform m_four4:
-    size (540, 1080)
+    zoom 0.86
     xalign 1.0
 
 # Percy
