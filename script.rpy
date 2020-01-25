@@ -140,7 +140,7 @@ label start:
         window hide
         $b_hat = True
         $b_partial = True
-        show brit a2 sad right opened_smile at middle
+        show brit p2 sad right opened_smile at middle
         $renpy.pause()
     # Tracking your progress through the story, with the 'progress' variable being added to as each new section is completed.
     # This system is only here because the call method was glitching for some odd reason, but this seems to be working.

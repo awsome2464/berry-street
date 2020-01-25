@@ -1223,23 +1223,20 @@ label artstore:
         scene bg mall_i with dissolve
         pause 0.5
         "Once I left the store, I shot both girls a text in a group chat between the 3 of us."
-        nvl clear
-        window hide dissolve
-        nvl show dissolve
-        a_nvl "{font=fonts/LemonMilk.otf}{i}Hey, I'm done shopping.{/i}{/font}"
-        b_nvl "{font=fonts/LemonMilk.otf}{i}Already?{/i}{/font}"
-        c_nvl "{font=fonts/LemonMilk.otf}{i}That was fast...{/i}{/font}"
-        a_nvl "{font=fonts/LemonMilk.otf}{i}I had a fair idea of what I wanted to get. I just hope he likes it.{/i}{/font}"
-        b_nvl "{font=fonts/LemonMilk.otf}{i}I'm sure he will.{/i}{/font}"
-        b_nvl "{font=fonts/LemonMilk.otf}{i}At least, he'll PRETEND to like it lol XD{/i}{/font}"
-        a_nvl "{font=fonts/LemonMilk.otf}{i}I'm on my way to the food court. Should I wait for you guys?{/i}{/font}"
-        b_nvl "{font=fonts/LemonMilk.otf}{i}I won't be upset if you start eating without me.{/i}{/font}"
-        c_nvl "{font=fonts/LemonMilk.otf}{i}I think I'm almost done, anyway, so I should be there soon, if you wanna wait.{/i}{/font}"
-        a_nvl "{font=fonts/LemonMilk.otf}{i}Alright.{/i}{/font}"
-        nvl clear
-        nvl hide dissolve
-        window show dissolve
-        pause 0.1
+        $groupchat = True
+        call showphone("Group")
+        call showtext("Alex", "Hey, I'm done shopping.")
+        call showtext("Brittney", "Already?")
+        call showtext("Christeena", "That was fast...")
+        call showtext("Alex", "I had a fair idea of what I wanted to get. I just hope he likes it.")
+        call showtext("Brittney", "I'm sure he will.")
+        call showtext("Brittney", "At least, he'll PRETEND to like it lol XD")
+        call showtext("Alex", "I'm on my way to the food court. Should I wait for you guys?")
+        call showtext("Brittney", "I won't be upset if you start eating without me.")
+        call showtext("Christeena", "I think I'm almost done, anyway, so I should be there soon, if you wanna wait.")
+        call showtext("Alex", "Alright.")
+        call hidephone
+        $groupchat = False
         "With that, I was on my way to the food court."
         pause 0.5
         scene bg mall_fc with dissolve

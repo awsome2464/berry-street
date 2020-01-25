@@ -37,7 +37,7 @@ define gui.about = _("")
 ## or semicolons.
 
 define build.name = "BerryStreetDEMO"
-define build.include_update = True
+#define build.include_update = True
 
 ## Sounds and music ############################################################
 

@@ -57,9 +57,9 @@ label baseball:
     b p2 raised closed_smile "Let's kick some ass!"
     mu mad blank "Brittney Anne!"
     $ b_partial = True
-    b level blank "..."
+    b_s level blank "..."
     b raised "Let us place our feet onto some posteriors with force."
-    mu level grin "..."
+    mu_s level grin "..."
     mu "Just get in."
     $ b_partial = False
     $ b_wink = True
@@ -81,7 +81,7 @@ label baseball:
     pause 0.1
     c "Hey, if they wanna get their asses beat again--"
     m_o "Christeena Renee!"
-    c mad blank "..."
+    c_s mad blank "..."
     c raised grin "If they wanna lose again in front of everyone, let them!"
     c mad smile "It'll only make it satisfying for the rest of us!"
     d closed sad grin "Amen!"
@@ -254,7 +254,7 @@ label baseball:
     "...or maybe the whole time Christeena and Donald are gone, it'll just be awkward silence..."
     a "Well, uh..."
     if persistent.choices["31"] == 1:
-        jump gowithchris
+        jump gowithchrisanddon
     elif persistent.choices["31"] == 2:
         jump stayhere
     else:
@@ -543,7 +543,7 @@ label stayhere:
     show martha p1 straight casual grin at close_m zorder 3 with dissolve
     pause 0.1
     a_s "..."
-    mu sad_s "..."
+    mu_s sad "..."
     "Mrs. Truman and I just looked at each other awkwardly before turning back to the field."
     "So far, so good..."
     hide martha with dissolve
@@ -681,7 +681,7 @@ label stayhere:
         mu "Oh, Donald, you didn't have to pay for everything!"
         $d_blink = False
         d closed "I know~"
-        mu level grin "..."
+        mu_s level grin "..."
         mu sad "Well, thank you."
         hide don
         hide chris
@@ -874,7 +874,7 @@ label gamestart:
     pause 0.1
     a "So, I'm assuming batting isn't her specialty?"
     d sad grin "It's pretty hit-or-miss."
-    d level right "..."
+    d_s level right "..."
     d "...{fast}no pun intended."
     c sad grin "Yeah, she's way better on the field than she is at the bat."
     c p2 smile casual "Though she still has her moments of contact."
@@ -898,4 +898,12 @@ label gamestart:
     window show dissolve
     pause 0.1
     "The 5th inning ended."
-    
+
+    $groupchat = True
+    call showphone("Group")
+    call showtext("Brittney", "Yo, dum-dum!")
+    call showtext("Christeena", "Hey, Alex")
+    call showtext("Alex", "Yo. Wassup?")
+    call hidephone
+    $groupchat = False
+    "Back to the story."

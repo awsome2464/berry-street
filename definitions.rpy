@@ -21,9 +21,10 @@ define j = Character("Mrs. Waters", callback=j_voice, image="janice", what_prefi
 define k = Character("[K_Name]", callback=k_voice, image="kelly", what_prefix='"', what_suffix='"')
 define l = Character("Mr. Waters", callback=l_voice, image="latrell", what_prefix='"', what_suffix='"')
 define mu = Character("[M_Name]", callback=m_voice, image="martha", what_prefix='"', what_suffix='"')
+define narrate = nvl_narrator
 define p = Character("[P_Name]", callback=p_voice, image="percy", what_prefix='"', what_suffix='"')
 define ump = Character("Umpire", what_prefix='"', what_suffix='"')
-define unknown = Character(" ???", what_prefix='"', what_suffix='"')
+define unknown = Character("???", what_prefix='"', what_suffix='"')
 define wo = Character("Woman", what_prefix='"', what_suffix='"')
 
 # Offscreen
@@ -47,13 +48,6 @@ define e_s = Character("[E_Name]", image="elie", what_prefix='"', what_suffix='"
 define h_s = Character("Harry", image="harry", what_prefix='"', what_suffix='"')
 define mu_s = Character("[M_Name]", image="martha", what_prefix='"', what_suffix='"')
 
-# Texting
-define narrate = nvl_narrator
-define a_nvl = Character("Alex", what_color="#d7d400", what_outlines=[(1, "#000000")], kind=nvl)
-define b_nvl = Character("Brittney", what_color="#7c0000", what_outlines=[(1, "#000000")], kind=nvl)
-define c_nvl = Character("Christeena", what_color="#5a00ae", what_outlines=[(1, "#000000")], kind=nvl)
-define d_nvl = Character("Donald", what_color="#ff0000", what_outlines=[(1, "#000000")], kind=nvl)
-define unknown_nvl = Character("???", what_color="#424242", what_outlines=[(1, "#ffffff")], kind=nvl)
 
 ###############
 # Backgrounds #
@@ -517,6 +511,8 @@ default monthpoints = {"June3B": 0, "June3D": 0,
 "June30B": 0, "June30C": 0, "June30D": 0, 
 "July4B": 0, "July4C": 0, "July4D": 0, 
 "July10B": 0, "July10C": 0, "July10D": 0, "July10E": 0}
+
+default groupchat = False
 
 #####################
 # Character Sprites #

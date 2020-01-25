@@ -459,7 +459,7 @@ label nhie_b_stop:
     show brit closed sad closed_smile zorder 1:
         linear 0.2 xalign 0.25
     pause 0.2
-    d e2 small casual blank "Urk!"
+    d p2 small casual blank "Urk!"
     "Just like that, Brittney hugged him tightly."
     "Once she noticed how tightly she was squeezing, though, she released him from her grasp."
     $b_blink = True
@@ -1482,7 +1482,7 @@ label d_dare_pushup:
     "His arms flopped to his sides, almost as if he had lost all feeling in them."
     "Well, if I'm being honest, he probably did."
     show brit p2 level grin straight at tworight
-    show don e2 straight sad blank at twoleft
+    show don p2 straight sad blank at twoleft
     with dissolve
     pause 0.1
     b "We'll let you sit there until you can move again."

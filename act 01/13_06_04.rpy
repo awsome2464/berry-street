@@ -1802,25 +1802,25 @@ label lunchatkellys:
         play sound phone_vibrate
         "Before I could get to the first box, though, I got a text."
         "Looking at the screen revealed it to be from a number I didn't recognize."
-        nvl show dissolve
-        unknown_nvl "{font=fonts/LemonMilk.otf}{i}Hey is this Alex?{/i}{/font}"
-        a_nvl "{font=fonts/LemonMilk.otf}{i}Yeah. Who's asking?{/i}{/font}"
-        nvl hide dissolve
+        call showphone("???")
+        call showtext("???", "Hey is this Alex?")
+        call showtext("Alex", "Yeah. Who's asking?")
+        call hidephone
         "I open up the first box I see."
         "Ah, these are all my books."
         "I admittedly don't read as much as I used to, but I've been meaning to get back into it."
         "After all, a good story can really change a person."
         play sound phone_vibrate
         "I get another text."
-        nvl show dissolve
+        call showphone("???")
         if C_Points == -1 or C_Points == 0:
-            unknown_nvl "{font=fonts/LemonMilk.otf}{i}It's Brittney. Swiped your digits from Donnie ;) :P{/i}{/font}"
+            call showtext("???", "It's Brittney. Swiped your digits from Donnie ;) :P")
             $ have_number = "Brittney"
         else:
-            unknown_nvl "{font=fonts/LemonMilk.otf}{i}It's Christeena. Donald gave me your number.{/i}{/font}"
+            call showtext("???", "It's Christeena. Donald gave me your number.")
             $ have_number = "Christeena"
-        a_nvl "{font=fonts/LemonMilk.otf}{i}Oh, hey! What's up?{/i}{/font}"
-        nvl hide dissolve
+        call showtext("Alex", "Oh, hey! What's up?")
+        call hidephone
         "Let's see here..."
         "Most of these books are books I've read before, though there are still a few I've been meaning to read."
         "Honestly, I don't know why I keep these books when I've finished them; I've never reread a book I've already read."
@@ -1829,88 +1829,88 @@ label lunchatkellys:
         "Another text."
         "I suppose I should focus more on the conversation than the unboxing, for now."
         "I look at the text."
-        nvl clear
-        nvl show dissolve
         if C_Points == -1:
-            b_nvl "{font=fonts/LemonMilk.otf}{i}Just curious if you have anything against my sister{/i}{/font}"
-            a_nvl "{font=fonts/LemonMilk.otf}{i}Huh? No. Why do you ask?{/i}{/font}"
-            b_nvl "{font=fonts/LemonMilk.otf}{i}Just wondering. She doesn't seem too fond of you{/i}{/font}"
-            b_nvl "{font=fonts/LemonMilk.otf}{i}Of course not sure how I feel either with you telling her that I'm not pretty and all{/i}{/font}"
+            call showphone("Brittney")
+            call showtext("Brittney", "Just curious if you have anything against my sister")
+            call showtext("Alex", "Huh? No. Why do you ask?")
+            call showtext("Brittney", "Just wondering. She doesn't seem too fond of you.")
+            call showtext("Brittney", "Of course not sure how I feel either with you telling her that I'm not pretty and all")
+            call hidephone
             "Ouch..."
-            nvl clear
-            a_nvl "{font=fonts/LemonMilk.otf}{i}I'm sorry about that. Really.{/i}{/font}"
-            b_nvl "{font=fonts/LemonMilk.otf}{i}Well I don't really know you that well so I'll give you another chance{/i}{/font}"
-            b_nvl "{font=fonts/LemonMilk.otf}{i}Although I'll never forget that you said I'm ugly lol XD{/i}{/font}"
-            a_nvl "{font=fonts/LemonMilk.otf}{i}Hey, I never said you were ugly!{/i}{/font}"
-            b_nvl "{font=fonts/LemonMilk.otf}{i}You said I wasn't pretty. That's close enough.{/i}{/font}"
-            b_nvl "{font=fonts/LemonMilk.otf}{i}Talk to ya later dum-dum!{/i}{/font}"
-            a_nvl "{font=fonts/LemonMilk.otf}{i}Okay then...{/i}{/font}"
-            nvl clear
-            nvl hide dissolve
+            call showphone("Brittney")
+            call showtext("Alex", "I'm sorry about that. Really.")
+            call showtext("Brittney", "Well I don't really know you that well so I'll give you another chance")
+            call showtext("Brittney", "Although I'll never forget that you said I'm ugly lol XD")
+            call showtext("Alex", "Hey, I never said you were ugly!")
+            call showtext("Brittney", "You said I wasn't pretty. That's close enough.")
+            call showtext("Brittney", "Talk to ya later dum-dum!")
+            call showtext("Alex", "Okay, then...")
+            call hidephone
             "Yeah, in hindsight, maybe saying that to Christeena was a bad idea."
             "Honestly, I guess Christeena doesn't really seem too fond of me at the moment, anyway."
             "Although, it has only been a day; bad first impressions happen all the time. I'm sure I can find ways to redeem myself."
         elif C_Points == 0:
             if B_Points == 1:
-                b_nvl "{font=fonts/LemonMilk.otf}{i}You seem like a pretty cool dude you know that?{/i}{/font}"
-                a_nvl "{font=fonts/LemonMilk.otf}{i}Uh, thanks.{/i}{/font}"
-                b_nvl "{font=fonts/LemonMilk.otf}{i}Just being honest XD{/i}{/font}"
-                b_nvl "{font=fonts/LemonMilk.otf}{i}Anyway now that you've got my number we can talk whenever we want!{/i}{/font}"
-                b_nvl "{font=fonts/LemonMilk.otf}{i}Although I'm not much of a texter{/i}{/font}"
-                b_nvl "{font=fonts/LemonMilk.otf}{i}Or a phone-caller{/i}{/font}"
-                a_nvl "{font=fonts/LemonMilk.otf}{i}So why even give me your number?{/i}{/font}"
-                b_nvl "{font=fonts/LemonMilk.otf}{i}So you'll have a female contact that isn't your mom lol{/i}{/font}"
+                call showphone("Brittney")
+                call showtext("Brittney", "You seem like a pretty cool dude you know that?")
+                call showtext("Alex", "Uh, thanks")
+                call showtext("Brittney", "Just being hoenst XD")
+                call showtext("Brittney", "Anyway now that you've got my number we can talk whenever we want!")
+                call showtext("Brittney", "Although I'm not much of a texter")
+                call showtext("Brittney", "Or a phone-caller")
+                call showtext("Alex", "So why even give me your number?")
+                call showtext("Brittney", "So you'll have a female contact that isn't your mom lol")
                 if britnotpretty:
-                    b_nvl "{font=fonts/LemonMilk.otf}{i}Even if said contact supposedly isn't pretty{/i}{/font}"
+                    call showtext("Brittney", "Even if said contact supposedly isn't pretty")
+                    call hidephone
                     "Shit..."
-                    a_nvl "{font=fonts/LemonMilk.otf}{i}I'm sorry. I didn't mean that.{/i}{/font}"
-                    b_nvl "{font=fonts/LemonMilk.otf}{i}Oh, I'm sure you didn't. Doesn't mean I'll forget it X'D{/i}{/font}"
-                b_nvl "{font=fonts/LemonMilk.otf}{i}Anyway I'll stop buggin you. See ya whenever dum-dum!{/i}{/font}"
-                nvl clear
-                a_nvl "{font=fonts/LemonMilk.otf}{i}Okay...? See you.{/i}{/font}"
-                nvl clear
-                nvl hide dissolve
+                    call showphone("Brittney")
+                    call showtext("Alex", "I'm sorry. I didn't mean that.")
+                    call showtext("Brittney", "Oh, I'm sure you didn't. Doesn't mean I'll forget it X'D")
+                call showtext("Brittney", "Anyway I'll stop buggin you. See ya whenever dum-dum!")
+                call showtext("Alex", "Okay...? See you.")
+                call hidephone
                 "Man, this girl is weird."
                 "Still, she is pretty cool, and she doesn't seem to hate me, so I suppose there's that."
             else:
-                b_nvl "{font=fonts/LemonMilk.otf}{i}Just thought I'd get your number on the off-chance you wanted to talk or something{/i}{/font}"
-                a_nvl "{font=fonts/LemonMilk.otf}{i}Ah. Well, I'm unpacking my room right now, so I'm a bit busy with that.{/i}{/font}"
-                b_nvl "{font=fonts/LemonMilk.otf}{i}Cool beans. I'll let you get to that then.{/i}{/font}"
-                a_nvl "{font=fonts/LemonMilk.otf}{i}Sorry.{/i}{/font}"
-                b_nvl "{font=fonts/LemonMilk.otf}{i}Oh no problem at all I promise.{/i}{/font}"
-                a_nvl "{font=fonts/LemonMilk.otf}{i}Okay, then. See ya.{/i}{/font}"
-                b_nvl "{font=fonts/LemonMilk.otf}{i}See ya!{/i}{/font}"
-                nvl clear
-                nvl hide dissolve
+                call showphone("Brittney")
+                call showtext("Brittney", "Just thought I'd get your number on the off-chance you wanted to talk or something")
+                call showtext("Alex", "Ah. Well, I'm unpacking my room right now, so I'm a bit busy with that.")
+                call showtext("Brittney", "Cool beans. I'll let you get to that then.")
+                call showtext("Alex", "Sorry.")
+                call showtext("Brittney", "Oh no problem at all I promise.")
+                call showtext("Alex", "Okay, then. See ya.")
+                call showtext("Brittney", "See ya!")
+                call hidephone
                 "I suppose I could've talked to her for a bit, but something about Brittney is just... weird."
                 "I'm sure she's a nice girl, but her personality certainly isn't for everyone. Still, who knows? Maybe I'm judging a book by its cover."
         elif C_Points == 1:
-            c_nvl "{font=fonts/LemonMilk.otf}{i}Just wanted to say that I liked hanging out today. You seem pretty cool.{/i}{/font}"
-            a_nvl "{font=fonts/LemonMilk.otf}{i}Well, thanks! You seem pretty cool, too.{/i}{/font}"
-            c_nvl "{font=fonts/LemonMilk.otf}{i}Lol thanks.{/i}{/font}"
-            c_nvl "{font=fonts/LemonMilk.otf}{i}Anyway, that's all I really wanted to say.{/i}{/font}"
-            a_nvl "{font=fonts/LemonMilk.otf}{i}Alrighty, then. Talk to you later.{/i}{/font}"
-            c_nvl "{font=fonts/LemonMilk.otf}{i}Same.{/i}{/font}"
-            nvl clear
-            nvl hide dissolve
+            call showphone("Christeena")
+            call showtext("Christeena", "Just wanted to say that I liked hanging out today. You seem pretty cool.")
+            call showtext("Alex", "Well, thanks! You seem pretty cool, too.")
+            call showtext("Christeena", "Lol thanks")
+            call showtext("Christeena", "Anyway, that's all I really wanted to say.")
+            call showtext("Alex", "Alrighty, then. Talk to you later.")
+            call showtext("Christeena", "Same")
+            call hidephone
             "Huh. I kinda took Christeena to be the kind of introverted girl who wouldn't go out of her way to send a text to someone she hardly knew, but I guess I was wrong."
             "Although she was quick to end the conversation, if you even want to call it that. So I guess she's still a little shy."
         else:
-            c_nvl "{font=fonts/LemonMilk.otf}{i}Just wanted to say that I liked hanging out today. You're a really sweet guy.{/i}{/font}"
-            a_nvl "{font=fonts/LemonMilk.otf}{i}Well, thanks! I try my best.{/i}{/font}"
-            c_nvl "{font=fonts/LemonMilk.otf}{i}:){/i}{/font}"
-            c_nvl "{font=fonts/LemonMilk.otf}{i}Anyway, what's up?{/i}{/font}"
-            a_nvl "{font=fonts/LemonMilk.otf}{i}Unpacking.{/i}{/font}"
-            c_nvl "{font=fonts/LemonMilk.otf}{i}Oh, I'm not distracting you, am I?{/i}{/font}"
-            a_nvl "{font=fonts/LemonMilk.otf}{i}You're okay, I promise.{/i}{/font}"
-            c_nvl "{font=fonts/LemonMilk.otf}{i}You sure?{/i}{/font}"
-            a_nvl "{font=fonts/LemonMilk.otf}{i}Positive.{/i}{/font}"
-            c_nvl "{font=fonts/LemonMilk.otf}{i}Okay, then. :) still, I should let you work on that; we could always talk later if you wanted.{/i}{/font}"
-            a_nvl "{font=fonts/LemonMilk.otf}{i}That sounds great! I'll let you know when I'm done for the night.{/i}{/font}"
-            c_nvl "{font=fonts/LemonMilk.otf}{i}Okay :) talk to you later.{/i}{/font}"
-            a_nvl "{font=fonts/LemonMilk.otf}{i}Talk to you later!{/i}{/font}"
-            nvl clear
-            nvl hide dissolve
+            call showphone("Christeena")
+            call showtext("Christeena", "Just wanted to say that I liked hanging out today. You're a really sweet guy.")
+            call showtext("Alex", "Well, thanks! I try my best.")
+            call showtext("Christeena", ":)")
+            call showtext("Christeena", "Anyway, what's up?")
+            call showtext("Alex", "Unpacking")
+            call showtext("Christeena", "Oh, I'm not distracting you, am I?")
+            call showtext("Alex", "You're okay, I promise.")
+            call showtext("Christeena", "You sure?")
+            call showtext("Alex", "Positive")
+            call showtext("Christeena", "Okay, then. :) still, I should let you work on that; we could always talk later if you wanted.")
+            call showtext("Alex", "That sounds great! I'll let you know when I'm done for the night.")
+            call showtext("Christeena", "Okay :) talk to you later.")
+            call showtext("Alex", "Talk to you later!")
+            call hidephone
             "Huh. I kinda took Christeena to be the kind of introverted girl who wouldn't go out of her way to send a text to someone she hardly knew, but I guess I was wrong."
             "She really seems happy at the idea of us talking, even though we hardly know each other."
             "I don't know whether to be excited that she's not scared of me or worried that she's some sort of hyper-obsessed girl."
