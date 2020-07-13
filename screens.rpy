@@ -709,9 +709,13 @@ screen pause():
             vbox:
                 xalign 0.5 yalign 0.5
                 spacing 25
-                textbutton "{size=+10}{b}Save{/b}{/size}" action ShowMenu("save") xalign 0.5
+                if not replay:
+                    textbutton "{size=+10}{b}Save{/b}{/size}" action ShowMenu("save") xalign 0.5
                 textbutton "{size=+10}{b}Options{/b}{/size}" action ShowMenu("preferences") xalign 0.5
-                textbutton "{size=+10}{b}Replay{/b}{/size}" action ShowMenu("dayselectmenu") xalign 0.5
+                if not replay:
+                    textbutton "{size=+10}{b}Replay{/b}{/size}" action ShowMenu("dayselectmenu") xalign 0.5
+                else:
+                    textbutton "{size=+10}{b}End Replay{/b}{/size}" action EndReplay(confirm=True) xalign 0.5
                 textbutton "{size=+10}{b}Main Menu{/b}{/size}" action MainMenu() xalign 0.5
                 null height 10
                 textbutton "{size=+10}{b}Quit{/b}{/size}" action Quit() xalign 0.5

@@ -2694,6 +2694,5 @@ label pond_end:
     "I don't know if my family would've been able to handle that."
     $ daydesc = 0
     $ replay = False
-    $ renpy.end_replay()
     $ progress += 1
     jump progress

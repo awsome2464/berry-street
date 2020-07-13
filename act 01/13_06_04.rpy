@@ -1917,7 +1917,6 @@ label lunchatkellys:
         "Anyway, I better keep focused on this unpacking..."
         $ daydesc = 0
         $ replay = False
-        $ renpy.end_replay()
     label progressday02:
         $ progress += 1
         jump progress

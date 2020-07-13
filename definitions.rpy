@@ -18,7 +18,7 @@ define gr = Character("Greeter", what_prefix='"', what_suffix='"')
 define h = Character("Harry", callback=h_voice, image="harry", what_prefix='"', what_suffix='"')
 define hr = Character("Mr. Rodriguez", image="hector", what_prefix='"', what_suffix='"')
 define j = Character("Mrs. Waters", callback=j_voice, image="janice", what_prefix='"', what_suffix='"')
-define k = Character("[K_Name]", callback=k_voice, image="kelly", what_prefix='"', what_suffix='"')
+define k = Character("K_Name]", callback=k_voice, image="kelly", what_prefix='"', what_suffix='"')
 define l = Character("Mr. Waters", callback=l_voice, image="latrell", what_prefix='"', what_suffix='"')
 define mu = Character("[M_Name]", callback=m_voice, image="martha", what_prefix='"', what_suffix='"')
 define narrate = nvl_narrator
@@ -357,6 +357,7 @@ define audio.relaxation_in_the_country = "<loop 5.333>audio/music/Relaxation in 
 define audio.violet_wonder = "<loop 9.6>audio/music/Violet Wonder.ogg" # Christeena
 define audio.dinin_in = "<loop 9.6>audio/music/Dinin' In.ogg" # Kelly's Deli
 define audio.reflection = "audio/music/Reflection.ogg" # Sad
+define audio.from_the_heart = "audio/music/From the Heart.ogg" # Emotional Moments
 define audio.cabin_fever = "<loop 8>audio/music/Cabin Fever.ogg" # Cabin
 define audio.friendly_competition = "audio/music/Friendly Competition.ogg" # Heavy Workout
 define audio.outside_the_street = "audio/music/Outside the Street.ogg" # Downtown
@@ -2552,6 +2553,7 @@ init -1 python:
     mr.add("<loop 14.769>audio/music/New Life.ogg")
     mr.add("<loop 15>audio/music/The Mall.ogg")
     mr.add("<to 108 loop 4>audio/music/Getting Educated.ogg")
+    mr.add("audio/music/From the Heart.ogg")
 
 
 # CG Gallery

@@ -329,7 +329,7 @@ label britisready:
     c p2 hanging "NO!!"
     b p2 mad grin "Well, then how else am I supposed to believe you? After all, the only time you're NOT wearing those is when--"
     b small casual hanging "OH!"
-    b p1 straight sad blank "S-Sorry. I don't know how I forgot..."
+    b p1 straight sad blank "R-Right. Sorry."
     c_s p1 left blank "..."
     "Feeling like I'm missing an inside joke, as well as not being a fan of the awkwardness, I cleared my throat and changed the topic."
     a "Anyway, where are we shopping at?"
@@ -337,7 +337,7 @@ label britisready:
     show brit p1 straight casual opened_smile at tworight
     show chris p1 straight sad blank at twoleft
     b "There's a mall in the next town over. Not the biggest or most crowded of malls, but it's good for what it is."
-    b p2 grin sad "I'm sure there's gotta be something there we can get Donald for his birthday."
+    b p2 grin sad "I'm sure there's gotta be something there we can get Donald."
     c mad hanging "Not if we don't get going, we can't!"
     b left level huhu "Alright, alright! Calm your tits!"
     scene bg living_ut with dissolve
@@ -455,7 +455,7 @@ label britisready:
     b_o "Kneecap straight to the kisser!"
     show cg_01 c_up c_casual with dissolve
     c_o "I just want to clarify that it was completely and totally an accident!"
-    b_o "That doesn't change the fact you technically won as I let go of my grip to grab onto my bleeding mouth!"
+    b_o "That doesn't change the fact you technically won as I grabbed onto my bleeding mouth!"
     show cg_01 a_level with dissolve
     a "Oh, geez...!"
     show cg_01 c_sad with dissolve
@@ -477,7 +477,7 @@ label britisready:
     b_o "Well, you make it sound like I try to give myself scars or something!"
     show cg_01 b_grin b_casual with dissolve
     b_o "I'm just fascinated by them because there's a story behind every one. Sure, they're not always good stories, but it's a story nonetheless, and it's a part of your past."
-    b_o "Take my tooth, for example. If I had it fixed, what are the realistic odds that you'd ever learn about the time Christeena kneed me on a trampoline?"
+    b_o "Take my tooth, for example. If I had it fixed, what are the odds that you'd ever learn about the time Christeena kneed me on a trampoline?"
     b_o "The only reason we even casually mention that day is because of that tooth. And now it's become something we both look back and laugh at."
     show cg_01 a_level with dissolve
     a "I guess I see where you're coming from."
@@ -685,7 +685,7 @@ label sportsstore:
     "She then held up her fists."
     $ b_partial = False
     show brit p1 casual straight grin
-    b "Besides, it's clear he really enjoys spending time as just friends, as well, so it's not like he's just hanging out with me simply because he wants to date me."
+    b "Besides, it's clear he really enjoys spending time as just friends, as well, so it's not like he's just hanging out with me because he wants to date me."
     b blank "I've made it clear to him in many ways that it'll never happen, so if he refuses to accept it, that's on him, not me."
     a "So nothing he could do would ever make you consider being his girlfriend?"
     b p2 sad grin "If there were something, he would've tried it by now, and it would've worked."
@@ -1499,6 +1499,5 @@ label eatatfc:
     a "Ditto."
     $ daydesc = 0
     $ replay = False
-    $ renpy.end_replay()
     $ progress += 1
     jump progress

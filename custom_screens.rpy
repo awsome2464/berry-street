@@ -268,6 +268,7 @@ screen music_room():
             textbutton "19. Cabin Fever" action [ToggleVariable('persistent.current_track', 'Cabin Fever'), mr.Play("<loop 8>audio/music/Cabin Fever.ogg")]
             textbutton "20. Sunday Service" action [ToggleVariable('persistent.current_track', 'Sunday Service'), mr.Play("audio/music/Sunday Service.ogg")]
             textbutton "21. Generic 80s Song" action [ToggleVariable('persistent.current_track', 'Generic 80s Song'), mr.Play("audio/music/Generic 80s Song.ogg")]
+            textbutton "22. From the Heart" action [ToggleVariable('persistent.current_track', 'From the Heart'), mr.Play("audio/music/From the Heart.ogg")]
 
             null height 20
 

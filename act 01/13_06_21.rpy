@@ -812,7 +812,6 @@ label grayhair:
     "There's only one way this could've been better:{w} if we had eaten baked spaghetti instead of meatloaf."
     $ replay = False
     $ daydesc = 0
-    $ renpy.end_replay()
 label progressday04:
     $ progress += 1
     jump progress

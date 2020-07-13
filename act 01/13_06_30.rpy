@@ -759,7 +759,6 @@ label startnhie:
 label nhie_end:
     $ daydesc = 0
     $ replay = False
-    $ renpy.end_replay()
     $ progress += 1
 
     jump progress

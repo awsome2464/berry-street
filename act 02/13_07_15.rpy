@@ -874,7 +874,7 @@ label gamestart:
     pause 0.1
     a "So, I'm assuming batting isn't her specialty?"
     d sad grin "It's pretty hit-or-miss."
-    d_s level right "..."
+    d_s level right "...{w=0.5}"
     d "...{fast}no pun intended."
     c sad grin "Yeah, she's way better on the field than she is at the bat."
     c p2 smile casual "Though she still has her moments of contact."
@@ -897,13 +897,14 @@ label gamestart:
     with wipeleft
     window show dissolve
     pause 0.1
-    "The 5th inning ended."
+    "The 8th inning ended."
+    "The score was 10-12"
 
-    $groupchat = True
-    call showphone("Group")
-    call showtext("Brittney", "Yo, dum-dum!")
-    call showtext("Christeena", "Hey, Alex")
-    call showtext("Alex", "Yo. Wassup?")
-    call hidephone
-    $groupchat = False
-    "Back to the story."
+    # $groupchat = True
+    # call showphone("Group")
+    # call showtext("Brittney", "Yo, dum-dum!")
+    # call showtext("Christeena", "Hey, Alex")
+    # call showtext("Alex", "Yo. Wassup?")
+    # call hidephone
+    # $groupchat = False
+    # "Back to the story."

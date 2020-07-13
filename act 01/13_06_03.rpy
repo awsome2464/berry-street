@@ -361,7 +361,7 @@ label continuemoveconvo:
     pause 0.5
     $ current_track = "\"Oddball\""
     play music oddball
-    "We turned around to see a girl standing on the porch."
+    "We turned around to see a girl holding a dumbbell in the garage."
     hide don
     show brit at middle
     with easeoutright
@@ -371,7 +371,7 @@ label continuemoveconvo:
     "Honestly, not to be offensive, it was kinda like looking at a female head on a male body."
     "..."
     "I don't suppose there's a way to put that without sounding offensive."
-    "Regardless, she quickly jogged over to us."
+    "Regardless, she put the weight down and quickly jogged over to us."
     hide brit
     show don p1 left casual smile at tworight
     with dissolve
@@ -429,7 +429,7 @@ label continuemoveconvo:
     a "Yeah. Alex Sprouse."
     b opened_smile "Brittney Usher."
     "She then held her fist in front of her. Following suit, I bumped her fist with my own."
-    "As we shook hands, I couldn't help but notice that there was something off about her mouth..."
+    "I couldn't help but notice that there was something off about her mouth..."
     "Was that... a chipped tooth?"
     b p2 huhu right level "It's a pleasure to meet someone else capable of putting up with Donald Waters for longer than 5 seconds."
     show brit zorder 2:
@@ -464,9 +464,9 @@ label continuemoveconvo:
     show don p1 straight grin level at tworight
     with easeinright
     pause 0.1
-    a "Well, I don't mind hanging out with a friend of Donald's."
+    a "Well, it wouldn't hurt to get to know my neighbor a bit, right?"
     d left smile "See?"
-    b p1 mad opened_smile "Alright, alright, if you insist. I'll let my mom know real quick, and I'll be right over!"
+    b p1 mad opened_smile "Alright, alright, if you insist. I'll just let my parents know and be right over!"
     d straight sad grin "Sounds like a plan!"
     show brit grin at punchleft zorder 3
     pause 0.15
@@ -502,11 +502,8 @@ label continuemoveconvo:
     with dissolve
     show don p1 straight grin casual at close_d with dissolve
     pause 0.1
-    d "Brittney should be on her way by now."
-    a "Sounds good."
-    a_s "..."
-    a "Where are your parents?"
-    d level "On a cruise for their anniversary."
+    a "Huh. Awfully quiet in here."
+    d level "That's because my parents are on a cruise for their anniversary."
     a "They just let you stay at home by yourself??"
     d raised smile "Dude, I'm almost 17. I'm basically an adult."
     a "I know, but my parents would never allow me to be home alone when they're out of town."
@@ -974,7 +971,6 @@ label continuemoveconvo:
         hide ginger with dissolve
         $ daydesc = 0
         $ replay = False
-        $ renpy.end_replay()
 label progressday01:
         $ progress += 1
 

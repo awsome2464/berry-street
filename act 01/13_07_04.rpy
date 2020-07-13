@@ -1821,6 +1821,5 @@ label presenttime:
     hide firework with dissolve
     $ daydesc = 0
     $ replay = False
-    $ renpy.end_replay()
     $ progress += 1
     jump progress

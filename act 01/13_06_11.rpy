@@ -769,7 +769,6 @@ label shoppingwithharry:
         "With that, I went back into the house. Dinner should be ready soon, but before that, maybe I'll get a chance to lie down for a bit; it's been a busy day."
         $ daydesc = 0
         $ replay = False
-        $ renpy.end_replay()
     label progressday03:
         $ progress += 1
 

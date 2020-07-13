@@ -239,15 +239,88 @@
 
 #     return
 
-# # Meeting Percy
-
-# show chris casual at four1 zorder 2
-# show percy 1 at four2 zorder 3
-# show don a1 straight casual grin at four3 zorder 3
-# show brit at four4 zorder 2
-# with dissolve
-# with Pause(.1)
-# a "Oh! Hey, Percy!"
-# p 6 "Wassup, my man? How you doin'?"
-# a "Doin' good, I suppose."
-# p 2 "Good to hear, good to hear."
+label brit_sibling_talk:
+    python:
+        b_hair = 0
+        b_hat = 0
+        B_Name = "Brittney"
+        outfit_b = "a"
+        b_blink = True
+        current_track = "\"From the Heart\""
+    play music from_the_heart
+    play loop forest_nighttime
+    scene bg pond_n
+    show pond_foreground zorder 1
+    show brit p2 right grin sad at close_b zorder 2
+    a "Heh. It's a bit weird when you think about it."
+    b straight casual blank "What is?"
+    a "I always thought families having multiple kids was the most common thing in the world..."
+    a "...yet out of everyone in Berry Street, Harry and I are the only ones with a biological sibling."
+    b_s level right grin "...{w=0.5}{nw}"
+    b "...{fast}you're not wrong."
+    b sad left "...although that almost wasn't the case, you know."
+    a "What do you mean?"
+    b level "Heh. Well, uh..."
+    b straight p1 "When I was 4, my mom actually got pregnant again."
+    a "She did?"
+    b p2 casual opened_smile "Yep. She and my dad could hardly believe it."
+    b grin "Her having one child was rare enough, but another on top of that?"
+    b closed "It was like winning the lottery!"
+    a "They really wanted another kid, huh?"
+    b level left huhu "It was mostly my dad. He always dreamed of having a big family."
+    b raised straight grin p1 "My mom only wanted at least one child, so you could say that my presence was good enough for her."
+    b sad closed "But I definitely have some clear memories of that time in my family's history. The idea of my mommy giving me a little brother or sister made me happy."
+    "I suppose it's not difficult to figure out what happened next, but..."
+    a "...so, what happened?"
+    show brit p2 sad right
+    "She took a deep breath as her smile looked a lot more forced all of a sudden."
+    b "Well, she was pretty far along. I think 6 or 7 months."
+    b "Far enough along to where they had a name picked out for her: Elizabeth."
+    b "All seemed to be going well up until that point, from what I've been told."
+    b blank "But then, one day..."
+    b "...out of nowhere..."
+    b_s "..."
+    show brit closed_sad
+    "She closed her eyes and swallowed hard before finishing with:"
+    b straight "...Elizabeth's heart stopped beating."
+    a "Dang..."
+    $b_wince = True
+    b left "Yeah."
+    b "My mom was warned many times throughout her life that complications could happen during pregnancy, but that still didn't properly prepare her for that moment."
+    $b_wince = False
+    b straight "I was definitely as hurt as a kid my age could've been at finding out that my little sister wasn't coming, after all, but I obviously didn't really understand everything."
+    $b_wince = True
+    b right p1 "I still have some faint memories of my mom crying not too long afterwards."
+    b grin "I tried anything I could to make her feel happy. Like I said, I didn't fully understand the situation."
+    a "Of course."
+    $b_wince = False
+    b straight blank "I don't remember too many things about my dad at that time, but one thing for sure still sticks in my mind to this day."
+    b level left p2 "I was already tucked in bed for the night, but I could hear them through the wall; my room was right next to the dining room."
+    b "He told her that he still loves her."
+    b sad "And that he always would, no matter how many kids they had."
+    "I could see her eyes starting to water up a bit as she recalled the event."
+    a "Wow... I had no idea your family went through all that."
+    b level straight p1 grin "Heh. It doesn't exactly make for a good conversation starter."
+    a "Valid point."
+    show brit sad
+    "We both gave awkward chuckles before sighing."
+    b p2 sad "But you know what the craziest part was?"
+    a "What?"
+    b level "She was willing to try having another baby."
+    a "You're kidding."
+    $b_wink = True
+    b raised tongue "I didn't inherit my stubbornness from my old man, you know."
+    $b_wink = False
+    b casual grin p1 "But she really was insistent on having another kid."
+    b sad left "Giving me a younger sibling to bond with, giving my dad his wish of a bigger family..."
+    b p2 "That's something I'll never stop respecting about my mom: she loves her family and is willing to do anything for them."
+    a "Yeah, I've certainly noticed."
+    a "But still. Wanting to try getting pregnant again right after she--"
+    b casual straight blank "Oh, it wasn't right away."
+    b "She was still hit pretty hard by the loss of Elizabeth."
+    b sad "We all were."
+    b grin "But she swore she'd try again when she was ready."
+    b right "...of course, by the time she was ready..."
+    b "...my dad... you know..."
+    a "...yeah."
+    b_s blank "..."
