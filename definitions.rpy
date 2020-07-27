@@ -18,7 +18,7 @@ define gr = Character("Greeter", what_prefix='"', what_suffix='"')
 define h = Character("Harry", callback=h_voice, image="harry", what_prefix='"', what_suffix='"')
 define hr = Character("Mr. Rodriguez", image="hector", what_prefix='"', what_suffix='"')
 define j = Character("Mrs. Waters", callback=j_voice, image="janice", what_prefix='"', what_suffix='"')
-define k = Character("K_Name]", callback=k_voice, image="kelly", what_prefix='"', what_suffix='"')
+define k = Character("[K_Name]", callback=k_voice, image="kelly", what_prefix='"', what_suffix='"')
 define l = Character("Mr. Waters", callback=l_voice, image="latrell", what_prefix='"', what_suffix='"')
 define mu = Character("[M_Name]", callback=m_voice, image="martha", what_prefix='"', what_suffix='"')
 define narrate = nvl_narrator
@@ -99,10 +99,10 @@ image bg house_n:
     "BG/Nanner House.png"
     size(1920, 1080)
 image bg pond:
-    zoom 0.75
+    zoom 0.76
     "BG/Pond.png"
 image bg pond_n:
-    zoom 0.75
+    zoom 0.76
     "BG/Pond Night.png"
 image bg cabin_e:
     "BG/Cabin Exterior.png"
