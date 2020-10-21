@@ -256,7 +256,7 @@ screen music_room():
             textbutton "07. Ivories and Ebony" action [ToggleVariable('persistent.current_track', 'Ivories and Ebony'), mr.Play("<loop 3>audio/music/Ivories and Ebony.ogg")]
             textbutton "08. Different Yet Equal" action [ToggleVariable('persistent.current_track', "Different Yet Equal"), mr.Play("audio/music/Different Yet Equal.ogg")]
             textbutton "09. Home Life" action [ToggleVariable('persistent.current_track', "Home Life"), mr.Play("<to 112 loop 5.32>audio/music/Home Life.ogg")]
-            textbutton "10. Home of One" action [ToggleVariable('persistent.current_track', "Home of One"),, mr.Play("audio/music/Home of One.ogg")]
+            textbutton "10. Home of One" action [ToggleVariable('persistent.current_track', "Home of One"), mr.Play("audio/music/Home of One.ogg")]
             textbutton "11. Relaxation in the Country" action [ToggleVariable('persistent.current_track', 'Relaxation in the Country'), mr.Play("<loop 5.333>audio/music/Relaxation in the Country.ogg")]
             textbutton "12. Reflection" action [ToggleVariable('persistent.current_track', 'Reflection'), mr.Play("audio/music/Reflection.ogg")]
             textbutton "13. Chillaxin\'" action [ToggleVariable('persistent.current_track', 'Chillaxin\''), mr.Play("<loop 18>audio/music/Chillaxin.ogg")]
