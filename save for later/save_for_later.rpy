@@ -468,4 +468,41 @@ label brit_sibling_talk:
     "Brittney truly is something else."
     "I gotta admit, seeing her not be a crazy pervert and instead be a calm and mature young woman really makes me even more fascinated with her."
     "I just hope she actually thinks about what I said to her."
+    return
+
+
+label brit_shopping:
+    python:
+        b_hair = 0
+        b_hat = 0
+        B_Name = "Brittney"
+        outfit_b = "b"
+        b_blink = True
+        current_track = "None"
+    window hide
+    stop music
+    scene bg fade
+    pause 1
+    $current_track = "\"Friendly Competition\""
+    play music friendly_competition
+    scene bg basketball_park with dissolve
+    pause 0.5
+    show brit p1 straight mad closed_smile:
+        zoom 1.0
+        xalign 0.45 yalign 0.2
+        parallel:
+            linear 0.4 xalign 0.55
+            linear 0.4 xalign 0.45
+        parallel:
+            linear 0.2 yalign 0.25
+            linear 0.2 yalign 0.2
+            repeat 2
+        repeat
+    with dissolve
+    pause 0.1
+    window show dissolve
+    pause 0.1
+    b "C'mon, Sprouse! Let's see what ya got!"
+    "I dribbled the ball in front of me, looking her dead in the eye."
+    "The last thing I need to do is give any indication of weakness or fault."
 

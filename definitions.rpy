@@ -76,6 +76,10 @@ image bg living_w:
 image bg basketball_w:
     "BG/Waters Basketball Hoop.png"
     size(1920, 1080)
+image bg living_e = "#b2b2b2"
+image bg basketball_park:
+    "BG/Basketball Court.jpg"
+    size(1920, 1080)
 image bg living_s_m:
     "BG/Living Room Moving.png"
     size(1920, 1080)
@@ -373,6 +377,7 @@ define audio.chaotic_evil = "audio/music/Chaotic Evil.ogg" # Eleanor
 define audio.chillaxin = "<loop 18>audio/music/Chillaxin.ogg" # Slow, happy moments
 define audio.judgement = "audio/se/judgement.mp3" # ???
 define audio.credits = "<from 14.769>audio/music/New Life.ogg"
+define audio.home_of_one = "audio/music/Home of One.ogg"
 
 
 #################
@@ -2543,6 +2548,7 @@ init -1 python:
     mr.add("<loop 18>audio/music/Chillaxin.ogg")
     mr.add("audio/music/Different Yet Equal.ogg")
     mr.add("<to 112 loop 5.32>audio/music/Home Life.ogg")
+    mr.add("audio/music/Home of One.ogg")
     mr.add("audio/music/The Pond.ogg")
     mr.add("audio/music/Outside the Street.ogg")
     mr.add("<loop 9.6>audio/music/Dinin' In.ogg")
