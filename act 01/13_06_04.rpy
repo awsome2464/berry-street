@@ -40,14 +40,14 @@ label tour:
     "I yawned again and answered the phone."
     stop loop
     a "Hello?"
-    d_o "{font=fonts/LemonMilk.otf}{i}Morning, Sunshine!{/i}{/font}"
+    d "{font=fonts/LemonMilk.otf}{i}Morning, Sunshine!{/i}{/font}"
     a "Donald, why are you calling me this early?"
-    d_o "{font=fonts/LemonMilk.otf}{i}Well, we gotta give you a tour of the town sooner or later, so we decided sooner!{/i}{/font}"
+    d "{font=fonts/LemonMilk.otf}{i}Well, we gotta give you a tour of the town sooner or later, so we decided sooner!{/i}{/font}"
     a "'We?'"
-    d_o "{font=fonts/LemonMilk.otf}{i}Just get ready and head over to Brittney's house; I'll meet you guys there soon enough.{/i}{/font}"
+    d "{font=fonts/LemonMilk.otf}{i}Just get ready and head over to Brittney's house; I'll meet you guys there soon enough.{/i}{/font}"
     "I gave another yawn and rubbed my eyes."
     a "Alright, whatever you say, man."
-    d_o "{font=fonts/LemonMilk.otf}{i}Good deal! See ya soon!{/i}{/font}"
+    d "{font=fonts/LemonMilk.otf}{i}Good deal! See ya soon!{/i}{/font}"
     a "See ya soon."
     "Donald then hung up, and I put my phone away."
     "Well, I guess it's time for me to see how well the shower works."
@@ -87,13 +87,13 @@ label tour:
     c_s dot "..."
     "She then turned towards the interior of the house."
     c up hanging raised "Hey, Brittney!"
-    b_o "Yeah?"
+    b "Yeah?"
     c "Some guy's here to see you!"
-    b_o "Oh! Is he tall, blonde, and wearing glasses?"
+    b "Oh! Is he tall, blonde, and wearing glasses?"
     show chris straight casual blank
     "She looked back at me, ran her eyes up and down, and turned back to the house."
     c up hanging raised "Yes!"
-    b_o "Cool! Tell him I'll be down in a minute!"
+    b "Cool! Tell him I'll be down in a minute!"
     show chris straight casual blank
     "The girl turned back to me."
     c "She said-"
@@ -252,13 +252,13 @@ label waitingforbrit:
     d casual smile "If you and Al are ready, sure!"
     d "We've got a lot to show our new neighbor."
     c casual dot "Wait, 'you and Al'?"
-    d grin "Yeah, Brittney and I were going to-{nw}"
+    d grin "Yeah, Brittney and I were going to--"
     b p2 casual left grin "Do you wanna come with us, Christeena?"
     c p2 smile "Sure!"
     c "It beats being home alone."
     a "Where are your parents?"
     c p1 grin "Work."
-    c "Dad works at an auto-repair garage, and Mom works at a local deli."
+    #c "Dad works at an auto-repair garage, and Mom works at a local deli."
     a "I swear, parents here are never around."
     $c_blink = False
     c closed_happy sad smile "Yeah, it is awfully convenient, isn't it?"
@@ -401,7 +401,7 @@ label tourberrystreet:
     with dissolve
     pause 0.1
     c "I think it was something about Mr. Rodriguez knowing a guy who knew a guy, or something similar."
-    c p2 grin "He works with my dad. Very nice guy."
+    c p2 grin "He works with my dad at the repair shop. Very nice guy."
     hide chris
     show brit p1 raised straight opened_smile at middle
     with dissolve
@@ -448,13 +448,13 @@ label tourberrystreet:
     pause 0.1
     b "Hehehe."
     $b_blink = True
-    $ b_partial = True
+    $b_eyelids = "partial"
     b straight huhu raised "Hehehe.{fast} Let's just say they celebrated their immigration the right way."
     hide brit
     show don p1 raised straight grin at middle
     with dissolve
     pause .1
-    $ b_partial = False
+    $b_eyelids = "blink"
     d "Alright, then; moving on."
     hide don with dissolve
     pause 0.1
@@ -500,7 +500,7 @@ label tourberrystreet:
     $c_blink = True
     $d_blink = True
     show brit p1 raised straight grin at middle
-    b "Oh, you think that now, but if you ever find yourself face-to-face with her, you'll be crapping your pants."
+    b "Oh, you think that now, but if you ever find yourself face-to-face with her, you'll be shitting your pants."
     a "Huh?"
     hide brit
     show don p1 blank level straight at middle
@@ -535,7 +535,8 @@ label tourberrystreet:
     b "The Reagans are a cover band."
     b grin raised "They'll basically perform any song they've practiced enough times, but they mostly prefer songs from the 80s, hence the name."
     b left level "There's Percy, the lead singer, Nicole, the backup singer, James, the keyboardist, Karrie, the drummer, and Mike, the guitarist."
-    b straight raised "Rock, pop, rap, you name it. If it's a song that exists, they'll perform it."
+    b straight "Though it's only Percy and Nicole that actually live here; the rest are scattered across town."
+    b raised "Rock, pop, rap, you name it. If it's a song that exists, they'll perform it."
     a "They any good?"
     hide brit
     show chris p2 straight grin casual at middle
@@ -732,7 +733,7 @@ label tourpond:
     "Probably."
     scene bg fade with dissolve
     pause 0.1
-    d_o "There it is, in all its glory!"
+    d "There it is, in all its glory!"
     scene bg cabin_e with dissolve
     pause .1
     "Donald then gestured towards what appeared to be some sort of cabin."
@@ -992,7 +993,7 @@ label tourschool:
     pause 0.1
     b "That's very true."
     b p2 sad left "Though, it's a shame we'll only be in school together for a year."
-    $ b_partial = True
+    $b_eyelids = "partial"
     b straight opened_smile raised "Guess we'll just have to make the most of it!"
     show brit at tworight
     show chris p1 straight mad blank at twoleft
@@ -1004,7 +1005,7 @@ label tourschool:
     show don p1 straight casual grin at middle
     with dissolve
     pause 0.1
-    $ b_partial = False
+    $b_eyelids = "blink"
     d "So, now you know how to get to the school and what the general feel of the place is."
     d "Hopefully you'll be able to take care of things from there."
     a "Yeah, hopefully..."
@@ -1129,8 +1130,7 @@ label lunchatkellys:
     mu raised "What, did you decide to come in to once again try and get a discount?"
     b p2 mad opened_smile "Nah; we wanted to show Alex how good the food was!"
     show martha casual
-    hide brit with easeoutleft
-    pause 0.1
+    hide brit with dissolve
     "The waitress looked at me and smiled."
     mu sad "So you're the mysterious new neighbor I've been hearing about?"
     a_s "..."
@@ -1148,9 +1148,9 @@ label lunchatkellys:
     mu level blank "For the thousandth time, the employee discount only applies when the employee, themselves, is the one paying for the meal."
     b straight raised opened_smile "Then can--"
     mu "No."
-    $ b_partial = True
+    $b_eyelids = "partial"
     b straight level blank "Darn."
-    $ b_partial = False
+    $b_eyelids = "blink"
     show brit p1 straight raised grin
     b "Well, I guess that means it's time to order."
     $ m_partial = False
@@ -1182,8 +1182,8 @@ label lunchatkellys:
     show martha zorder 1:
         ease 0.5 xalign 1.4
     show brit p1 small level derp zorder 1:
-        zoom 0.75
-        xalign -0.4 yalign 0.5
+        zoom 0.8
+        xalign -0.65 yalign 0.5
         ease 0.5 xalign 0.25
     pause .6
     b "And here I thought you loved me."
@@ -1334,7 +1334,7 @@ label lunchatkellys:
             ease 0.5 twoleft
         show don p1 closed sad smile zorder 3 at close_right_d with dissolve
         pause .1
-        d "Yeah, clearly the sexiness gene runs in the females of the Usher family."
+        d "Yeah, clearly the sexy gene runs in the females of the Usher family."
         $d_blink = True
         show don:
             linear 0.1 yalign 0.3
@@ -1342,7 +1342,7 @@ label lunchatkellys:
         d small wide "OUCH!"
         d straight mad "That was my shin!"
         b p1 small sad hanging "Oh, sorry!"
-        $ b_partial = True
+        $b_eyelids = "partial"
         b p2 straight blank level "I was actually trying to go for your kneecap."
         b raised "Though if you call me or my mom sexy again, I'll be sure to be more accurate."
         d blank "Alright, alright. Sorry."
@@ -1360,7 +1360,7 @@ label lunchatkellys:
         show brit at tworight
         with easeinleft
         pause 0.1
-        $ b_partial = False
+        $b_eyelids = "blink"
         show brit p2 straight casual blank
         a "So, is it alright if I ask you girls a personal question?"
         b p1 raised grin "Hit me."
@@ -1397,13 +1397,13 @@ label lunchatkellys:
         c p2 level blank "Honestly, I suppose living with her could be fun..."
         c sad "...but I don't know if I can trust her."
         c p1 level blank "I mean, if I did live with her, would she really love me and treat me like her daughter..."
-        c left "...or would I be more of a trophy in this silly contest of 'who's the better parent?' that she's created in her head?"
+        c left "...or would I be more of a trophy in this silly contest of 'who's the better parent?' that she made up?"
         a "So that's why you're still here?"
         c p2 straight casual "Partially."
         c sad "My dad has always been there for me when she wasn't. It would break his heart to have the only original family he has left leave him."
         c p1 grin "Plus, Martha has been a better mother to me than my own mother ever was, and Brittney's the closest I have to a sister and best friend."
         $c_blink = False
-        c closed_happy smile "And, I'm not gonna lie, I would miss Donald's silliness."
+        c closed_happy smile "And, I'm not gonna lie, I would miss Donald's shenanigans."
         a "So, the pros of staying outweigh the cons?"
         $c_blink = True
         c p2 straight casual grin "Yeah, you can say that."
@@ -1470,7 +1470,7 @@ label lunchatkellys:
         pause 0.1
         d "One thing I must say I dislike about this place is the crappy restroom."
         d "It's just so old and broken down that I'm scared the toilet will overflow every time I flush."
-        $ b_partial = True
+        $b_eyelids = "partial"
         show brit p2 straight blank level at twoleft with easeinleft
         pause 0.1
         b "Thanks for that, Mr. Waters."
@@ -1478,7 +1478,7 @@ label lunchatkellys:
         hide don
         with dissolve
         pause .1
-        $ b_partial = False
+        $b_eyelids = "blink"
         "It was at that moment when Mrs. Truman arrived carrying a tray of food and drinks."
         show martha p1 straight raised grin at m_threeright with dissolve
         pause 0.1
@@ -1579,11 +1579,11 @@ label lunchatkellys:
         pause 0.1
         d "Indeed. Nice to know I didn't waste your money, after all!"
         b casual "Same here. Because if you did, indeed, waste my hard-earned money..."
-        $ b_partial = True
+        $b_eyelids = "partial"
         b mad closed_smile "...I would've slit your throat while you sleep tonight."
         d level straight "Love ya too, Brit."
-        $ b_partial = False
         $b_blink = False
+        $b_eyelids = "blink"
         show brit p2 closed sad grin at twoleft
         b "Ehehe!"
         "These two certainly are quite an odd pair."
@@ -1744,7 +1744,7 @@ label lunchatkellys:
             ease 0.5 tworight
         hide don with dissolve
         pause .1
-        b p1 sad "Just let me know when you're on your way home, okay, Christeena?"
+        b p1 sad "Just let me know when you're on your way home, okay, Chris?"
         $c_blink = True
         c p2 straight casual "Will do."
         $ current_track = "None"

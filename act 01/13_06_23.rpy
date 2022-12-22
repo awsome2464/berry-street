@@ -3,7 +3,7 @@ label churchends:
         B_Name = "Brittney"
         C_Name = "Christeena"
         E_Name = "Eleanor"
-        b_hair = 1
+        b_hair = 2
         outfit_b = "c"
         outfit_c = "c"
         outfit_d = "c"
@@ -60,7 +60,7 @@ label churchends:
     a "For once."
     $d_blink = True
     d raised straight grin "You two, I swear..."
-    h sad small blank "Shoot!"
+    h sad small blank "Aw, crap!"
     show don straight casual blank
     a "What?"
     h "I left my Bible in there! I'll be right back!"
@@ -74,7 +74,7 @@ label churchends:
     a "Why aren't the girls here? Haven't you ever invited them?"
     d level blank right "More times than I can count."
     d straight raised "Christeena's an atheist, so getting her to go is as difficult as you'd think."
-    a "She's not one of those atheists who constantly make fun of religion, is she?"
+    a "She's not one of those atheists who constantly hates on religion, is she?"
     d level grin "Would I be her friend if she was?"
     a "Yes."
     d_s blank "..."
@@ -84,16 +84,16 @@ label churchends:
     d straight casual grin "...but for the most part, we get along just fine, as I'm sure you've noticed."
     a "So what about Brittney? Is she an atheist, too, or...?"
     d blank level "Nah, she's..."
-    d right "Ah, what's the word... It also starts with an 'A'... You know, where someone isn't really sure if God is real or not...?"
+    d right "Ah, what's the word...{w=0.2} It also starts with an 'A'...{w=0.2} You know, when someone isn't sure if God is real or not...?"
     a "Agnostic?"
-    d straight casual smile "Agnostic! Yes, that's it!"
-    d blank "She doesn't seem opposed to coming to church, and she does seem to be curious about my beliefs."
+    d straight casual smile "Agnostic! Yeah, that's it!"
+    d blank "She doesn't seem opposed to coming to church, and she does occasionally ask me about my beliefs."
     a "But?"
     d level right "But she likes to work out on Sunday mornings, as she claims they work the best for her."
     a "Kinda sounds like an excuse."
     d straight casual grin "Well, either way, she's not against the idea, so there's always hope."
     a "I guess so."
-    h_o "*huff* *huff*"
+    h "{i}*huff* *huff*{/i}"
     show harry p1 straight raised closed_smile at twoleft
     show don at tworight
     with easeinleft
@@ -136,31 +136,31 @@ label churchends:
     $ current_track = "\"Relaxation in the Country\""
     play music relaxation_in_the_country
     "By some miracle, I was able to remember the way home, though that didn't mean I didn't second-guess myself at times."
-    "Harry got out of the van and went towards the house.{nw}"
+    "Harry got out of the van and went towards the house."
     play loop phone_vibrate_call
-    "Harry got out of the van and went towards the house. {fast}I was going to do the same, but my phone started ringing."
+    "I was going to do the same, but my phone started ringing."
     "I looked at the screen and saw that it was Christeena."
     stop loop
     a "Hello?"
-    c_o "{font=fonts/LemonMilk.otf}{i}Hey, are you doing anything today?{/i}{/font}"
+    c "{font=fonts/LemonMilk.otf}{i}Hey, are you doing anything today?{/i}{/font}"
     a "Not that I'm aware of. Why?"
-    c_o "{font=fonts/LemonMilk.otf}{i}Well, you know how Donald's birthday is coming up?{/i}{/font}"
+    c "{font=fonts/LemonMilk.otf}{i}Well, you know how Donald's birthday is coming up?{/i}{/font}"
     a "He'd never forgive me if I forgot."
-    c_o "{font=fonts/LemonMilk.otf}{i}Hahaha! Well, Brittney and I were going to go out shopping for gifts for him today; you wanna come with?{/i}{/font}"
+    c "{font=fonts/LemonMilk.otf}{i}Hahaha! Well, Brittney and I were going to go out shopping for gifts for him today; you wanna come with?{/i}{/font}"
     a "You? Inviting a boy to go shopping with you?"
-    c_o "{font=fonts/LemonMilk.otf}{i}H-Hey, now! Don't get any weird thoughts!{/i}{/font}"
+    c "{font=fonts/LemonMilk.otf}{i}H-Hey, now! Don't get any weird thoughts!{/i}{/font}"
     a "Too late."
-    c_o "{font=fonts/LemonMilk.otf}{i}You're an asshole.{/i}{/font}"
+    c "{font=fonts/LemonMilk.otf}{i}You're an asshole.{/i}{/font}"
     a "And the sun is a star."
     "I could hear a snort of contained laughter escape her."
-    c_o "{font=fonts/LemonMilk.otf}{i}Anyway, you wanna come with us or not? Doesn't matter either way.{/i}{/font}"
+    c "{font=fonts/LemonMilk.otf}{i}Anyway, you wanna come with us or not? Doesn't matter either way.{/i}{/font}"
     "Well, I'll admit that with all that's been happening, I had forgotten that Donald's birthday was coming up. I mean, I remembered the day, but I didn't realize it was that close."
     "Of course, with as often as he loves to brag about sharing a birthday with the entire country, how could ANYONE forget the day?"
     "Still, with the 4th coming quickly, and me realistically forgetting to go gift shopping after today..."
     a "Yeah, I'll go with you guys. When are you leaving?"
-    c_o "{font=fonts/LemonMilk.otf}{i}Whenever Brittney's ready, which could be anywhere between 10 minutes and 10 hours.{/i}{/font}"
+    c "{font=fonts/LemonMilk.otf}{i}Whenever Brittney's ready, which could be anywhere between 10 minutes and 10 hours.{/i}{/font}"
     a "Hahaha! Alright, I'll be there ASAP; just gotta let my parents know."
-    c_o "{font=fonts/LemonMilk.otf}{i}Alrighty! See ya in a bit!{/i}{/font}"
+    c "{font=fonts/LemonMilk.otf}{i}Alrighty! See ya in a bit!{/i}{/font}"
     a "See ya!"
     "We hung up, and I got out of the van."
     "I realized that this was actually the first time that someone other than Donald had asked me to hang out with them."
@@ -231,10 +231,10 @@ label whydontyou:
     c level blank "Eh..."
     c p1 left "No offense, but I've never really bought any of that stuff. Doesn't really make a lot of sense to me."
     a "I guess that's fair enough. It doesn't really make complete sense to us, either."
-    c straight raised "So then why bother believing it?"
+    c straight raised "So then why bother listening to it?"
     a "I..."
     "I remembered what Donald said earlier about conversations he's had with her."
-    a "You know what? I don't feel like having this debate right now. Maybe another time."
+    a "You know what? I'll tell you when we've got more time."
     c p2 left level grin "Alright, then."
     jump britisready
 
@@ -254,7 +254,7 @@ label britisready:
     show chris at close_to_right
     pause 0.6
     c scream "BRITTNEY, HURRY UP!!"
-    b_o "I'm coming, I'm coming!"
+    b "I'm coming, I'm coming!"
     "As she said this, I could hear footsteps moving towards the top of the stairs."
     c p1 left blank "About damn time..."
     a "Does it really take that long to put on a T-shirt and--"
@@ -279,7 +279,7 @@ label britisready:
     with easeinleft
     pause 0.1
     c "Thanks for keeping us waiting, Brit!"
-    b blank "Huh? 'Us'?"
+    b blank "'Us'?"
     "That's when Brittney actually looked and noticed my presence."
     b hanging "Oh! Alex! What are you doing here?"
     c casual grin "I invited him to go shopping with us."
@@ -294,8 +294,8 @@ label britisready:
     a "H-Huh?"
     b casual "There you are!"
     b p2 raised grin "Oh, and I might not have much to see down there, but that doesn't mean you have my consent to stare at my chest."
-    a "Huh? I-I wasn't staring at your chest!"
-    c p2 level blank "You kinda were."
+    a "Huh? I-I wasn't--"
+    c p2 level blank "Yes, you were."
     a "Uh..."
     "Well, this awkward situation just got worse."
     a "I was just in shock, I guess."
@@ -303,10 +303,10 @@ label britisready:
     a "I've just never seen you look... you know..."
     b p1 opened_smile "Like a girl?"
     a "Y-Yeah, I guess."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b p2 straight raised huhu "Well, Alexander, believe it or not, I do, in fact, have a vagina, which means if I wanna look like a girl, I'm free to."
     c mad p1 "That could've been worded so much better."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight raised grin at tworight
     b "'Differently'? Yes. 'Better'? No."
     "Well, she may look like a different person, but that's clearly still the brain of Brittney Usher inside that head."
@@ -314,7 +314,7 @@ label britisready:
     c p2 "Yeah, FINALLY!"
     b mad blank "Not my fault! It was this damn earring; it wouldn't stay in."
     c hanging "Seriously?? Your hair is covering your ears! We can't even see your earrings!!"
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b left raised huhu "And we can't see your panties, but I'm willing to bet you're wearing those pink polka-dotted ones that make you feel cute."
     $ c_blush = True
     c_s small sad "...!!!"
@@ -322,16 +322,16 @@ label britisready:
     c p1 straight mad blank "W-Well, I'll have you know..."
     "She then glared at me with an awkward look before turning back to her sister."
     c "...that I'm NOT wearing those ones."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight raised grin at tworight
     b "Oh, yeah?"
-    b opened_smile "Prove it."
+    extend opened_smile " Prove it."
     c p2 hanging "NO!!"
     b p2 mad grin "Well, then how else am I supposed to believe you? After all, the only time you're NOT wearing those is when--"
     b small casual hanging "OH!"
     b p1 straight sad blank "R-Right. Sorry."
     c_s p1 left blank "..."
-    "Feeling like I'm missing an inside joke, as well as not being a fan of the awkwardness, I cleared my throat and changed the topic."
+    "Feeling like I'm missing something, as well as not being a fan of the awkwardness, I cleared my throat and changed the topic."
     a "Anyway, where are we shopping at?"
     $ c_blush = False
     show brit p1 straight casual opened_smile at tworight
@@ -350,41 +350,41 @@ label britisready:
     show cg_01 a_right a_level a_blank b_raised b_right b_grin c_left c_casual c_blank with dissolve
     pause 0.5
     $persistent.cg_1 = True
-    b_o "So, what are you guys thinking we should buy?"
+    b "So, what are you guys thinking we should buy?"
     show cg_01 c_level c_right with dissolve
-    c_o "I guess that's a good thing to think about, isn't it?"
-    b_o "Alex, you've known him the longest; what do you think?"
-    a "Hey, you two have known the more recent Donald; I don't know if his opinions on certain things have changed."
+    c "I guess that's a good thing to think about, isn't it?"
+    b "Alex, you've known him the longest; what do you think?"
+    a "Hey, you two know the more recent Donald; I don't know if his opinions on certain things have changed."
     show cg_01 b_casual with dissolve
-    b_o "Well, name some of them, and we'll tell you."
+    b "Well, name some of them, and we'll tell you."
     show cg_01 a_raised with dissolve
     a "I mean, I know he still loves classic video games, but I don't know if he's still obsessed with them as he used to be."
     show cg_01 c_up c_casual c_grin with dissolve
-    c_o "I wouldn't call him 'obsessed', but a video game in general might be a good idea."
-    b_o "Well, there's a video game store in the mall, so we can check there. Anything else?"
+    c "I wouldn't call him 'obsessed', but a video game in general might be a good idea."
+    b "Well, there's a video game store in the mall, so we can check there. Anything else?"
     a "Basketball's another one I know he still kinda likes, but he doesn't seem to play it as much as he used to."
     show cg_01 b_level with dissolve
     if B_Basketball:
-        b_o "He still plays from time to time, like that day when you first moved here."
+        b "He still plays from time to time, like that day when you first moved here."
     else:
-        b_o "He still plays from time to time, like he offered when you first moved here."
-    b_o "I guess it wouldn't hurt to check some of the sports stores to see if anything catches our eyes."
+        b "He still plays from time to time, like he offered when you first moved here."
+    b "I guess it wouldn't hurt to check some of the sports stores to see if anything catches our eyes."
     show cg_01 c_left c_sad c_blank with dissolve
-    c_o "I mean, I hate to be THAT person, but we could always just get him a gift card."
+    c "I mean, I hate to be THAT person, but we could always just get him a gift card."
     show cg_01 b_mad b_blank with dissolve
-    b_o "Only as a last resort; he deserves something better and more personal than that."
+    b "Only as a last resort; he deserves something better and more personal than that."
     show cg_01 c_right c_mad with dissolve
-    c_o "It was just a suggestion!"
+    c "It was just a suggestion!"
     show cg_01 a_casual with dissolve
     a "Well, maybe something we wouldn't think of will show up and we'll get that. You never know."
     show cg_01 b_casual b_grin with dissolve
-    b_o "Very true!"
+    b "Very true!"
     "The conversation died down after that, and Brittney turned on the radio."
     $ current_track = "\"Generic 80s Song\""
     play music generic_80s_song
     pause 1
     show cg_01 b_mad b_opened_smile with dissolve
-    b_o "Aw, hell yeah!"
+    b "Aw, hell yeah!"
     show cg_01 c_right c_casual with dissolve
     "It was some song from the 80s (or somewhere around there) that I recognized, but didn't really know the lyrics to."
     "Brittney, on the other hand, was a different story."
@@ -393,8 +393,8 @@ label britisready:
     show cg_01 a_left a_raised a_grin with dissolve
     a "I'm gonna go on a limb and say that she enjoys this song?"
     show cg_01 c_up c_level c_grin with dissolve
-    c_o "It's that obvious?"
-    b_o "Hush! It's getting to the good part!"
+    c "It's that obvious?"
+    b "Hush! It's getting to the good part!"
     "As she continued to jam, I just leaned back and chuckled while Christeena rolled her eyes with a small grin."
     $ current_track = "None"
     stop music fadeout(3)
@@ -404,95 +404,96 @@ label britisready:
     show cg_01 a_right with dissolve
     a "You truly are something else."
     show cg_01 b_grin b_raised with dissolve
-    b_o "How so?"
-    a "For the few weeks that I've known you, you've come off as this tomboy who didn't do anything girly, and here you are today acting like a totally stereotypical teenage girl."
-    b_o "Well, could it be because of the fact that I AM a teenage girl?"
+    b "How so?"
+    a "As long as I've known you, you've been this tomboy, and here you are today acting like a teenage girl."
+    b "Well, could it be because of the fact that I AM a teenage girl?"
     a "Well, you certainly haven't acted like it around me until today."
     show cg_01 b_casual with dissolve
-    b_o "What can I say? I like to spice things up from time to time."
-    b_o "Some days I wanna dress in a simple T-shirt and blue jeans and feel casual, other days I wanna wear a sundress and feel pretty."
+    b "What can I say? I like to spice things up from time to time."
+    b "Some days I wanna dress in a simple T-shirt and blue jeans and feel casual, other days I wanna wear a sundress and earrings and feel pretty."
     if britnotpretty:
         show cg_01 b_mad with dissolve
-        b_o "I mean, I know YOU don't think I'm pretty, but ya know."
+        b "I mean, I know YOU don't think I'm pretty, but ya know."
         "I rolled my eyes in annoyance; I just know she's never going to let me forget that I said that."
     a "Well, from one friend to another, I'd say you look really good today."
     show cg_01 b_casual b_opened_smile with dissolve
-    b_o "Awww! How sweet of you, Alex!"
-    a "In fact, and I don't mean to sound offensive..."
+    b "Awww! How sweet of you, Alex!"
+    a "In fact, and I mean no offense..."
     show cg_01 b_level b_grin with dissolve
-    b_o "It's gonna have to be really bad to have even a sliver of a chance of offending me."
-    a "Well, anyway, if it weren't for your chipped tooth, I'd go as far as say you look flawless."
+    b "It's gonna have to be really bad to have even a sliver of a chance of offending me."
+    a "Well, anyway, if it weren't for your tooth, I'd go as far as say you look flawless."
     show cg_01 b_mad b_opened_smile with dissolve
-    b_o "HA!"
-    b_o "Ya hear that, Chris? He just blamed you for me not looking perfect!"
+    b "HA!"
+    b "Ya hear that, Chris? He just blamed you for me not looking perfect!"
     show cg_01 c_right c_mad with dissolve
-    c_o "Oh, shut it."
+    c "Oh, shut it."
     show cg_01 a_casual a_blank with dissolve
     a "Wait...{w=.5} You mean CHRISTEENA is the one who chipped your tooth??"
     show cg_01 b_blank b_casual with dissolve
-    b_o "You haven't heard this story yet?"
+    b "You haven't heard the story yet?"
     a "How would I?"
-    b_o "I figured you would've asked Don or Chris about it by now."
+    b "I figured you would've asked Don or Chris about it by now."
     a "I figured it would be one of those things you shouldn't ask about someone you hardly knew."
     show cg_01 b_level with dissolve
-    b_o "Geez. You're too respectful."
+    b "Geez. You're too respectful."
     a "Uh... thanks?{w} Anyway, so what happened with your tooth?"
     show cg_01 b_grin with dissolve
-    b_o "Okay, so it was about a year before our parents got married; I was 11 and Chris was 9."
+    b "Okay, so it was about a year before our parents got married; I was 11 and Chris was 9."
     show cg_01 c_casual with dissolve
     "As Brittney started this story, I could see Christeena looking at her sister with a grin, as if she was looking forward to this."
-    b_o "We had this trampoline in the backyard that we liked to play on during the summer; we were just obsessed with this thing!"
-    b_o "Well, one day, we were both jumping on it, and we decided to play a game of Popcorn. I was the kernel balled up the middle, and she was the one trying to jump and make me 'pop open'."
-    b_o "You would think it would be easier for a girl her size, but she underestimated my grip."
+    b "We had this trampoline in the backyard that we liked to play on during the summer; we were just obsessed with this thing!"
+    b "Well, one day, we were both jumping on it, and we decided to play a game of Popcorn. I was the kernel balled up the middle, and she was the one trying to jump and make me 'pop open'."
+    b "You would think it would be easier for a girl her size, but she underestimated my grip."
     show cg_01 c_level c_blank with dissolve
     "Christeena's smile faded and was replaced with a more awkward, yet angry look."
     show cg_01 b_casual b_blank with dissolve
-    b_o "About 30 seconds had passed before it happened."
-    b_o "The timing was just right.{w=.5} I landed on my back, and I could see her falling towards me."
-    b_o "Before I could react or try to move..."
+    b "About 30 seconds had passed before it happened."
+    b "The timing was just right.{w=.5} I landed on my back, and I could see her falling towards me."
+    b "Before I could react or try to move..."
     show cg_01 b_mad
-    b_o "{b}BAM!!!{/b}{fast}"
-    b_o "Kneecap straight to the kisser!"
+    b "{b}BAM!!!{/b}{fast}"
+    b "Kneecap straight to the kisser!"
     show cg_01 c_up c_casual with dissolve
-    c_o "I just want to clarify that it was completely and totally an accident!"
-    b_o "That doesn't change the fact you technically won as I grabbed onto my bleeding mouth!"
+    c "For the record, it was completely and totally an accident!"
+    b "That doesn't change the fact you technically won when I grabbed onto my bleeding mouth!"
     show cg_01 a_level with dissolve
     a "Oh, geez...!"
     show cg_01 c_sad with dissolve
-    c_o "Yeah, it was not a pretty sight."
+    c "Yeah, it was not a pretty sight."
     show cg_01 b_level with dissolve
-    b_o "It wasn't a pretty feeling, either."
-    b_o "Christeena called for our parents like I was dead, us both crying for different reasons, and I was rushed to the ER."
-    b_o "At the end of the day, it was just a cut lip and the chipped tooth. I guess it could've been a lot worse."
+    b "It wasn't a pretty feeling, either."
+    b "Christeena screamed for our parents like I was dead, both of us crying for different reasons, and I was rushed to the ER."
+    b "At the end of the day, it was just a cut lip and the chipped tooth. I guess it could've been a lot worse."
     a "Didn't your parents try to get it fixed?"
     show cg_01 b_grin with dissolve
-    b_o "Yep. And they even want it fixed to this day."
+    b "Yep. And they even want it fixed to this day."
     a "So why not fix it?"
-    b_o "Why would I? It's basically a scar, but cooler."
+    b "Why would I? It's basically a scar."
     show cg_01 a_raised with dissolve
     a "I don't think I see why that's a good thing."
     show cg_01 c_level with dissolve
-    c_o "Brittney has this unhealthy obsession with scars."
+    c "Brittney has this unhealthy obsession with scars."
     show cg_01 b_mad b_blank with dissolve
-    b_o "Well, you make it sound like I try to give myself scars or something!"
+    b "Well, you're making it sound like I try to give myself scars or something!"
     show cg_01 b_grin b_casual with dissolve
-    b_o "I'm just fascinated by them because there's a story behind every one. Sure, they're not always good stories, but it's a story nonetheless, and it's a part of your past."
-    b_o "Take my tooth, for example. If I had it fixed, what are the odds that you'd ever learn about the time Christeena kneed me on a trampoline?"
-    b_o "The only reason we even casually mention that day is because of that tooth. And now it's become something we both look back and laugh at."
+    b "I'm just fascinated by them because there's a story behind every one. Kind like tattoos."
+    b "Sure, they're not always good stories, but it's a story nonetheless, and it's a part of your past."
+    b "Take my tooth, for example. If I had it fixed, what are the odds that you'd ever learn about the time Christeena kneed me on a trampoline?"
+    b "The only reason we even mention that day is because of my tooth. And now it's become something we both look back and laugh at."
     show cg_01 a_level with dissolve
     a "I guess I see where you're coming from."
     a "So, does that mean you have other scars, then?"
-    b_o "Oh, with the life I've lived? Absolutely! You can see a few of them on my arms and legs, but I've got them everywhere."
-    b_o "Hell, I've even got one right on my asscheek if you're interested in seeing that one."
+    b "Oh, with the life I've lived? Absolutely! You can see a few of them on my arms and legs, but I've got them everywhere."
+    b "Hell, I've even got one right on my ass cheek if you wanna see that one."
     show cg_01 c_right c_mad with dissolve
-    c_o "Brittney Anne, don't you fucking dare!"
+    c "Brittney Anne, don't you fucking dare!"
     show cg_01 b_mad b_blank with dissolve
-    b_o "Geez, I wasn't actually going to show him, Mother!"
-    c_o "I can never tell with you..."
+    b "Geez, I wasn't actually going to show him, Mother!"
+    c "I can never tell with you..."
     show cg_01 a_raised with dissolve
     a "Wait, so how the heck did you even get a scar there?"
     show cg_01 b_raised b_opened_smile with dissolve
-    b_o "Oh, as much as I'd love to share that story right now, we better focus back on getting gifts for Donald; we're here!"
+    b "Oh, as much as I'd love to share that story right now, we better focus back on getting gifts for Donald; we're here!"
     window hide dissolve
     scene bg mall_e with dissolve
     pause 1
@@ -502,7 +503,7 @@ label britisready:
     show chris p1 straight casual blank at tworight
     with dissolve
     pause 0.1
-    b "Hey, it may not be the super-expensive skyscraper malls with a thousand stores inside that you're used to up north, but it's still a mall."
+    b "Hey, it may not be one of those super-expensive skyscrapers with a thousand stores inside that you're used to up north, but it's still a mall."
     c p2 smile "I like the simplicity of it; you don't feel lost or confused."
     b p1 casual "Plus, there are still a decent amount of stores inside."
     b p2 opened_smile "C'mon! We'll show ya!"
@@ -533,7 +534,7 @@ label britisready:
     "Honestly, I'm sure Donald would be happy with either one, but--"
     "I lost my train of thought when I saw an art supply store nearby."
     a "Does Donald still like to draw or do any sort of art?"
-    b p2 blank "{i}'Still'{/i}? You mean he used to draw?"
+    b p2 blank "'Still'? He used to draw?"
     c left p1 dot "That's news to me, too."
     "I suppose that answers that."
     "I remember Donald drawing when we were younger; he was good, too.{w} Maybe he just does it on the side or is just hiding it from them for some reason."
@@ -577,10 +578,10 @@ label sportsstore:
     b p2 right mad blank "Damn, you don't know a joke when you hear it, do you?"
     b "And even if I was serious, what would it matter to you, anyway?"
     c p1 hanging "Well, maybe if you weren't constantly acting like such a slu--"
-    c blank right "Nevermind."
+    c blank right "Never mind."
     b p1 straight hanging "No, go ahead! Say it!"
     $ c_blush = True
-    c straight "I said nevermind!"
+    c straight "I said never mind!"
     hide chris with easeoutright
     pause 0.1
     $ c_blush = False
@@ -588,7 +589,7 @@ label sportsstore:
     show brit at middle with easeinleft
     pause 0.1
     $b_blink = False
-    b blank closed_sad sad p2 "*sigh*"
+    b blank closed_sad sad p2 "{i}*sigh*{/i}"
     a "Is everything okay between you two...?"
     $b_blink = True
     b straight p1 "Yeah, it's fine, I promise."
@@ -611,9 +612,9 @@ label sportsstore:
     "Baseball, basketball, football, soccer, hockey, and the list goes on."
     b p2 sad grin "It's just so beautiful..."
     a "You know, hearing you say that while you're dressed like a sports-hating teenage girl just hurts my brain."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b level huhu "Good."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight raised grin
     b "So, let's look around and see if anything catches our eye."
     a "Should we start somewhere specific, or...?"
@@ -646,9 +647,9 @@ label sportsstore:
     b raised straight opened_smile "ESPECIALLY those Cubs."
     a "Eh. There's something to be said about having pride in your hometown."
     b p1 sad grin "Oh, I get his logic. I do."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b level huhu "But that doesn't mean I'm ever going to stop making fun of him for hoping crappy teams will win."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p2 straight raised opened_smile
     b "I keep telling him he's setting himself up for disappointment each time, but oh well."
     b mad grin "Hell, we even made a deal that if the Cubs win the World Series within our lifetime, I'll suck his dick."
@@ -658,15 +659,15 @@ label sportsstore:
     a "So, what about you? Any luck finding something?"
     $b_blink = True
     b p2 straight casual blank "Maybe."
-    b left level "I remember him mentioning that he had lost his baseball glove, and that that was his excuse for never playing catch with me."
+    b left level "I remember him mentioning that he had lost his baseball mitt, and that that was his excuse for never playing catch with me."
     a "Playing catch? How old are you again?"
     b p1 straight mad frown "Hey! There's nothing wrong with or childish about it!"
     b p2 blank "I need to make sure I'm always keeping my aim and throws in peak condition, so unless you know a better solution...!"
     a "Sorry, sorry. I guess the way it was worded just threw me off."
     b left level "Hm..."
     b p1 straight raised opened_smile "Okay, I'll let you off the hook this time."
-    b casual "Anyway, back to my point: I'm thinking about buying him a new glove."
-    a "So you're basically buying him a new glove simply for your benefit?"
+    b casual "Anyway, back to my point: I'm thinking about buying him a new mitt."
+    a "So you're basically buying him a new mitt simply for your benefit?"
     b p2 sad blank "Well, when you say it like that, it makes it look selfish."
     a "That's because it IS selfish."
     b left level huhu "I know."
@@ -675,17 +676,17 @@ label sportsstore:
     a "Well, I suppose that's true. But doesn't that still seem kinda wrong?"
     b casual blank "How?"
     a "You're basically taking advantage of his crush on you."
-    b mad p1 hanging "Well, NOW you're making me sound like a cruel, friendzoning bitch."
+    b mad p1 hanging "Well, NOW you're making me sound like a cruel, friend-zoning bitch."
     b raised blank right "I may not like him the same way he likes me..."
     b straight "...but that doesn't mean I hate his company. He's still my friend, even if he wishes we were more."
     a "Doesn't that ever get annoying, though? Him constantly wanting to be more?"
     b p2 casual "Eh. At times."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b grin "But that's what these are for."
     "She then held up her fists."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 casual straight grin
-    b "Besides, it's clear he really enjoys spending time as just friends, as well, so it's not like he's just hanging out with me because he wants to date me."
+    b "Besides, it's clear he really enjoys spending time as just friends, as well, so it's not like he's just hanging out with me because he wants to fuck me."
     b blank "I've made it clear to him in many ways that it'll never happen, so if he refuses to accept it, that's on him, not me."
     a "So nothing he could do would ever make you consider being his girlfriend?"
     b p2 sad grin "If there were something, he would've tried it by now, and it would've worked."
@@ -693,10 +694,10 @@ label sportsstore:
     a_s "..."
     b straight casual blank "What?"
     a "What?"
-    b level "You looked at me like I was wrong or something..."
+    b level "You looked at me weird."
     a "I don't know what you're talking about."
     b_s left "..."
-    a "So, are you gonna get him the glove, then?"
+    a "So, are you gonna get him the mitt, then?"
     b p1 straight casual grin "Might as well. You getting him a jersey?"
     a "Might as well."
     hide brit with dissolve
@@ -811,9 +812,9 @@ label sportsstore:
         c smile "Hey, guys!"
         b p2 raised "Yo."
         c p2 grin "What did you guys get him?"
-        a "I got him a Bulls jersey, and Brittney got him a baseball glove."
-        c raised blank "A baseball glove?{w=.5}{nw}"
-        c mad p1 "A baseball glove?{fast} You didn't get him that so you could have someone to practice throwing with, did you?"
+        a "I got him a Bulls jersey, and Brittney got him a baseball mitt."
+        c raised blank "A baseball mitt?{w=.5}{nw}"
+        extend mad p1 " You didn't get him that so you could have someone to practice throwing with, did you?"
         b p1 casual blank "Was it that obvious?"
         c left "Ugh..."
         a "Hey, I'm sure Donald will still enjoy it."
@@ -821,12 +822,12 @@ label sportsstore:
         b p2 grin "What about you? What did you get him?"
         $ c_blush = True
         c p2 right level "I...{w=.25} I honestly didn't know what to get him, so I just got him a $50 Vapor gift card."
-        $ b_partial = True
+        $ b_eyelids = "partial"
         b level blank "A gift card? Really?"
         c straight mad hanging "Hey, it's better than getting him nothing!!"
         a "Girls, girls! Settle down!{w=.5} What's important is that we each got him a gift that I'm sure he'll enjoy."
         a "Now, come on. Let's eat some lunch."
-        $ b_partial = False
+        $ b_eyelids = "blink"
         show brit p1 straight casual grin at twoleft
         b "Well, how can I say no to that offer?"
         jump eatatfc
@@ -852,11 +853,12 @@ label vgstore:
     $ c_blush = False
     show chris p1 left mad blank at middle
     c "Ugh... that girl..."
-    a "You shouldn't let things like that bother you so much; as an older sibling, myself, I know she's only doing it because it riles you up."
-    c straight raised "Yeah, I know, but it's still unnecessary for her to say."
+    a "You shouldn't let things like that bother you so much."
+    a "As an older sibling, myself, I know she's only doing it because it riles you up."
+    c straight raised "Yeah, I know, but it's still unnecessary."
     c "She's always just saying things that don't need to be said, especially in front of other people."
     $ c_blush = True
-    c level right p2 "Like that comment earlier... about my underwear..."
+    c level right p2 "Like that comment earlier...{w=0.5} about my underwear..."
     a "It's just underwear. Everyone wears it."
     c_s "..."
     a "Christeena, it's only a big deal if you make it a big deal."
@@ -865,6 +867,7 @@ label vgstore:
     a "Lead the way."
     pause 0.1
     hide chris with dissolve
+    $ c_blush = False
     pause 0.5
     scene bg games with dissolve
     pause 0.5
@@ -872,7 +875,6 @@ label vgstore:
     pause 0.1
     $ current_track = "\"Violet Wonder\""
     play music violet_wonder
-    $ c_blush = False
     c "Here we are!"
     "I let out a surprised whistle as I glanced around the store."
     "It was a used game store, which means they're cheaper than buying them new, so there's already that advantage."
@@ -884,11 +886,11 @@ label vgstore:
     pause 0.1
     "We looked over the games in the selection. They were all alphabetized, so finding a specific game we had in mind wouldn't be an issue."
     "That said, it would help if we had a game in mind."
-    show chris straight casual blank p1 at close_right_c with dissolve
+    show chris straight casual blank p1 at close_c with dissolve
     pause 0.1
     a "What kind of games does Donald play that he wouldn't already have?"
     c left level dot "Hm..."
-    c p2 "He likes playing puzzle games, but the only ones for console that I can think of are {i}Wormhole 2{/i} and {i}Crops vs. Zombies{/i}, both of which he bought and played countless times by now."
+    c p2 "He likes playing puzzle games, but the only ones for console that I can think of are {i}Wormhole 2{/i} and {i}Crops vs. Zombies{/i}, both of which he owns and has played countless times by now."
     a "I mean, I don't blame him; those games are masterpieces."
     c p1 straight casual blank "I wouldn't know, to be honest."
     a "You're dead to me."
@@ -896,13 +898,13 @@ label vgstore:
     c mad hanging "!!"
     a "I'm kidding!"
     $ c_blush = False
-    show chris p2 straight mad grin at close_right_c
+    show chris p2 straight mad grin at close_c
     c "I know, but it's still mean."
     a "Not my fault you call yourself a gamer and then not play the best games ever made."
-    c raised p1 "First of all, that's completely opinionated."
+    c raised p1 "First of all, that's completely subjective."
     c "Second, puzzle games aren't my thing; I'm more of an online shooter player."
     "If I had a drink in my mouth, it would've been spat out."
-    a "You?{w=.75} A girl?{w=.75} Playing online shooters?"
+    a "You?{w=.75} A girl?{w=.75} Playing an online shooter?"
     c p2 level "It's not that uncommon, you know."
     a "It's not that common, either."
     $c_blink = False
@@ -912,7 +914,7 @@ label vgstore:
     a "Fair enough.{w} Hey, maybe we could play together some time."
     $ choice_xalign = 0.3
     $ choicevbox = 4
-    c p1 smile "Maybe, if you're prepared to be dominated."
+    c p1 smile "Maybe, if you want to be dominated."
     if persistent.choices["13"] == 1:
         jump isthatachallenge
     elif persistent.choices["13"] ==2:
@@ -921,7 +923,7 @@ label vgstore:
         jump stilltalkingaboutgames
     else:
         menu:
-            c "Maybe, if you're prepared to be dominated.{fast}"
+            c "Maybe, if you want to be dominated.{fast}"
 
             "'Is that a challenge?'":
                 $ persistent.choices["13"] = 1
@@ -967,10 +969,10 @@ label vgstore:
         c_s blank "...?"
         $ c_blush = False
         c small sad hanging "OH!"
-        c straight mad blank "Y-Yes, we're still talking about video games, you pervert!"
-        c left p2 "Can't I have just one fucking conversation without someone cracking a dirty joke or some shit like that??"
+        c straight mad blank "Yes, we're still talking about video games, you pervert!"
+        c left p2 "God, can't I have just one fucking conversation without someone cracking a dirty joke or some shit??"
         a "...I'm sorry."
-        c "Whatever. Let's just get a game for Donald."
+        c level straight "Whatever. Let's just get a game for Donald."
         a "Alright, then..."
         hide chris with dissolve
         pause 0.1
@@ -981,13 +983,13 @@ label vgstore:
         $ c_blush = False
         "We looked back at the game selections."
         "Donald's love of puzzle games did seem to limit our console selection..."
-        show chris p1 straight sad blank at close_right_c with dissolve
+        show chris p1 straight sad blank at close_c with dissolve
         pause 0.1
         c "I think I may have to get him a Vapor gift card so he can buy whatever game he wants..."
         c p2 right "I mean, I really, REALLY hate to do that, but I'm at a loss on what to do."
         a "Well, maybe we're thinking too modern."
         c straight casual "Huh?"
-        a "Do they have a section for older games from older systems?"
+        a "Do they have a section for games from older systems?"
         c left level dot "I believe so... I think it's towards the back."
         a "Let's check it out; we may find something there."
         c p1 straight raised blank "Do you really think he'd be happy with getting an older game?"
@@ -998,7 +1000,7 @@ label vgstore:
         a_s "..."
         a "...{fast}huh. I guess you're right."
         c level "If I'm being completely honest, Donald and I are less of 'friends' and more of 'friends of a friend'."
-        c p1 left "I mean, yeah, we get along for the most part when we're together, but we hardly hang out on our own."
+        c p1 left "I mean, yeah, we generally get along when we're together, but we hardly hang out on our own."
         c straight mad "I mean, the only reason he brought me to your house on Friday was so I could help you unpack."
         c p2 level "We're just so different, you know? Even more than Brittney and I."
         a "Sure, I get it. He even mentioned to me today how you two have had your share of debates and arguments over certain topics."
@@ -1006,9 +1008,9 @@ label vgstore:
         c p1 right sad "Yeah..."
         a "But, hey, if you can still be around each other without trouble, that's something, right?"
         $ c_blush = False
-        show chris p1 straight sad blank at close_right_c
+        show chris p1 straight sad blank
         c "I suppose so."
-        c grin "He's a sweet guy, and I know he means well."
+        c grin "He's a nice guy, and I know he means well."
         c p2 left "Honestly, a part of me wishes Brittney would come to her senses and go out with him."
         c straight raised blank "But me and her have seen firsthand what happens when you force relationships."
         a "Oh, really?"
@@ -1026,8 +1028,8 @@ label vgstore:
         a "Kinda... When we were younger, he would always talk about how he wanted to play {i}Clunker's Bad Day{/i}, but his parents wouldn't let him."
         c p1 raised "Isn't that that game that looks like a kid's game but is actually full of sex jokes and stuff?"
         a "That would be the one. I didn't see it at his house, so it's safe to say he still may not have it."
-        a "If I'm lucky, this place might just--{w=.2}"
-        c p2 smile casual "Is that it?"
+        a "If I'm lucky, this place might just--"
+        c p2 smile casual "There it is!"
         "I looked where she was pointing. It was a collection of games for the 64. Right smack in the middle of them was..."
         a "Yes! That's it!"
         "I grabbed it from the shelf and looked it over."
@@ -1057,24 +1059,24 @@ label vgstore:
         play music the_mall
         c "Brittney said she's already here waiting."
         a "Where at?"
-        a "Oh, nevermind; I see her."
+        a "Oh, never mind; I see her."
         "Sitting at a table by the Chinese restaurant was a tall, thin blonde waving her hand at us. Waving back, we both walked over and sat down."
         show chris:
             ease 0.5 tworight
         show brit p2 straight casual grin at twoleft with easeinleft
         pause 0.1
         a "Did you find anything good?"
-        b p1 sad opened_smile "I hope so; Donald's been mentioning how he's lost his baseball glove, so I bought him a new one."
+        b p1 sad opened_smile "I hope so; Donald's been mentioning how he's lost his baseball mitt, so I bought him a new one."
         c mad blank "Are you sure this isn't so you have an excuse to get him to go outside and play catch with you?"
         b mad hanging "What? No!"
-        b p2 left level huhu "That wasn't my ONLY reason..."
+        extend p2 left level huhu " That wasn't my ONLY reason..."
         b p1 straight casual grin "Anyway, did you guys find anything?"
         c smile casual "Well, Alex got him an older game Donald always wanted to play, and I got him a Vapor card."
-        $ b_partial = True
+        $ b_eyelids = "partial"
         b p2 level blank "A gift card? Really?"
         c p2 mad hanging "Hey, it was more difficult than we thought, okay?"
         a "Alright, alright, let's settle down here and get some food. Sound good?"
-        $ b_partial = False
+        $ b_eyelids = "blink"
         b p1 straight casual grin "Sounds excellent! I was about to wither to nothing over here waiting for you slowpokes!"
         jump eatatfc
 
@@ -1135,7 +1137,7 @@ label artstore:
     show elie p1 straight casual blank at close_e with dissolve
     pause 0.1
     "Eleanor was coming this way."
-    "She still wasn't looking at me, but she honestly didn't look very threatening. In fact, she kinda looked...{w} normal."
+    "She still wasn't looking at me, but she honestly didn't look very threatening. In fact, she kinda looked...{w=0.2} normal."
     "Well, as normal as a held-back high school student with tattoos and revealing clothing can get."
     "She seems to be in a good mood, which from what the guys have told me, is as rare as winning the lottery."
     "We haven't really been properly introduced to each other... Does she even know that I'm her neighbor?"
@@ -1170,7 +1172,7 @@ label artstore:
         else:
 
             menu:
-                "'Nevermind'":
+                "'Never mind'":
                     $ persistent.choices["16"] = 1
                     jump nevermind_e
 
@@ -1179,7 +1181,7 @@ label artstore:
                     jump introduceyourself
 
         label nevermind_e:
-            a "N-Nevermind."
+            a "N-Never mind."
             e_s level "..."
             jump wasteoftime
 
@@ -1225,16 +1227,16 @@ label artstore:
         "Once I left the store, I shot both girls a text in a group chat between the 3 of us."
         $groupchat = True
         call showphone("Group")
-        call showtext("Alex", "Hey, I'm done shopping.")
-        call showtext("Brittney", "Already?")
+        call showtext("Alex", "Hey, I'm done shopping")
+        call showtext("Brittney", "already?")
         call showtext("Christeena", "That was fast...")
-        call showtext("Alex", "I had a fair idea of what I wanted to get. I just hope he likes it.")
-        call showtext("Brittney", "I'm sure he will.")
-        call showtext("Brittney", "At least, he'll PRETEND to like it lol XD")
+        call showtext("Alex", "I had a fair idea of what I wanted to get. I just hope he likes it")
+        call showtext("Brittney", "i'm sure he will")
+        call showtext("Brittney", "at least, he'll PRETEND to like it lol XD")
         call showtext("Alex", "I'm on my way to the food court. Should I wait for you guys?")
-        call showtext("Brittney", "I won't be upset if you start eating without me.")
-        call showtext("Christeena", "I think I'm almost done, anyway, so I should be there soon, if you wanna wait.")
-        call showtext("Alex", "Alright.")
+        call showtext("Brittney", "i won't be upset if you start eating without me")
+        call showtext("Christeena", "I think I'm almost done, anyway, so I should be there soon, if you wanna wait")
+        call showtext("Alex", "Alright")
         call hidephone
         $groupchat = False
         "With that, I was on my way to the food court."
@@ -1267,7 +1269,7 @@ label artstore:
         c straight "I mean, it's better than nothing, right?"
         a "This is true."
         show chris casual
-        b_o "What is?"
+        b "What is?"
         pause 0.1
         show chris at close_right_c
         show brit p2 straight casual grin at twoleft
@@ -1275,14 +1277,14 @@ label artstore:
         pause 0.1
         "Almost on cue, Ms. Usher made her appearance."
         a "Christeena got Donald a gift card, which is better than nothing."
-        $ b_partial = True
+        $ b_eyelids = "partial"
         b raised blank "Barely."
         $ c_blush = True
         c_s mad "..."
         a "Anyway, what did you get, Brittney?"
-        $ b_partial = False
+        $ b_eyelids = "blink"
         show brit p1 straight casual grin at twoleft
-        b "I got him a baseball glove."
+        b "I got him a baseball mitt."
         $ c_blush = False
         show chris p2 straight raised blank at close_right_c
         c "So you got him something for you to use?"
@@ -1315,7 +1317,7 @@ label eatatfc:
             "McDaniel's":
                 $ persistent.choices["17"] = 4
 
-            "P.J. Chong's":
+            "P.J. Ching's":
                 $ persistent.choices["17"] = 5
 
     window hide dissolve
@@ -1343,10 +1345,10 @@ label eatatfc:
     with dissolve
     pause 0.1
     a "Heh. Not very hungry, I see."
-    $ b_wink = True
-    b mad tongue "Oh, hush."
-    $ b_wink = False
-    b p1 straight raised opened_smile "I'm just a naturally slow eater."
+    $ b_eyelids = "wink"
+    b mad tongue "Oh, hush.{w=0.5}{nw}"
+    $ b_eyelids = "blink"
+    extend p1 straight raised opened_smile " I'm just a naturally slow eater."
     a "Excuses, excuses."
     b p2 level grin "Call it what you will, but eating too fast isn't good for you, you know."
     b raised "Ask Christeena; she sometimes shovels her food down so fast that she'll be burping like a trucker for the rest of the night."
@@ -1361,7 +1363,7 @@ label eatatfc:
     b "What shit?"
     c p1 blank "Saying a bunch of embarrassing and insulting shit about me!!"
     "Naturally, people were starting to look our direction to see what was going on."
-    b level "So what? I do it all the time, and you never seem to have an issue."
+    b level "So what? I do that all the time, and you never bring it up."
     c right "Y-Yeah, well..."
     "Brittney paused, looked at me, then grew a smile and looked at Christeena."
     b p2 raised huhu "It wouldn't happen to be an issue today because we're in front of Alex, is it?"
@@ -1371,14 +1373,14 @@ label eatatfc:
     a "Seriously, Christeena; what's up? You've been acting this way all day."
     c_s p2 right "..."
     b mad blank "I know, right? She's never been THIS moody on her period!"
-    c straight p1 scream "ARE!! {w=.5}YOU!!{w=.5} FUCKING!!{w=.5} SERIOUS?!?!"
+    c straight p1 scream "ARE!! {w=.2}YOU!!{w=.2} FUCKING!!{w=.2} SERIOUS?!?!"
     b_s blank casual "..."
     $ current_track = "None"
     stop music fadeout(3)
     stop loop fadeout(3)
     play sound table_slam
     "Christeena then quickly stood up and slammed her hands onto the table, leaning towards Brittney with a furious, almost inhuman expression."
-    c "FUCK YOU, BRITTNEY!!! THIS IS WHY PEOPLE CAN'T FUCKING STAND YOUR STUPID ASS!!"
+    c "FUCK YOU, BRITTNEY!!! THIS IS WHY PEOPLE CAN'T FUCKING STAND YOU!!"
     show chris:
         ease 0.25 offscreenright
     pause 0.25
@@ -1398,7 +1400,7 @@ label eatatfc:
     a "I'm sorry. I shouldn't have said anything."
     b "Alex..."
     $b_blink = True
-    b straight "Alex...{fast}it's not your fault. I promise.{w} It's MY fault."
+    extend straight " it's not your fault. I promise.{w} It's MY fault."
     $ b_wince = True
     b left "It's ALWAYS my fault..."
     "Her voice gave a small crack as she said that."
@@ -1430,9 +1432,9 @@ label eatatfc:
     a "She said she needed to walk and clear her head."
     c p2 right "Oh..."
     a_s "..."
-    a "Hey, I'm sorry that I--{nw}"
+    a "Hey, I'm sorry that I--"
     c straight "Don't."
-    c p1 "It's my fault; I shouldn't have snapped on her like that. I know how sensitive she can get when..."
+    c p1 "It's my fault; I shouldn't have snapped at her like that. I know how sensitive she can get when..."
     c_s left "..."
     c grin "...{fast}heh. No point in being shy about it at this point."
     c straight "I know how sensitive she can get when she's on HER period."
@@ -1449,7 +1451,7 @@ label eatatfc:
     "She then let out a sigh."
     c "I'm such a bitch."
     a "Hey, now; I get why you were upset. I wouldn't want to constantly be belittled and humiliated like that, either."
-    c straight "Still, I could've handled that a bit better."
+    c straight "Still, I could've handled that better."
     a "Well...{w} Yeah, you could've."
     c p2 right "I don't know what's wrong with me... I always end up doing things like this, especially to Brittney..."
     c straight "I'm sorry that you had to see all of this... I promise you we're better than that."
@@ -1458,43 +1460,43 @@ label eatatfc:
     "With an awkward grimace on my face, I gave Christeena a quick pat on the back."
     a "We all have those days. Lord knows I certainly have."
     c_s "..."
-    b_o "H-Hey..."
+    b "H-Hey..."
     pause 0.1
     show chris straight:
         ease 0.5 close_right_c
     show brit p2 straight sad grin at twoleft with easeinleft
     pause 0.5
-    b blank "Listen, I--{w=.25}{nw}"
+    b blank "Listen, I--"
     show chris:
         parallel:
-            ease 0.25 zoom 0.75
+            ease 0.25 zoom 0.8
         parallel:
-            ease 0.25 xalign 0.39 yalign 0.5
+            ease 0.25 xalign 0.43 yalign 0.5
     pause .25
     show brit small casual hanging zorder 2
     show chris zorder 1
     "Christeena quickly stood up and hugged her sister, sobbing loudly as she buried her face in her shoulder."
     $c_blink = False
-    c tightly_shut sad scream p1 "I'M SO SORRY, BRITTNEY!! I SWEAR I DIDN'T MEAN IT!!"
+    c tightly_shut sad scream p1 "I'm so sorry, Brittney!! I swear I didn't mean it!!"
     b sad straight p1 grin "Hey, hey..."
     "Brittney hugged Christeena back and sighed."
     b "I'm sorry, too."
     "The two stood there and hugged for a few seconds before Christeena let go, tears flowing down her face."
-    with Pause(.1)
+    pause 0.1
     $c_blink = True
     show chris tears straight blank at tworight with easeinleft
     with Pause(.1)
     b p2 "Let's just...{w=0.5} forget about this, okay?"
-    c grin "Y-Yeah... *sniff* I'm okay with that."
+    c grin "Y-Yeah... {i}*sniff*{/i} I'm okay with that."
     a "Same here."
     b p1 opened_smile "Heh. Sorry for making your day really awkward, Al."
     a "You kidding? Any day where I can hang out with a couple of girls is a good day, in my book."
-    b p2 raised grin "You're such an asshole at times."
+    b p2 raised grin "You're such an asshole."
     a "That's rich coming from you."
-    $ b_wink = True
+    $ b_eyelids = "wink"
     b tongue mad "Nyeh."
     c p2 straight sad grin -tears "So, uh...{w=.5} are we ready to head home?"
-    $ b_wink = False
+    $ b_eyelids = "blink"
     b p1 straight sad grin "I am."
     a "Ditto."
     $ daydesc = 0

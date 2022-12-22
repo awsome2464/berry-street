@@ -6,10 +6,10 @@ label firstday:
     window hide
     pause 2
     if not persistent.autosavewarning:
-        "{b}Notice:{/b} Berry Street autosaves regularly, and a notification will be displayed when it does.{w=1.0}{nw}"
+        "{b}Notice:{/b} Berry Street auto saves regularly, and a notification will be displayed when it does.{w=1.0}{nw}"
         $ renpy.notify("Game saved!")
         menu:
-            "{b}Notice:{/b} Berry Street autosaves regularly, and a notification will be displayed when it does.{fast}"
+            "{b}Notice:{/b} Berry Street auto saves regularly, and a notification will be displayed when it does.{fast}"
             "Cool!":
                 $ persistent.autosavewarning = True
                 pause 2
@@ -190,7 +190,7 @@ label continuemoveconvo:
     pause 1
     window show dissolve
     pause 0.1
-    f_o "We're here!"
+    f "We're here!"
     "I quickly opened up my eyes."
     "I didn't even realize that I had passed out."
     "I looked outside of my window to see..."
@@ -353,7 +353,7 @@ label continuemoveconvo:
     a "Point taken."
     $ current_track = "None"
     stop music fadeout 2.0
-    b_o "Hey, Donnie!"
+    b "Hey, Donnie!"
     show brit p1 straight casual grin zorder 1:
         middle
         ease 0.5 twoleft
@@ -528,12 +528,12 @@ label continuemoveconvo:
     "The door then opened up, revealing Brittney Usher in all her glory."
     show don p1 straight casual smile at tworight with dissolve
     d "Hey, speak of the devil!"
-    $ b_partial = True
+    $b_eyelids = "partial"
     show brit p2 straight level blank at twoleft with easeinleft
     pause 0.1
     b "Nice to see you, too, Donnie."
     d blank "It's just an expression."
-    $ b_partial = False
+    $b_eyelids = "blink"
     show brit p1 straight raised grin
     b "I know. I just like to mess with you."
     $ current_track = "\"Oddball\""
@@ -607,13 +607,13 @@ label continuemoveconvo:
     show don p1 mad blank straight at tworight
     with easeinright
     d "Not really."
-    $ b_partial = True
+    $b_eyelids = "partial"
     show brit p1 level blank
     "Brittney raised her fist."
     d sad "I mean, yes! Definitely!"
     a_s "..."
     a "You guys are weird."
-    $ b_partial = False
+    $b_eyelids = "blink"
     show brit p1 straight casual opened_smile at twoleft
     show don casual smile
     bd "Thank you!"
@@ -652,18 +652,18 @@ label continuemoveconvo:
     b left level derp "Hmm... {w}That does sound pretty tempting."
     b straight blank "But I get the feeling that Alex here isn't a fan of sports."
     a "Huh? What gave you that impression?"
-    $ b_partial = True
+    $b_eyelids = "partial"
     b p1 closed_smile mad "Call it a hunch."
     a_s "..."
     a "Well, I mean, I swam competitively in the summertime for a few years."
-    $ b_partial = False
+    $b_eyelids = "blink"
     show brit p2 straight casual grin at twoleft
     b "Huh. That's one more sport than I thought you'd be in."
     a "I only said one."
-    $ b_wink = True
+    $b_eyelids = "wink"
     b mad tongue "That's the joke, dum-dum."
     d level "Anyway, what's it going to be? Video games or basketball?"
-    $ b_wink = False
+    $b_eyelids = "blink"
     show brit p2 straight casual opened_smile at twoleft
     b "I vote hoops."
     d casual "I vote gaming."
@@ -917,7 +917,7 @@ label continuemoveconvo:
         hide don with dissolve
         pause 0.1
         "Donald and I bro-hugged and I started walking home."
-        d_o "Hey, Al!"
+        d "Hey, Al!"
         "I turned back around to my childhood friend."
         show don p1 mad straight grin at middle with dissolve
         pause 0.1

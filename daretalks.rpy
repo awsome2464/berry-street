@@ -4,16 +4,16 @@ label animetalk_b:
     pause 0.1
     a "So..."
     a "...how's the anime watching going?"
-    b level "..."
+    b_s level "..."
     b right "I don't know..."
     b "I'm just not a fan of that whole Japanese look to it."
     a "That kinda sounds racist."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b p1 mad straight "You know what I mean."
     a "I don't think I do."
     "We had reached the coolers. She opened up one of them, revealing it to be nothing but water bottles."
     "She grabbed one of them, closed the lid, and continued to speak as she opened the one next to it."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight raised blank at close_b
     b "It's so... choppy. And the mouth animations are, like, so simple. It's just them opening and closing their mouth over and over to sync up to the dialogue."
     "After grabbing a Hilly Dew from the cooler, she closed that lid and turned to face me."
@@ -24,7 +24,7 @@ label animetalk_b:
     b p1 hanging mad straight "Oh, don't get me started on the plot."
     a "Alright. I won't."
     "I grabbed a Hilly Dew for myself, and we started to walk back towards Christeena, who was standing by herself awkwardly in the middle of the yard."
-    b p2 sad right blank "I dunno. Maybe I'm just too used to American animated films to get it."
+    b p2 sad right blank "I dunno. Maybe I'm just too used to American animation to get it."
     a "Maybe. I've only seen bits and pieces of anime here and there, but from what I've seen, I can certainly see the appeal."
     b level straight "I'm glad one of us can."
     b grin "Thankfully, we're almost done with this season, apparently, so I only have to suffer for a little longer."
@@ -34,22 +34,22 @@ label animetalk_b:
 
 label kisstalk_b:
     "About halfway there, she turned towards me with a smug grin."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     show brit p2 straight level huhu at close_b with dissolve
     pause 0.1
     b "You're not just hanging out with me because we kissed, are you?"
     "Well, that certainly came out of nowhere."
     a "Uh..."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight sad grin at close_b
     b "Hey, don't feel embarrassed! I think it's kinda cute!"
     a "Oh, do you?"
     b casual opened_smile "Yeah!"
     b p2 right level huhu "Plus, I bet it'll make Donnie really jealous."
     a "I actually talked to him about this earlier. He said he was fine with it."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b straight casual grin "Oh, I'm sure he DID say that."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight raised opened_smile at close_b
     b "But I know him well enough to know that it's killing him that I kissed you and not him."
     "We had reached the coolers. She opened up one of them, revealing it to be nothing but water bottles."
@@ -59,7 +59,7 @@ label kisstalk_b:
     b p2 casual blank "But I hope you realize that it was just a kiss and nothing more."
     b level "It's not like we're dating or anything."
     b right "Hell, I can't even really say that I like you romantically, so don't get any weird ideas."
-    b "It's bad enough I've got one guy on my ass about that..."
+    b "It's bad enough I've got {i}one{/i} guy on my ass about that..."
     a_s "..."
     a "Brit, you're the only one who's implied anything of the sort. All I wanted was a soda."
     b p1 straight sad "Sorry, sorry. You're right."
@@ -143,7 +143,7 @@ label punchtalk_b_b:
     b right huhu "Well, I knew he would be at the pond; it's his go-to place to hide when the cabin's unavailable."
     a "Was he upset to see you?"
     b_s straight blank sad "..."
-    b "...{fast}a little."
+    extend "a little."
     b level right "But I must've looked more upset than he did, because he quickly asked if I was okay, as if he was the one who hurt ME."
     "We had reached the coolers. She opened up one of them, revealing it to be nothing but water bottles."
     "She grabbed one of them, closed the lid, and continued to speak as she opened the one next to it."
@@ -156,7 +156,7 @@ label punchtalk_b_b:
     "I grabbed a Hilly Dew for myself, and we started to walk back towards Christeena, who was standing by herself awkwardly in the middle of the yard."
     a "So does this kind of thing happen often, or...?"
     b_s p2 level blank "..."
-    b "...{fast}yeah, more than I'd like to admit."
+    extend "yeah, more than I'd like to admit."
     b "The problem seems to stem from the fact that I'm a bit of a hypocrite."
     a "How so?"
     b right "I'm always getting on Don's case about not thinking before doing, and then there's me, who's even worse at not doing it."
@@ -172,14 +172,14 @@ label punchtalk_b_b:
 
 label kisstalk_b_c_t:
     "About halfway there, she turned towards me with a smug grin."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     show brit p2 level huhu straight at close_b with dissolve
     pause 0.1
     b "I'm honestly shocked you chose to not spend time with your girlfriend."
     a "Brittney, you and I both know that Christeena is not my girlfriend."
     b casual grin p1 "But you kissed, and you both seemed to enjoy it, so the ball is already in motion."
     a "It was just a dare!"
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight mad grin at close_b
     b "Yeah, a dare YOU made!"
     a "Your point being?"
@@ -189,18 +189,18 @@ label kisstalk_b_c_t:
     b grin raised "So then why not get ME out so I could be the one you kissed?"
     b "After all, I obviously would be the more-willing girl out of the two."
     a_s "..."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b level huhu "Exactly."
     "We had reached the coolers. She opened up one of them, revealing it to be nothing but water bottles."
     "She grabbed one of them, closed the lid, and continued to speak as she opened the one next to it."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     b p1 level straight grin "But, hey. Don't feel embarrassed about it."
     "After grabbing a Hilly Dew from the cooler, she closed that lid and turned to face me."
     b raised closed_smile p2 "She feels the same way."
     a_s "..."
     a "She does...?"
     b level right huhu "I probably shouldn't be telling you this..."
-    b p1 straight raised grin "...but she totally has a crush on you. Like, ever since she met you, she's talked about how handsome you are."
+    b p1 straight raised grin "...but she totally has a crush on you. Like, ever since she met you, she's talked my ears off about you."
     a "And why do I get the feeling that you're lying to me?"
     b p2 left derp level "Probably because I do tend to lie a lot to mess with people."
     b raised straight grin "But I swear on my father's grave that I would never kid around with something like this."
@@ -218,12 +218,12 @@ label kisstalk_b_c_t:
 
 label kisstalk_b_c_f:
     "About halfway there, she turned towards me with a smug grin."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     show brit p2 straight level huhu at close_b with dissolve
     pause 0.1
     b "You're not trying to avoid Christeena, are you?"
     a "And why would I do a thing like that?"
-    $ b_partial = False
+    $ b_eyelids = "blink"
     b p1 grin "Because you two didn't actually kiss because she didn't want to, and now you feel embarrassed about it."
     a_s "..."
     b p2 "Here's a life lesson for ya: sisters tell each other EVERYTHING."
@@ -262,11 +262,11 @@ label kisstalk_b_c_f:
 label flashtalk_b_c:
     "About halfway there, Brittney turned towards me with a smug grin."
     show brit p2 straight level huhu at close_b with dissolve
-    $ b_partial = True
+    $ b_eyelids = "partial"
     pause 0.1
     b "You're not trying to avoid Christeena, are you?"
     a "And why would I do a thing like that?"
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight level grin at close_b
     if persistent.choices["20"] == 1:
         b "Because you tried to make her show you her tits, and now you're embarrassed."
@@ -368,19 +368,19 @@ label tampontalk_b:
     show brit p1 straight casual blank at close_b with dissolve
     pause 0.1
     a "So, is Donald really going to go through with his dare?"
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b p2 level grin "Oh, he will, whether he wants to or not."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     b p1 "I mean, when you think about it, it's the perfect dare."
     a "How so?"
     b right level huhu "Well, nobody got hurt, doing it will embarrass him, and I benefit heavily from the actions of the dare."
     a "...huh.{w} I guess you have a point."
     b p2 raised straight grin "Plus, he won't need to make that many shopping trips for it throughout the year, since I'm not that much of a heavy bleeder."
     a "Ok{cps=*0.25}aaaaay{/cps}. {w=.5}Did not need to know that."
-    $ b_wink = True
+    $ b_eyelids = "wink"
     b tongue "Well, it made you blush, so you kinda did."
     a "Do you ever get tired of flustering people?"
-    $ b_wink = False
+    $ b_eyelids = "blink"
     b p2 level straight grin "If I did, I wouldn't keep doing it, dum-dum."
     "We had reached the coolers. She opened up one of them, revealing it to be nothing but water bottles."
     "She grabbed one of them, closed the lid, and continued to speak as she opened the one next to it."
@@ -399,11 +399,11 @@ label tampontalk_b:
     a "What, letting you win?"
     b level "No, that time you saved me from the fire-breathing dragon."
     "I wiped some of the condensation off of my soda can and flicked it at her."
-    $ b_wink = True
+    $ b_eyelids = "wink"
     show brit tongue
     "She just wiped it off her face and stuck out her tongue."
     a "Well, you're welcome for the dare. Glad you could find use out of it."
-    $ b_wink = False
+    $ b_eyelids = "blink"
     b p2 raised "But, you know, something else has been on my mind..."
     a "...yes?"
     b opened_smile "What would you have made Donald do if you were gay?"
@@ -425,11 +425,11 @@ label pushuptalk_b:
     pause 0.1
     b "I still can't believe he managed to do all of those push-ups."
     a "Who, Donald?"
-    $ b_partial = True
-    b level grin "No, I meant Fat Albert."
+    $ b_eyelids = "partial"
+    b level grin "No, George Washington."
     "I guess I deserved that sarcasm."
     a "Well, that certainly would be impressive to see."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     b p2 left level derp "Hm. Fair enough."
     a "But I'll admit that Donald did a pretty good job."
     b p1 straight casual grin "Has he said anything about his arms being sore?"
@@ -502,7 +502,7 @@ label pondtalk_b:
     b p2 left "...I'm just scared that he might not fully forgive me."
     a "Why wouldn't he? He's the kind of guy who would forgive someone who slaughtered his parents."
     b_s "..."
-    b "...{fast}I don't know. Maybe I'm just freaking myself out."
+    extend "I don't know. Maybe I'm just freaking myself out."
     "We had reached the coolers. She opened up one of them, revealing it to be nothing but water bottles."
     "She grabbed one of them, closed the lid, and continued to speak as she opened the one next to it."
     b p1 straight "Like, as much as I think I know him, I sometimes can't read how he feels."
@@ -559,11 +559,11 @@ label kisstalk_b_d_d:
     play music reflection
     b raised straight p1 "I guess what I mean is that even though Donald and I are close, I kinda don't trust him with everything."
     a "That doesn't seem like the kind of thing you can 'kinda' do. Either you do or you don't."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b_s level "..."
     b p2 raised "Fine. I don't trust him with everything."
     a "Why not?"
-    $ b_partial = False
+    $ b_eyelids = "blink"
     b p1 straight sad blank "I don't know..."
     "After grabbing a Hilly Dew from the cooler, she closed that lid and turned to face me."
     b_s p2 right "..."
@@ -576,7 +576,7 @@ label kisstalk_b_d_d:
     "Although hearing her vent like this at all seems a bit out of character for her..."
     b p2 "He knows I'm not perfect, and he doesn't expect me to be, either, but..."
     $b_blink = False
-    b closed_sad "*sigh* I don't know..."
+    b closed_sad "{i}*sigh*{/i} I don't know..."
     a_s "..."
     "I grabbed a Hilly Dew for myself, and we started to walk back towards Christeena, who was standing by herself awkwardly in the middle of the yard."
     a "So, why don't you find a friend that you CAN talk to about this stuff with? One that won't judge?"
@@ -587,14 +587,14 @@ label kisstalk_b_d_d:
     b level "I said I didn't have anyone to help me out with certain stuff."
     b p1 "But I talk to Christeena about this stuff all the time."
     b "She just can't..."
-    b p2 right "...help."
+    extend p2 right " help."
     a_s "..."
     a "So, may I ask why exactly you're telling me all of this?"
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b straight level huhu "Because who would ever believe you?"
     a_s "...!"
     "I feel like I should be offended right now, but I'm too confused to really understand what to feel."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     b p1 straight level grin "Anyway, enough depressing stuff."
     $ current_track = "\"Relaxation in the Country\""
     play music relaxation_in_the_country
@@ -623,7 +623,7 @@ label animetalk_c:
     c straight "And doesn't that bother you?"
     a "Eh. Not really."
     c casual "Really?"
-    a "I dunno. Maybe it's a male thing, but Harry and I have this mutual understanding that we're a bit different from each other."
+    a "I dunno. Maybe it's a male thing, but Harry and I have this mutual understanding that we're different from each other."
     a "So, we use that to our advantage and just pick on each other a lot."
     c_s level "..."
     a "But it's all in good fun, I promise."
@@ -651,7 +651,7 @@ label kisstalk_c:
         menu:
             a "I, uh...{fast}"
 
-            "'I think she's attractive.'":
+            "'I think she's cute.'":
                 $ persistent.choices["23_"] = 1
                 jump thinkshesattractive
 
@@ -661,14 +661,14 @@ label kisstalk_c:
 
     label thinkshesattractive:
         a "Okay, this stays between us, but..."
-        a "...I think she's attractive."
+        a "...I think she's cute."
         c p1 sad grin "Really?"
         "I could feel my face getting warmer as I looked to see where Brittney was."
         "She had just made it to the coolers and was digging around in one of them."
         "I quickly turned back to Christeena and gave an awkward smile."
         a "Yeah, really."
         $c_blink = False
-        c closed_happy "Well, that's a little cute."
+        c closed_happy "Well, that's adorable."
         a "But I just...{w=.5} don't want her to know."
         $c_blink = True
         c straight p2 "I don't blame you, Alex. It's not easy to tell someone you think they're attractive when you've only known them for a month."
@@ -680,7 +680,7 @@ label kisstalk_c:
         $ c_blush = False
         show chris p1 straight sad blank at close_c
         c "It's just that she's, well..."
-        c right level "...not exactly into relationships right now."
+        c right level "...not exactly into relationships."
         a "...oh."
         c straight "Yeah."
         a "Is there a specific reason, or...?"
@@ -736,9 +736,9 @@ label kisstalk_b_d_c:
         c grin "Yeah, you did."
         c level blank "Still, she really was upset that it was suggested, nonetheless..."
     a "What exactly is her issue with kissing Donald?"
-    c raised "She told you: she's uncomfortable kissing a close friend that she has no romantic feelings for."
+    c mad "She told you: she's uncomfortable kissing a close friend that she has no romantic feelings for."
     a "That's all it is, though?"
-    c mad p2 "What other reason would there be?"
+    c raised p2 "What other reason would there be?"
     a "Well...{w} I don't know. {w=.25}I guess I assumed she was the kind of person who wouldn't let something like that bother her."
     a "She said she'd be fine kissing a total stranger like me, yet kissing someone she knows and trusts is an issue."
     a "That doesn't make sense to me."
@@ -773,7 +773,7 @@ label punchtalk_b_c_c:
     c straight sad "But that's just how people are, right?"
     a "I suppose."
     c level blank right "I mean, there was that day at the mall, for example."
-    c raised p2 "There were several variables that led to the argument that had happened..."
+    c raised p2 "There were several variables that led to what had happened..."
     c straight sad grin "But, in the end, we both realized we were being stupid and made up."
     a "And that's essentially what happened with Brit and Don?"
     c casual blank p1 "More or less."
@@ -878,7 +878,7 @@ label flashtalk_c_t:
         a "Do you hate me? Because I wouldn't blame you if you did."
         c level "No, I don't hate you, Alex."
         c left p1 "I just thought you were... Well..."
-        c straight raised "Better than that."
+        extend straight raised " Better than that."
         a "Oh."
         c level "But..."
         c grin "...I appreciate the fact you apologized."
@@ -992,7 +992,7 @@ label tampontalk_c:
     a "Always...?"
     $ c_blush = False
     show chris p1 straight sad blank at close_c
-    c "N-Nevermind."
+    c "N-Never mind."
     a_s "..."
     "Before I could attempt to press her for more information, I heard a voice behind me."
     $ cutoff = True
@@ -1008,7 +1008,7 @@ label pushuptalk_c:
     $ c_blush = True
     $c_blink = True
     c p1 straight hanging "Uh...{w} I-I didn't mean to sound so happy about that last part..."
-    a "Heh heh heh. You're good."
+    a "Heh. You're good."
     c p2 blank "Are you sure?"
     a "Positive."
     c left grin "O-Okay."
@@ -1075,7 +1075,7 @@ label pondtalk_c:
     c right "Yeah, everything's all good and sorted away, with the person she wronged forgiving her..."
     c "...but..."
     a "But...?"
-    c "She can't seem to forgive HERSELF, no matter what."
+    c "She can't ever seem to forgive HERSELF, no matter what."
     a "Oh..."
     c straight p1 "Yeah."
     c left "It's been that way for a few years, ever since--"

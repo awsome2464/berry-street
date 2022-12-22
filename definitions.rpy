@@ -27,18 +27,6 @@ define ump = Character("Umpire", what_prefix='"', what_suffix='"')
 define unknown = Character("???", what_prefix='"', what_suffix='"')
 define wo = Character("Woman", what_prefix='"', what_suffix='"')
 
-# Offscreen
-define b_o = Character("[B_Name]", callback=b_offscreen, what_prefix='"', what_suffix='"')
-define c_o = Character("[C_Name]", callback=c_offscreen, what_prefix='"', what_suffix='"')
-define da_o = Character("Daniel", callback=da_offscreen, what_prefix='"', what_suffix='"')
-define d_o = Character("Donald", callback=d_offscreen, what_prefix='"', what_suffix='"')
-define e_o = Character("[E_Name]", callback=e_offscreen, what_prefix='"', what_suffix='"')
-define f_o = Character("Dad", callback=f_offscreen, what_prefix='"', what_suffix='"')
-define g_o = Character("Mom", callback=g_offscreen, what_prefix='"', what_suffix='"')
-define h_o = Character("Harry", callback=h_offscreen, what_prefix='"', what_suffix='"')
-define m_o = Character("[M_Name]", callback=m_offscreen, what_prefix='"', what_suffix='"')
-define p_o = Character("[P_Name]", callback=p_offscreen, what_prefix='"', what_suffix='"')
-
 # Silent
 define a_s = Character("Alex", what_prefix='"', what_suffix='"')
 define b_s = Character("[B_Name]", image="brit", what_prefix='"', what_suffix='"')
@@ -201,6 +189,10 @@ image baseball_overlay:
 image bg conveniencestore:
     "BG/Convenience Store.png"
     size(1920, 1080)
+image bg brit_car = "#7c0047"
+image bg school_hall = "#8a851f"
+image bg brit_room_e = "#b1ba80"
+image bg brit_room_i = "#8091ba"
 
 ##########
 # Images #
@@ -411,6 +403,7 @@ define audio.stomach = "audio/se/stomach.mp3"
 define audio.doorbell = "audio/se/doorbell.mp3"
 define audio.twig_snap = "audio/se/twig_snap.mp3"
 define audio.scare_and_scream = "audio/se/scare_and_scream.mp3"
+define audio.tire_squeal = "audio/se/tire_squeal.ogg"
 
 #############
 # Variables #
@@ -458,18 +451,18 @@ default tour_downtown = False
 default tour_school = False
 default first_tour_pick = False
 
+default b_eyelids = "blink"
 default b_blink = True
 default b_hat = 0
-default b_hair = 0
-default b_hairtie = renpy.random.randint(0, 2)
-default b_partial = False
-default b_wink = False
-default b_wince = False
+default b_hair = 1
+default b_hair_color = "Blonde"
+default b_eye_bags = ""
 default c_blink = True
 default c_blush = False
 default c_hair = 0
 default d_blink = True
 default e_blink = True
+default e_cig = False
 default e_hair = 0
 default e_glasses = True
 default h_blink = True
@@ -526,33 +519,16 @@ default groupchat = False
 
 # Brittney
 image brit_blink:
-    "Characters/Brittney/Brittney_Blinking_00.png"
-    block:
-        pause 2.0
-        choice:
-            pass
-        choice:
-            pause 0.5
-        choice:
-            pause 1.0
-        choice:
-            pause 1.5
-        choice:
-            pause 2.0
-        choice:
-            pause 2.5
-        choice:
-            pause 3.0
-        "Characters/Brittney/Brittney_Blinking_04.png"
-        pause 0.025
-        "Characters/Brittney/Brittney_Blinking_03.png"
-        pause 0.025
-        "Characters/Brittney/Brittney_Blinking_02.png"
-        pause 0.025
-        "Characters/Brittney/Brittney_Blinking_01.png"
-        pause 0.025
-        "Characters/Brittney/Brittney_Blinking_00.png"
-        repeat
+    "Characters/Brittney/Brittney_Lip_None.png"
+    choice:
+        pause 4.0 + renpy.random.random()
+    choice:
+        pause 5.0 + renpy.random.random()
+    choice:
+        pause 6.0 + renpy.random.random()
+    "Characters/Brittney/Brittney_Blinking[b_eye_bags].png"
+    pause 0.1
+    repeat
 
 image brit_talking:
     choice:
@@ -563,20 +539,14 @@ image brit_talking:
         "Characters/Brittney/Brittney_Lip_O.png"
     choice:
         "Characters/Brittney/Brittney_Lip_U.png"
-    pause 0.09
+    pause 0.1
+    "Characters/Brittney/Brittney_Lip_None.png"
+    pause 0.1
     repeat
 
 layeredimage brit:
-    if b_hair == 0:
-        "Characters/Brittney/Brittney_Ponytail.png"
-    elif b_hair == 1:
-        "Characters/Brittney/Brittney_Hair_Back.png"
-    if b_hairtie == 0:
-        "Characters/Brittney/Brittney_HairTie_01.png"
-    elif b_hairtie == 1:
-        "Characters/Brittney/Brittney_HairTie_02.png"
-    else:
-        "Characters/Brittney/Brittney_HairTie_03.png"
+    always:
+        "Characters/Brittney/Brittney_HairBack_0[b_hair].png"
     group body:
         attribute p1:
             "Characters/Brittney/Brittney_Body_[outfit_b]01.png"
@@ -592,17 +562,17 @@ layeredimage brit:
         attribute small:
             "Characters/Brittney/Brittney_Pupils_04.png"
         attribute closed:
-            "Characters/Brittney/Brittney_Eyelids_02.png"
+            "Characters/Brittney/Brittney_Eyelids[b_eye_bags]_02.png"
         attribute closed_sad:
-            "Characters/Brittney/Brittney_Eyelids_04.png"
+            "Characters/Brittney/Brittney_Eyelids[b_eye_bags]_04.png"
+    if b_eyelids == "partial":
+        "Characters/Brittney/Brittney_Eyelids[b_eye_bags]_01.png"
+    elif b_eyelids == "wink":
+        "Characters/Brittney/Brittney_Eyelids[b_eye_bags]_03.png"
+    elif b_eyelids == "wince":
+        "Characters/Brittney/Brittney_Eyelids[b_eye_bags]_05.png"
     if b_blink:
         "brit_blink"
-    if b_partial:
-        "Characters/Brittney/Brittney_Eyelids_01.png"
-    if b_wink:
-        "Characters/Brittney/Brittney_Eyelids_03.png"
-    if b_wince:
-        "Characters/Brittney/Brittney_Eyelids_05.png"
     group mouth:
         attribute closed_smile:
             "Characters/Brittney/Brittney_Mouth_01.png"
@@ -629,21 +599,19 @@ layeredimage brit:
             "brit_talking"
         attribute notalking:
             "Characters/Brittney/Brittney_Lip_None.png"
-    if b_hair == 0:
-        "Characters/Brittney/Brittney_Hair_01.png"
-    elif b_hair == 1:
-        "Characters/Brittney/Brittney_Hair_02.png"
+    always:
+        "Characters/Brittney/Brittney_HairHead_0[b_hair].png"
     group eyebrows:
         attribute raised:
-            "Characters/Brittney/Brittney_Eyebrows_01.png"
+            "Characters/Brittney/Brittney_Eyebrows_[b_hair_color]_01.png"
         attribute casual:
-            "Characters/Brittney/Brittney_Eyebrows_02.png"
+            "Characters/Brittney/Brittney_Eyebrows_[b_hair_color]_02.png"
         attribute mad:
-            "Characters/Brittney/Brittney_Eyebrows_03.png"
+            "Characters/Brittney/Brittney_Eyebrows_[b_hair_color]_03.png"
         attribute sad:
-            "Characters/Brittney/Brittney_Eyebrows_04.png"
+            "Characters/Brittney/Brittney_Eyebrows_[b_hair_color]_04.png"
         attribute level:
-            "Characters/Brittney/Brittney_Eyebrows_05.png"
+            "Characters/Brittney/Brittney_Eyebrows_[b_hair_color]_05.png"
     group misc:
         attribute blush:
             "Characters/Brittney/Brittney_Blush.png"
@@ -653,13 +621,8 @@ layeredimage brit:
     group headwear:
         attribute sunglasses:
             "Characters/Brittney/Brittney_Sunglasses.png"
-    if b_hat == 1:
-        "Characters/Brittney/Brittney_Hat_01.png"
-    elif b_hat == 2:
-        "Characters/Brittney/Brittney_Hat_02.png"
-    group pants:
-        attribute shorts:
-            "Characters/Brittney/Brittney_Shorts.png"
+    if b_hat != 0:
+        "Characters/Brittney/Brittney_Hat_0[b_hat].png"
 
 # Chad Truman
 image chad_blink:
@@ -719,7 +682,7 @@ layeredimage chad:
         attribute talking:
             "chad_talking"
         attribute notalking:
-            "Characters/Brittney/Brittney_Lip_None.png"
+            "Characters/Brittney/Brittney_Blinking_00.png"
     group eyes:
         ypos 0.2
         attribute straight:
@@ -746,7 +709,7 @@ layeredimage chad:
 
 # Christeena
 image chris_blink:
-    "Characters/Christeena/Christeena_Blinking_00.png"
+    "Characters/Brittney/Brittney_Lip_None.png"
     block:
         pause 2.0
         choice:
@@ -763,15 +726,9 @@ image chris_blink:
             pause 2.5
         choice:
             pause 3.0
-        "Characters/Christeena/Christeena_Blinking_04.png"
-        pause 0.025
-        "Characters/Christeena/Christeena_Blinking_03.png"
-        pause 0.025
-        "Characters/Christeena/Christeena_Blinking_02.png"
-        pause 0.025
-        "Characters/Christeena/Christeena_Blinking_01.png"
-        pause 0.025
-        "Characters/Christeena/Christeena_Blinking_00.png"
+        "Characters/Christeena/Christeena_Blinking.png"
+        pause 0.1
+        "Characters/Brittney/Brittney_Lip_None.png"
         repeat
 
 image chris_talking:
@@ -783,15 +740,14 @@ image chris_talking:
         "Characters/Christeena/Christeena_Lip_O.png"
     choice:
         "Characters/Christeena/Christeena_Lip_U.png"
-    pause 0.09
+    pause 0.1
+    "Characters/Brittney/Brittney_Lip_None.png"
+    pause 0.1
     repeat
 
 layeredimage chris:
-    if c_hair == 0:
-        "Characters/Christeena/Christeena_Hair_Down_02.png"
-        ypos 0.1
-    elif c_hair == 1:
-        "Characters/Christeena/Christeena_Hair_Up_02.png"
+    always:
+        "Characters/Christeena/Christeena_HairBack_0[c_hair].png"
         ypos 0.1
     group body:
         ypos 0.1
@@ -799,6 +755,13 @@ layeredimage chris:
             "Characters/Christeena/Christeena_Body_[outfit_c]01.png"
         attribute p2:
             "Characters/Christeena/Christeena_Body_[outfit_c]02.png"
+    if c_hair == 0:
+        "Characters/Christeena/Christeena_Hair_Shadow_01.png"
+        ypos 0.1
+    group crying:
+        ypos 0.1
+        attribute tears:
+            "Characters/Christeena/Christeena_Tears_01.png"
     group eyes:
         ypos 0.1
         attribute straight:
@@ -839,15 +802,12 @@ layeredimage chris:
         attribute talking:
             "chris_talking"
         attribute notalking:
-            "Characters/Christeena/Christeena_Lip_None.png"
+            "Characters/Brittney/Brittney_Lip_None.png"
     if c_blush:
         "Characters/Christeena/Christeena_Blush_01.png"
         ypos 0.1
-    if c_hair == 0:
-        "Characters/Christeena/Christeena_Hair_Down_01.png"
-        ypos 0.1
-    elif c_hair == 1:
-        "Characters/Christeena/Christeena_Hair_Up_01.png"
+    always:
+        "Characters/Christeena/Christeena_HairHead_0[c_hair].png"
         ypos 0.1
     group eyebrows:
         ypos 0.1
@@ -861,10 +821,6 @@ layeredimage chris:
             "Characters/Christeena/Christeena_Eyebrows_04.png"
         attribute raised:
             "Characters/Christeena/Christeena_Eyebrows_05.png"
-    group crying:
-        ypos 0.1
-        attribute tears:
-            "Characters/Christeena/Christeena_Tears_01.png"
 
 # Daniel
 image daniel_blink:
@@ -928,7 +884,7 @@ layeredimage daniel:
         attribute talking:
             "daniel_talking"
         attribute notalking:
-            "Characters/Brittney/Brittney_Lip_None.png"
+            "Characters/Brittney/Brittney_Blinking_00.png"
     group eyebrows:
         attribute casual:
             "Characters/Daniel/Daniel_Eyebrows_01.png"
@@ -939,7 +895,7 @@ layeredimage daniel:
 
 # Donald
 image don_blink:
-    "Characters/Donald/Donald_Blinking_00.png"
+    "Characters/Brittney/Brittney_Lip_None.png"
     block:
         pause 2.0
         choice:
@@ -956,15 +912,9 @@ image don_blink:
             pause 2.5
         choice:
             pause 3.0
-        "Characters/Donald/Donald_Blinking_04.png"
-        pause 0.025
-        "Characters/Donald/Donald_Blinking_03.png"
-        pause 0.025
-        "Characters/Donald/Donald_Blinking_02.png"
-        pause 0.025
-        "Characters/Donald/Donald_Blinking_01.png"
-        pause 0.025
-        "Characters/Donald/Donald_Blinking_00.png"
+        "Characters/Donald/Donald_Blinking.png"
+        pause 0.1
+        "Characters/Brittney/Brittney_Lip_None.png"
         repeat
 
 image don_talking:
@@ -976,6 +926,8 @@ image don_talking:
         "Characters/Donald/Donald_Lip_O.png"
     choice:
         "Characters/Donald/Donald_Lip_U.png"
+    pause 0.08
+    "Characters/Brittney/Brittney_Lip_None.png"
     pause 0.08
     repeat
 
@@ -1013,7 +965,7 @@ layeredimage don:
         attribute talking:
             "don_talking"
         attribute notalking:
-            "Characters/Donald/Donald_Lip_None.png"
+            "Characters/Brittney/Brittney_Lip_None.png"
     group eyebrows:
         attribute casual:
             "Characters/Donald/Donald_Eyebrows_01.png"
@@ -1049,14 +1001,8 @@ image elie_blink:
             pause 2.5
         choice:
             pause 3.0
-        "Characters/Eleanor/Eleanor_Blinking_04.png"
-        pause 0.025
-        "Characters/Eleanor/Eleanor_Blinking_03.png"
-        pause 0.025
-        "Characters/Eleanor/Eleanor_Blinking_02.png"
-        pause 0.025
-        "Characters/Eleanor/Eleanor_Blinking_01.png"
-        pause 0.025
+        "Characters/Eleanor/Eleanor_Blinking.png"
+        pause 0.1
         "Characters/Brittney/Brittney_Blinking_00.png"
         repeat
 
@@ -1070,7 +1016,19 @@ image elie_talking:
     choice:
         "Characters/Eleanor/Eleanor_Lip_U.png"
     pause 0.1
+    "Characters/Brittney/Brittney_Blinking_00.png"
+    pause 0.1
     repeat
+
+image elie_cig_smoke:
+    "Characters/Eleanor/Eleanor_Cigarette_Smoke_01.png" with dissolve
+    pause 0.5
+    "Characters/Eleanor/Eleanor_Cigarette_Smoke_02.png" with dissolve
+    pause 0.5
+    "Characters/Eleanor/Eleanor_Cigarette_Smoke_03.png" with dissolve
+    pause 0.5
+    repeat
+
 
 layeredimage elie:
     if e_hair == 0:
@@ -1078,6 +1036,10 @@ layeredimage elie:
     group body:
         attribute p1:
             "Characters/Eleanor/Eleanor_Body_[outfit_e]01.png"
+    if e_cig:
+        "elie_cig_smoke"
+    if e_cig:
+        "Characters/Eleanor/Eleanor_Cigarette.png"
     group eyes:
         attribute straight:
             "Characters/Eleanor/Eleanor_Pupils_01.png"
@@ -1102,7 +1064,7 @@ layeredimage elie:
         attribute talking:
             "elie_talking"
         attribute notalking:
-            "Characters/Brittney/Brittney_Lip_None.png"
+            "Characters/Brittney/Brittney_Blinking_00.png"
     if e_glasses:
         "Characters/Eleanor/Eleanor_Glasses_01.png"
     if e_hair == 0:
@@ -1176,7 +1138,7 @@ layeredimage fred:
         attribute talking:
             "fred_talking"
         attribute notalking:
-            "Characters/Brittney/Brittney_Lip_None.png"
+            "Characters/Brittney/Brittney_Blinking_00.png"
     group eyes:
         attribute straight:
             "Characters/Fred/Fred_Pupils_01.png"
@@ -1256,7 +1218,7 @@ layeredimage ginger:
         attribute talking:
             "ginger_talking"
         attribute notalking:
-            "Characters/Brittney/Brittney_Lip_None.png"
+            "Characters/Brittney/Brittney_Blinking_00.png"
     group eyes:
         attribute straight:
             "Characters/Ginger/Ginger_Pupils_01.png"
@@ -1339,7 +1301,7 @@ layeredimage harry:
         attribute talking:
             "harry_talking"
         attribute notalking:
-            "Characters/Brittney/Brittney_Lip_None.png"
+            "Characters/Brittney/Brittney_Blinking_00.png"
     group eyes:
         attribute straight:
             "Characters/Harry/Harry_Pupils_01.png"
@@ -1420,7 +1382,7 @@ layeredimage janice:
         attribute talking:
             "janice_talking"
         attribute notalking:
-            "Characters/Brittney/Brittney_Lip_None.png"
+            "Characters/Brittney/Brittney_Blinking_00.png"
     group eyes:
         attribute straight:
             "Characters/Janice/Janice_Pupils_01.png"
@@ -1498,7 +1460,7 @@ layeredimage kelly:
         attribute talking:
             "kelly_talking"
         attribute notalking:
-            "Characters/Brittney/Brittney_Lip_None.png"
+            "Characters/Brittney/Brittney_Blinking_00.png"
     if k_hair == 0:
         "Characters/Kelly/Kelly_Hair_01.png"
     group eyebrows:
@@ -1784,7 +1746,7 @@ layeredimage percy:
         attribute talking:
             "percy_talking"
         attribute notalking:
-            "Characters/Brittney/Brittney_Lip_None.png"
+            "Characters/Brittney/Brittney_Blinking_00.png"
     group eyes:
         attribute straight:
             "Characters/Percy/Percy_Pupils_01.png"
@@ -1895,6 +1857,8 @@ image firework:
     choice:
         "#8a00ff"
 
+image bg cg_andi_aisle = "#2cba4a"
+
 ##############
 # Transforms #
 ##############
@@ -1906,11 +1870,11 @@ init:
     $ config.default_transform = new_default
 
 transform middle:
-    zoom 0.75
+    zoom 0.8
     xalign 0.5 yalign 0.5
 
 transform middle_float:
-    zoom 0.75
+    zoom 0.8
     xalign 0.5 ycenter 0.5
     block:
         ease 1.0 ycenter 0.52
@@ -1918,68 +1882,68 @@ transform middle_float:
         repeat
 
 transform twoleft:
-    zoom 0.75
-    xalign 0.25 yalign 0.5
+    zoom 0.8
+    xalign 0.2 yalign 0.5
 
 transform twoleft_float:
-    zoom 0.75
-    xalign 0.25 ycenter 0.5
+    zoom 0.8
+    xalign 0.2 ycenter 0.5
     block:
         ease 1.0 ycenter 0.52
         ease 1.0 ycenter 0.5
         repeat
 
 transform tworight:
-    zoom 0.75
-    xalign 0.75 yalign 0.5
+    zoom 0.8
+    xalign 0.8 yalign 0.5
 
 transform tworight_float:
-    zoom 0.75
-    xalign 0.75 ycenter 0.5
+    zoom 0.8
+    xalign 0.8 ycenter 0.5
     block:
         ease 1.0 ycenter 0.52
         ease 1.0 ycenter 0.5
         repeat
 
 transform threeleft:
-    zoom 0.75
-    xalign 0.1 yalign 0.5
+    zoom 0.8
+    xalign 0.0 yalign 0.5
 
 transform threeleft_float:
-    zoom 0.75
-    xalign 0.1 ycenter 0.5
+    zoom 0.8
+    xalign 0.0 ycenter 0.5
     block:
         ease 1.0 ycenter 0.52
         ease 1.0 ycenter 0.5
         repeat
 
 transform threeright:
-    zoom 0.75
-    xalign 0.9 yalign 0.5
+    zoom 0.8
+    xalign 1.0 yalign 0.5
 
 transform threeright_float:
-    zoom 0.75
-    xalign 0.9 ycenter 0.5
+    zoom 0.8
+    xalign 1.0 ycenter 0.5
     block:
         ease 1.0 ycenter 0.52
         ease 1.0 ycenter 0.5
         repeat
 
 transform four1:
-    zoom 0.75
-    xalign 0.0 yalign 0.5
+    zoom 0.8
+    xalign -0.15 yalign 0.5
 
 transform four2:
-    zoom 0.75
+    zoom 0.8
     xalign 0.3 yalign 0.5
 
 transform four3:
-    zoom 0.75
+    zoom 0.8
     xalign 0.7 yalign 0.5
 
 transform four4:
-    zoom 0.75
-    xalign 1.0 yalign 0.5
+    zoom 0.8
+    xalign 1.15 yalign 0.5
 
 transform close_b:
     zoom 1.0
@@ -1995,11 +1959,11 @@ transform close_b_float:
 
 transform close_right_b:
     zoom 1.0
-    xalign 0.9 yalign 0.2
+    xalign 1.0 yalign 0.2
 
 transform close_right_b_float:
     zoom 1.0
-    xalign 0.9 yalign 0.2
+    xalign 1.0 yalign 0.2
     block:
         ease 1.0 yalign 0.15
         ease 1.0 yalign 0.2
@@ -2007,11 +1971,11 @@ transform close_right_b_float:
 
 transform close_right_b_2:
     zoom 1.0
-    xalign 1.0 yalign 0.2
+    xalign 1.1 yalign 0.2
 
 transform close_right_b_2_float:
     zoom 1.0
-    xalign 1.0 yalign 0.2
+    xalign 1.1 yalign 0.2
     block:
         ease 1.0 yalign 0.15
         ease 1.0 yalign 0.2
@@ -2099,11 +2063,11 @@ transform close_left_d_float:
 
 transform close_left_d_2:
     zoom 1.0
-    xalign 0.0 yalign 0.2
+    xalign -0.1 yalign 0.2
 
 transform close_left_d_2_float:
     zoom 1.0
-    xalign 0.0 yalign 0.2
+    xalign -0.1 yalign 0.2
     block:
         ease 1.0 yalign 0.15
         ease 1.0 yalign 0.2
@@ -2111,7 +2075,7 @@ transform close_left_d_2_float:
 
 transform close_e:
     zoom 1.0
-    xalign 0.5 yalign 0.25
+    xalign 0.5 yalign 0.3
 
 transform close_h:
     zoom 1.0
@@ -2155,15 +2119,15 @@ transform close_m:
 
 transform close_to_left:
     parallel:
-        ease 0.5 zoom 0.75
+        ease 0.5 zoom 0.8
     parallel:
-        ease 0.5 xalign 0.25 yalign 0.5
+        ease 0.5 xalign 0.2 yalign 0.5
 
 transform close_to_right:
     parallel:
-        ease 0.5 zoom 0.75
+        ease 0.5 zoom 0.8
     parallel:
-        ease 0.5 xalign 0.75 yalign 0.5
+        ease 0.5 xalign 0.8 yalign 0.5
 
 transform close_to_far:
     ease 0.5 zoom 0.75
@@ -2249,22 +2213,21 @@ init -1 python:
 
 # Brittney
     def b_voice(event, interact=True, **kwargs):
+        voice_num = 15
+        voice_random = []
+        voice_sound = ["audio/voice/brittney_01.ogg", "audio/voice/brittney_02.ogg", "audio/voice/brittney_03.ogg"]
         if not interact:
             return
-        if event == "show_done":
-            renpy.show("brit talking")
-            renpy.sound.play("audio/voice/brittney.ogg", loop=True, channel="blip")
+        if event == "show_done":  
+            while voice_num > 0:
+                voice_random.append(renpy.random.choice(voice_sound))
+                voice_num -= 1
+            if renpy.showing("brit"):
+                renpy.show("brit talking")
+            renpy.sound.play(voice_random, loop=True, channel="blip")
         elif event == "slow_done":
-            renpy.show("brit notalking")
-            renpy.sound.stop(channel="blip")
-            renpy.restart_interaction()
-
-    def b_offscreen(event, interact=True, **kwargs):
-        if not interact:
-            return
-        if event == "show_done":
-            renpy.sound.play("audio/voice/brittney.ogg", loop=True, channel="blip")
-        elif event == "slow_done":
+            if renpy.showing("brit"):
+                renpy.show("brit notalking")
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
 
@@ -2282,69 +2245,51 @@ init -1 python:
 
 # Christeena
     def c_voice(event, interact=True, **kwargs):
+        voice_num = 15
+        voice_random = []
+        voice_sound = ["audio/voice/christeena_01.ogg", "audio/voice/christeena_02.ogg", "audio/voice/christeena_03.ogg"]
         if not interact:
             return
         if event == "show_done":
-            renpy.show("chris talking")
-            renpy.sound.play("audio/voice/christeena.ogg", loop=True, channel="blip")
+            while voice_num > 0:
+                voice_random.append(renpy.random.choice(voice_sound))
+                voice_num -= 1
+            if renpy.showing("chris"):
+                renpy.show("chris talking")
+            renpy.sound.play(voice_random, loop=True, channel="blip")
         elif event == "slow_done":
-            renpy.show("chris notalking")
+            if renpy.showing("chris"):
+                renpy.show("chris notalking")
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
-
-    def c_offscreen(event, interact=True, **kwargs):
-        if not interact:
-            return
-        if event == "show_done":
-            renpy.sound.play("audio/voice/christeena.ogg", loop=True, channel="blip")
-        elif event == "slow_done":
-            renpy.sound.stop(channel="blip")
-            renpy.restart_interaction()
-
 
 # Daniel
     def da_voice(event, interact=True, **kwargs):
         if not interact:
             return
         if event == "show_done":
-            renpy.show("daniel talking")
+            if renpy.showing("daniel"):
+                renpy.show("daniel talking")
             renpy.sound.play("audio/voice/daniel.ogg", loop=True, channel="blip")
         elif event == "slow_done":
-            renpy.show("daniel notalking")
+            if renpy.showing("daniel"):
+                renpy.show("daniel notalking")
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
-
-    def da_offscreen(event, interact=True, **kwargs):
-        if not interact:
-            return
-        if event == "show_done":
-            renpy.sound.play("audio/voice/daniel.ogg", loop=True, channel="blip")
-        elif event == "slow_done":
-            renpy.sound.stop(channel="blip")
-            renpy.restart_interaction()
-
 
 # Donald
     def d_voice(event, interact=True, **kwargs):
         if not interact:
             return
         if event == "show_done":
-            renpy.show("don talking")
+            if renpy.showing("don"):
+                renpy.show("don talking")
             renpy.sound.play("audio/voice/donald.ogg", loop=True, channel="blip")
         elif event == "slow_done":
-            renpy.show("don notalking")
+            if renpy.showing("don"):
+                renpy.show("don notalking")
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
-
-    def d_offscreen(event, interact=True, **kwargs):
-        if not interact:
-            return
-        if event == "show_done":
-            renpy.sound.play("audio/voice/donald.ogg", loop=True, channel="blip")
-        elif event == "slow_done":
-            renpy.sound.stop(channel="blip")
-            renpy.restart_interaction()
-
 
 # Brittney and Donald
     def bd_voice(event, interact=True, **kwargs):
@@ -2362,88 +2307,56 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.show("elie talking")
+            if renpy.showing("elie"):
+                renpy.show("elie talking")
             renpy.sound.play("audio/voice/eleanor.ogg", loop=True, channel="blip")
         elif event == "slow_done":
-            renpy.show("elie notalking")
+            if renpy.showing("elie"):
+                renpy.show("elie notalking")
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
-
-    def e_offscreen(event, interact=True, **kwargs):
-        if not interact:
-            return
-        if event == "show_done":
-            renpy.sound.play("audio/voice/eleanor.ogg", loop=True, channel="blip")
-        elif event == "slow_done":
-            renpy.sound.stop(channel="blip")
-            renpy.restart_interaction()
-
 
 # Fred
     def f_voice(event, interact=True, **kwargs):
         if not interact:
             return
         if event == "show_done":
-            renpy.show("fred talking")
+            if renpy.showing("fred"):
+                renpy.show("fred talking")
             renpy.sound.play("audio/voice/fred.ogg", loop=True, channel="blip")
         elif event == "slow_done":
-            renpy.show("fred notalking")
+            if renpy.showing("fred"):
+                renpy.show("fred notalking")
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
-
-    def f_offscreen(event, interact=True, **kwargs):
-        if not interact:
-            return
-        if event == "show_done":
-            renpy.sound.play("audio/voice/fred.ogg", loop=True, channel="blip")
-        elif event == "slow_done":
-            renpy.sound.stop(channel="blip")
-            renpy.restart_interaction()
-
 
 # Ginger
     def g_voice(event, interact=True, **kwargs):
         if not interact:
             return
         if event == "show_done":
-            renpy.show("ginger talking")
+            if renpy.showing("ginger"):
+                renpy.show("ginger talking")
             renpy.sound.play("audio/voice/ginger.ogg", loop=True, channel="blip")
         elif event == "slow_done":
-            renpy.show("ginger notalking")
+            if renpy.showing("ginger"):
+                renpy.show("ginger notalking")
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
-
-    def g_offscreen(event, interact=True, **kwargs):
-        if not interact:
-            return
-        if event == "show_done":
-            renpy.sound.play("audio/voice/ginger.ogg", loop=True, channel="blip")
-        elif event == "slow_done":
-            renpy.sound.stop(channel="blip")
-            renpy.restart_interaction()
-
 
 # Harry
     def h_voice(event, interact=True, **kwargs):
         if not interact:
             return
         if event == "show_done":
-            renpy.show("harry talking")
+            if renpy.showing("harry"):
+                renpy.show("harry talking")
             renpy.sound.play("audio/voice/harry.ogg", loop=True, channel="blip")
         elif event == "slow_done":
-            renpy.show("harry notalking")
+            if renpy.showing("harry"):
+                renpy.show("harry notalking")
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
-
-    def h_offscreen(event, interact=True, **kwargs):
-        if not interact:
-            return
-        if event == "show_done":
-            renpy.sound.play("audio/voice/harry.ogg", loop=True, channel="blip")
-        elif event == "slow_done":
-            renpy.sound.stop(channel="blip")
-            renpy.restart_interaction()
-
 
 # Janice
     def j_voice(event, interact=True, **kwargs):
@@ -2489,44 +2402,28 @@ init -1 python:
         if not interact:
             return
         if event == "show_done":
-            renpy.show("martha talking")
+            if renpy.showing("martha"):
+                renpy.show("martha talking")
             renpy.sound.play("audio/voice/martha.ogg", loop=True, channel="blip")
         elif event == "slow_done":
-            renpy.show("martha notalking")
+            if renpy.showing("martha"):
+                renpy.show("martha notalking")
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
-
-    def m_offscreen(event, interact=True, **kwargs):
-        if not interact:
-            return
-        if event == "show_done":
-            renpy.sound.play("audio/voice/martha.ogg", loop=True, channel="blip")
-        elif event == "slow_done":
-            renpy.sound.stop(channel="blip")
-            renpy.restart_interaction()
-
 
 # Percy
     def p_voice(event, interact=True, **kwargs):
         if not interact:
             return
         if event == "show_done":
-            renpy.show("percy talking")
+            if renpy.showing("percy"):
+                renpy.show("percy talking")
             renpy.sound.play("audio/voice/percy.ogg", loop=True, channel="blip")
         elif event == "slow_done":
-            renpy.show("percy notalking")
+            if renpy.showing("percy"):
+                renpy.show("percy notalking")
             renpy.sound.stop(channel="blip")
             renpy.restart_interaction()
-
-    def p_offscreen(event, interact=True, **kwargs):
-        if not interact:
-            return
-        if event == "show_done":
-            renpy.sound.play("audio/voice/percy.ogg", loop=True, channel="blip")
-        elif event == "slow_done":
-            renpy.sound.stop(channel="blip")
-            renpy.restart_interaction()
-
 
 
 #########

@@ -18,11 +18,11 @@ label nhie_b:
     b p1 straight mad grin "Well, well, well. Bravo, Mr. Sprouse!"
     $ nhie_b_points -= 1
     with dissolve
-    "Brittney then lowered her final finger, marking her out of the game."
+    "Brittney then lowered her final finger, officially marking her out of the game."
     # Points: A = 3, B = 0, C = 1, D = 1
     show don level grin
-    "Donald looked at me and winked, as if thanking me for that."
-    $ b_wink = True
+    "Donald looked at me and winked in thanks."
+    $ b_eyelids = "wink"
     b mad tongue p2 "Alright; time to see which one of you losers will get the honor of making me do a dare."
     show don right
     d "Yes, time to see, indeed."
@@ -32,7 +32,7 @@ label nhie_b:
     with easeoutright
     pause 0.1
     show don straight raised
-    $ b_wink = False
+    $ b_eyelids = "blink"
     "Donald looked at both Christeena and I with giant grins."
     d smile "Never have I ever..."
     d_s grin "..."
@@ -45,9 +45,9 @@ label nhie_b:
     show chris p1 straight casual blank at tworight
     with easeinright
     pause 0.1
-    d right casual blank "Wait a minute; Christeena, I thought you wore glasses at one point!"
+    d right casual blank "Wait a minute; Christeena, didn't you wear glasses at one point?"
     c raised "Why the heck would you think that?"
-    d straight level "I thought I saw a picture of you in glasses at one point..."
+    d straight level "I thought I saw a picture of you in glasses before..."
     c_s level "..."
     c raised "...wait a minute..."
     c p2 hanging "Are you talking about that picture where I was wearing my mom--"
@@ -60,16 +60,16 @@ label nhie_b:
     with easeinright
     pause 0.1
     b "Nice try, Donnie."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     $b_blink = True
-    b level straight huhu "But it would appear as though your plan backfired."
+    extend level straight huhu " But it would appear as though your plan backfired."
     d straight level blank "It would appear so, indeed."
     d right grin "Alright, Christeena; you're up!"
     hide don
     hide brit
     with dissolve
     pause 0.1
-    $ b_partial = False
+    $ b_eyelids = "blink"
     c casual smile "Okay, then!"
     c level left dot "Hm..."
     c p1 straight raised smile "Oh, I've got a good one!"
@@ -217,7 +217,7 @@ label b_dare_kiss_a:
     b p1 small level hanging "Hey!"
     b straight raised grin "None of you are even gonna question the 'girl' part?"
     d level grin "I mean, you could always prove it right now..."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b p2 huhu level "Oh, how you wish, you pervert."
     hide chris
     hide don
@@ -225,12 +225,11 @@ label b_dare_kiss_a:
     show brit at close_b
     with easeinright
     pause 0.1
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight casual grin
     b "Alright, then, Alexander. Let's kiss!"
     a "N-Now? In front of everyone?"
     b p2 raised huhu "Hey, you're the one who wanted a kiss!"
-    b level grin p1 "It's just a kiss; it's not like it has to mean anything. Actors do it all the time with no issue."
     a "I guess..."
     show brit:
         ease 0.5 zoom 1.1
@@ -245,7 +244,6 @@ label b_dare_kiss_a:
     with dissolve
     pause 0.1
     "They both looked curious yet embarrassed."
-    "It's not every day you watch two people kiss in a scenario like this one."
     scene bg cabin_i_s with dissolve
     pause 0.1
     "With nothing else to really lose, I looked back to Brittney, leaned forward, and pressed my lips against hers."
@@ -262,12 +260,10 @@ label b_dare_kiss_a:
     b "Huh."
     b "You didn't even try going French on me."
     b raised "If you were going to make a weak dare, you could've at least tried to spice it up!"
-    a "Uh..."
-    a "Sorry?"
+    a "Uh... Sorry?"
     $b_blink = False
     b p1 sad closed closed_smile "Well, you're lucky your lips were nice."
-    a "Well, uh, thanks."
-    a "Yours were, too."
+    a "Well, uh, thanks. Yours were, too."
     $b_blink = True
     b straight sad huhu "Aww, thank you, Sweetheart!"
     show brit at close_right_b
@@ -410,7 +406,7 @@ label nhie_b_continue:
     pause 0.1
     "And just like that, their lips touched."
     "Before Donald could fully appreciate it, though, she pulled back, still sporting that disinterested face."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     show brit p2 level blank straight at close_right_b
     show don p1 small sad blank at close_left_d
     with dissolve
@@ -420,7 +416,7 @@ label nhie_b_continue:
     d raised grin straight "Y-Yeah! Of course!"
     b_s "..."
     b grin casual "Well, I'm glad."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight raised grin at close_right_b
     b "If you weren't, that would've made the last few years' efforts completely pointless."
     d level "Yeah, I suppose so."
@@ -437,10 +433,9 @@ label nhie_b_stop:
     a "Brittney..."
     show brit straight casual
     a "I'm sorry for suggesting this dare."
-    a "I was just trying to help Donald out, but it's not worth it if you really are going to be this uncomfortable with it."
+    a "I was just trying to help Donald out, but it's not worth it if you really are this uncomfortable with it."
     b_s sad "..."
-    a "You don't have to kiss him if you really don't want to."
-    a "I'm sorry."
+    a "You don't have to kiss him if you really don't want to. I'm sorry."
     b_s right "..."
     show brit at close_right_b
     show don p1 straight sad blank at close_left_d zorder 2
@@ -454,20 +449,7 @@ label nhie_b_stop:
     b_s sad "..."
     b "...Donald..."
     b p1 grin "...that was really sweet of you."
-    b "Just like the guy I know you really are deep inside."
-    $b_blink = False
-    show brit closed sad closed_smile zorder 1:
-        linear 0.2 xalign 0.25
-    pause 0.2
-    d p2 small casual blank "Urk!"
-    "Just like that, Brittney hugged him tightly."
-    "Once she noticed how tightly she was squeezing, though, she released him from her grasp."
-    $b_blink = True
-    show brit p2 straight grin at close_right_b with easeinleft
-    pause 0.1
-    b "Sorry, I just got excited."
-    d p1 level straight grin "No need to apologize; as long as you're happy, I'm happy."
-    b_s "..."
+    b_s p2 straight grin "..."
     b level "You know what?"
     b p1 sad opened_smile "I won't kiss you on the lips, but how about the cheek?"
     extend p2 grin " That's a fair enough compromise, right?"
@@ -504,8 +486,8 @@ label brit_don_kiss_end:
     d straight level grin "Alright, then. What do you say we call it a night?"
     $b_blink = True
     b p2 left level huhu "Well, since you got what you really brought us together tonight for, I don't see why not."
-    d right "I will neither confirm nor deny if there were other reasonings behind this hangout session other than Alex getting to know us better."
-    $ b_partial = True
+    d right "I will neither confirm nor deny if there were other motivations behind this hangout session other than Alex getting to know us better."
+    $ b_eyelids = "partial"
     b straight grin casual "Sure thing, Donald. Sure thing."
     jump nhie_end
 
@@ -570,9 +552,9 @@ label b_dare_hit:
     b "I went too far that time, didn't I?"
     c p2 "Maybe just a little."
     b sad left "Damn it..."
-    b "I better go apologize."
     hide brit with easeoutleft
     pause 1
+    "She then ran out of cabin, as well."
     show chris at middle with easeinleft
     pause 0.1
     $ current_track = "\"Reflection\""
@@ -607,6 +589,7 @@ label chris_win:
     show brit casual blank
     a "Never have I ever..."
     a "...graduated high school."
+    $c_blush = False
     show chris raised p1 straight blank
     show brit level hanging
     "Both girls looked naturally surprised at my move."
@@ -627,7 +610,7 @@ label chris_win:
     show brit p1 straight mad opened_smile at close_right_b
     show chris at twoleft
     with easeinright
-    with Pause(.1)
+    pause 0.1
     b "{cps=15}Niiiice!{/cps}"
     hide screen finger_points
     hide nhie
@@ -640,9 +623,9 @@ label chris_win:
     c raised blank "Hm..."
     c_s level left "..."
     c mad straight grin "Okay."
-    c p2 smile "I dare you to watch a whole season's worth of anime with me."
+    c p2 smile "I dare you to watch a whole season of anime with me."
     b small level hanging "Wha...?"
-    b p1 straight mad frown "I'd rather shove an unlubed cactus up my ass!"
+    b p1 straight mad frown "I'd rather shove a cactus up my ass without lube!"
     c p1 raised grin "I dared you, though. A dare I won fair and square!"
     b_s level blank "..."
     b p2 right "...{fast}fine. I'll do it."
@@ -703,7 +686,7 @@ label nhie_c:
     d casual "You're right; I have no reason."
     d mad right "Except that I want to."
     d "So, never have I ever worn a bra."
-    $ b_wink = True
+    $ b_eyelids = "wink"
     show brit tongue mad
     "Brittney playfully stuck out her tongue as she put her final finger down."
     # Points: A = 3, B = 0, C = 0, D = 1
@@ -713,7 +696,7 @@ label nhie_c:
     show brit at close_b
     with easeoutleft
     pause 0.1
-    $ b_wink = False
+    $ b_eyelids = "blink"
     b p1 straight raised grin "Alright, then; whoever wins get to make Christeena perform a dare."
     b p2 level huhu "And I have a feeling that Alex is going to be the winner here, unless he wants the game to last longer."
     b p1 sad grin "Either way, this is going to be fun!"
@@ -808,7 +791,7 @@ label c_dare_kiss:
     c mad scream "BRITTNEY!"
     b sad opened_smile p1 "What?"
     c_s blank "..."
-    c "...{fast}okay."
+    extend "okay."
     c p2 right "Just... can you and Donald go into the other room, first?"
     $b_blink = False
     b closed closed_smile "Oh, alright."
@@ -863,7 +846,7 @@ label c_dare_kiss:
         $ C_Points += 1
         $ C_Kiss = True
         "After kissing me for a few seconds, Christeena pulled back."
-        c_o "Okay... you can open your eyes."
+        c "Okay... you can open your eyes."
         scene bg cabin_i:
             xalign 1.0
         with dissolve
@@ -884,7 +867,7 @@ label c_dare_kiss:
         a "Sorry if you really were uncomfortable with this."
         $ c_blush = False
         show chris level blank p1 straight at close_c
-        c "I was, at first, but..."
+        c "I was at first, but..."
         $ c_blush = True
         c right sad grin "...it was worth it."
         show chris straight
@@ -913,7 +896,7 @@ label c_dare_kiss:
     pause 0.1
     "Almost on cue, Brittney and Donald exited the bathroom with faces of anticipation."
     $ c_blush = False
-    $ b_partial = True
+    $ b_eyelids = "partial"
     show brit p2 level huhu straight at tworight
     show don p1 straight casual grin at twoleft
     with easeinright
@@ -936,7 +919,7 @@ label c_dare_kiss:
         show chris p2 level straight grin at middle with dissolve
         pause 0.1
     c "Honestly, it wasn't so bad."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight mad grin at threeright
     pause 0.1
     b "I told you, it was just a kiss."
@@ -946,7 +929,7 @@ label c_dare_kiss:
     d "Don't wanna be out TOO late, right?"
     b level "Aww, is Donnie staying up past his bedtime?"
     d right grin "Ah, screw you."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b p2 casual huhu "Oh, how you wish."
     jump nhie_end
 
@@ -957,8 +940,7 @@ label c_dare_kiss:
 label c_dare_flash:
     a "...flash me."
     $ C_Points -= 2
-    c p2 mad scream "NO!!"
-    c "Absolutely not!!"
+    c p2 mad scream "NO!! Absolutely not!!"
     show don p1 straight casual smile at close_left_d_2
     show chris at middle
     show brit p1 casual straight grin at close_right_b_2
@@ -975,12 +957,12 @@ label c_dare_flash:
     b p1 casual blank "Why would I? They're just boobs."
     c mad scream p1 "No, they are not 'just boobs', Brittney!!"
     c "Not all girls have a man's chest like you do!"
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b p2 raised "Okay, first of all, fuck you, Cantaloupes."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight raised blank
     b "And secondly, that doesn't change the fact that they're just lumps of fat with nipples on them."
-    b p2 right level "I mean, yeah, if he wanted you to take your pants off, I'd stop this..."
+    b p2 right level "I mean, yeah, if he wanted you to take your pants off, that would be one thing..."
     b straight grin "...but I'm sure Alex has seen a nipple before, right?"
     c p2 left blank "S-Still..."
     b left huhu "Trust me, you'll survive!"
@@ -989,7 +971,7 @@ label c_dare_flash:
     b casual "Well, Don and I will leave you both to your business."
     $b_blink = False
     b closed sad opened_smile "Have fun, you two!"
-    $ b_partial = True
+    $ b_eyelids = "partial"
     $b_blink = True
     b p2 straight level huhu "Don't stay here alone for too long; a simple flash could evolve to something more if you're not careful."
     show brit at close_right_b_2
@@ -997,7 +979,7 @@ label c_dare_flash:
     show don p1 straight raised grin at close_left_d_2
     with easeinleft
     pause 0.1
-    "Donald gave me a small wink and nod, as if to say 'You got this, Bro!'"
+    "Donald gave me a small wink and nod."
     $ current_track = "None"
     stop music fadeout 2.0
     hide brit
@@ -1005,7 +987,7 @@ label c_dare_flash:
     with easeoutright
     play sound door_open
     pause 1
-    $ b_partial = False
+    $ b_eyelids = "blink"
     "And with that, Christeena and I were alone in the cabin."
     $ current_track = "\"Reflection\""
     play music reflection
@@ -1263,9 +1245,8 @@ label nhie_d:
     $ c_blush = True
     c p2 scream mad "What the hell??"
     c blank "I was just trying to be nice and not get you out, and this is how you return the favor??"
-    $ b_partial = True
-    b casual grin "Rule 1 of this game: never be nice!"
-    b "Being nice results in lame games!"
+    $ b_eyelids = "partial"
+    b casual grin "Rule 1 of this game: never be nice! Being nice results in lame games!"
     show chris p1 left
     if acceptsandwich:
         "Christeena still didn't seem happy, and rightfully so, as we each put a finger down."
@@ -1280,7 +1261,7 @@ label nhie_d:
         with dissolve
         pause 0.1
         # Points A = 2, B = 1, C = 0, D = 0
-    $ b_partial = False
+    $ b_eyelids = "blink"
     b p1 straight casual grin "Okay, Al. You're up!"
     a "So I am."
     hide brit
@@ -1388,7 +1369,7 @@ label d_dare_pushup:
     d_s casual dot "..."
     d mad grin "No problem."
     show don at close_left_d
-    $ b_partial = True
+    $ b_eyelids = "partial"
     show brit p2 straight raised grin at close_right_b
     with easeinright
     pause 0.1
@@ -1400,7 +1381,7 @@ label d_dare_pushup:
     pause 0.1
     show bg cabin_i_s:
         ease 0.5 xalign 0.0
-    $ b_partial = False
+    $ b_eyelids = "blink"
     "Donald then got up from his seat and moved to the living area, the rest of us quickly following suit."
     "He seems to be perfectly fine with this dare, though whether it's an act to impress Brittney is not currently clear."
     show don p1 straight raised grin at twoleft
@@ -1409,11 +1390,11 @@ label d_dare_pushup:
     pause 0.1
     d "Alright, let's do this!"
     b p2 raised "This is certainly going to be more entertaining than it should be."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b "But what's stopping you from going the sissy route?"
     d casual blank "What do you mean?"
     b casual "I mean, Alex never clarified when you had to do them or if you had to do them all at once."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight mad opened_smile
     b "For all we know, you could just say that you'll do one now and the rest later or some sneaky bull like that."
     d right mad grin "What do you take me for? I'll happily do all 50 right here, right now!"
@@ -1446,8 +1427,7 @@ label d_dare_pushup:
     b p1 mad closed_smile "25...{w=1.0}26...{w=1.0}27..."
     c_s "..."
     a "C'mon, Don! You're over halfway there!"
-    "Donald looked at me with a face that showed...{w}well, I'm not sure what emotion it was supposed to be."
-    "Anger?{w} Determination?{w} Constipation?"
+    "Donald looked at me with a face that showed...{w}well, I'm not sure what emotion it was supposed to be. Anger?{w} Determination?{w} Constipation?"
     "Regardless, he continued his push-ups."
     b opened_smile "33...{w=1.5}34...{w=1.5}35..."
     b p2 grin raised "Let's go, Waters! Pick up the pace!"
@@ -1473,7 +1453,7 @@ label d_dare_pushup:
     pause 0.1
     b p2 sad grin "Well, you told me you could do it, and you did it!"
     b "For that, I give you props, Donnie."
-    d "*huff* Thank... {w=0.75}*huff* you... {w=0.75}*huff*"
+    d "{i}*huff*{/i} Thank... {w=0.75}{i}*huff*{/i} you... {w=0.75}{i}*huff*{/i}"
     b p1 level "Shall we help you up?"
     d "...please..."
     hide brit with dissolve
@@ -1487,13 +1467,13 @@ label d_dare_pushup:
     pause 0.1
     b "We'll let you sit there until you can move again."
     b sad "Though if I'm being honest..."
-    b p1 opened_smile "Though if I'm being honest...{fast} That was pretty impressive!"
+    extend p1 opened_smile " That was pretty impressive!"
     d casual dot "You...{w=0.5}really...{w=0.5}think so?"
     b casual "I do!"
     $b_blink = False
     b closed sad closed_smile "I mean, yeah, you look like a limp noodle afterwards..."
     $b_blink = True
-    b p2 straight casual grin "I mean, yeah, you look like a limp noodle afterwards...{fast}but you certainly had more strength than I gave you credit for!"
+    extend p2 straight casual grin "but you certainly had more strength than I gave you credit for!"
     d_s blank level "..."
     d grin "Well... thank you."
     hide brit
@@ -1532,7 +1512,7 @@ label d_dare_pond:
     with easeinright
     pause 0.1
     b "Damn! That's harsh!"
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b level huhu "I love it! Let's go!"
     show brit:
         ease 0.25 xalign 0.25
@@ -1542,7 +1522,7 @@ label d_dare_pond:
     hide brit
     with moveoutright
     pause 0.1
-    $ b_partial = False
+    $ b_eyelids = "blink"
     "With that, Brittney quite literally dragged Donald out of the cabin."
     "Christeena and I quickly followed after them."
     scene bg pond_n with dissolve
@@ -1579,7 +1559,7 @@ label d_dare_pond:
     $b_blink = False
     b p1 closed sad closed_smile "In a heartbeat!"
     $b_blink = True
-    $ b_partial = True
+    $ b_eyelids = "partial"
     extend straight level grin " But the point is you're just too cowardly to do it!"
     d "I...!"
     "Uh-oh. This isn't going very well."
@@ -1608,10 +1588,10 @@ label d_pond_no:
         ease 0.5 close_d
     hide brit with dissolve
     pause 0.1
-    $ b_partial = False
+    $ b_eyelids = "blink"
     a "Hey, Donald?"
     d raised "Yeah?"
-    a "Look, man, you don't have to do the dare, after all."
+    a "Look, man, you don't have to do the dare."
     a "I was just trying to do something embarrassing and humiliating to punish you for coming up with the dare idea in the first place, but this just doesn't feel right."
     a "I don't want you getting hypothermia or something because of a stupid dare."
     a "So if you really are uncomfortable with doing this, you really don't have to."
@@ -1622,13 +1602,13 @@ label d_pond_no:
     pause 0.1
     b_s "..."
     b sad "Well, shit..."
-    b right "Well, shit...{fast}now I feel like an ass for trying to force this on you."
-    b p1 straight "But, he's right. As much as I love picking on you, I suppose something like this could be pretty dangerous. I'm sorry, Don."
+    extend right " Wow I feel like an ass for trying to force this on you."
+    b p1 straight "But, he's right. As much as I love picking on you, I suppose something like this could be pretty dangerous. Sorry, Don."
     b p2 right "I guess I really do get a little crazy when I'm tired..."
     d_s "..."
     d grin "It's alright. I forgive you both."
     d left "I suppose I did kinda deserve some sort of punishment for trying to be sneaky."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b casual straight huhu "Well, how about this?"
     show brit:
         linear 0.3 xalign 1.55
@@ -1644,10 +1624,10 @@ label d_pond_no:
     hide white
     d small sad blank "OOF!"
     "Before he could even respond to her, Donald got punched right in the chest. Nothing too serious (at least, that's how it looked), but certainly enough to get one's attention."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     $ b_blink = False
     b p1 closed sad closed_smile "There! We'll call that your punishment!"
-    d straight level grin "*cough* I guess so..."
+    d straight level grin "{i}*cough*{/i} I guess so..."
     show don:
         ease 0.5 middle
     show brit:
@@ -1670,7 +1650,7 @@ label d_pond_yes:
         ease 0.5 close_d
     hide brit with dissolve
     pause 0.1
-    $ b_partial = False
+    $ b_eyelids = "blink"
     a "C'mon, Donald. It's not that big of a deal."
     d wide "Not that big of a deal??"
     d "I could get sick or worse from something like this, man!"
@@ -1725,7 +1705,7 @@ label d_pond_yes:
     b p1 straight "I really hope he doesn't hate us."
     a "Well, I may have known him longer, but you know him better; I suppose you'd be the better judge of if he would or not."
     b_s left "..."
-    b "...{fast}I honestly don't know."
+    extend "I honestly don't know."
     a "Well, then I guess we'll just have to apologize and hope for the best."
     b "I suppose so..."
     "She still looked rightfully upset as she looked towards where Donald and Christeena had walked off."
@@ -1749,7 +1729,7 @@ label d_dare_kiss:
     b "What??"
     a "Well, isn't that why you wanted to add a dare element in the first place, Don? To do something like this?"
     d level blank "Uh..."
-    d left "Uh...{fast} kinda, yeah."
+    extend left " kinda, yeah."
     b straight mad blank "So you're just going to give it to him?"
     a "Hey, who am I to deny my childhood friend something he wants?"
     b_s level "..."
@@ -1777,16 +1757,16 @@ label d_dare_kiss:
     d level "Still, you are part of my dare."
     b straight raised blank "Yeah, I know.{w} Though why it feels like I've been punished is beyond me."
     a "You'll survive. It's just a kiss; it doesn't have to mean anything."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b_s level "..."
     b level "...{fast}fine."
     d sad straight "..."
     b raised "Well? What are you waiting for?"
     d_s "..."
-    d "...{fast}you really are uncomfortable with us kissing, aren't you?"
-    $ b_partial = False
+    extend "you really are uncomfortable with us kissing, aren't you?"
+    $ b_eyelids = "blink"
     b_s straight p2 sad blank "..."
-    b "...{fast}if I'm being honest with you...{w=.5} yeah. A little."
+    extend "if I'm being honest with you...{w=.5} yeah."
     d mad "Then you know what?{w=.5} I think I'll turn down this dare."
     b p1 casual hanging "Huh?"
     d sad right "It just wouldn't feel right kissing a girl that doesn't want to kiss me back."
@@ -1798,10 +1778,10 @@ label d_dare_kiss:
     extend grin " that was really sweet."
     d right "So, you're not mad at me?"
     b p1 level "Of course not. Honestly, if I were in your shoes, I'd be lying if I said that the idea of pulling a similar stunt wouldn't cross my mind."
-    b sad opened_smile "Plus, you apologized and knew that what you were doing was wrong, just like the Donald Waters I know."
+    b sad opened_smile "Plus, you knew that what you were doing was wrong and apologized, just like the Donald Waters I know."
     d_s grin "..."
     a "What about me? You're not mad at me, are you?"
-    b p2 raised grin "Why would I? You were just trying to help out your friend, acting as his wingman!"
+    b p2 raised grin "Why would I? You were just trying to be a wingman."
     b level right huhu "Makes me wish I could have a friend who could do something like that for me."
     hide don
     show chris p2 straight mad blank at twoleft
@@ -1842,7 +1822,7 @@ label brit_win:
     with easeinleft
     pause 0.1
     c "Really? There was no other option you could've come up with?"
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b level huhu "Nope!"
     c_s left "..."
     hide chris
@@ -1858,7 +1838,7 @@ label brit_win:
     hide nhie
     with dissolve
     pause .1
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight mad opened_smile at close_b
     b "Alright, Donald. I guess I'm going to be making you do a dare!"
     show brit at close_right_b
@@ -1868,22 +1848,22 @@ label brit_win:
     d "{i}*gulp*{/i}"
     b p2 right level huhu "Hmm.{w=0.25}.{w=0.25}.{w=0.5}{nw}"
     extend p1 straight casual opened_smile " Oh, I know!"
-    b "I dare you to buy pads and tampons for me for a year!"
+    b "I dare you to buy all my pads and tampons for me for a year!"
     d straight level "...{w}that's it?"
     b raised grin "That's it."
     d_s raised "..."
     a "Huh. Even I admit that that's a little underwhelming."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b "Well, I'm not so cruel that I'd make him do something like jump into the pond."
     if persistent.d_pond:
         a "I highly doubt that."
-        $ b_partial = False
+        $ b_eyelids = "blink"
         show brit p2 straight mad hanging at close_right_b
         b "Hey! I'm not a monster!"
         a "Whatever you say."
     else:
         a "I guess."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     b p1 straight casual grin "Plus, at least all the people at the store will know they're not for you, so if anything, you should be happy!"
     d left "I suppose..."
     b p2 left level huhu "Plus, you'd be making me really happy by giving me something I need...~"
@@ -1899,7 +1879,7 @@ label brit_win:
     c p2 hanging "!!!"
     "Christeena's face is understandably red."
     a "Alright, now that that's settled, what do you say we call it a night?"
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b p2 level "I suppose so. I'll be sure to let Donald know when I'm in need for supplies."
     c left blank "Ugh..."
     $ d_buy_stuff = True

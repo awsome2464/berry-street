@@ -5,9 +5,9 @@ label baseball:
         M_Name = "Mrs. Truman"
         current_track = "None"
         b_hat = 1
-        b_hair = 0
-        c_hair = 0
-        outfit_b = "f"
+        b_hair = 1
+        c_hair = 1
+        outfit_b = "g"
         outfit_ch = "b"
         outfit_c = "a"
         outfit_d = "a"
@@ -56,20 +56,20 @@ label baseball:
     b "Alright!"
     b p2 raised closed_smile "Let's kick some ass!"
     mu mad blank "Brittney Anne!"
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b_s level blank "..."
     b raised "Let us place our feet onto some posteriors with force."
     mu_s level grin "..."
     mu "Just get in."
-    $ b_partial = False
-    $ b_wink = True
+    $ b_eyelids = "blink"
+    $ b_eyelids = "wink"
     b p1 tongue "Will do!"
     hide martha
     hide don
     hide brit
     with dissolve
     pause 0.1
-    $ b_wink = False
+    $ b_eyelids = "blink"
     "As Mrs. Truman got into the driver's seat and Brittney got into the passenger seat, the rest of us got into the back."
     "Having two long-legged guys made it challenging, but we managed to squeeze ourselves on the outside seats while Christeena sat comfortably in the middle."
     a "So, is it normal for two school teams to have an unofficial game in the summer?"
@@ -80,7 +80,7 @@ label baseball:
     show chris p1 straight raised smile at close_right_c with dissolve
     pause 0.1
     c "Hey, if they wanna get their asses beat again--"
-    m_o "Christeena Renee!"
+    m "Christeena Renee!"
     c_s mad blank "..."
     c raised grin "If they wanna lose again in front of everyone, let them!"
     c mad smile "It'll only make it satisfying for the rest of us!"
@@ -94,15 +94,15 @@ label baseball:
     "Plus, baseball is simple enough, I'm sure even I can follow what's happening."
     show don straight sad grin p1 at twoleft with dissolve
     pause 0.1
-    $ b_partial = True
+    $ b_eyelids = "partial"
     d "You won't regret being dragged along, Al!"
     show brit p2 straight raised closed_smile at tworight with dissolve
     pause 0.1
     b "I'll make sure of it~"
-    m_o "Alright, buckle up, chillins!"
+    m "Alright, buckle up, chillins!"
     scene bg house_ut with dissolve
     pause 0.1
-    $ b_partial = False
+    $ b_eyelids = "blink"
     "With that, we pulled out of the driveway and headed to the baseball diamond."
     play sound van_start
     $ current_track = "None"
@@ -124,7 +124,7 @@ label baseball:
     show brit p1 casual grin straight at middle zorder 3 with dissolve
     pause 0.1
     b "Bat... {w=0.5}glove... {w=0.5}hat... {w=0.5}cleats..."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b level closed_smile "I'd say 'cup', but I don't have that disadvantage."
     show brit at tworight
     show chris p1 level straight blank at twoleft zorder 3
@@ -137,18 +137,18 @@ label baseball:
     pause 0.1
     mu "Alright, you better start practicing!"
     mu casual grin "Good luck, Brittney!"
-    $ b_partial = False
+    $ b_eyelids = "blink"
     b opened_smile casual "Thanks, Mom!"
     b p2 sad grin "And be sure to save Dad a seat for when he gets here!"
     $ m_partial = True
     mu raised "Brittney, this ain't my first rodeo."
-    $ b_wink = True
+    $ b_eyelids = "wink"
     b raised tongue "If you say so."
     hide martha
     hide brit
     with dissolve
     pause 0.1
-    $ b_wink = False
+    $ b_eyelids = "blink"
     $ m_partial = False
     "With that, we parted ways, with Brittney headed towards the field while we popped the trunk, with Donald grabbing the cooler and the rest of us grabbing blankets to sit on."
     "We then found some metal bleachers near the fence that gave us a good view of the home base."
@@ -731,11 +731,11 @@ label gamestart:
     pause 0.1
     mu "Alright, don't get too cocky, Brittney."
     ct sad "Relax, Martha. It's all in good fun."
-    $b_wink = True
+    $b_eyelids = "wink"
     b tongue raised "Yeah, totally, Mom!"
     mu "Ahaha..."
     "Girl" "\"Hey, Brittney!\""
-    $b_wink = False
+    $b_eyelids = "blink"
     show brit casual blank
     "Brittney then turned around and looked at a teammate standing behind the fence."
     "Girl" "\"Coach wants us all in the dugout!\""
@@ -747,23 +747,23 @@ label gamestart:
     ct "Go out and kick some ass!"
     show martha level blank
     b_s level blank "..."
-    $b_partial = True
+    $b_eyelids = "partial"
     show brit raised huhu
     "Brittney then looked at her mother with a smug expression."
     mu_s grin "..."
     mu "Fine. You win."
     mu raised "For this game only, everyone's allowed to swear."
-    $b_partial = False
+    $b_eyelids = "blink"
     b p1 mad closed_smile "Fuck yeah!"
     mu mad blank "Don't.{w=0.5} Push it."
-    $b_wink = True
+    $b_eyelids = "wink"
     b level tongue "{cps=15}Fiiiiine.{/cps}"
     hide chad
     hide martha
     hide brit
     with dissolve
     pause 0.1
-    $b_wink = False
+    $b_eyelids = "blink"
     "After we all gave our wishes of good luck, Brittney jogged back towards the dugout."
     "About five minutes later, the game was on."
     window hide dissolve
@@ -781,7 +781,7 @@ label gamestart:
     else:
         "Though with the second half of the inning starting, I realized that I hadn't heard anything about her batting abilities."
     "I guess I wasn't really paying too much attention to her when the Saints were practicing that part."
-    "Then again, with the chatting amongst us in the bleachers, I don't think any of us were."
+    "Then again, with the chatting among us in the bleachers, I don't think any of us were."
     "Though when she walked up to the plate, I was given my chance to see just how good she was."
     show bg baseball:
         xalign 0.5 yalign 0.5

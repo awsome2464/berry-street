@@ -4,7 +4,6 @@ label shoppingwithharry:
         C_Name = "Christeena"
         E_Name = "???"
         b_hat = 0
-        b_hairtie = renpy.random.randint(0, 2)
         outfit_b = "a"
     show text "{size=+50}June, 2013{/size}":
         xalign 0.5 yalign 0.05
@@ -62,7 +61,7 @@ label shoppingwithharry:
     g grin "Seriously. Consider it a bonus for working so hard to unbox everything."
     "Huh.{w} Perhaps it wasn't too good to be true, after all."
     show ginger blank
-    h_o "Hey!!"
+    h "Hey!!"
     show ginger at close_left_c
     show harry p1 small mad scream at tworight
     with easeinright
@@ -177,7 +176,7 @@ label shoppingwithharry:
     stop loop
     play sound shopping_cart
     "But it was too late; Harry ran the cart right into someone."
-    e_o "{b}{i}OWW!{/i}{/b}"
+    e "{b}{i}OWW!{/i}{/b}"
     show elie p1 straight mad blank at middle with dissolve
     pause 0.1
     $ current_track = "\"Chaotic Evil\""
@@ -466,7 +465,7 @@ label shoppingwithharry:
     "Harry folded his hands together, bowed his head, and closed his eyes, with me following suit."
     scene bg fade with dissolve
     pause 0.1
-    h_o "Dear, Jesus, we thank you for this food, and we ask that you bless it to our bodies. Amen."
+    h "...Amen."
     a "Amen."
     scene bg deli_i_wb
     show deli_table zorder 2
@@ -520,7 +519,7 @@ label shoppingwithharry:
     h level blank "Jerk."
     a "I'm your big brother. I'm supposed to be a jerk."
     $ B_Name = "???"
-    b_o "Is that so?"
+    b "Is that so?"
     show harry casual
     "I jumped what felt like a mile in the air as that voice spoke from right by my ear! I turned around and found the source."
     $b_blink = False
@@ -538,9 +537,9 @@ label shoppingwithharry:
     a "What, does sitting in a chair and blowing a whistle all day build up an appetite?"
     b p2 level "I'll remember that when you start drowning on my watch."
     a "Don't you mean 'if'?"
-    $ b_partial = True
+    $b_eyelids = "partial"
     b closed_smile mad "I know what I said."
-    $ b_partial = False
+    $b_eyelids = "blink"
     show brit p2 right casual grin
     b "Oh, hey! Who's this?"
     show brit at close_left_b
@@ -555,18 +554,18 @@ label shoppingwithharry:
     b straight p1 opened_smile "Nice to meet ya!"
     h raised left grin "Yeah, same here, with as much as Alex talks about you!"
     b p2 straight raised grin "Is that so? What does he say?"
-    h straight closed_smile mad "He said that he thinks you're cute!"
+    h straight closed_smile mad "He said that he thinks you're hot!"
     a "Hey!! I said no such thing!!"
     if britnotpretty:
         b level "Oh, I know you haven't, Alex. I believe the exact words you DID say were 'Brittney is not pretty'!"
         a "You're never going to let that go, are you?"
-        $ b_partial = True
+        $ b_eyelids = "partial"
         b mad opened_smile "Nope."
-        $ b_partial = False
+        $ b_eyelids = "blink"
     else:
-        b p1 sad blank "Aww, so you don't think I'm cute?"
+        b p1 sad blank "Aww, so you don't think I'm hot?"
         a "Hey! I-I didn't say that, either!"
-        b p2 raised grin "So you DO think I'm cute?"
+        b p2 raised grin "So you DO think I'm hot?"
         a "I...! {w}Ugh..."
         $b_blink = False
         b p2 sad closed opened_smile "Ehehe. Your face is so red right now!"
@@ -645,10 +644,10 @@ label shoppingwithharry:
         "She gave a small giggle before she took a sip of her water."
         a "So, can I ask why you always drink water with your meals?"
         $ b_blink = True
-        $ b_partial = True
+        $ b_eyelids = "partial"
         b straight raised "What, do you have something against water?"
         a "No, I'm just curious."
-        $ b_partial = False
+        $ b_eyelids = "blink"
         show brit straight level p1 grin
         b "Well, I'm not a fan of soda, to start with."
         a "Why?"
@@ -660,9 +659,9 @@ label shoppingwithharry:
         a "I suppose not."
         b p1 casual "You know, you may wanna pay attention to what you're eating and drinking, yourself."
         a "What do you mean?"
-        b p2 level "Well, not to be offensive, but you seem out of shape and unhealthy."
+        b p2 level "Well, no offense, but you seem out of shape and unhealthy."
         a "Which part of that wasn't supposed to be offensive?"
-        b p2 left huhu level "Well, okay, maybe I was being a little offensive, but my point still remains!"
+        b p2 left huhu level "Well, okay, maybe I meant a little offense, but my point still remains!"
         b p1 straight casual blank "I've seen how out of breath you get when you walk for a while. You get exhausted too quickly."
         b p2 sad "At the very least, you could try exercising a little bit to build your stamina up."
         a "Yeah, I'll consider that."
@@ -682,12 +681,12 @@ label shoppingwithharry:
         a "Hey, even you can make that entertaining, Miss Messy-Eater."
         b p1 mad opened_smile "It was a couple drops of cheese on my pant leg!"
         a "Still a mess, albeit a small one."
-        $ b_wink = True
+        $ b_eyelids = "wink"
         show brit p2 tongue
         "She stuck her tongue out at me and picked up the check."
         hide brit with dissolve
         pause 0.1
-        $ b_wink = False
+        $ b_eyelids = "blink"
         "After that, we said our goodbyes and both headed back to Berry Street."
         stop loop fadeout(0.5)
         scene bg house_s with dissolve
@@ -730,11 +729,13 @@ label shoppingwithharry:
         "I took the trash out to the garbage can next to the driveway. I looked around and saw that a few of the other houses on the street had their cans out, as well."
         "That's when I saw movement at the far end of the street, right across from Donald's house. It looks like they were dragging their garbage can out, too."
         "...{w}wait a minute..."
+        scene bg house_y with dissolve
+        pause 0.1
         $ current_track = "None"
         stop music fadeout 3.0
         "...{w}no...!"
         pause 1
-        show elie p1 straight casual blank at middle with dissolve
+        show elie p1 left casual blank at middle with dissolve
         pause 1
         $ current_track = "\"Chaotic Evil\""
         play music chaotic_evil

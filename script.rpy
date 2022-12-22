@@ -136,11 +136,28 @@ label start:
         $ persistent.credits = False
         return
     if persistent.customdialogue:
-        scene bg house_ut
-        window hide
-        $b_hat = True
-        $b_partial = True
-        show brit p2 sad right opened_smile at middle
+        scene bg deli_i_e
+        python:
+            b_hat = True
+            outfit_b = "a"
+            outfit_d = "a"
+            e_blink = True
+            k_blink = False
+            E_Name = "Eleanor"
+            K_Name = "Kelly"
+        show elie p1 straight level blank at twoleft
+        show kelly p1 straight raised grin at tworight
+        k "So, you think you got what it takes?"
+        e mad grin "I'll tell you what I've got: your husband's dick on my breath."
+        k casual blank "..."
+        e "..."
+        k "No one has ever talked to me like that before."
+        e "That's because everyone's mouth is usually full of your husband's cock."
+        k "..."
+        e "..."
+        k raised grin "You're hired."
+        e casual blank "...shit."
+
         $renpy.pause()
     # Tracking your progress through the story, with the 'progress' variable being added to as each new section is completed.
     # This system is only here because the call method was glitching for some odd reason, but this seems to be working.

@@ -2,7 +2,7 @@ label nhie_start:
     python:
         B_Name = "Brittney"
         C_Name = "Christeena"
-        b_hair = 0
+        b_hair = 1
         b_hairtie = renpy.random.randint(0, 2)
         outfit_b = "d"
         outfit_c = "d"
@@ -39,7 +39,7 @@ label nhie_start:
     play music relaxation_in_the_country
     "It was getting pretty chilly out, so I made sure to put on some jeans and a jacket before heading over to the cabin."
     "I walked past Donald's house and was about to cross the street towards the pond before I heard a voice calling out from behind me."
-    b_o "Yo!"
+    b "Yo!"
     "I turned around to see Brittney jogging towards me."
     "Christeena seemed to be right behind her, albeit a tad slower."
     "A second or so later, Brittney caught up to me."
@@ -56,10 +56,10 @@ label nhie_start:
     show chris p1 straight sad blank at twoleft with easeinleft
     pause 0.1
     a "You okay?"
-    c "Yeah, it's just hard to catch up to an athlete like Brittney."
+    c "Yeah, it's just hard to catch up to an athlete."
     b left level huhu "My athleticism has nothing to do with your inability to--"
     b_s straight casual blank "..."
-    b left level "Nevermind."
+    b left level "Never mind."
     b p1 straight casual grin "Now let's go before it gets too dark to see."
     a "Roger that!"
     c p2 casual grin "Alright!"
@@ -82,10 +82,10 @@ label nhie_start:
     b sad small hanging "Either that, or the masked killer is real and waiting for us..."
     a "Let's assume the first one."
     b p2 straight blank "Well, I'll have you go in first, just in case it's the second one."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b level huhu "That way he'll attack you first, giving us time to run away!"
     a "Aww, how thoughtful of you, Ms. Usher."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     $b_blink = False
     show brit p1 closed closed_smile sad
     b "Ehehehe!"
@@ -105,21 +105,21 @@ label nhie_start:
     show don p1 straight raised grin at middle with dissolve
     pause 0.1
     d smile "Alright! You guys made it!"
-    $ b_partial = True
+    $ b_eyelids = "partial"
     show don at tworight
     show brit p2 straight raised grin at twoleft
     with easeinleft
     pause 0.1
     b "We would've been here sooner, but Alex was too scared to go into the woods."
     d grin "Oh, really?"
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight sad blank at twoleft
     b "He even said something about wanting me to enter the cabin first in case there was a killer inside."
     d level "You truly are a convincing actress."
-    $ b_wink = True
+    $ b_eyelids = "wink"
     b p2 mad tongue "And you truly are a dum-dum."
     d raised grin "Anyway, what do you say we start with what I called you here for?"
-    $ b_wink = False
+    $ b_eyelids = "blink"
     show brit p1 straight casual blank
     b "It would help if we knew what that was."
     d left level "Follow me and find out."
@@ -167,7 +167,7 @@ label nhie_start:
     hide chris
     show brit p1 straight mad opened_smile at close_b
     with dissolve
-    with Pause(.1)
+    pause 0.1
     b "Oooo!"
     b p2 raised "Okay, this night just got interesting."
     show brit at close_right_b
@@ -177,23 +177,22 @@ label nhie_start:
     d "I assume everyone here has played before?"
     b grin "I certainly have."
     show don:
-        ease 0.5 xalign 0.0
+        ease 0.5 close_left_d_2
     show brit:
-        ease 0.5 xalign 1.0
+        ease 0.5 close_right_b_2
     show chris p2 right level blank at middle with dissolve
     pause 0.1
     c "I have once or twice."
     d straight "Al?"
     a_s "..."
     a "Uh..."
-    d level blank "Wait..."
-    d "You haven't??"
+    d level blank "Wait... You haven't?"
     a "Not really."
     show chris casual straight
     b p1 small level hanging "Whaaaaat?"
     b straight mad blank "What kind of teenager are you?"
     a "The kind that has no friends to ever play that with."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b p2 raised huhu "Well, that's about to change tonight."
     if persistent.choices["22"] == 1:
         d casual "Do you at least know the rules of 'Never Have I Ever'?"
@@ -202,8 +201,9 @@ label nhie_start:
         d casual "Do you at least know the rules of 'Never Have I Ever'?"
         jump dontknowrules
     else:
+        d "Do you at least know the rules of 'Never Have I Ever'?{nw}"
         menu:
-            d "Do you at least know the rules of 'Never Have I Ever'?"
+            d "Do you at least know the rules of 'Never Have I Ever'?{fast}"
 
             "Yes":
                 $ persistent.choices["22"] = 1
@@ -215,14 +215,14 @@ label nhie_start:
 
 label knowtherules:
     a "Of course I know the rules. I've just never played, that's all."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight raised grin
     b "Alright, glad to see you're not a TOTAL loser."
     jump startnhie
 
 label dontknowrules:
     a "Nope."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight mad frown
     b "Sheesh! I thought you went to a public school!"
     a "What does that have to do with anything?"
@@ -269,20 +269,20 @@ label startnhie:
     d smile "...gets to make the first one out perform a dare!"
     c small sad dot "Eh??"
     show brit:
-        ease 0.5 xalign 0.9
+        ease 0.5 close_right_b
     show don:
-        ease 0.5 xalign 0.1
+        ease 0.5 close_left_d
     hide chris with dissolve
     pause 0.1
     b p1 mad grin "Oh, ho ho!"
     b raised "What prompted this idea?"
     d straight grin "Just a little something I thought up to make it more fun."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b p2 level huhu "Mhm."
     b "So it would have nothing to do with the TOTALLY fair and NOT rigged chance of me getting out first and you winning?"
     d casual "Well, that outcome is obviously possible, but not because it's rigged."
     b casual grin "I see, I see..."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight mad grin
     b "Well, this game truly is going to be interesting, then."
     hide brit
@@ -290,11 +290,11 @@ label startnhie:
     with dissolve
     pause 0.1
 
-    "Oh, boy. {w}Be my luck, I'll lose the game."
+    "Oh, boy. {w=0.5}Be my luck, I'll lose the game."
     "If that's the case, I hope whoever wins won't make me do something stupid."
 
     show don p1 straight raised grin at close_d with dissolve
-    with Pause(.1)
+    pause 0.1
     d "Alright, I'll go first, then."
     d casual "Everyone, hold up 5 fingers."
 
@@ -322,7 +322,7 @@ label startnhie:
     $ nhie_b_points -= 1
     $ nhie_c_points -= 1
     with dissolve
-    $ b_partial = True
+    $ b_eyelids = "partial"
     show don:
         ease 0.5 offscreenleft
     show chris p1 straight level blank at twoleft
@@ -348,7 +348,7 @@ label startnhie:
     pause .6
     hide brit
     hide don
-    $ b_partial = False
+    $ b_eyelids = "blink"
     c small sad dot "Oh..."
     c p2 straight blank "Um..."
     c_s "..."
@@ -378,7 +378,7 @@ label startnhie:
     a "Doesn't that make you feel kinda isolated?"
     c p1 straight raised blank "Well, you're one to talk; you didn't put your finger down, either."
     a "Well, yeah, but I've still been all over the state for different stuff."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     show chris at twoleft
     show brit p2 straight raised huhu at close_right_b
     with easeinright
@@ -388,7 +388,7 @@ label startnhie:
     show brit at close_b
     with easeoutleft
     pause 0.1
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight mad grin
     b "Alright, my turn now."
     "She gave a devilish grin at Donald before quickly continuing."
@@ -412,7 +412,7 @@ label startnhie:
     c p1 straight blank "How the hell--?!"
     c_s level "..."
     $ c_blush = True
-    c p2 left mad "Actually, I don't think I wanna know..."
+    c p2 left mad "Actually, I don't wanna know..."
     hide chris with dissolve
     pause 0.1
     show don p1 straight mad blank at close_left_d
@@ -421,12 +421,12 @@ label startnhie:
     pause 0.1
     $ c_blush = False
     "Donald looked at Brittney with a furious expression."
-    d wide "That was supposed to be a secret!"
-    $ b_partial = True
-    b p2 level huhu "That was before you made us play this game with the added dare challenge!"
+    d wide "That was supposed to stay between us!"
+    $ b_eyelids = "partial"
+    b p2 level huhu "That was before you added the dare challenge!"
     b raised "With something like that, I have no choice but to make sure you lose!"
     a "Do I even want to know how you would even know that fact?"
-    $ b_partial = False
+    $ b_eyelids = "blink"
     $b_blink = False
     show brit p1 closed opened_smile sad
     b "Oh, it's a great story!"
@@ -446,10 +446,10 @@ label startnhie:
     b raised straight blank "About 10 minutes pass and he's still in there, so I'm a bit concerned, right?"
     b casual "Does he have diarrhea or something? Is he just distracted on his phone?"
     b "So, I walked over to the restrooms and opened the door up a crack."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b grin "Before I could even say anything, I could hear a thumping noise from inside."
     b raised "Add the heavy breathing and moans and you could quickly figure out what was happening."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 mad straight opened_smile
     b "So, I then called out to Donald and asked if he was okay."
     b level huhu "As to be expected, I heard a gasp of surprise and a nervous 'Yeah, I'm okay!'"
@@ -517,7 +517,7 @@ label startnhie:
     b "And it looks like Alexander is going to have to receive the same treatment!"
     b p2 sad blank "What should we start with? {i}'Elm Street'{/i}? {i}'Halloween'{/i}?"
     b level "Nah, those are too tame."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     b huhu "Nah, those are too tame.{fast} I say we start with {i}'Saw'{/i}!"
     show don p1 right raised grin at close_left_d_2
     show brit at close_right_b_2
@@ -525,7 +525,7 @@ label startnhie:
     with easeinleft
     pause 0.1
     d "We'll have time to worry about that later; it's my turn again!"
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight level grin at close_right_b_2
     b "Very well."
     b raised opened_smile "So, let's see how you're going to screw me over this time, shall we?"
@@ -560,7 +560,7 @@ label startnhie:
     a "Wait, Christeena has turned someone down?"
     c level p2 "You sound surprised."
     a "I just didn't expect that, that's all."
-    $ b_partial = True
+    $ b_eyelids = "partial"
     show chris at twoleft
     show brit p2 straight level blank at close_right_b
     with easeinright
@@ -568,15 +568,15 @@ label startnhie:
     b "And what, pray tell, is that supposed to mean?"
     a "Nothing!"
     b raised p1 "Really? Because it sounds like you thought she either would say yes to anyone who asked her out OR she has never been asked on a date."
-    $ b_partial = False
+    $ b_eyelids = "blink"
     show brit p1 straight mad blank at close_right_b
-    b "Heck, maybe it's both, you judgmental jerk!"
+    b "Heck, maybe it's both."
     a "You know what? Let's just forget I said anything. There's no way I'm going to be able to defend myself here."
     b p2 grin "Looks like you've got a brain in that head, after all!"
     c mad p2 "Don't worry about her, Alex. What little filter she initially had is removed when she's tired."
-    b level left blank "I'm not ti--"
+    b level left blank "I'm not ti{nw}"
     $b_blink = False
-    b closed sad hanging "*YAWN*"
+    extend closed sad hanging "{i}*YAAAAAAAAWN*{/i}"
     $b_blink = True
     b_s straight casual blank "..."
     c_s level "..."
@@ -632,11 +632,11 @@ label startnhie:
         ease 0.5 close_right_b
     hide chris with dissolve
     pause 0.1
-    d raised "And if it ain't offending me, it shouldn't offend you, either."
-    a "I wasn't offended, I was just surprised."
+    d raised "And if it ain't worrying about it, neither should you."
+    a "I wasn't worrying, I was just surprised."
     d level "Well, I'm sure you still get my drift."
     d right casual "Brittney, you're up."
-    d level blank "Brittney, you're up.{fast} Unfortunately..."
+    extend level blank " Unfortunately..."
     b p1 straight casual grin "Relax, I'll go a little easier on ya."
     hide don
     show brit at close_b
@@ -653,7 +653,7 @@ label startnhie:
     pause 0.1
     "Christeena shot a dirty look at her sister before slowly lowering a finger."
     # Points: A = 3, B = 1, C = 1, D = 1
-    b p1 small sad hanging "Oh, shoot! Sorry, I wasn't thinking about that."
+    b p1 small sad hanging "Oh, shit! Sorry, I wasn't thinking about that."
     c p2 "{cps=15}Suuuurrrrrre.{/cps}"
     a "Okay, I gotta know the story behind this."
     $ c_blush = False
@@ -665,7 +665,7 @@ label startnhie:
     pause 0.1
     c p1 casual "It was a month before our parents got married; she dared me to eat a grasshopper that she found."
     c level "Said it was some sort of 'initiation' to be sisters."
-    a "And you did it...?"
+    a "And you believed her...?"
     $ c_blush = True
     c p2 mad hanging "I was 9!"
     a "Yeah, 9, not 4!"
@@ -693,14 +693,14 @@ label startnhie:
     b p2 level right huhu "It's like the woman didn't even know me!"
     b "I pick on any and all people that I think are cool!"
     a "Really? Would have never figured that one out."
-    $ b_wink = True
+    $ b_eyelids = "wink"
     b p1 straight mad tongue "Oh, hush it, dum-dum."
     hide brit
     hide chris
     with dissolve
     show don p1 straight casual grin at close_d with dissolve
     pause 0.1
-    $ b_wink = False
+    $ b_eyelids = "blink"
     d "Alright, Al. You're up."
     show don at close_left_d
     show brit p2 straight casual opened_smile at close_right_b
@@ -709,11 +709,11 @@ label startnhie:
     b "Ah, now THIS is interesting!"
     d blank "Huh?"
     b p1 raised grin "We all have one point left!"
-    show don:
-        ease 0.5 xalign 0.0
-    show brit:
-        ease 0.5 xalign 1.0
-    show chris p1 straight sad blank at middle with dissolve
+    show don zorder 2:
+        ease 0.5 close_left_d_2
+    show brit zorder 2:
+        ease 0.5 close_right_b_2
+    show chris p1 straight sad blank zorder 1 at middle with dissolve
     pause 0.1
     "I looked at everyone and discovered that, sure enough, they each had 1 finger up."
     "Christeena in particular didn't look too happy about this scenario."
