@@ -420,6 +420,7 @@ default persistent.choices = {"1": 0, "2": 0, "3": 0,
     "31": 0, "32": 0}
 
 default persistent.tour = {"1": 0, "2": 0, "3": 0, "4": 0}
+default britdepression = {"worthless": 0, "dye": 0, "donhate": 0}
 
 default marthatruman = False
 
@@ -512,6 +513,9 @@ default monthpoints = {"June3B": 0, "June3D": 0,
 "July10B": 0, "July10C": 0, "July10D": 0, "July10E": 0}
 
 default groupchat = False
+
+default brit_depress_questions = 0
+default first_or_next = "first"
 
 #####################
 # Character Sprites #

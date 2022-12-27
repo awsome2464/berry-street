@@ -12,6 +12,7 @@ label brit_sibling_talk:
         renpy.music.set_volume(0.5, channel='loop')
         b_hair_color = "Blonde"
         b_eyelids = "blink"
+        b_eye_bags = ""
     play music from_the_heart
     play loop forest_nighttime
     scene bg pond_n
@@ -245,6 +246,7 @@ label brit_shopping:
         outfit_b = "b"
         b_blink = True
         current_track = "None"
+        b_eye_bags = ""
     window hide
     stop music
     scene bg fade
@@ -608,6 +610,7 @@ label checking_on_brit:
     b_s "..."
     show brit straight
     "She eventually turned her head towards me, eyes locking onto the wrapped treat and bottled liquid in my hands."
+    show brit p1
     "Slowly, but surely, she sat up and turned towards me, her arm extending towards the food."
     "I handed her the bar, which she proceeded to slowly unwrap and take an ever-so-tiny bite out of."
     "All while doing this, she was staring blankly towards the ground."
@@ -617,7 +620,7 @@ label checking_on_brit:
         ease 0.5 close_b
     pause 0.6
     a "Better?"
-    b right "Not really."
+    b p2 right "Not really."
     "Her voice was still somehow more gravely than our smoker neighbor."
     show brit straight
     "I opened and offered the water bottle, a move she accepted just as slow as the granola bar."
@@ -646,7 +649,7 @@ label checking_on_brit:
     b "You don't know anything about me, Alex."
     a "I know you're kind.{w=0.2} I know you're funny.{w=0.2} I know you care about people."
     b straight "See, that's where you've got it all wrong."
-    b "That's just who everyone wants me to be.{w=0.2} Who I am to try and make everyone happy."
+    b "That's just who everyone wants me to be.{w=0.2} That's just who I am to try and make everyone happy."
     b right blank "But sooner or later, the real me slips through the cracks.{w=0.2} And before you know it..."
     $b_blink = False
     $b_eyelids = "blink"
@@ -675,17 +678,99 @@ label checking_on_brit:
     $b_blink = False
     b closed_sad frown p2 "Just...{w=0.75} ARGH!!!"
     "She grabbed and squeezed the top of her head as she leaned back onto the bed with a growl of frustration."
+    $renpy.block_rollback()
     "I paused for a second or so;{w=0.2} there was a lot to unpack in all of that."
-    "What should I ask about first?{nw}"
-    menu:
-        "What should I ask about first?{fast}"
+label brit_depression_questions:
+    if brit_depress_questions >= 3:
+        jump brit_comes_out
+    else:
+        menu:
+            "What should I ask about [first_or_next]?"
 
-        "\"You think you're worthless?\"":
-            pass
+            "\"You think you're worthless?\"" if britdepression["worthless"] == 0:
+                jump thinks_shes_worthless
 
-        "\"That's why you dyed your hair?\"":
-            pass 
+            "\"That's why you dyed your hair?\"" if britdepression["dye"] == 0:
+                jump dyed_her_hair
 
-        "\"You 'knew' he would hate you?\"":
-            pass
+            "\"You 'knew' he would hate you?\"" if britdepression["donhate"] == 0:
+                jump knew_he_would_hate
+
+label thinks_shes_worthless:
+    a "You think you're worthless?"
+    python:
+        brit_depress_questions += 1
+        britdepression["worthless"] = brit_depress_questions
+        first_or_next = "next"
+        b_blink = True
+        b_eyelids = "blink"
+    b p2 level straight blank "I KNOW I am."
+    a "Brit, that is not--"
+    b p1 mad "Yes, it IS true, Alex!"
+    $b_eyelids = "wince"
+    b p2 right "I'm just a disposable piece of trash that everyone forgets about in due time!"
+    b "Yeah, maybe they'll like me at first, but once they find someone better, I'm just a speck in their memory!"
+    b "They'll stop thinking about me.{w=0.2} They'll stop checking in on me.{w=0.2} They'll stop prioritizing me, no matter how special I once was to them."
+    $b_eyelids = "partial"
+    b raised "Hell, the only ones who've stayed by my side the longest are my parents and Chris."
+    b "But we're not all gonna be living together forever.{w=0.2} And once we're all in separate houses, they'll slowly stop thinking about me, too."
+    a "Brittney...!"
+    b straight mad "Save the pity, Alex."
+    b "It's happened to everyone else I knew; it'll eventually happen to everyone I currently know, as well."
+    $b_eyelids = "blink"
+    b p1 hanging "Including you."
+    a "Fat fucking chance."
+    a "You mean way too much to me for me to just forget about you."
+    $b_eyelids = "partial"
+    b p2 level blank right "Hmph.{w=0.2} If I had a fucking nickel..."
+    "I had no idea that Brittney thought this low of herself, though I guess if what she's saying about losing friends and loved ones is true, then I truly do feel for her."
+    "Though as much as I hate to admit it, I don't think I'm gonna be changing her mind about her self worth in this conversation."
+    jump brit_depression_questions
+
+label dyed_her_hair:
+    a "That's why you dyed your hair?"
+    python:
+        brit_depress_questions += 1
+        britdepression["dye"] = brit_depress_questions
+        first_or_next = "next"
+        b_blink = True
+        b_eyelids = "partial"
+    b straight level grin p1 "Pretty sad, right?"
+    "She ran her fingers through her ratty hair with a chuckle."
+    b "Ruined my perfect and natural blonde hair just so my friend would say something to me."
+    b p2 left "And it didn't even fucking work."
+    b straight "So there's time and money down the toilet."
+    a "Well, I mean, it seems that everyone else likes it, myself included."
+    b right blank "Yeah.{w=0.2} Everyone but the one person I did it for."
+    b raised "Or maybe he DOES like it and just didn't bother to say it.{w=0.2} I dunno."
+    b straight "Point is, the plan failed.{w=0.2} So fuck me, I guess."
+    "She really is very desperate to get Donald to acknowledge her."
+    "If only I could get Donald to see just how much his petty grudge is destroying her."
+    jump brit_depression_questions
+
+label knew_he_would_hate:
+    a "You 'knew' he would hate you?"
+    python:
+        brit_depress_questions += 1
+        britdepression["dye"] = brit_depress_questions
+        first_or_next = "next"
+        b_blink = True
+        b_eyelids = "partial"
+    b p2 raised straight blank "Of course I did."
+    b right "After all, everyone always does, in the end."
+    a "Right, that whole thing about your \"real\" self, whatever that means."
+    b p1 level straight "I'll tell you exactly what it means."
+    b left "Imagine, if you will, an annoying piece of shit who constantly roasts those she cares about."
+    b "Now imagine that every now and then, she says something that goes a bit too far."
+    b "Something that hits her loved one close to home and kills their mood."
+    a "But if it was a joke, then that's their fault."
+    b straight mad "Doesn't matter whether it a joke or not;{w=0.2} they take it personally, regardless."
+    $b_eyelids = "blink"
+    b p2 right "They take it personally, and you end up feeling awful for hurting them."
+    b "And yet, despite feeling awful about it, you still continue to do it without even stopping to think about the consequences."
+    b straight raised "That's what I mean by my real self."
+    b "Sure, I come off as a kind, funny person, but deep down, I'm just a bitch who's only satisfied when she's hurting those around her."
+    $renpy.pause(hard=True)
+
+label brit_comes_out:
 
